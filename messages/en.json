@@ -1,0 +1,340 @@
+{
+  "Navbar": {
+    "home": "Home Page",
+    "solutions": "Solutions",
+    "service": "Services",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+
+  "Hero": {
+ "title": "Empowering Businesses through\nTechnology, Connectivity,\nand Expertise.",
+  "stats": [
+    {
+      "value": "20+",
+      "label": "Our Partner"
+    },
+    {
+      "value": "20+",
+      "label": "Our Customer"
+    },
+    {
+      "value": "30+",
+      "label": "Employees"
+    }
+  ]
+},
+
+  "WhoWeAre": {
+    "title": "Who We Are",
+    "description1": "PT Medianusa Permana, with more than a decade of experience, provides a comprehensive technology ecosystem covering Technology Consulting, Business Application Solutions, Internet Connectivity Services, and IT Resource Services.",
+    "description2": "Supported by continuously expanding infrastructure, ISO 9001:2015 and ISO 27001 certifications, and extensive cross-industry experience, we are committed to delivering reliable, innovative, and sustainable technology solutions that drive long-term business growth."
+  },
+
+  "Solutions": {
+  "hero": {
+    "title": "Technology Solutions for Business Growth",
+    "description": "Empowering organizations with innovative technology, connectivity, compliance, and digital transformation solutions to drive performance and accelerate growth.",
+    "profileButton": "Get a Profile",
+    "contactButton": "Talk to Us"
+  },
+
+  "bestSolutions": {
+    "our": "Our",
+    "title": "Best Solutions",
+    "button": "More Info",
+    "items": [
+  {
+    "title": "Digital Transformation Solutions",
+    "description": "Helping businesses modernize processes, improve productivity, and leverage technology for sustainable growth.",
+    "includes": [
+      "Business Process Digitalization",
+      "Custom Application Development",
+      "System Integration",
+      "Cloud Adoption"
+    ]
+  },
+  {
+    "title": "Connectivity & Infrastructure Solutions",
+    "description": "Providing reliable network and internet services to ensure seamless business operations.",
+    "includes": [
+      "Dedicated Internet",
+      "Metro Ethernet",
+      "IP VPN",
+      "Managed Network"
+    ]
+  },
+  {
+    "title": "Business Applications Solutions",
+    "description": "Delivering scalable applications that streamline operations and support business expansion.",
+    "includes": [
+      "ERP",
+      "CRM",
+      "HRIS",
+      "Custom Application"
+    ]
+  },
+  {
+    "title": "Compliance & Governance Solutions",
+    "description": "Supporting organizations in meeting regulatory requirements and industry standards.",
+    "includes": [
+      "ISO 27001",
+      "Risk Management",
+      "Governance",
+      "Compliance Audit"
+    ]
+  },
+  {
+    "title": "Managed Technology Solutions",
+    "description": "Ensuring technology environments remain secure, optimized, and continuously supported.",
+    "includes": [
+      "Helpdesk",
+      "Monitoring",
+      "Maintenance",
+      "Managed Service"
+    ]
+  }
+]
+  }
+},
+
+"WhyChoose": {
+  "title": "Why Choose Us?",
+  "items": [
+    {
+      "title": "Reliability & Security",
+      "description": "Robust Systems With Strong Security Architecture."
+    },
+    {
+      "title": "Operational Efficiency",
+      "description": "Reduce Complexity And Optimize Workflows."
+    },
+    {
+      "title": "Cost Optimization",
+      "description": "Maximize ROI Through Strategic Technology Investments."
+    },
+    {
+      "title": "Innovation & Growth",
+      "description": "Enable Scalable Digital Transformation."
+    },
+    {
+      "title": "Compliance Readiness",
+      "description": "Stay Aligned With Regulatory Requirements."
+    },
+    {
+      "title": "Business Agility",
+      "description": "Adapt Faster To Market And Operational Changes."
+    }
+  ]
+},
+
+"SolutionsIndustry": {
+  "tag": "Industries We Serve",
+  "title1": "Solutions Designed",
+  "title2": "For Every",
+  "titleHighlight": "Industry",
+  "description": "We provide tailored solutions that address the unique challenges of each industry, helping businesses improve efficiency, ensure compliance, and deliver exceptional experiences.",
+  "footer": "One platform to streamline operations, enhance security, and keep you connected with what matters most to your people and your customers."
+},
+
+  "WhyChooseUs": {
+    "title": "Driving Business Growth Through Technology, Compliance, and Innovation",
+    "description": "We deliver integrated technology and consulting services that help organizations work smarter, grow faster, and stay ahead of evolving business demands. By combining strategic consulting, digital solutions, connectivity services, and experienced IT resources, we support business transformation, governance readiness, operational efficiency, and sustainable growth to create long-term value for our clients and partners."
+  },
+
+  "SmartSystem": {
+  "title": "Smart System, Real Impact",
+  "subtitle": "We build systems and dashboards that help businesses operate smarter, make better decisions, and achieve more.",
+  "ourSystem": "Our System",
+  "industry": "Built For Every Industry",
+  "monitoring": "Real-Time Monitoring And Actionable Business Insights.",
+  "systems": [
+    {
+      "name": "Prime Course",
+      "title": "Learning Management System",
+      "description": "A modern LMS platform for managing courses, students, assignments, and progress in one place."
+    },
+    {
+      "name": "Prime EDU",
+      "title": "School Management System",
+      "description": "End to end school management for academic operations, administration, and communication."
+    },
+    {
+      "name": "Prime Cafe",
+      "title": "Cafe Management System",
+      "description": "Simplifies cafe operations from ordering and billing to inventory monitoring."
+    },
+    {
+      "name": "Prime Restaurant",
+      "title": "Restaurant Management System",
+      "description": "Complete restaurant operations management from orders to kitchen to reporting."
+    },
+    {
+      "name": "Prime Biz",
+      "title": "Enterprise Resource Planning",
+      "description": "PrimeBiz is an integrated ERP platform that helps businesses manage operations in one real time system."
+    },
+    {
+      "name": "Prime Teams",
+      "title": "Project Management System",
+      "description": "Improves collaboration, task management, and communication across teams."
+    }
+  ]
+},
+
+  "SmartSystemShowcase": {
+    "why": "Why",
+    "heading": "Organizations Trust Permana",
+    "aria": "Reasons organizations trust Permana",
+    "items": [
+      {
+        "title": "Integrated Technology Ecosystem",
+        "description": "Bringing together strategy, business applications, connectivity infrastructure, and IT resources into a unified ecosystem that supports your organization's digital transformation journey."
+      },
+      {
+        "title": "Proven Industry Experience",
+        "description": "Extensive experience delivering technology solutions across various industries, including financial services, government, property and real estate, healthcare, manufacturing, and public services."
+      },
+      {
+        "title": "Expert Resources",
+        "description": "Supported by a team of experienced consultants, engineers, developers, project managers, and technology specialists dedicated to delivering measurable business outcomes."
+      },
+      {
+        "title": "Long-Term Partnership",
+        "description": "Focused on building lasting relationships with our clients by delivering sustainable value, continuous innovation, and reliable support at every stage of their growth journey."
+      },
+      {
+        "title": "Certified & Secure",
+        "description": "Committed to maintaining the highest standards of quality and information security through internationally recognized certifications and best practices."
+      },
+      {
+        "title": "Connectivity &",
+        "description": "Powered by a robust fiber-optic network infrastructure and high-quality internet services, ensuring stable, secure, and high-performance connectivity for your business operations."
+      }
+    ]
+  },
+
+  "Service": {
+    "title": "Our Services",
+    "seeMore": "Learn More",
+    "asp": "ASP",
+    "isp": "ISP",
+    "resource": "Consulting & IT Resources"
+  },
+
+  "ISP": {
+    "tagline": "Internet Service Provider",
+
+    "heading1": "Connectivity &",
+    "heading2": "Infrastructure",
+    "heading3": "Solutions",
+
+    "premiumTitle": "Our Premium",
+    "premiumTitle2": "Solutions",
+
+    "products": [
+      {
+        "logo": "/images/image 261.png",
+        "title": "Permana Dedicated",
+        "description": "Dedicated internet service dengan bandwidth simetris yang stabil, cepat, dan aman untuk kebutuhan bisnis, pemerintahan, industri, dan UKM, tersedia melalui Fiber Optic dan Wireless Radio."
+      },
+      {
+        "logo": "/images/image 262.png",
+        "title": "Permana Hosta",
+        "description": "A customized high-speed internet solution tailored to business needs, delivering flexible, reliable, and scalable connectivity via Fiber Optic and Wireless Radio."
+      },
+      {
+        "logo": "/images/image 263.png",
+        "title": "Permana iMore",
+        "description": "Permana iMore is a high-speed internet solution with value-added services, delivering reliable connectivity and integrated support for business digital transformation." 
+      },
+      {
+        "logo": "/images/image 264.png",
+        "title": "Permana Home",
+        "description": "Permana Home is a residential broadband service offering fast, stable, and reliable internet from 25–100 Mbps via Fiber Optic."
+      }
+
+    ],
+
+    "connectivity": {
+  "title": "Connectivity & Infrastructure",
+  "services": [
+    {
+      "icon": "/images/Earth-Globe.png",
+      "title": "Permana Link (Metro Ethernet/IP VPN)",
+      "description": "Permana Link delivers high-speed, reliable IP/Ethernet connectivity with strong QoS for businesses.",
+      "color": "#04BCBC"
+    },
+    {
+      "icon": "/images/Electrical.png",
+      "title": "Permana Dark Fiber",
+      "description": "Scalable enterprise networking solutions that ensure secure and efficient communication across your organization.",
+      "color": "#6ED6E0"
+    },
+    {
+      "icon": "/images/GPS Signal.png",
+      "title": "Permana DWDM",
+      "description": "Direct cloud connectivity that improves application performance, enhances security, and supports business productivity.",
+      "color": "#00628D"
+    }
+  ]
+},
+
+    "managed": {
+      "tag": "Managed",
+
+      "title 1": "Connectivity",
+      "title 2": "Service",
+      "badge1": {
+  "title": "Internet Provider",
+  "subtitle": "Management"
+},
+"badge2": {
+  "title": "Networking",
+  "subtitle": "Monitoring"
+},
+"badge3": {
+  "title": "Last Mile",
+  "subtitle": "Connectivity"
+},
+"badge4": {
+  "title": "Enterprise Connectivity",
+  "subtitle": "Solutions"
+}
+    }
+  },
+
+  "Client": {
+    "title": "Our Clients"
+  },
+
+  "Contact": {
+    "title": "Trusted Technology\nService Partner",
+    "companyProfile": "Company Profile",
+
+    "formTitle": "Explore The Best Solution\nFor Your Organization",
+
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+
+    "companyName": "Company Name",
+    "companyNamePlaceholder": "Enter your company name",
+
+    "phone": "Phone Number / Whatsapp",
+    "phonePlaceholder": "Enter your phone number",
+
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+
+    "description": "Brief Description of Your Needs",
+    "descriptionPlaceholder": "Please describe your needs or how we can help you...",
+
+    "submit": "Submit",
+    "download": "Download"
+  },
+
+  "Footer": {
+    "copyright": "© 2026 PT Medianusa Permana"
+  }
+
+  }

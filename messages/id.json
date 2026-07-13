@@ -1,0 +1,249 @@
+{
+  "Navbar": {
+    "home": "Beranda",
+    "solutions": "Solusi",
+    "service": "Layanan",
+    "about": "Tentang Kami",
+    "contact": "Kontak"
+  },
+
+ "Hero": {
+  "title": "Menguatkan bisnis dengan\ndukungan Teknologi, Konektivitas,\ndan Keahlian.",
+
+  "stats": [
+    {
+      "value": "20+",
+      "label": "Mitra Kami"
+    },
+    {
+      "value": "20+",
+      "label": "Klient Kami"
+    },
+    {
+      "value": "30+",
+      "label": "Tim Kami"
+    }
+  ]
+},
+
+  "WhoWeAre": {
+    "title": "Tentang Kami",
+    "description1": "PT Medianusa Permana, dengan pengalaman lebih dari satu dekade, menyediakan ekosistem teknologi yang mencakup Konsultasi Teknologi, Solusi Aplikasi Bisnis, Layanan Konektivitas Internet, dan Layanan Sumber Daya TI.",
+    "description2": "Didukung oleh infrastruktur yang terus berkembang, sertifikasi ISO 9001:2015 dan ISO 27001, serta pengalaman di berbagai industri, kami berkomitmen menghadirkan solusi teknologi yang andal, inovatif, dan berkelanjutan untuk mendukung pertumbuhan bisnis jangka panjang."
+  },
+
+  "Solutions": {
+    "hero": {
+      "title": "Solusi Teknologi untuk Pertumbuhan Bisnis.",
+      "description": "Memberdayakan organisasi dengan solusi teknologi, konektivitas, kepatuhan, dan transformasi digital terintegrasi yang dirancang untuk meningkatkan kinerja dan mempercepat pertumbuhan.",
+      "profileButton": "Profil Perusahaan",
+      "contactButton": "Kontak Kami"
+    },
+
+    "bestSolutions": {
+      "our": "Our",
+      "title": "Best Solutions"
+    }
+  },
+
+  "WhyChooseUs": {
+    "title": "Memacu pertumbuhan bisnis dengan teknologi, kepatuhan, dan inovasi.",
+    "description": "Kami menghadirkan layanan teknologi dan konsultasi terintegrasi yang membantu organisasi bekerja lebih cerdas, berkembang lebih cepat, dan tetap unggul dalam menghadapi kebutuhan bisnis yang terus berkembang. Dengan menggabungkan konsultasi strategis, solusi digital, layanan konektivitas, dan sumber daya TI yang berpengalaman, kami mendukung transformasi bisnis, kesiapan tata kelola, efisiensi operasional, serta pertumbuhan yang berkelanjutan untuk menciptakan nilai jangka panjang bagi klien dan mitra kami."
+  },
+
+  "SmartSystem": {
+    "title": "Sistem Cerdas, Dampak Nyata",
+    "subtitle": "Kami membangun sistem dan dashboard yang membantu bisnis beroperasi lebih cerdas, mengambil keputusan yang lebih baik, dan mencapai lebih banyak.",
+    "ourSystem": "Sistem Kami",
+    "industry": "Dirancang untuk Berbagai Industri",
+    "monitoring": "Pemantauan real time dengan insight bisnis yang dapat langsung diterapkan.",
+    "systems": [
+      {
+        "name": "Prime Course",
+        "title": "Learning Management System",
+        "description": "Platform LMS cerdas untuk mengelola kursus, siswa, tugas, dan kemajuan di satu tempat."
+      },
+      {
+        "name": "PrimeEDU",
+        "title": "School Management System",
+        "description": "Manajemen sekolah ujung ke ujung untuk operasional akademik, administrasi, dan komunikasi."
+      },
+      {
+        "name": "Prime Cafe",
+        "title": "Cafe Management System",
+        "description": "Menyederhanakan operasional kafe mulai dari pemesanan dan penagihan hingga pemantauan inventaris."
+      },
+      {
+        "name": "Prime Restaurant",
+        "title": "Restaurant Management System",
+        "description": "Manajemen operasional restoran secara lengkap, mulai dari pemesanan, dapur, hingga pelaporan."
+      },
+      {
+        "name": "Prime Biz",
+        "title": "Enterprise Resource Planning",
+        "description": "PrimeBiz adalah platform ERP terintegrasi yang membantu bisnis mengelola operasional dalam satu sistem waktu nyata."
+      },
+      {
+        "name": "Prime Teams",
+        "title": "Project Management System",
+        "description": "Meningkatkan kolaborasi, manajemen tugas, dan komunikasi antar tim."
+      }
+    ]
+  },
+
+  "SmartSystemShowcase": {
+    "why": "Mengapa",
+    "heading": "Permana Menjadi Pilihan Organisasi",
+    "aria": "Alasan organisasi mempercayai Permana",
+    "items": [
+      {
+        "title": "Ekosistem Teknologi Terintegrasi",
+        "description": "Menyatukan strategi, aplikasi bisnis, infrastruktur konektivitas, dan sumber daya TI dalam satu ekosistem terpadu yang mendukung perjalanan transformasi digital organisasi Anda."
+      },
+      {
+        "title": "Pengalaman Industri yang Terbukti",
+        "description": "Memiliki pengalaman luas dalam menghadirkan solusi teknologi di berbagai industri, termasuk layanan keuangan, pemerintahan, properti dan real estat, kesehatan, manufaktur, serta layanan publik."
+      },
+      {
+        "title": "Sumber Daya Ahli",
+        "description": "Didukung oleh tim konsultan, engineer, developer, manajer proyek, dan spesialis teknologi berpengalaman yang berdedikasi untuk menghasilkan dampak bisnis yang terukur."
+      },
+      {
+        "title": "Kemitraan Jangka Panjang",
+        "description": "Berfokus pada pembangunan hubungan jangka panjang dengan klien melalui pemberian nilai yang berkelanjutan, inovasi yang konsisten, serta dukungan yang andal di setiap tahap pertumbuhan mereka."
+      },
+      {
+        "title": "Tersertifikasi & Aman",
+        "description": "Berkomitmen untuk mempertahankan standar kualitas dan keamanan informasi tertinggi melalui sertifikasi yang diakui secara internasional dan praktik terbaik."
+      },
+      {
+        "title": "Konektivitas yang Andal",
+        "description": "Didukung oleh infrastruktur jaringan fiber optik yang andal dan layanan internet berkualitas tinggi, memastikan konektivitas yang stabil, aman, dan berkinerja tinggi untuk operasional bisnis Anda."
+      }
+    ]
+  },
+
+  "Service": {
+    "title": "Pelayanan Kami",
+    "seeMore": "Selengkapnya",
+    "asp": "ASP",
+    "isp": "ISP",
+    "resource": "Konsultasi & Sumber Daya TI"
+  },
+
+  "ISP": {
+    "tagline": "Penyedia Layanan Internet",
+
+    "heading1": "Konektivitas &",
+    "heading2": "Solusi",
+    "heading3": "Infrastruktur",
+
+    "premiumTitle": "Solusi",
+    "premiumTitle2": "Premium Kami",
+
+    "products": [
+      {
+        "logo": "/images/image 261.png",
+        "title": "Permana Dedicated",
+        "description": "Layanan internet khusus dengan simetri bandwidth yang stabil, cepat, dan aman untuk kebutuhan bisnis, pemerintahan, industri, dan UKM, tersedia melalui Fiber Optic dan Wireless Radio."
+      },
+      {
+        "logo": "/images/image 262.png",
+        "title": "Permana Hosta",
+        "description": "Solusi internet berkecepatan tinggi yang disesuaikan dengan kebutuhan bisnis, menghadirkan konektivitas yang fleksibel, andal, dan terukur melalui Fiber Optic dan Radio Nirkabel."
+      },
+      {
+        "logo": "/images/image 263.png",
+        "title": "Permana iMore",
+        "description": "Permana iMore adalah solusi internet berkecepatan tinggi dengan layanan bernilai tambah, menghadirkan konektivitas yang andal dan dukungan terintegrasi untuk transformasi digital bisnis."
+      },
+      {
+        "logo": "/images/image 264.png",
+        "title": "Permana Home",
+        "description": "Permana Home adalah layanan broadband residensial yang menawarkan internet cepat, stabil, dan andal dari 25–100 Mbps melalui Fiber Optic."
+      }
+    
+    ],
+"connectivity": {
+  "title": "Connectivity & Infrastructure",
+  "services": [
+    {
+      "icon": "/images/Earth-Globe.png",
+      "title": "Permana Link (Metro Ethernet/IP VPN)",
+      "description": "Permana Link delivers high-speed, reliable IP/Ethernet connectivity with strong QoS for businesses.",
+      "color": "#04BCBC"
+    },
+    {
+      "icon": "/images/Electrical.png",
+      "title": "Permana Dark Fiber",
+      "description": "Scalable enterprise networking solutions that ensure secure and efficient communication across your organization.",
+      "color": "#6ED6E0"
+    },
+    {
+      "icon": "/images/GPS Signal.png",
+      "title": "Permana DWDM",
+      "description": "Direct cloud connectivity that improves application performance, enhances security, and supports business productivity.",
+      "color": "#00628D"
+    }
+  ]
+    },
+
+     "managed": {
+      "tag": "Mengelola",
+
+      "title 1": "Layanan",
+      "title 2": "Konektivitas",
+
+      "badge1": {
+      "title": "Manajemen",
+      "subtitle": "Penyedia Internet"
+    },
+      "badge2": {
+      "title": "Pemantauan",
+      "subtitle": "Jaringan"
+    },
+      "badge3": {
+      "title": "Konektivitas",
+      "subtitle": "Jarak Terakhir"
+    },
+      "badge4": {
+      "title": "Solusi Konektivitas",
+      "subtitle": "Perusahaan"
+    }
+    }
+  },
+
+  "Client": {
+    "title": "Klient Kami"
+  },
+
+
+  "Contact": {
+    "title": "Mitra Layanan Teknologi\nTerpercaya",
+    "companyProfile": "Profil Perusahaan",
+
+    "formTitle": "Temukan Solusi Terbaik\nUntuk Organisasi Anda",
+
+    "fullName": "Nama Lengkap",
+    "fullNamePlaceholder": "Masukkan nama lengkap",
+
+    "companyName": "Nama Perusahaan",
+    "companyNamePlaceholder": "Masukkan nama perusahaan",
+
+    "phone": "Nomor Telepon / Whatsapp",
+    "phonePlaceholder": "Masukkan nomor telepon",
+
+    "email": "Alamat Email",
+    "emailPlaceholder": "Masukkan alamat email",
+
+    "description": "Deskripsi Singkat Kebutuhan Anda",
+    "descriptionPlaceholder": "Jelaskan kebutuhan Anda atau bagaimana kami dapat membantu...",
+
+    "submit": "Kirim",
+    "download": "Unduh"
+  },
+
+  "Footer": {
+    "copyright": "© 2026 PT Medianusa Permana"
+  }
+}

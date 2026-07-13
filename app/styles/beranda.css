@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button,
+  input,
+  select,
+  textarea {
+    @apply appearance-none bg-transparent border-0 outline-none;
+  }
+
+  .all-unset {
+    all: unset;
+  }
+}
+
+:root {
+  --biru-70: rgba(4, 188, 188, 0.7);
+  --biru-muda: rgba(0, 185, 191, 1);
+  --biru-tua: rgba(0, 98, 141, 1);
+  --eride-madrasthemes-com-arial-regular-font-family: "Arial", Helvetica;
+  --eride-madrasthemes-com-arial-regular-font-size: 20px;
+  --eride-madrasthemes-com-arial-regular-font-style: normal;
+  --eride-madrasthemes-com-arial-regular-font-weight: 400;
+  --eride-madrasthemes-com-arial-regular-letter-spacing: 0px;
+  --eride-madrasthemes-com-arial-regular-line-height: normal;
+  --eride-madrasthemes-com-inter-bold-upper-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-inter-bold-upper-font-size: 14px;
+  --eride-madrasthemes-com-inter-bold-upper-font-style: normal;
+  --eride-madrasthemes-com-inter-bold-upper-font-weight: 700;
+  --eride-madrasthemes-com-inter-bold-upper-letter-spacing: 0px;
+  --eride-madrasthemes-com-inter-bold-upper-line-height: 28px;
+  --eride-madrasthemes-com-inter-light-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-inter-light-font-size: 34px;
+  --eride-madrasthemes-com-inter-light-font-style: normal;
+  --eride-madrasthemes-com-inter-light-font-weight: 300;
+  --eride-madrasthemes-com-inter-light-letter-spacing: 0px;
+  --eride-madrasthemes-com-inter-light-line-height: 34px;
+  --eride-madrasthemes-com-inter-medium-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-inter-medium-font-size: 26px;
+  --eride-madrasthemes-com-inter-medium-font-style: normal;
+  --eride-madrasthemes-com-inter-medium-font-weight: 500;
+  --eride-madrasthemes-com-inter-medium-letter-spacing: 0px;
+  --eride-madrasthemes-com-inter-medium-line-height: 31.200000762939453px;
+  --eride-madrasthemes-com-inter-regular-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-inter-regular-font-size: 26px;
+  --eride-madrasthemes-com-inter-regular-font-style: normal;
+  --eride-madrasthemes-com-inter-regular-font-weight: 400;
+  --eride-madrasthemes-com-inter-regular-letter-spacing: 0px;
+  --eride-madrasthemes-com-inter-regular-line-height: 15.600000381469727px;
+  --eride-madrasthemes-com-inter-regular-title-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-inter-regular-title-font-size: 16px;
+  --eride-madrasthemes-com-inter-regular-title-font-style: normal;
+  --eride-madrasthemes-com-inter-regular-title-font-weight: 400;
+  --eride-madrasthemes-com-inter-regular-title-letter-spacing: 0px;
+  --eride-madrasthemes-com-inter-regular-title-line-height: 22.079999923706055px;
+  --eride-madrasthemes-com-inter-semi-bold-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-inter-semi-bold-font-size: 26px;
+  --eride-madrasthemes-com-inter-semi-bold-font-style: normal;
+  --eride-madrasthemes-com-inter-semi-bold-font-weight: 600;
+  --eride-madrasthemes-com-inter-semi-bold-letter-spacing: 0px;
+  --eride-madrasthemes-com-inter-semi-bold-line-height: 31.200000762939453px;
+  --eride-madrasthemes-com-open-sans-regular-font-family: "Open Sans", Helvetica;
+  --eride-madrasthemes-com-open-sans-regular-font-size: 14px;
+  --eride-madrasthemes-com-open-sans-regular-font-style: normal;
+  --eride-madrasthemes-com-open-sans-regular-font-weight: 400;
+  --eride-madrasthemes-com-open-sans-regular-letter-spacing: 0px;
+  --eride-madrasthemes-com-open-sans-regular-line-height: 16.799999237060547px;
+  --eride-madrasthemes-com-semantic-heading-2-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-heading-2-font-size: 42px;
+  --eride-madrasthemes-com-semantic-heading-2-font-style: normal;
+  --eride-madrasthemes-com-semantic-heading-2-font-weight: 700;
+  --eride-madrasthemes-com-semantic-heading-2-letter-spacing: -1px;
+  --eride-madrasthemes-com-semantic-heading-2-line-height: 46.20000076293945px;
+  --eride-madrasthemes-com-semantic-heading-2-title-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-heading-2-title-font-size: 32px;
+  --eride-madrasthemes-com-semantic-heading-2-title-font-style: normal;
+  --eride-madrasthemes-com-semantic-heading-2-title-font-weight: 500;
+  --eride-madrasthemes-com-semantic-heading-2-title-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-heading-2-title-line-height: 41.599998474121094px;
+  --eride-madrasthemes-com-semantic-heading-4-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-heading-4-font-size: 32px;
+  --eride-madrasthemes-com-semantic-heading-4-font-style: normal;
+  --eride-madrasthemes-com-semantic-heading-4-font-weight: 500;
+  --eride-madrasthemes-com-semantic-heading-4-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-heading-4-line-height: 28.799999237060547px;
+  --eride-madrasthemes-com-semantic-input-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-input-font-size: 15px;
+  --eride-madrasthemes-com-semantic-input-font-style: normal;
+  --eride-madrasthemes-com-semantic-input-font-weight: 500;
+  --eride-madrasthemes-com-semantic-input-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-input-line-height: normal;
+  --eride-madrasthemes-com-semantic-item-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-item-font-size: 34px;
+  --eride-madrasthemes-com-semantic-item-font-style: normal;
+  --eride-madrasthemes-com-semantic-item-font-weight: 400;
+  --eride-madrasthemes-com-semantic-item-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-item-line-height: 34px;
+  --eride-madrasthemes-com-semantic-link-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-link-font-size: 14px;
+  --eride-madrasthemes-com-semantic-link-font-style: normal;
+  --eride-madrasthemes-com-semantic-link-font-weight: 700;
+  --eride-madrasthemes-com-semantic-link-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-link-line-height: 21.700000762939453px;
+  --eride-madrasthemes-com-semantic-slot-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-slot-font-size: 15px;
+  --eride-madrasthemes-com-semantic-slot-font-style: normal;
+  --eride-madrasthemes-com-semantic-slot-font-weight: 400;
+  --eride-madrasthemes-com-semantic-slot-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-slot-line-height: 24px;
+  --eride-madrasthemes-com-semantic-strikethrough-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-strikethrough-font-size: 12px;
+  --eride-madrasthemes-com-semantic-strikethrough-font-style: normal;
+  --eride-madrasthemes-com-semantic-strikethrough-font-weight: 500;
+  --eride-madrasthemes-com-semantic-strikethrough-letter-spacing: -0.4000000059604645px;
+  --eride-madrasthemes-com-semantic-strikethrough-line-height: 12px;
+  --eride-madrasthemes-com-semantic-strong-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-strong-font-size: 16px;
+  --eride-madrasthemes-com-semantic-strong-font-style: normal;
+  --eride-madrasthemes-com-semantic-strong-font-weight: 700;
+  --eride-madrasthemes-com-semantic-strong-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-strong-line-height: 24.799999237060547px;
+  --eride-madrasthemes-com-semantic-summary-font-family: "Inter", Helvetica;
+  --eride-madrasthemes-com-semantic-summary-font-size: 18px;
+  --eride-madrasthemes-com-semantic-summary-font-style: normal;
+  --eride-madrasthemes-com-semantic-summary-font-weight: 500;
+  --eride-madrasthemes-com-semantic-summary-letter-spacing: 0px;
+  --eride-madrasthemes-com-semantic-summary-line-height: 42.119998931884766px;
+  --permanasolutions-com-font-awesome-5-free-regular-font-family: "Font Awesome 5 Free", Helvetica;
+  --permanasolutions-com-font-awesome-5-free-regular-font-size: 50px;
+  --permanasolutions-com-font-awesome-5-free-regular-font-style: normal;
+  --permanasolutions-com-font-awesome-5-free-regular-font-weight: 400;
+  --permanasolutions-com-font-awesome-5-free-regular-letter-spacing: 0px;
+  --permanasolutions-com-font-awesome-5-free-regular-line-height: 50px;
+  --permanasolutions-com-font-awesome-5-free-solid-font-family: "Font Awesome 5 Free", Helvetica;
+  --permanasolutions-com-font-awesome-5-free-solid-font-size: 50px;
+  --permanasolutions-com-font-awesome-5-free-solid-font-style: normal;
+  --permanasolutions-com-font-awesome-5-free-solid-font-weight: 400;
+  --permanasolutions-com-font-awesome-5-free-solid-letter-spacing: 0px;
+  --permanasolutions-com-font-awesome-5-free-solid-line-height: 50px;
+  --permanasolutions-com-noto-sans-bold-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-noto-sans-bold-font-size: 17px;
+  --permanasolutions-com-noto-sans-bold-font-style: normal;
+  --permanasolutions-com-noto-sans-bold-font-weight: 700;
+  --permanasolutions-com-noto-sans-bold-letter-spacing: 0px;
+  --permanasolutions-com-noto-sans-bold-line-height: 25.5px;
+  --permanasolutions-com-noto-sans-display-medium-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-noto-sans-display-medium-font-size: 24px;
+  --permanasolutions-com-noto-sans-display-medium-font-style: normal;
+  --permanasolutions-com-noto-sans-display-medium-font-weight: 500;
+  --permanasolutions-com-noto-sans-display-medium-letter-spacing: 0px;
+  --permanasolutions-com-noto-sans-display-medium-line-height: 36px;
+  --permanasolutions-com-noto-sans-display-regular-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-noto-sans-display-regular-font-size: 17px;
+  --permanasolutions-com-noto-sans-display-regular-font-style: normal;
+  --permanasolutions-com-noto-sans-display-regular-font-weight: 400;
+  --permanasolutions-com-noto-sans-display-regular-letter-spacing: 0px;
+  --permanasolutions-com-noto-sans-display-regular-line-height: 25.5px;
+  --permanasolutions-com-noto-sans-display-semibold-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-noto-sans-display-semibold-font-size: 17px;
+  --permanasolutions-com-noto-sans-display-semibold-font-style: normal;
+  --permanasolutions-com-noto-sans-display-semibold-font-weight: 600;
+  --permanasolutions-com-noto-sans-display-semibold-letter-spacing: 0px;
+  --permanasolutions-com-noto-sans-display-semibold-line-height: 25.5px;
+  --permanasolutions-com-poppins-medium-title-font-family: "Poppins", Helvetica;
+  --permanasolutions-com-poppins-medium-title-font-size: 15px;
+  --permanasolutions-com-poppins-medium-title-font-style: normal;
+  --permanasolutions-com-poppins-medium-title-font-weight: 500;
+  --permanasolutions-com-poppins-medium-title-letter-spacing: 0px;
+  --permanasolutions-com-poppins-medium-title-line-height: 15px;
+  --permanasolutions-com-roboto-regular-font-family: "Roboto", Helvetica;
+  --permanasolutions-com-roboto-regular-font-size: 16px;
+  --permanasolutions-com-roboto-regular-font-style: normal;
+  --permanasolutions-com-roboto-regular-font-weight: 400;
+  --permanasolutions-com-roboto-regular-letter-spacing: -0.44999998807907104px;
+  --permanasolutions-com-roboto-regular-line-height: 19.200000762939453px;
+  --permanasolutions-com-semantic-cell-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-semantic-cell-font-size: 17px;
+  --permanasolutions-com-semantic-cell-font-style: normal;
+  --permanasolutions-com-semantic-cell-font-weight: 700;
+  --permanasolutions-com-semantic-cell-letter-spacing: 0px;
+  --permanasolutions-com-semantic-cell-line-height: 25.5px;
+  --permanasolutions-com-semantic-data-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-semantic-data-font-size: 17px;
+  --permanasolutions-com-semantic-data-font-style: normal;
+  --permanasolutions-com-semantic-data-font-weight: 400;
+  --permanasolutions-com-semantic-data-letter-spacing: 0px;
+  --permanasolutions-com-semantic-data-line-height: 25.5px;
+  --permanasolutions-com-semantic-heading-2-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-semantic-heading-2-font-size: 52px;
+  --permanasolutions-com-semantic-heading-2-font-style: normal;
+  --permanasolutions-com-semantic-heading-2-font-weight: 600;
+  --permanasolutions-com-semantic-heading-2-letter-spacing: 0px;
+  --permanasolutions-com-semantic-heading-2-line-height: 52px;
+  --permanasolutions-com-semantic-heading-4-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-semantic-heading-4-font-size: 24px;
+  --permanasolutions-com-semantic-heading-4-font-style: normal;
+  --permanasolutions-com-semantic-heading-4-font-weight: 400;
+  --permanasolutions-com-semantic-heading-4-letter-spacing: 0px;
+  --permanasolutions-com-semantic-heading-4-line-height: 24px;
+  --permanasolutions-com-semantic-item-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-semantic-item-font-size: 17px;
+  --permanasolutions-com-semantic-item-font-style: normal;
+  --permanasolutions-com-semantic-item-font-weight: 400;
+  --permanasolutions-com-semantic-item-letter-spacing: 0px;
+  --permanasolutions-com-semantic-item-line-height: 25.5px;
+  --permanasolutions-com-semantic-link-font-family: "Noto Sans", Helvetica;
+  --permanasolutions-com-semantic-link-font-size: 15px;
+  --permanasolutions-com-semantic-link-font-style: normal;
+  --permanasolutions-com-semantic-link-font-weight: 600;
+  --permanasolutions-com-semantic-link-letter-spacing: 0px;
+  --permanasolutions-com-semantic-link-line-height: 15px;
+  --permanasolutions-com-semantic-options-font-family: "Helvetica", Helvetica;
+  --permanasolutions-com-semantic-options-font-size: 17px;
+  --permanasolutions-com-semantic-options-font-style: normal;
+  --permanasolutions-com-semantic-options-font-weight: 400;
+  --permanasolutions-com-semantic-options-letter-spacing: 0px;
+  --permanasolutions-com-semantic-options-line-height: 17px;
+  --white: rgba(255, 255, 255, 1);
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+img {
+  display: none;
+}
