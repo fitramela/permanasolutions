@@ -342,7 +342,44 @@
   },
 
   "Footer": {
-    "copyright": "© 2026 PT Medianusa Permana"
-  }
+  "copyright": "© 2026 PT Medianusa Permana"
+},
 
+"About": {
+  "hero": {
+    "title": "About Us",
+    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation. Through innovative software development and Managed & Professional IT Services, we help improve efficiency, drive growth, and strengthen your business's digital ecosystem."
+  },
+
+"profile": {
+  "title": "Our Profile",
+  "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through optimized technology integrated within the PERMANA technology ecosystem."
+},  
+
+  "company": {
+    "title": "Permana Solutions",
+    "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of the PERMANA Corporation. We focus on software development, connectivity solutions, managed IT services, and digital transformation consulting."
+  },
+
+  "visionMission": {
+    "title": "Vision & Mission",
+    "visionTitle": "Vision",
+    "visionDescription": "To become a trusted technology partner in delivering innovative digital solutions that support sustainable business growth.",
+
+    "missionTitle": "Mission",
+    "missions": [
+      "Deliver innovative and reliable technology solutions.",
+      "Support digital transformation through integrated services.",
+      "Provide excellent customer experience and professional support.",
+      "Continuously improve quality, security, and operational excellence.",
+      "Build long-term partnerships with clients and stakeholders."
+    ]
+  },
+
+  "team": {
+    "title": "Meet Our Exceptional Team",
+    "subtitle": "The People Behind Permana Solutions",
+    "description": "Our experienced professionals work together to create innovative and impactful technology solutions."
   }
+}
+}

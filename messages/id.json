@@ -344,7 +344,45 @@
     "download": "Unduh"
   },
 
-  "Footer": {
+    "Footer": {
     "copyright": "© 2026 PT Medianusa Permana"
+  },
+
+  "About": {
+    "hero": {
+      "title": "Tentang Kami",
+      "description": "Permana Solutions menawarkan solusi TI terintegrasi untuk mempercepat transformasi digital perusahaan Anda. Melalui pengembangan perangkat lunak inovatif dan Layanan TI Terkelola & Profesional, kami membantu meningkatkan efisiensi, mendorong pertumbuhan, dan memperkuat ekosistem digital bisnis Anda"
+    },
+
+    "profile": {
+  "title": "Profil Kami",
+  "description": "PERMANA merupakan perusahaan penyedia solusi teknologi yang berfokus pada inovasi berkelanjutan untuk membantu dunia bisnis menghadapi peluang masa depan melalui optimalisasi teknologi yang terintegrasi dalam ekosistem teknologi PERMANA."
+},
+
+    "company": {
+      "title": "Permana Solutions",
+      "description": "Didirikan pada November 2020..."
+    },
+
+    "visionMission": {
+      "title": "Visi & Misi",
+      "visionTitle": "Visi",
+      "visionDescription": "Menjadi mitra teknologi terpercaya...",
+
+      "missionTitle": "Misi",
+      "missions": [
+        "Menyediakan solusi teknologi yang inovatif dan andal.",
+        "Mendukung transformasi digital melalui layanan yang terintegrasi.",
+        "Memberikan pelayanan terbaik dan dukungan profesional kepada pelanggan.",
+        "Terus meningkatkan kualitas, keamanan, dan keunggulan operasional.",
+        "Membangun kemitraan jangka panjang dengan pelanggan dan pemangku kepentingan."
+      ]
+    },
+
+    "team": {
+      "title": "Tim Profesional Kami",
+      "subtitle": "Orang-Orang di Balik Permana Solutions",
+      "description": "Tim kami terdiri dari para profesional berpengalaman yang berkolaborasi untuk menghadirkan solusi teknologi yang inovatif dan berdampak."
+    }
   }
 }
