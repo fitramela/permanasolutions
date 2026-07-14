@@ -39,12 +39,113 @@
       "profileButton": "Profil Perusahaan",
       "contactButton": "Kontak Kami"
     },
-
-    "bestSolutions": {
-      "our": "Our",
-      "title": "Best Solutions"
-    }
+"bestSolutions": {
+    "our": "Solusi",
+    "title": "Terbaik Kami",
+    "button": "Info Lengkap",
+    "items": [
+  {
+    "title": "Solusi Transformasi Digital",
+    "description": "Membantu Bisnis Memodernisasi Proses, Meningkatkan Produktivitas, dan Memanfaatkan Teknologi untuk Pertumbuhan Berkelanjutan.",
+     "includesTitle": "Mencakup:",
+      "includes": [
+      "Digitalisasi Proses Bisnis",
+      "Pengembangan Aplikasi Kustom",
+      "Integrasi Sistem",
+      "Adopsi Awan"
+    ]
   },
+  {
+    "title": "Solusi Konektivitas & Infrastruktur",
+    "description": "Menyediakan Layanan Jaringan dan Internet yang Andal untuk Memastikan Kelancaran Operasional Bisnis.",
+    "includesTitle": "Mencakup:",
+      "includes": [
+      "Akses Internet Khusus",
+      "Layanan Jaringan Terkelola",
+      "Infrastruktur Jaringan",
+      "Konektivitas Awan"
+    ]
+  },
+  {
+    "title": "Solusi Aplikasi Bisnis",
+    "description": "Memberikan Aplikasi Terukur yang Menyederhanakan Operasi dan Mendukung Ekspansi Bisnis.",
+    "includesTitle": "Mencakup:",
+      "includes": [
+      "Solusi ERP",
+      "Solusi CRM",
+      "Solusi HRIS",
+      "Sistem Manajemen Dokumen",
+      "Otomatisasi Alur Kerja"
+    ]
+  },
+  {
+    "title": "Solusi Kepatuhan & Tata Kelola",
+    "description": "Mendukung Organisasi Dalam Memenuhi Persyaratan Peraturan dan Standar Industri.",
+   "includesTitle": "Mencakup:",
+      "includes": [
+      "Konsultasi Kesiapan PJP",
+      "Penilaian Kesenjangan Regulasi",
+      "Program Kesiapan ISO",
+      "Pengembangan Kebijakan & SOP",
+      "Penasihat Risiko & Tata Kelola"
+    ]
+  },
+  {
+    "title": "Solusi Teknologi Terkelola",
+    "description": "Memastikan Lingkungan Teknologi tetap Aman, Optimal, dan Terus Didukung.",
+   "includesTitle": "Mencakup:",
+      "includes": [
+      "Layanan TI yang Dikelola",
+      "Layanan Pemantauan",
+      "Layanan Meja Bantuan",
+      "Dukungan Infrastruktur",
+      "Dukungan Aplikasi"
+    ]
+  }
+]
+  }
+},
+
+"WhyChoose": {
+  "title": "Mengapa Memilih Kami?",
+  "items": [
+    {
+      "title": "Keandalan & Keamanan",
+      "description": "Sistem yang Tangguh dengan Arsitektur Keamanan yang Kuat."
+    },
+    {
+      "title": "Efisiensi Operasional",
+      "description": "Kurangi Kompleksitas dan Optimalkan Alur Kerja."
+    },
+    {
+      "title": "Optimalisasi Biaya",
+      "description": "Maksimalkan ROI melalui Investasi Teknologi Strategis."
+    },
+    {
+      "title": "Ketangkasan Bisnis",
+      "description": "Beradaptasi lebih Cepat terhadap Perubahan Pasar dan Operasional."
+    },
+    {
+      "title": "Kesiapan Kepatuhan",
+      "description": "Tetap Patuhi Persyaratan Peraturan."
+    },
+    {
+      "title": "Inovasi & Pertumbuhan",
+      "description": "Memungkinkan Transformasi Digital yang Terukur."
+    }
+  ]
+},
+
+"SolutionsIndustry": {
+  "tag": "Industri yang Kami Layani",
+  "title1": "Solusi Untuk",
+  "title2": "Beragam",
+  "titleHighlight": "Industri",
+  "description": "Kami memberikan solusi khusus yang mengatasi tantangan unik setiap industri, membantu bisnis meningkatkan efisiensi, memastikan kepatuhan, dan memberikan pengalaman luar biasa.",
+  "footer": "Satu platform untuk Menyederhanakan operasi, Meningkatkan keamanan, dan Membuat Anda tetap terhubung dengan hal-hal yang paling Berarti bagi karyawan dan pelanggan Anda."
+},
+
+
 
   "WhyChooseUs": {
     "title": "Memacu pertumbuhan bisnis dengan teknologi, kepatuhan, dan inovasi.",

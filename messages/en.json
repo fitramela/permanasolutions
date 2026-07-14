@@ -46,52 +46,60 @@
     "items": [
   {
     "title": "Digital Transformation Solutions",
-    "description": "Helping businesses modernize processes, improve productivity, and leverage technology for sustainable growth.",
-    "includes": [
-      "Business Process Digitalization",
-      "Custom Application Development",
-      "System Integration",
-      "Cloud Adoption"
-    ]
+      "description": "Helping Businesses Modernize Processes, Improve Productivity, and Leverage Technology for Sustainable Growth.",
+      "includesTitle": "Includes:",
+      "includes": [
+        "Business Process Digitalization",
+        "Custom Application Development",
+        "System Integration",
+        "Cloud Adoption"
+      ]
   },
   {
     "title": "Connectivity & Infrastructure Solutions",
-    "description": "Providing reliable network and internet services to ensure seamless business operations.",
-    "includes": [
-      "Dedicated Internet",
-      "Metro Ethernet",
-      "IP VPN",
-      "Managed Network"
+    "description": "Providing Reliable Network and Internet Services to Ensure Seamless Business Operations.",
+    "includesTitle": "Includes:",
+      "includes": [
+      "Dedicated Internet Access",
+      "Managed Network Services",
+      "Network Infrastructure",
+      "Cloud Connectivity"
     ]
   },
   {
     "title": "Business Applications Solutions",
-    "description": "Delivering scalable applications that streamline operations and support business expansion.",
-    "includes": [
-      "ERP",
-      "CRM",
-      "HRIS",
-      "Custom Application"
+    "description": "Delivering Scalable Applications that Streamline Operations and Support Business Expansion.",
+   "includesTitle": "Includes:",
+      "includes": [
+      "ERP Solutions",
+      "CRM Solutions",
+      "HRIS Solutions",
+      "Document Management System",
+      "Workflow Automation"
     ]
   },
   {
     "title": "Compliance & Governance Solutions",
-    "description": "Supporting organizations in meeting regulatory requirements and industry standards.",
-    "includes": [
-      "ISO 27001",
-      "Risk Management",
-      "Governance",
-      "Compliance Audit"
+    "description": "Supporting Organizations in Meeting Regulatory Requirements and Industry Standards.",
+    "includesTitle": "Includes:",
+      "includes": [
+      "PJP Readiness Consulting",
+      "Regulatory Gap Assessment",
+      "ISO Readiness Programs",
+      "Policy & SOP Development",
+      "Risk & Governance Advisory"
     ]
   },
   {
     "title": "Managed Technology Solutions",
-    "description": "Ensuring technology environments remain secure, optimized, and continuously supported.",
-    "includes": [
-      "Helpdesk",
-      "Monitoring",
-      "Maintenance",
-      "Managed Service"
+    "description": "Ensuring Technology Environments Remain Secure, Optimized, and Continuously Supported.",
+    "includesTitle": "Includes:",
+      "includes": [
+      "Managed IT Services",
+      "Monitoring Services",
+      "Helpdesk Services",
+      "Infrastructure Support",
+      "Application Support"
     ]
   }
 ]
@@ -139,7 +147,7 @@
 
   "WhyChooseUs": {
     "title": "Driving Business Growth Through Technology, Compliance, and Innovation",
-    "description": "We deliver integrated technology and consulting services that help organizations work smarter, grow faster, and stay ahead of evolving business demands. By combining strategic consulting, digital solutions, connectivity services, and experienced IT resources, we support business transformation, governance readiness, operational efficiency, and sustainable growth to create long-term value for our clients and partners."
+    "description": "We deliver integrated technology and advisory services that help organizations operate smarter, scale faster, and stay ahead of evolving business requirements. Combining strategic consulting, digital solutions, connectivity services, and expert IT resources, we support business transformation, governance readiness, operational efficiency, and sustainable growth—creating long-term value for our clients and partners."
   },
 
   "SmartSystem": {

@@ -36,21 +36,21 @@ export default function Solutions() {
               {t("description")}
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
-              <Link
-                href="/company-profile"
-                className="rounded-full bg-[#04BCBC] px-8 py-3 font-semibold text-white transition hover:bg-[#03A8A8]"
-              >
-                {t("profileButton")}
-              </Link>
+            <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
+  <Link
+    href="/company-profile"
+    className="rounded-lg border border-white/30 bg-[#00628D]/30 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-[#00628D]/50"
+  >
+    {t("profileButton")}
+  </Link>
 
-              <Link
-                href="/contact"
-                className="rounded-full border border-white px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-[#00628D]"
-              >
-                {t("contactButton")}
-              </Link>
-            </div>
+  <Link
+    href="/contact"
+    className="rounded-lg border border-white/30 bg-white/20 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-white/15"
+  >
+    {t("contactButton")}
+  </Link>
+</div>
           </div>
         </div>
       </section>

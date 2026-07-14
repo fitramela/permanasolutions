@@ -1,21 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function IndustrySection() {
   const t = useTranslations("SolutionsIndustry");
+  const locale = useLocale();
 
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto flex max-w-[1440px] items-start gap-12 px-6 lg:px-16">
+    <section className="bg-white py-16 lg:py-24">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 sm:px-6 lg:flex-row lg:items-start lg:gap-12 lg:px-16">
         {/* Left */}
-        <div className="max-w-[360px]">
-          <p className="text-lg font-semibold text-[#04BCBC]">
+        <div className="max-w-full lg:max-w-[360px]">
+          <p className="text-base font-semibold text-[#04BCBC] lg:text-lg">
             {t("tag")}
           </p>
 
-          <h2 className="mt-3 text-5xl font-bold leading-tight text-[#111111]">
+          <h2 className="mt-3 text-3xl font-bold leading-tight text-[#111111] sm:text-4xl">
             {t("title1")}
             <br />
             {t("title2")}{" "}
@@ -24,11 +25,11 @@ export default function IndustrySection() {
             </span>
           </h2>
 
-          <p className="mt-8 text-base leading-8 text-[#6B7280]">
+          <p className="mt-6 text-sm leading-7 text-[#6B7280] sm:mt-8 sm:text-base sm:leading-8">
             {t("description")}
           </p>
 
-          <p className="mt-14 text-sm leading-8 text-[#555555]">
+          <p className="mt-8 text-sm leading-7 text-[#555555] lg:mt-14 lg:leading-8">
             {t("footer")}
           </p>
         </div>
@@ -36,7 +37,7 @@ export default function IndustrySection() {
         {/* Right Image */}
         <div className="flex-1">
           <Image
-            src="/images/Frame.png"
+            src={locale === "id" ? "/images/Frame-id.png" : "/images/Frame-en.png"}
             alt="Industries"
             width={900}
             height={700}
