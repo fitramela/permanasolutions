@@ -26,115 +26,126 @@
 },
 
   "WhoWeAre": {
-    "title": "Who We Are",
+    "title": "About Us",
     "description1": "PT Medianusa Permana, with more than a decade of experience, provides a comprehensive technology ecosystem covering Technology Consulting, Business Application Solutions, Internet Connectivity Services, and IT Resource Services.",
-    "description2": "Supported by continuously expanding infrastructure, ISO 9001:2015 and ISO 27001 certifications, and extensive cross-industry experience, we are committed to delivering reliable, innovative, and sustainable technology solutions that drive long-term business growth."
+    "description2": "Supported by continuously evolving infrastructure, ISO 9001:2015 and ISO 27001 certifications, and extensive experience across various industries, we are committed to delivering reliable, innovative, and sustainable technology solutions to support long-term business growth."
   },
 
   "Solutions": {
-  "hero": {
-    "title": "Technology Solutions for Business Growth",
-    "description": "Empowering organizations with innovative technology, connectivity, compliance, and digital transformation solutions to drive performance and accelerate growth.",
-    "profileButton": "Get a Profile",
-    "contactButton": "Talk to Us"
-  },
+    "hero": {
+      "title": "Technology Solutions for Business Growth.",
+      "description": "Empowering organizations with integrated technology, connectivity, compliance, and digital transformation solutions designed to improve performance and accelerate growth.",
+      "profileButton": "Company Profile",
+      "contactButton": "Contact Us"
+    },
 
-  "bestSolutions": {
-    "our": "Our",
-    "title": "Best Solutions",
-    "button": "More Info",
-    "items": [
-  {
-    "title": "Digital Transformation Solutions",
-      "description": "Helping Businesses Modernize Processes, Improve Productivity, and Leverage Technology for Sustainable Growth.",
-      "includesTitle": "Includes:",
-      "includes": [
-        "Business Process Digitalization",
-        "Custom Application Development",
-        "System Integration",
-        "Cloud Adoption"
+    "bestSolutions": {
+      "our": "Our",
+      "title": "Best Solutions",
+      "button": "Learn More",
+
+      "items": [
+        {
+          "title": "Digital Transformation Solutions",
+          "description": "Helping businesses modernize processes, improve productivity, and leverage technology for sustainable growth.",
+          "includesTitle": "Includes:",
+          "includes": [
+            "Business Process Digitalization",
+            "Custom Application Development",
+            "System Integration",
+            "Cloud Adoption"
+          ]
+        },
+
+        {
+          "title": "Connectivity & Infrastructure Solutions",
+          "description": "Providing reliable network and internet services to ensure seamless business operations.",
+          "includesTitle": "Includes:",
+          "includes": [
+            "Dedicated Internet Access",
+            "Managed Network Services",
+            "Network Infrastructure",
+            "Cloud Connectivity"
+          ]
+        },
+
+        {
+          "title": "Business Application Solutions",
+          "description": "Delivering scalable applications that streamline operations and support business expansion.",
+          "includesTitle": "Includes:",
+          "includes": [
+            "ERP Solutions",
+            "CRM Solutions",
+            "HRIS Solutions",
+            "Document Management System",
+            "Workflow Automation"
+          ]
+        },
+
+        {
+          "title": "Compliance & Governance Solutions",
+          "description": "Helping organizations meet regulatory requirements and industry standards.",
+          "includesTitle": "Includes:",
+          "includes": [
+            "PJP Readiness Consulting",
+            "Regulatory Gap Assessment",
+            "ISO Readiness Program",
+            "Policy & SOP Development",
+            "Risk & Governance Advisory"
+          ]
+        },
+
+        {
+          "title": "Managed Technology Solutions",
+          "description": "Keeping your technology environment secure, optimized, and continuously supported.",
+          "includesTitle": "Includes:",
+          "includes": [
+            "Managed IT Services",
+            "Monitoring Services",
+            "Help Desk Services",
+            "Infrastructure Support",
+            "Application Support"
+          ]
+        }
       ]
-  },
-  {
-    "title": "Connectivity & Infrastructure Solutions",
-    "description": "Providing Reliable Network and Internet Services to Ensure Seamless Business Operations.",
-    "includesTitle": "Includes:",
-      "includes": [
-      "Dedicated Internet Access",
-      "Managed Network Services",
-      "Network Infrastructure",
-      "Cloud Connectivity"
-    ]
-  },
-  {
-    "title": "Business Applications Solutions",
-    "description": "Delivering Scalable Applications that Streamline Operations and Support Business Expansion.",
-   "includesTitle": "Includes:",
-      "includes": [
-      "ERP Solutions",
-      "CRM Solutions",
-      "HRIS Solutions",
-      "Document Management System",
-      "Workflow Automation"
-    ]
-  },
-  {
-    "title": "Compliance & Governance Solutions",
-    "description": "Supporting Organizations in Meeting Regulatory Requirements and Industry Standards.",
-    "includesTitle": "Includes:",
-      "includes": [
-      "PJP Readiness Consulting",
-      "Regulatory Gap Assessment",
-      "ISO Readiness Programs",
-      "Policy & SOP Development",
-      "Risk & Governance Advisory"
-    ]
-  },
-  {
-    "title": "Managed Technology Solutions",
-    "description": "Ensuring Technology Environments Remain Secure, Optimized, and Continuously Supported.",
-    "includesTitle": "Includes:",
-      "includes": [
-      "Managed IT Services",
-      "Monitoring Services",
-      "Helpdesk Services",
-      "Infrastructure Support",
-      "Application Support"
-    ]
-  }
-]
-  }
-},
-
-"WhyChoose": {
-  "title": "Why Choose Us?",
-  "items": [
-    {
-      "title": "Reliability & Security",
-      "description": "Robust Systems With Strong Security Architecture."
-    },
-    {
-      "title": "Operational Efficiency",
-      "description": "Reduce Complexity And Optimize Workflows."
-    },
-    {
-      "title": "Cost Optimization",
-      "description": "Maximize ROI Through Strategic Technology Investments."
-    },
-    {
-      "title": "Innovation & Growth",
-      "description": "Enable Scalable Digital Transformation."
-    },
-    {
-      "title": "Compliance Readiness",
-      "description": "Stay Aligned With Regulatory Requirements."
-    },
-    {
-      "title": "Business Agility",
-      "description": "Adapt Faster To Market And Operational Changes."
     }
-  ]
-},
+  },
+
+  "WhyChoose": {
+    "title": "Why Choose Us?",
+
+    "items": [
+      {
+        "title": "Reliability & Security",
+        "description": "Robust systems with a strong security architecture."
+      },
+
+      {
+        "title": "Operational Efficiency",
+        "description": "Reduce complexity and optimize workflows."
+      },
+
+      {
+        "title": "Cost Optimization",
+        "description": "Maximize ROI through strategic technology investments."
+      },
+
+      {
+        "title": "Business Agility",
+        "description": "Adapt faster to market and operational changes."
+      },
+
+      {
+        "title": "Compliance Readiness",
+        "description": "Stay compliant with regulatory requirements."
+      },
+
+      {
+        "title": "Innovation & Growth",
+        "description": "Enabling scalable digital transformation."
+      }
+    ]
+  },
 
 "SolutionsIndustry": {
   "tag": "Industries We Serve",
@@ -381,5 +392,10 @@
     "subtitle": "The People Behind Permana Solutions",
     "description": "Our experienced professionals work together to create innovative and impactful technology solutions."
   }
+},
+"ContactHero": {
+  "title": "Contact Us",
+  "office": "Head Office - Jakarta",
+  "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nGambir District\nCentral Jakarta\nSpecial Capital Region of Jakarta\n10140"
 }
 }

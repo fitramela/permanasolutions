@@ -8,48 +8,112 @@ export default function OurProfile() {
 
   return (
     <section className="relative overflow-hidden bg-white py-20 lg:py-28">
-      <div className="mx-auto flex max-w-[1400px] flex-col justify-between gap-16 px-6 lg:flex-row lg:items-end lg:px-20">
+      {/* Cyan Glow */}
+      <div
+        className="
+          absolute
+          left-1/2
+          top-0
+          -translate-x-1/2
+          -translate-y-1/2
+          h-52
+          w-[90%]
+          rounded-full
+          bg-[#29D9E6]
+          opacity-25
+          blur-[110px]
+        "
+      />
 
-        {/* LEFT */}
-        <div className="flex-1">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-16">
+        <div className="relative">
 
-          {/* Badge */}
-          <div className="relative inline-flex">
-
-            {/* kotak */}
-            <div className="rounded-r-[90px] bg-[#0B618A] px-10 py-8 lg:px-14 lg:py-10">
-              <h2 className="font-serif text-4xl font-bold text-white lg:text-6xl">
-                {t("title")}
-              </h2>
-            </div>
-
-            {/* bulatan */}
-            <div className="absolute -right-12 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-[#0B618A] lg:h-36 lg:w-36" />
-          </div>
-
-          {/* Deskripsi */}
-          <p className="mt-12 max-w-[760px] text-base leading-8 text-[#5F6368] lg:text-lg">
-            {t("description")}
-          </p>
-        </div>
-
-        {/* RIGHT */}
-        <div className="flex justify-center lg:justify-end">
-
-          <div className="rounded-full bg-white px-12 py-7 shadow-[0_12px_35px_rgba(0,0,0,0.15)]">
+          {/* OUR PROFILE TITLE */}
+          <div
+  className="
+    relative
+    -ml-10
+    lg:-ml-16
+    h-[120px]
+    w-[430px]
+    lg:h-[145px]
+    lg:w-[520px]
+  "
+>
 
             <Image
-              src="/images/logo-permana.png"
-              alt="Permana"
-              width={280}
-              height={90}
-              className="h-auto w-[190px] lg:w-[280px]"
+              src="/images/ourprofile.png"
+              alt="Our Profile Background"
+              fill
+              priority
+              className="object-contain"
             />
 
+            <div className="absolute inset-0 flex items-center pl-8 lg:pl-12">
+              
+            </div>
           </div>
 
-        </div>
+          {/* DESCRIPTION */}
+<div className="mt-8">
 
+  <p
+    className="
+      max-w-[980px]
+      text-base
+      leading-8
+      text-[#5F6368]
+      lg:text-lg
+      lg:leading-9
+    "
+  >
+    {t("description")}
+  </p>
+
+  {/* Logo */}
+  <div className="mt-8 flex justify-end pr-4 lg:pr-8">
+
+    <div className="relative">
+
+      {/* Shadow */}
+      <div
+        className="
+          absolute
+          left-3
+          top-3
+          h-full
+          w-full
+          rounded-full
+          bg-[#D7F4FA]
+        "
+      />
+
+      {/* Card Logo */}
+      <div
+        className="
+          relative
+          rounded-full
+          bg-white
+          px-8
+          py-5
+          shadow-[0_12px_30px_rgba(0,93,134,.18)]
+        "
+      >
+        <Image
+          src="/images/pErmana.png"
+          alt="Permana Logo"
+          width={220}
+          height={70}
+          className="h-auto w-[170px] lg:w-[220px]"
+        />
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+        </div>
       </div>
     </section>
   );

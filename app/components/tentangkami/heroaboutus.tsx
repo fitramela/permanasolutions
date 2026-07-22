@@ -12,7 +12,7 @@ export default function HeroAbout() {
       <div className="relative h-[420px] sm:h-[560px] lg:h-[700px] xl:h-[760px]">
         {/* Background */}
         <Image
-          src="/images/bagroundh.png"
+          src="/images/orngdkk.png"
           alt="About Background"
           fill
           priority
@@ -38,7 +38,7 @@ export default function HeroAbout() {
               alt="Decoration"
               width={180}
               height={14}
-              className="mt-8 w-87 sm:w-72 lg:mt-10 lg:w-44"
+              className="mt-18 w-full sm:w-157 lg:mt-10 lg:w-168"
             />
           </div>
         </div>

@@ -384,5 +384,11 @@
       "subtitle": "Orang-Orang di Balik Permana Solutions",
       "description": "Tim kami terdiri dari para profesional berpengalaman yang berkolaborasi untuk menghadirkan solusi teknologi yang inovatif dan berdampak."
     }
-  }
+  },
+
+"ContactHero": {
+  "title": "Hubungi Kami",
+  "office": "Kantor Pusat - Jakarta",
+  "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nKecamatan Gambir\nKota Jakarta Pusat\nDaerah Khusus Ibukota Jakarta\n10140"
+}
 }
