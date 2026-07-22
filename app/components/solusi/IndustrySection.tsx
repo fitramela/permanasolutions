@@ -9,29 +9,58 @@ export default function IndustrySection() {
 
   return (
     <section className="bg-white py-16 lg:py-24">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 sm:px-6 lg:flex-row lg:items-start lg:gap-12 lg:px-16">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 sm:px-6 lg:flex-row lg:items-stretch lg:gap-12 lg:px-16">
         {/* Left */}
-        <div className="max-w-full lg:max-w-[360px]">
-          <p className="text-base font-semibold text-[#04BCBC] lg:text-lg">
+       <div className="flex h-full max-w-full flex-col lg:max-w-[360px]">
+          <p className="text-base font-semibold text-[#00628D] lg:text-lg">
             {t("tag")}
           </p>
 
           <h2 className="mt-3 text-3xl font-bold leading-tight text-[#111111] sm:text-4xl">
             {t("title1")}
             <br />
-            {t("title2")}{" "}
+            {t("title2")}{" "}  
             <span className="text-[#04BCBC]">
               {t("titleHighlight")}
             </span>
           </h2>
 
-          <p className="mt-6 text-sm leading-7 text-[#6B7280] sm:mt-8 sm:text-base sm:leading-8">
-            {t("description")}
-          </p>
+          <p
+  className="
+    mt-6
+    max-w-[340px]
+    text-[15px]
+    leading-8
+    text-[#6B7280]
+    text-justify
+    sm:mt-8
+    sm:max-w-[360px]
+    lg:max-w-[350px]
+  "
+>
+  {t("description")}
+</p>
 
-          <p className="mt-8 text-sm leading-7 text-[#555555] lg:mt-14 lg:leading-8">
-            {t("footer")}
-          </p>
+        <p
+  className="
+    mt-6
+    text-sm
+    leading-7
+    text-[#555555]
+    text-justify
+    [text-align-last:left]
+    lg:mt-[250px]
+    lg:leading-8
+  "
+>
+  {t.rich("footer", {
+    bold: (chunks) => (
+      <span className="font-semibold text-[#333333]">
+        {chunks}
+      </span>
+    ),
+  })}
+</p>
         </div>
 
         {/* Right Image */}

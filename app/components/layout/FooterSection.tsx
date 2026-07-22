@@ -116,7 +116,8 @@ whitespace-pre-line
   <div
   className="
     w-full
-    max-w-[680px]
+    w-[680px]
+    
     rounded-[38px]
     aspect-square
     bg-white
@@ -313,7 +314,7 @@ whitespace-pre-line
           </Link>
 
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/permana.solutions?igsh=ajh6aDdtenNvaWM0"
             target="_blank"
           >
             <Image

@@ -21,6 +21,8 @@ import image35 from "@/public/images/client/image 35.png";
 import image36 from "@/public/images/client/image 36.png";
 import image37 from "@/public/images/client/image 37.png";
 import image38 from "@/public/images/client/image 38.png";
+import image39 from "@/public/images/client/image 39.png";
+import image40 from "@/public/images/client/image 40.png";
 
 type ClientLogo = {
   src: StaticImageData;
@@ -46,6 +48,8 @@ const clients: ClientLogo[] = [
   { src: image36, alt: "Client 36" },
   { src: image37, alt: "Client 37" },
   { src: image38, alt: "Client 38" },
+  { src: image39, alt: "Client 39" },
+  { src: image40, alt: "Client 40" },
 ];
 
 export const Client= () => {
@@ -55,9 +59,20 @@ export const Client= () => {
   return (
     <section className="relative z-20 -mt-28 bg-white pb-20">
       <div className="mx-auto w-full">
-        <h2 className="mb-12 text-center text-5xl font-bold text-[#05638B]">
-          {t("title")}
-        </h2>
+         <h2
+  className="
+    relative
+    z-10
+    mb-12
+    text-center
+    text-5xl
+    font-bold
+    text-[#05638B]
+    drop-shadow-[0_4px_8px_rgba(0,0,0,0.25)]
+  "
+>
+  {t("title-clientlayanan")}
+</h2>
 
         <div className="overflow-hidden">
   <div className="flex w-max animate-scroll gap-6 md:gap-12">

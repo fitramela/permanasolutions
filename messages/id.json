@@ -7,24 +7,7 @@
     "contact": "Kontak"
   },
 
- "Hero": {
-  "title": "Menguatkan bisnis dengan\ndukungan Teknologi, Konektivitas,\ndan Keahlian.",
 
-  "stats": [
-    {
-      "value": "20+",
-      "label": "Mitra Kami"
-    },
-    {
-      "value": "20+",
-      "label": "Klient Kami"
-    },
-    {
-      "value": "30+",
-      "label": "Tim Kami"
-    }
-  ]
-},
 
   "WhoWeAre": {
     "title": "Tentang Kami",
@@ -142,13 +125,13 @@
   "title2": "Beragam",
   "titleHighlight": "Industri",
   "description": "Kami memberikan solusi khusus yang mengatasi tantangan unik setiap industri, membantu bisnis meningkatkan efisiensi, memastikan kepatuhan, dan memberikan pengalaman luar biasa.",
-  "footer": "Satu platform untuk Menyederhanakan operasi, Meningkatkan keamanan, dan Membuat Anda tetap terhubung dengan hal-hal yang paling Berarti bagi karyawan dan pelanggan Anda."
+"footer": "Satu platform untuk <bold>Menyederhanakan operasi</bold>, <bold>Meningkatkan keamanan</bold>, dan membuat Anda tetap terhubung dengan hal-hal yang paling <bold>berarti</bold> bagi karyawan dan pelanggan Anda."
 },
 
 
 
   "WhyChooseUs": {
-    "title": "Memacu pertumbuhan bisnis dengan teknologi, kepatuhan, dan inovasi.",
+    "title": "Memacu pertumbuhan bisnis dengan Teknologi, Kepatuhan, dan Inovasi.",
     "description": "Kami menghadirkan layanan teknologi dan konsultasi terintegrasi yang membantu organisasi bekerja lebih cerdas, berkembang lebih cepat, dan tetap unggul dalam menghadapi kebutuhan bisnis yang terus berkembang. Dengan menggabungkan konsultasi strategis, solusi digital, layanan konektivitas, dan sumber daya TI yang berpengalaman, kami mendukung transformasi bisnis, kesiapan tata kelola, efisiensi operasional, serta pertumbuhan yang berkelanjutan untuk menciptakan nilai jangka panjang bagi klien dan mitra kami."
   },
 
@@ -226,10 +209,235 @@
 
   "Service": {
     "title": "Pelayanan Kami",
+    "title-clientlayanan": "Klient Kami",
     "seeMore": "Selengkapnya",
     "asp": "ASP",
     "isp": "ISP",
-    "resource": "Konsultasi & Sumber Daya TI"
+    "resource": "Consulting\n&\nResource"
+  },
+
+ "Asp": {
+    "title": "ASP",
+    "subtitle": "Application Service Provider",
+    "description": "Build Dynamic Web Applications with ASP",
+    "technology": "Technology",
+
+    "card1": "Empower Your Web with Modern ASP Solutions",
+    "card2": "Dynamic Web Development, Simplified with ASP",
+    "card3": "Years of Web Development Expertise",
+    "card4": "ASP technology that grows together with your business.",
+
+    "showLess": "show less...",
+    "seeMore": "see more...",
+
+    "primeDescription": "Manage your business smarter, faster, and more efficiently.",
+    "primeTeamsDescription": "Digital form solution to streamline every business process.",
+    "primeRestoDescription": "Smart asset and inventory management system.",
+    "primeCafeDescription": "Modern POS solution for cafés and restaurants.",
+    "primeCareDescription": "Integrated healthcare management platform.",
+    "primeEduDescription": "Digital education management system.",
+    "primeCourseDescription": "Complete organization management platform.",
+    "petPuffyDescription": "Smart pet care management solution.",
+
+    "primebiz": {
+      "items": [
+        {
+          "title": "PrimeBiz is an integrated ERP platform.",
+          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
+        },
+        {
+          "title": "Complete operational modules.",
+          "description": "All business operations are connected in real time."
+        },
+        {
+          "title": "Increase productivity.",
+          "description": "Automation reduces repetitive work and improves efficiency."
+        },
+        {
+          "title": "Flexible for every business.",
+          "description": "Suitable for small businesses up to enterprise companies."
+        },
+        {
+          "title": "Easy implementation.",
+          "description": "Starts from consultation, implementation, and user training."
+        }
+      ]
+    },
+
+    "primeteams": {
+      "items": [
+        {
+          "title": "Digital Forms.",
+          "description": "Create and manage digital forms with ease."
+        },
+        {
+          "title": "Workflow Automation.",
+          "description": "Automate approval and submission processes."
+        },
+        {
+          "title": "Real-time Submission.",
+          "description": "Monitor submitted forms instantly."
+        },
+        {
+          "title": "Cloud Storage.",
+          "description": "Store every form securely in the cloud."
+        },
+        {
+          "title": "Easy Reporting.",
+          "description": "Generate reports from collected data."
+        }
+      ]
+    },
+
+    "primeresto": {
+      "items": [
+        {
+          "title": "Asset Management.",
+          "description": "Manage company assets efficiently."
+        },
+        {
+          "title": "Inventory Tracking.",
+          "description": "Track stock movement in real time."
+        },
+        {
+          "title": "Maintenance Schedule.",
+          "description": "Plan maintenance automatically."
+        },
+        {
+          "title": "QR Code Integration.",
+          "description": "Scan assets quickly with QR codes."
+        },
+        {
+          "title": "Comprehensive Reports.",
+          "description": "Access complete asset reports anytime."
+        }
+      ]
+    },
+
+    "primecafe": {
+      "items": [
+        {
+          "title": "Restaurant POS.",
+          "description": "Fast and reliable cashier system."
+        },
+        {
+          "title": "Kitchen Display.",
+          "description": "Orders are sent directly to the kitchen."
+        },
+        {
+          "title": "Sales Analytics.",
+          "description": "View sales performance in real time."
+        },
+        {
+          "title": "Inventory Integration.",
+          "description": "Stock updates automatically after every sale."
+        },
+        {
+          "title": "Multi Outlet.",
+          "description": "Manage multiple branches from one dashboard."
+        }
+      ]
+    },
+
+    "primecare": {
+      "items": [
+        {
+          "title": "Patient Management.",
+          "description": "Manage patient records digitally."
+        },
+        {
+          "title": "Doctor Scheduling.",
+          "description": "Organize appointments efficiently."
+        },
+        {
+          "title": "Medical Records.",
+          "description": "Secure electronic medical records."
+        },
+        {
+          "title": "Billing System.",
+          "description": "Integrated healthcare billing."
+        },
+        {
+          "title": "Healthcare Reports.",
+          "description": "Generate medical reports instantly."
+        }
+      ]
+    },
+
+    "primeedu": {
+      "items": [
+        {
+          "title": "Student Management.",
+          "description": "Manage student information easily."
+        },
+        {
+          "title": "Attendance.",
+          "description": "Digital attendance management."
+        },
+        {
+          "title": "Online Grading.",
+          "description": "Manage grades in one platform."
+        },
+        {
+          "title": "Learning Management.",
+          "description": "Support online learning activities."
+        },
+        {
+          "title": "Parent Portal.",
+          "description": "Parents can monitor student progress."
+        }
+      ]
+    },
+
+    "primecourse": {
+      "items": [
+        {
+          "title": "Organization Management.",
+          "description": "Manage organization activities centrally."
+        },
+        {
+          "title": "Collaboration Tools.",
+          "description": "Improve team collaboration."
+        },
+        {
+          "title": "Workflow Automation.",
+          "description": "Automate daily operational tasks."
+        },
+        {
+          "title": "Real-time Dashboard.",
+          "description": "Monitor activities anytime."
+        },
+        {
+          "title": "Enterprise Security.",
+          "description": "Protected with enterprise-grade security."
+        }
+      ]
+    },
+
+    "petpuffy": {
+      "items": [
+        {
+          "title": "Pet Management.",
+          "description": "Manage pet data digitally."
+        },
+        {
+          "title": "Vaccination Reminder.",
+          "description": "Automatic reminders for vaccinations."
+        },
+        {
+          "title": "Medical Records.",
+          "description": "Complete health records for every pet."
+        },
+        {
+          "title": "Grooming Schedule.",
+          "description": "Manage grooming appointments."
+        },
+        {
+          "title": "Owner Portal.",
+          "description": "Owners can access pet information online."
+        }
+      ]
+    }
   },
 
   "ISP": {
@@ -321,7 +529,7 @@
 
   "Contact": {
     "title": "Mitra Layanan Teknologi\nTerpercaya",
-    "companyProfile": "Profil Perusahaan",
+    "companyProfile": "Profil Perusahaan  →",
 
     "formTitle": "Temukan Solusi Terbaik\nUntuk Organisasi Anda",
 
@@ -343,6 +551,53 @@
     "submit": "Kirim",
     "download": "Unduh"
   },
+
+  "Resource": {
+  "title": "Consulting & Resource",
+  "subtitle": "Sederhanakan TI. Tingkatkan Kinerja.",
+  "description": "Mitra Tepercaya Anda dalam <managed>Layanan Terkelola </managed> & <outsourcing>Alih Daya</outsourcing>",
+
+  "standOut": {
+    "title": "Mengapa Kami Berbeda?",
+    "subtitle": "Kami berfokus pada kualitas, kecepatan, dan efisiensi untuk memberikan hasil nyata bagi setiap klien.",
+    "cards": [
+      {
+        "image": "/images/card1.png",
+        "title": "PJP Consulting",
+        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      },
+      {
+        "image": "/images/card2.png",
+        "title": "ISO Consulting",
+        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      },
+      {
+        "image": "/images/card3.png",
+        "title": "Digital Compliance",
+        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      },
+      {
+        "image": "/images/card4.png",
+        "title": "IT Consulting",
+        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      },
+      {
+        "image": "/images/card5.png",
+        "title": "IT Resource Outsourcing",
+        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      },
+      {
+        "image": "/images/card6.png",
+        "title": "Infrastructure Managed Services",
+        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      }
+    ]
+  },
+
+  "powering": {
+    "title": "Powering Innovation With"
+  }
+},
 
   "Footer": {
     "copyright": "© 2026 PT Medianusa Permana"

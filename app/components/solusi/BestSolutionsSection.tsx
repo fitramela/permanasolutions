@@ -90,52 +90,58 @@ export default function BestSolutionsSection() {
           ))}
         </div>
 
-        {/* ================= DESKTOP ================= */}
-        <div className="hidden flex-1 gap-12 overflow-x-auto pb-4 scrollbar-hide lg:flex">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="min-w-[260px] max-w-[260px] flex-shrink-0"
+       {/* ================= DESKTOP ================= */}
+<div className="hidden flex-1 gap-12 overflow-x-auto pb-4 scrollbar-hide lg:flex">
+  {items.map((item, index) => (
+    <div
+      key={index}
+      className="min-w-[260px] max-w-[260px] flex-shrink-0"
+    >
+      <h3 className="min-h-[65px] text-[20px] font-bold leading-7 text-[#00628D]">
+        {item.title}
+      </h3>
+
+      <div className="mt-4">
+        {openIndex === index ? (
+          <div
+            onClick={() => setOpenIndex(null)}
+            className="cursor-pointer rounded-[22px] border border-[#E8EEF3] bg-white p-5 shadow-[0_10px_25px_rgba(0,0,0,0.12)] transition-all duration-300"
+          >
+            <h4 className="mb-3 text-sm font-semibold text-[#04BCBC]">
+              {item.includesTitle}
+            </h4>
+
+            <ul className="space-y-2">
+              {item.includes.map((include, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-2 text-sm text-[#6B7280]"
+                >
+                  <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[#04BCBC]" />
+                  <span>{include}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <>
+            <p className="text-sm leading-7 text-[#6B7280]">
+              {item.description}
+            </p>
+
+            <button
+              onClick={() => setOpenIndex(index)}
+              className="mt-6 flex items-center gap-2 font-semibold text-[#04BCBC] transition-all duration-300 hover:gap-3"
             >
-              <h3 className="min-h-[65px] text-[20px] font-bold leading-7 text-[#00628D]">
-                {item.title}
-              </h3>
-
-              <div className="group relative mt-4">
-                {/* Default */}
-                <div className="transition-all duration-300 group-hover:hidden">
-                  <p className="text-sm leading-7 text-[#6B7280]">
-                    {item.description}
-                  </p>
-
-                  <button className="mt-6 flex items-center gap-2 font-semibold text-[#04BCBC] transition-all duration-300 group-hover:gap-3">
-                    {t("button")}
-                    <span>→</span>
-                  </button>
-                </div>
-
-                {/* Hover */}
-                <div className="hidden rounded-[22px] border border-[#E8EEF3] bg-white p-5 shadow-[0_10px_25px_rgba(0,0,0,0.12)] group-hover:block">
-                 <h4 className="mb-3 text-sm font-semibold text-[#04BCBC]">
-  {item.includesTitle}
-</h4>
-
-                  <ul className="space-y-2">
-                    {item.includes.map((include, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-[#6B7280]"
-                      >
-                        <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[#04BCBC]" />
-                        <span>{include}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              {t("button")}
+              <span>→</span>
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </section>
   );
