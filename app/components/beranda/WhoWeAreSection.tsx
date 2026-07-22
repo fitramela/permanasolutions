@@ -43,17 +43,17 @@ export default function WhoWeAreSection() {
     font-bold
     text-[#05638B]
     drop-shadow-[0_4px_6px_rgba(0,0,0,0.25)]
-    lg:text-[48px]
+    lg:text-[40px]
   "
 >
   {t("title")}
 </h2>
 
-          <p className="relative z-10 mb-10 text-justify text-[18px] leading-[2.2] text-[#4F5965]">
+          <p className="relative z-10 mb-8 text-justify text-[15px] leading-[2.2] text-[#4F5965]">
             {t("description1")}
           </p>
 
-          <p className="relative z-10 text-justify text-[18px] leading-[2.2] text-[#4F5965]">
+          <p className="relative z-10 text-justify text-[15px] leading-[2.2] text-[#4F5965]">
             {t("description2")}
           </p>
         </div>

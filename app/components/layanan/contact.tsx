@@ -87,9 +87,9 @@ export const Contact = () => {
                   >
                     <div className="flex h-[290px] w-[290px] flex-col items-center justify-center rounded-full bg-[#19C5CB] p-8 shadow-xl">
 
-                      <h3 className="mb-6 text-center text-2xl font-bold leading-tight text-white">
-                        {t(service.key)}
-                      </h3>
+                      <h3 className="mb-6 whitespace-pre-line text-center text-2xl font-bold leading-tight text-white">
+  {t(service.key)}
+</h3>
 
                       <Image
                         src={service.imageSrc}

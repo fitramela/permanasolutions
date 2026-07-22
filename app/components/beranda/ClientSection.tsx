@@ -21,6 +21,8 @@ import image35 from "@/public/images/client/image 35.png";
 import image36 from "@/public/images/client/image 36.png";
 import image37 from "@/public/images/client/image 37.png";
 import image38 from "@/public/images/client/image 38.png";
+import image39 from "@/public/images/client/image 39.png";
+import image40 from "@/public/images/client/image 40.png";
 
 type ClientLogo = {
   src: StaticImageData;
@@ -46,6 +48,8 @@ const clients: ClientLogo[] = [
   { src: image36, alt: "Client 36" },
   { src: image37, alt: "Client 37" },
   { src: image38, alt: "Client 38" },
+  { src: image39, alt: "Client 39" },
+  { src: image40, alt: "Client 40" },
 ];
 
 export default function ClientSection() {

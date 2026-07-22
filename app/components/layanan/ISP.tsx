@@ -23,7 +23,7 @@ export default function ISP() {
 <section className="relative isolate overflow-hidden">
 
   {/* Background */}
-  <div className="absolute inset-y-0 left-0 w-full md:w-[68%]">
+  <div className="absolute inset-y-0 left-0 w-full md:w-[100%]">
     <Image
       src="/images/image 703.png"
       alt=""
@@ -38,7 +38,7 @@ export default function ISP() {
 
     <div className="ml-0 md:ml-auto max-w-full md:max-w-3xl text-center md:text-left">
 
-      <span className="mb-3 block text-xs md:text-sm font-medium uppercase tracking-[0.25em] md:tracking-[0.3em] text-[#00628D]">
+      <span className="mb-4 block text-xs md:text-[30px] font-extralight uppercase tracking-[0.25em] md:tracking-[0.3em] text-[#00628D]">
         {t("tagline")}
       </span>
 
@@ -99,25 +99,20 @@ export default function ISP() {
 
   <div className="relative mx-auto max-w-7xl px-6">
 
-    {/* Heading */}
-
-   <div className="mb-16 flex justify-center">
-  <div className="inline-flex flex-col items-start">
-    <span className="text-[40px] font-bold leading-none text-[#0B1F2A]">
-      {t("premiumTitle")}
-    </span>
-
-    <h2 className="-mt-1 text-[50px] font-bold leading-[0.7] text-[#04BCBC]">
-      {t("premiumTitle2")}
-    </h2>
-  </div>
-</div>
-
-    {/* Cards */}
-
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+   {/* Cards */}
+<div className="group grid gap-8 md:grid-cols-2 lg:grid-cols-4">
   {products.map((product) => (
-    <div key={product.title} className="group relative">
+    <div
+      key={product.title}
+      className="
+        group/card
+        relative
+        transition-all
+        duration-300
+        group-hover:opacity-40
+        hover:!opacity-100
+      "
+    >
       {/* Highlight */}
       <div
         className="
@@ -132,7 +127,7 @@ export default function ISP() {
           opacity-0
           transition-all
           duration-300
-          group-hover:opacity-100
+          group-hover/card:opacity-100
         "
       />
 
@@ -153,8 +148,8 @@ export default function ISP() {
           shadow-md
           transition-all
           duration-300
-          group-hover:-translate-y-2
-          group-hover:shadow-2xl
+          group-hover/card:-translate-y-2
+          group-hover/card:shadow-2xl
         "
       >
         <div className="flex h-16 items-center justify-center">
@@ -292,13 +287,11 @@ export default function ISP() {
         {/* ================= MANAGED CONNECTIVITY ================= */}
 <section className="py-12 lg:py-24">
   <div className="mx-auto w-full px-4 sm:px-6">
-
     <div className="relative overflow-hidden rounded-[28px] lg:rounded-[40px] bg-[#006A93]">
-
       <div className="grid min-h-[520px] grid-cols-1 lg:grid-cols-12 items-center">
 
-        {/* LEFT */}
-        <div className="order-2 lg:order-1 lg:col-span-5 z-20 px-6 py-10 text-center lg:pl-16 lg:py-0 lg:text-left">
+        {/* ================= LEFT ================= */}
+        <div className="order-1 lg:order-1 lg:col-span-5 z-20 px-6 pt-10 pb-0 text-center lg:pl-16 lg:py-0 lg:text-left">
 
           <span className="block text-[32px] md:text-[40px] lg:text-[48px] font-light text-[#19D5D7]">
             {t("managed.tag")}
@@ -315,10 +308,32 @@ export default function ISP() {
         </div>
 
         {/* ================= RIGHT ================= */}
-        <div className="relative order-1 lg:order-2 lg:col-span-7 h-[360px] sm:h-[430px] lg:h-[520px]">
+<div className="relative order-2 lg:order-2 lg:col-span-7 h-[430px] sm:h-[480px] lg:h-[520px]">
 
           {/* Group Model */}
-          <div className="absolute left-1/2 bottom-0 h-[320px] w-[340px] -translate-x-1/2 sm:h-[420px] sm:w-[470px] lg:left-auto lg:right-4 lg:h-[500px] lg:w-[600px] lg:translate-x-0">
+<div
+  className="
+    absolute
+    left-1/2
+    top-16
+    -translate-x-1/2
+
+    h-[320px]
+    w-[320px]
+
+    sm:top-8
+    sm:h-[520px]
+    sm:w-[570px]
+
+    lg:left-auto
+    lg:right-4
+    lg:top-auto
+    lg:bottom-0
+    lg:h-[500px]
+    lg:w-[600px]
+    lg:translate-x-0
+  "
+>
 
             <Image
               src="/images/model isp 2.png"
@@ -329,7 +344,7 @@ export default function ISP() {
             />
 
             {/* Badge 1 */}
-            <div className="absolute left-2 top-4 rounded-2xl border border-white/20 bg-[#1289B4]/70 px-3 py-2 backdrop-blur-xl shadow-2xl sm:left-4 sm:top-6 lg:left-4 lg:top-6 lg:px-4 lg:py-3">
+            <div className="absolute left-0 top-2 rounded-2xl border border-white/20 bg-[#1289B4]/70 px-3 py-2 backdrop-blur-xl shadow-2xl sm:left-4 sm:top-6 lg:left-4 lg:top-6 lg:px-4 lg:py-3">
               <div className="flex items-center gap-2 lg:gap-3">
                 <Image
                   src="/images/users.png"
@@ -347,7 +362,7 @@ export default function ISP() {
             </div>
 
             {/* Badge 2 */}
-            <div className="absolute right-0 top-12 rounded-2xl border border-white/20 bg-[#1289B4]/70 px-3 py-2 backdrop-blur-xl shadow-2xl sm:top-20 lg:right-0 lg:top-20 lg:px-4 lg:py-3">
+            <div className="absolute right-0 top-10 rounded-2xl border border-white/20 bg-[#1289B4]/70 px-3 py-2 backdrop-blur-xl shadow-2xl sm:top-20 lg:right-0 lg:top-20 lg:px-4 lg:py-3">
               <div className="flex items-center gap-2 lg:gap-3">
                 <Image
                   src="/images/monitor.png"
@@ -383,7 +398,7 @@ export default function ISP() {
             </div>
 
             {/* Badge 4 */}
-            <div className="absolute right-0 bottom-4 rounded-2xl border border-white/20 bg-[#1289B4]/70 px-3 py-2 backdrop-blur-xl shadow-2xl sm:bottom-10 lg:right-[-15px] lg:bottom-12 lg:px-4 lg:py-3">
+            <div className="absolute right-0 bottom-0 rounded-2xl border border-white/20 bg-[#1289B4]/70 px-3 py-2 backdrop-blur-xl shadow-2xl sm:bottom-10 lg:right-[-15px] lg:bottom-12 lg:px-4 lg:py-3">
               <div className="flex items-center gap-2 lg:gap-3">
                 <Image
                   src="/images/Location.png"

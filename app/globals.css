@@ -80,5 +80,16 @@ body {
   animation: scroll 80s linear infinite;
 }
 
+@keyframes poweringBounce {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 100vw));
+  }
+}
 
+.marquee {
+  animation: poweringBounce 18s linear infinite alternate;
+}
 
