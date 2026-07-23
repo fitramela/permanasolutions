@@ -565,12 +565,8 @@
  "Resource": {
   "title": "Consulting & Resource",
   "subtitle": "Simplify IT. Amplify Performance.",
-  "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>",
+  "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>"
 
-  
-
-  "Footer": {
-  "copyright": "© 2026 PT Medianusa Permana"
 },
 
 "About": {
@@ -654,7 +650,7 @@
 
   "powering": {
     "title": "Powering Innovation With"
-  }
+  
 },
 
 
@@ -662,6 +658,5 @@
 "Footer": {
   "copyright": "© 2026 PT Medianusa Permana"
 }
-
-
 }
+
