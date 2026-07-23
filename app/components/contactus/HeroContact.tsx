@@ -15,7 +15,7 @@ export default function HeroContact() {
         <div className="contact-circle"></div>
 
         {/* Isi */}
-        <div className="contact-card">
+        <div className="contact-content">
 
           <ContactInfo />
 

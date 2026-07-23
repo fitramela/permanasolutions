@@ -567,7 +567,8 @@
   "subtitle": "Simplify IT. Amplify Performance.",
   "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>",
 
-<<<<<<< HEAD
+  
+
   "Footer": {
   "copyright": "© 2026 PT Medianusa Permana"
 },
@@ -613,8 +614,7 @@
   "title": "Contact Us",
   "office": "Head Office - Jakarta",
   "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nGambir District\nCentral Jakarta\nSpecial Capital Region of Jakarta\n10140"
-}
-=======
+},
   "standOut": {
     "title": "Why We Stand Out?",
     "subtitle": "We focus on quality, speed, and efficiency to deliver real results for every client.",
@@ -663,5 +663,5 @@
   "copyright": "© 2026 PT Medianusa Permana"
 }
 
->>>>>>> bbadaad77b516efa13fab6885d7e5555293aa9b8
+
 }
