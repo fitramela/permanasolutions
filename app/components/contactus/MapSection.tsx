@@ -1,6 +1,12 @@
+"use client";
+
 import "./styles.css";
+import { useTranslations } from "next-intl";
 
 export default function MapSection() {
+
+  const t = useTranslations("ContactHero");
+
   return (
     <section className="map-section">
 
@@ -9,22 +15,24 @@ export default function MapSection() {
         <iframe
           src="https://www.google.com/maps?q=Medianusa+Permana+Jakarta&output=embed"
           loading="lazy"
-        ></iframe>
+          title="Medianusa Permana Location"
+        />
 
       </div>
+
 
       <div className="map-address">
 
-        <h3>Medianusa Permana (Permana Solutions)</h3>
+        <h3>
+          Medianusa Permana (Permana Solutions)
+        </h3>
 
-        <p>
-          Jl. Cideng Barat No.21B 3, RT.11/RW.11,
-          Duri Pulo, Kecamatan Gambir,
-          Kota Jakarta Pusat,
-          Daerah Khusus Ibukota Jakarta 10140
+        <p className="whitespace-pre-line">
+          {t("address")}
         </p>
 
       </div>
+
 
     </section>
   );

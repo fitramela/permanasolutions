@@ -207,14 +207,14 @@
     ]
   },
 
-  "Service": {
-    "title": "Pelayanan Kami",
-    "titleclientlayanan": "Klient Kami",
-    "seeMore": "Selengkapnya",
-    "asp": "ASP",
-    "isp": "ISP",
-    "resource": "Consulting\n&\nResource"
-  },
+ "Service": {
+  "title": "Pelayanan Kami",
+  "titleClientLayanan": "Klient Kami",
+  "seeMore": "Selengkapnya",
+  "asp": "ASP",
+  "isp": "ISP",
+  "resource": "Consulting\n&\nResource"
+},
 
  "Asp": {
     "title": "ASP",
