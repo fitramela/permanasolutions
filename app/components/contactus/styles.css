@@ -1,0 +1,167 @@
+.contact-hero{
+    width:100%;
+    margin-top:73px;
+}
+
+.contact-wrapper{
+    width:95%;
+    max-width:1280px;
+    margin:0 auto;
+    position:relative;
+    height:560px;
+}
+
+.contact-bg{
+    position:absolute;
+    left:0;
+    top:25px;
+    width:75%;
+    height:550px;
+    background:#12C2C9;
+    border-radius:24px;
+}
+
+.contact-circle{
+    position:absolute;
+    width:510px;
+    height:510px;
+    border:8px solid rgba(0,126,170,.08);
+    border-radius:50%;
+    left:310px;
+    top:26px;
+}
+
+.contact-card{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+}
+
+.contact-info{
+    position:absolute;
+
+    left:138px;
+    top:120px;
+
+    width:290px;
+    height:220px;   /* tinggi tetap */
+
+    color:#fff;
+    z-index:10;
+}
+
+.contact-info h1{
+    font-size:40px;
+    font-weight:600;
+    margin:0 0 20px;
+    line-height:1.1;
+}
+
+.contact-info h3{
+    font-size:20px;
+    font-weight:550;
+    margin:0 0 12px;
+}
+
+.contact-info p{
+    font-size:13px;
+    line-height:1.8;
+    margin:0;
+    white-space:pre-line;
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.contact-image{
+    position:absolute;
+
+    right:0;
+    bottom:-53px;
+
+    width:760px;
+    height:560px;
+
+    z-index:5;
+}
+
+.contact-person{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:760px;
+    height:auto;
+}
+
+.contact-logo{
+    position:absolute;
+    top:113px;
+    left:40px;
+    width:267px;
+    height:auto;
+}
+
+/* ===========================
+   MAP
+=========================== */
+
+.map-section{
+    width:90%;
+    max-width:1280px;
+    margin:120px auto 80px;
+}
+
+.map-wrapper{
+    width:100%;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.10);
+}
+
+.map-wrapper iframe{
+    width:100%;
+    height:470px;
+    border:none;
+}
+
+.map-address{
+    margin-top:24px;
+}
+
+.map-address h3{
+    font-size:18px;
+    font-weight:100;
+    color:#050404; 
+    margin-bottom:0px;
+
+}
+
+.map-address p{
+    color:#020101;
+    line-height:1.8;
+}
+
+/* ===========================
+   DOT LEFT
+=========================== */
+
+.contact-dots-left{
+    position:absolute;
+    left:48px;
+    bottom:20px;
+    width:46px;
+    display:grid;
+    grid-template-columns:repeat(2,20px);
+    gap:20px;
+    z-index:10;
+}
+
+.contact-dots-left span{
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:rgba(255,255,255,.35);
+}

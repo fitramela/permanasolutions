@@ -207,14 +207,14 @@
     ]
   },
 
-  "Service": {
-    "title": "Pelayanan Kami",
-    "title-clientlayanan": "Klient Kami",
-    "seeMore": "Selengkapnya",
-    "asp": "ASP",
-    "isp": "ISP",
-    "resource": "Consulting\n&\nResource"
-  },
+ "Service": {
+  "title": "Pelayanan Kami",
+  "titleClientLayanan": "Klient Kami",
+  "seeMore": "Selengkapnya",
+  "asp": "ASP",
+  "isp": "ISP",
+  "resource": "Consulting\n&\nResource"
+},
 
  "Asp": {
     "title": "ASP",
@@ -500,8 +500,8 @@
      "managed": {
       "tag": "Mengelola",
 
-      "title 1": "Layanan",
-      "title 2": "Konektivitas",
+      "title1": "Layanan",
+      "title2": "Konektivitas",
 
       "badge1": {
       "title": "Manajemen",
