@@ -8,7 +8,7 @@ import { useTranslations, useLocale } from "next-intl";
 const navigationItems = [
   { key: "home", href: "/" },
   { key: "solutions", href: "/solutions" },
-  { key: "service", href: "/service" },
+  { key: "service", href: "/#our-service" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ];
@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-sm">
       <div className="mx-auto flex h-[74px] w-full items-center justify-between px-5 lg:px-8">
         {/* Logo */}
-        <Link href={`/${locale}`} className="flex items-center">
+        <Link href={`/${locale}`} scroll className="flex items-center">
           <Image
             src="/images/logo.png"
             alt="Permana Solutions"
@@ -40,6 +40,7 @@ export default function Navbar() {
               <li key={item.key}>
                 <Link
                   href={`/${locale}${item.href === "/" ? "" : item.href}`}
+                  scroll
                   className="text-[13px] font-medium text-[#05638B] transition hover:text-[#04BCBC]"
                 >
                   {t(item.key)}
@@ -73,6 +74,7 @@ export default function Navbar() {
               <li key={item.key}>
                 <Link
                   href={`/${locale}${item.href === "/" ? "" : item.href}`}
+                  scroll
                   onClick={() => setIsMenuOpen(false)}
                   className="block border-b border-gray-100 px-6 py-4 text-base font-medium text-[#05638B] transition hover:bg-[#F5FBFD] hover:text-[#04BCBC]"
                 >

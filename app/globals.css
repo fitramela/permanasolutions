@@ -93,3 +93,31 @@ body {
   animation: poweringBounce 18s linear infinite alternate;
 }
 
+::view-transition-old(root) {
+  animation: slide-out 0.5s ease;
+}
+
+::view-transition-new(root) {
+  animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
