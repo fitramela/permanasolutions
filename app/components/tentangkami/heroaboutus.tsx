@@ -10,6 +10,7 @@ export default function HeroAbout() {
     <section className="relative overflow-hidden pt-20">
       {/* Hero Height */}
       <div className="relative h-[420px] sm:h-[560px] lg:h-[700px] xl:h-[760px]">
+
         {/* Background */}
         <Image
           src="/images/orngdkk.png"
@@ -25,6 +26,7 @@ export default function HeroAbout() {
         {/* Content */}
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 sm:px-10 lg:px-16">
           <div className="max-w-xl">
+
             <h1 className="font-serif text-3xl font-bold text-white sm:text-4xl lg:text-6xl">
               {t("title")}
             </h1>
@@ -38,10 +40,12 @@ export default function HeroAbout() {
               alt="Decoration"
               width={180}
               height={14}
-              className="mt-18 w-full sm:w-157 lg:mt-10 lg:w-168"
+              className="mt-8 w-full sm:w-[157px] lg:mt-10 lg:w-[168px]"
             />
+
           </div>
         </div>
+
       </div>
     </section>
   );
