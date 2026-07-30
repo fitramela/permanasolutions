@@ -9,15 +9,14 @@ export default function WhyChooseUsSection() {
   return (
     <section className="relative overflow-hidden py-14 lg:py-20 min-h-[520px] md:min-h-0">
       {/* Background Desktop */}
-      <div className="absolute inset-0 hidden md:block">
-        <Image
-          src="/images/bgdriving.png"
-          alt=""
-          fill
-          priority
-          className="pointer-events-none select-none object-fill object-left"
-        />
-      </div>
+      <Image
+  src="/images/bgdriving.png"
+  alt=""
+  fill
+  priority
+  className="pointer-events-none select-none object-fill object-[5%_left]"
+/>
+
 
       {/* Background Mobile */}
       <div className="absolute inset-0 block overflow-hidden md:hidden">
@@ -31,27 +30,29 @@ export default function WhyChooseUsSection() {
         <div className="w-full max-w-[760px] text-white lg:ml-0">
          <h2
   id="why-choose-us-title"
-className="mx-auto max-w-[900px] text-center text-[25px] sm:text-[30px] lg:text-[35px] font-bold leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)]">
+className="mx-auto max-w-[900px] text-center text-[25px] sm:text-[25px] lg:text-[35px] font-bold leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)]">
   {t("title")}
 </h2>
 
-          <p
-            className="
-              mt-9
-              max-w-[760px]
-              text-justify
-              text-[25px]
-              sm:text-base
-              lg:text-[15px]
-              font-regular
-              leading-[30px]
-              lg:leading-[25px]
-              tracking-[0.01em]
-              text-white/90
-            "
-          >
-            {t("description")}
-          </p>
+         <p
+  className="
+    mt-6 sm:mt-7 lg:mt-9
+    max-w-full sm:max-w-[760px]
+    text-center sm:text-left lg:text-justify
+    text-[14px]
+    sm:text-base
+    lg:text-[15px]
+    font-normal
+    leading-6
+    sm:leading-7
+    lg:leading-[25px]
+    tracking-[0.01em]
+    text-white/90
+    px-2 sm:px-0
+  "
+>
+  {t("description")}
+</p>
         </div>
       </div>
     </section>

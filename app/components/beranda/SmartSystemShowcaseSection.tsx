@@ -68,15 +68,14 @@ export default function SmartSystemShowcaseSection() {
                 key={index}
                 role="listitem"
                 className="
-                  snap-center
-                  min-w-full
-                  rounded-xl
-                  bg-white
-                  p-6
-                  shadow-md
+  snap-center
+  min-w-full
+  rounded-xl
+  bg-white
+  p-6
 
-                  md:min-w-[300px]
-                "
+  md:min-w-[300px]
+"
               >
                 <div className="mb-5 flex justify-center">
                   <div className="flex h-[78px] w-[250px] items-center justify-center rounded-full bg-[#04bcbc] shadow">
@@ -86,9 +85,20 @@ export default function SmartSystemShowcaseSection() {
                   </div>
                 </div>
 
-                <p className="text-center text-sm leading-7 text-gray-600">
-                  {item.description}
-                </p>
+                <p
+  className="
+    mx-auto
+    max-w-[350px]
+    text-center
+    text-[14px]
+    font-medium
+    leading-[22px]
+    tracking-[0.01em]
+    text-[#5F6368]
+  "
+>
+  {item.description}
+</p>
               </article>
             ))}
           </div>

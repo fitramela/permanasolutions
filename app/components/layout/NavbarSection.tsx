@@ -19,29 +19,34 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-sm">
-      <div className="mx-auto flex h-[74px] w-full items-center justify-between px-5 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 h-[80px] bg-white shadow-sm">
+      <div className="flex h-full w-full items-center justify-between px-10 lg:px-12 xl:px-16">
+
         {/* Logo */}
-        <Link href={`/${locale}`} scroll className="flex items-center">
+        <Link
+          href={`/${locale}`}
+          scroll
+          className="flex shrink-0 items-center"
+        >
           <Image
             src="/images/logo.png"
             alt="Permana Solutions"
-            width={220}
-            height={70}
+            width={500}
+            height={200}
             priority
-            className="h-auto w-[170px] sm:w-[200px] lg:w-[220px]"
+            className="h-auto w-[200px]"
           />
         </Link>
 
         {/* Desktop Menu */}
         <nav className="hidden md:block">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-10 lg:gap-15">
             {navigationItems.map((item) => (
               <li key={item.key}>
                 <Link
                   href={`/${locale}${item.href === "/" ? "" : item.href}`}
                   scroll
-                  className="text-[13px] font-medium text-[#05638B] transition hover:text-[#04BCBC]"
+                  className="text-[13px] font-semibold text-[#05638B] transition-colors duration-300 hover:text-[#04BCBC]"
                 >
                   {t(item.key)}
                 </Link>
@@ -50,10 +55,10 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Hamburger */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded md:hidden"
+          className="flex h-10 w-10 items-center justify-center md:hidden"
           aria-label="Toggle menu"
         >
           <span className="text-3xl text-[#05638B]">
@@ -65,7 +70,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`overflow-hidden bg-white transition-all duration-300 md:hidden ${
-          isMenuOpen ? "max-h-[500px] border-t" : "max-h-0"
+          isMenuOpen ? "max-h-[500px] border-t border-gray-200" : "max-h-0"
         }`}
       >
         <nav>

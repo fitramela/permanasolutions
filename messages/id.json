@@ -1,4 +1,11 @@
-{
+  {
+  "Hero": {
+  "heading1": "Memberdayakan Bisnis Melalui",
+  "heading2": "Teknologi, Konektivitas & Keahlian",
+    "partner": "Mitra Kami",
+    "customer": "Pelanggan Kami",
+    "employee": "Karyawan"
+  },
   "Navbar": {
     "home": "Beranda",
     "solutions": "Solusi",
@@ -131,7 +138,7 @@
 
 
   "WhyChooseUs": {
-    "title": "Memacu pertumbuhan bisnis dengan Teknologi, Kepatuhan, dan Inovasi.",
+    "title": "Memacu Pertumbuhan Bisnis dengan Teknologi, Kepatuhan, dan Inovasi.",
     "description": "Kami menghadirkan layanan teknologi dan konsultasi terintegrasi yang membantu organisasi bekerja lebih cerdas, berkembang lebih cepat, dan tetap unggul dalam menghadapi kebutuhan bisnis yang terus berkembang. Dengan menggabungkan konsultasi strategis, solusi digital, layanan konektivitas, dan sumber daya TI yang berpengalaman, kami mendukung transformasi bisnis, kesiapan tata kelola, efisiensi operasional, serta pertumbuhan yang berkelanjutan untuk menciptakan nilai jangka panjang bagi klien dan mitra kami."
   },
 

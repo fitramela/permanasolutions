@@ -35,12 +35,15 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={poppins.className}>
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
+         <Navbar />
 
-          <main>{children}</main>
+<main className="pt-[70px]">
+  {children}
+</main>
 
-          <FloatingLanguageButton /> {/* Tambahkan di sini */}
+<FloatingLanguageButton />
 
+         
           <FooterSection />
         </NextIntlClientProvider>
       </body>

@@ -1,5 +1,13 @@
 {
-  "Navbar": {
+  "Hero": {
+  "heading1": "Empowering Business Through",
+  "heading2": "Technology, Connectivity & Expertise",
+    "partner": "Our Partner",
+    "customer": "Our Customer",
+    "employee": "Employee"
+  },
+
+ "Navbar": {
     "home": "Home Page",
     "solutions": "Solutions",
     "service": "Services",
@@ -10,7 +18,7 @@
   
 
   "WhoWeAre": {
-    "title": "About Us",
+    "title": "Who We Are",
     "description1": "PT Medianusa Permana, with more than a decade of experience, provides a comprehensive technology ecosystem covering Technology Consulting, Business Application Solutions, Internet Connectivity Services, and IT Resource Services.",
     "description2": "Supported by continuously evolving infrastructure, ISO 9001:2015 and ISO 27001 certifications, and extensive experience across various industries, we are committed to delivering reliable, innovative, and sustainable technology solutions to support long-term business growth."
   },

@@ -73,7 +73,7 @@ export default function Asp() {
   <main className="overflow-hidden bg-white">
     {/* ================= HERO ================= */}
     <section className="bg-[#F5FBFD] pb-14 pt-[100px]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="relative mx-auto w-full max-w-[1600px] px-10 lg:px-20">
         {/* Heading */}
         <div className="text-center">
           <h1 className="text-[44px] font-extrabold leading-none text-[#05638B] sm:text-[56px] lg:text-[64px]">
@@ -106,17 +106,17 @@ export default function Asp() {
 
           {/* CARD 1 */}
           <div className="flex h-[240px] w-[190px] items-center justify-center rounded-[30px] bg-[linear-gradient(180deg,#0D668A_0%,#0A5F7E_45%,#062F44_100%)] px-6 text-center text-white">
-            <p className="max-w-[145px] text-[16px] leading-8">
+            <p className="max-w-[300px] text-[14px] leading-5">
               {t("card1")}
             </p>
           </div>
 
           {/* CARD 2 */}
-          <div className="flex h-[155px] w-[150px] flex-shrink-0 items-center justify-center lg:h-[190px] lg:w-[190px]">
-            <p className="max-w-[145px] text-center text-[16px] leading-8 text-[#1F3A5F]">
-              {t("card2")}
-            </p>
-          </div>
+<div className="flex h-[155px] w-[150px] flex-shrink-0 items-center justify-center rounded-[28px] border border-[#1F3A5F]/8 bg-white/20 lg:h-[190px] lg:w-[190px]">
+  <p className="max-w-[130px] text-center text-[15px] leading-5 text-[#1F3A5F]">
+    {t("card2")}
+  </p>
+</div>
 
           {/* CARD 3 */}
           <div className="flex h-[185px] w-[150px] flex-shrink-0 flex-col items-center justify-center rounded-[30px] bg-[#9FC8DC] text-white lg:h-[240px] lg:w-[190px]">
@@ -178,12 +178,12 @@ export default function Asp() {
         {products[currentProduct].title}
       </h2>
 
-      <p className="mt-3 max-w-xl text-gray-600">
+      <p className="mt-2 max-w-xl text-[20px] leading-8 font-extralight text-gray-600">
         {products[currentProduct].description}
       </p>
     </div>
 
-    <div className="grid items-start gap-12 lg:grid-cols-2">
+   <div className="grid items-center gap-24 lg:grid-cols-[720px_1fr] xl:gap-32">
     {/* LEFT */}
 <div className="flex items-center justify-center">
   <div className="drop-shadow-[0_25px_40px_rgba(0,0,0,0.18)]">
@@ -199,7 +199,7 @@ export default function Asp() {
 </div>
 
       {/* RIGHT */}
-      <div className="space-y-5">
+      <div className="w-full max-w-[700px] space-y-6">
         {products[currentProduct].items.map((_: any, index: number) => {
           const itemKey = `${products[currentProduct].key}-${index}`;
 
