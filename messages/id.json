@@ -606,7 +606,54 @@
   }
 },
 
-  "Footer": {
-    "copyright": "© 2026 PT Medianusa Permana"
+"ContactHero": {
+  "title": "Kontak Kami",
+  "office": "Kantor Pusat - Jakarta",
+  "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nKecamatan Gambir\nKota Jakarta Pusat\nDaerah Khusus Ibukota Jakarta\n10140"
+},
+
+"Footer": {
+  "copyright": "© 2026 PT Medianusa Permana"
+
+},
+"About": {
+  "hero": {
+    "title": "About Us",
+    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation through software development, professional IT services, and innovative technology solutions."
+  },
+
+  "profile": {
+    "title": "Our Profile",
+    "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through the PERMANA technology ecosystem."
+  },
+
+  "company": {
+    "title": "Permana Solutions",
+    "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of PERMANA Corporation, focusing on digital solutions, application development, connectivity services, and professional IT resources."
+  },
+
+  "visionMission": {
+    "title": "Vision & Mission",
+
+    "visionTitle": "Vision",
+
+    "visionDescription": "Driving innovation through collaboration and creativity, delivering solutions that transform the way people interact with technology.",
+
+    "missionTitle": "Mission",
+
+    "missions": [
+      "Provide innovative and high-quality IT solutions.",
+      "Deliver reliable and secure cloud connectivity.",
+      "Become a trusted software and IT partner.",
+      "Optimize technology resources for business productivity.",
+      "Deliver responsive service and excellent technical support."
+    ]
+  },
+
+  "team": {
+    "title": "Meet Our Exceptional Team",
+    "subtitle": "The People Behind Permana Solutions",
+    "description": "Driven by innovation and united by shared values, our professionals create impactful technology experiences."
   }
+}
 }
