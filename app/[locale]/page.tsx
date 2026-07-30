@@ -6,11 +6,11 @@ import { ContactFormSection } from "@/app/components/beranda/ContactFormSection"
 import HeroBannerSection from "@/app/components/beranda/HeroBannerSection";
 import ClientSection from "@/app/components/beranda/ClientSection";
 import FloatingLanguage from "@/app/components/FloatingLanguage";
-
+import PageTransition from "@/app/components/PageTransition";
 
 export default function Home() {
   return (
-    <>
+    <PageTransition>
       <HeroBannerSection />
       <WhoWeAreSection />
       <WhyChooseUsSection />
@@ -19,8 +19,7 @@ export default function Home() {
       <ContactFormSection />
       <ClientSection />
 
-
       <FloatingLanguage />
-    </>
+    </PageTransition>
   );
 }
