@@ -1,86 +1,124 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { useTranslations } from "next-intl";
 import TeamCard from "./teamcard";
 import { teamData } from "./teamdata";
 
 export default function TeamSection() {
-  const t = useTranslations("About.team");
-
-  const [active, setActive] = useState(0);
-
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-
   return (
-    <section className="bg-[#F7F9FB] py-20">
+    <section className="relative overflow-hidden bg-[#F7FCFE] py-20 lg:py-28">
 
-      <div className="mx-auto max-w-[1500px] px-6 lg:px-16">
+      {/* Glow */}
+      <div className="absolute -left-40 top-20 h-[340px] w-[340px] rounded-full bg-[#7BE7FF]/20 blur-[120px]" />
 
+      <div className="absolute -right-40 bottom-10 h-[340px] w-[340px] rounded-full bg-[#8DDFFF]/20 blur-[120px]" />
 
-        {/* TITLE */}
-        <div className="text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
 
-          <h2 className="font-serif text-4xl font-bold text-[#005D86]">
-            {t("title")}
+        {/* Heading */}
+
+        <div className="mx-auto max-w-3xl text-center">
+
+          <h2
+            className="
+            text-3xl
+            font-bold
+            text-[#005D86]
+
+            md:text-4xl
+
+            lg:text-5xl
+          "
+          >
+            Meet Our Exceptional Team
           </h2>
 
+          <h3
+            className="
+            mt-3
 
-          <h3 className="mt-3 text-3xl font-bold text-[#005D86]">
-            {t("subtitle")}
+            text-2xl
+            font-bold
+
+            text-[#005D86]
+
+            md:text-3xl
+
+            lg:text-[38px]
+          "
+          >
+            The People Behind Permana Solutions
           </h3>
 
+          <p
+            className="
+            mx-auto
 
-          <p className="mx-auto mt-5 max-w-4xl text-gray-500">
-            {t("description")}
+            mt-6
+
+            max-w-2xl
+
+            text-[15px]
+
+            leading-8
+
+            text-[#6D6D6D]
+
+            lg:text-base
+          "
+          >
+            Driven by innovation and united by a shared vision, our
+            professionals work together to deliver reliable engineering,
+            technology, and digital solutions for every client.
           </p>
 
         </div>
 
+        {/* Team */}
 
-
-        {/* CARD SLIDER */}
         <div
-          ref={scrollRef}
           className="
           mt-20
+
           flex
-          gap-8
+
+          gap-6
+
           overflow-x-auto
-          pb-10
+
+          scroll-smooth
+
+          snap-x
+
+          snap-proximity
+
+          px-1
+
+          pt-24
+
+          pb-6
+
           scrollbar-hide
-          "
+        "
         >
-
-          {teamData.map((member,index)=>(
-
+          {teamData.map((member) => (
             <div
-              key={member.name}
+              key={member.id}
               className="
-              min-w-[300px]
+                snap-start
+
+                shrink-0
+
+                w-[88%]
+
+                sm:w-[340px]
+
+                lg:w-[310px]
               "
             >
-
-              <TeamCard
-
-                {...member}
-
-                active={active === index}
-
-                onClick={()=>{
-                  setActive(index)
-                }}
-
-              />
-
+              <TeamCard member={member} />
             </div>
-
           ))}
-
-
         </div>
-
 
       </div>
 

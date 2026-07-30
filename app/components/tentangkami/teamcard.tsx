@@ -1,240 +1,143 @@
 "use client";
 
 import Image from "next/image";
-
+import { TeamMember } from "./teamdata";
 
 interface TeamCardProps {
-
- image:string;
- name:string;
- position:string;
- description:string;
-
- active:boolean;
-
- onClick:()=>void;
-
+  member: TeamMember;
 }
 
+export default function TeamCard({ member }: TeamCardProps) {
+  return (
+    <article
+      className="
+        group
+        relative
+        flex
+        h-full
+        min-h-[390px]
+        flex-col
+        rounded-[32px]
+        bg-white
+        px-7
+        pb-8
+        pt-24
+        shadow-[0_12px_40px_rgba(0,93,134,.08)]
+        transition-all
+        duration-300
+        hover:-translate-y-2
+        hover:shadow-[0_20px_55px_rgba(0,93,134,.18)]
+      "
+    >
+      {/* Photo */}
 
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
 
-export default function TeamCard({
+        <div
+          className="
+            relative
 
- image,
- name,
- position,
- description,
- active,
- onClick
+            h-[140px]
+            w-[140px]
 
-}:TeamCardProps){
+            overflow-hidden
 
+            rounded-full
 
-return (
+            border-[6px]
+            border-white
 
-<div
-onClick={onClick}
+            shadow-xl
 
-className={`
-relative
-cursor-pointer
-pt-20
-transition-all
-duration-500
+            transition-transform
+            duration-500
 
-${active 
-? "scale-105 -translate-y-4"
-: "opacity-70"
-}
+            group-hover:scale-105
 
-`}
->
+            lg:h-[160px]
+            lg:w-[160px]
+          "
+        >
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover object-top"
+          />
+        </div>
 
+      </div>
 
-{/* FOTO */}
+      {/* Position */}
 
-<div
-className="
-absolute
-left-1/2
-top-0
-z-20
--translate-x-1/2
-"
->
+      <div className="flex justify-center">
 
+        <span
+          className="
+            rounded-full
 
-<div
+            bg-gradient-to-r
 
-className={`
-h-36
-w-36
-overflow-hidden
-rounded-full
-border-[5px]
-border-white
+            from-cyan-400
+            to-sky-500
 
-shadow-xl
+            px-5
+            py-2
 
-transition-all
-duration-500
+            text-xs
 
-${active 
-? "ring-4 ring-[#00C4CC]"
-:""
-}
+            font-semibold
 
-`}
->
+            tracking-wide
 
+            text-white
+          "
+        >
+          {member.position}
+        </span>
 
-<Image
+      </div>
 
-src={image}
+      {/* Name */}
 
-alt={name}
+      <h3
+        className="
+          mt-6
 
-width={150}
+          text-center
 
-height={150}
+          text-xl
 
-className="
-h-full
-w-full
-object-cover
-"
+          font-bold
 
-/>
+          text-[#005D86]
 
+          lg:text-2xl
+        "
+      >
+        {member.name}
+      </h3>
 
-</div>
+      {/* Description */}
 
-</div>
+      <p
+        className="
+          mt-5
 
+          flex-1
 
+          text-center
 
-{/* CARD */}
+          text-sm
 
+          leading-7
 
-<div
+          text-[#6B7280]
+        "
+      >
+        {member.description}
+      </p>
 
-className={`
-
-h-[360px]
-
-rounded-[30px]
-
-border
-
-px-6
-pb-8
-pt-28
-
-
-transition-all
-duration-500
-
-
-${active
-
-?
-
-"bg-white shadow-[0_20px_50px_rgba(0,196,204,.25)] border-[#00C4CC]"
-
-:
-
-"bg-white border-[#E7E7E7] shadow-sm"
-
-}
-
-
-`}
-
->
-
-
-{/* BADGE */}
-
-<div
-
-className="
-
-mx-auto
-
-w-fit
-
-rounded-md
-
-bg-[#00C4CC]
-
-px-5
-
-py-1
-
-text-sm
-
-font-semibold
-
-text-white
-
-"
-
->
-
-{position}
-
-</div>
-
-
-
-
-{/* NAME */}
-
-<h3
-
-className="
-mt-5
-text-center
-font-serif
-text-xl
-font-bold
-text-[#003E63]
-"
-
->
-
-{name}
-
-</h3>
-
-
-
-
-{/* DESCRIPTION */}
-
-<p
-
-className="
-mt-8
-text-center
-text-sm
-leading-7
-text-gray-500
-"
-
->
-
-{description}
-
-</p>
-
-
-
-</div>
-
-
-</div>
-
-)
-
+    </article>
+  );
 }

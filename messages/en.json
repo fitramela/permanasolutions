@@ -565,51 +565,10 @@
  "Resource": {
   "title": "Consulting & Resource",
   "subtitle": "Simplify IT. Amplify Performance.",
-  "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>",
+  "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>"
 
-  
-
-  "Footer": {
-  "copyright": "© 2026 PT Medianusa Permana"
 },
 
-"About": {
-  "hero": {
-    "title": "About Us",
-    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation. Through innovative software development and Managed & Professional IT Services, we help improve efficiency, drive growth, and strengthen your business's digital ecosystem."
-  },
-
-"profile": {
-  "title": "Our Profile",
-  "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through optimized technology integrated within the PERMANA technology ecosystem."
-},  
-
-  "company": {
-    "title": "Permana Solutions",
-    "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of the PERMANA Corporation. We focus on software development, connectivity solutions, managed IT services, and digital transformation consulting."
-  },
-
-  "visionMission": {
-    "title": "Vision & Mission",
-    "visionTitle": "Vision",
-    "visionDescription": "To become a trusted technology partner in delivering innovative digital solutions that support sustainable business growth.",
-
-    "missionTitle": "Mission",
-    "missions": [
-      "Deliver innovative and reliable technology solutions.",
-      "Support digital transformation through integrated services.",
-      "Provide excellent customer experience and professional support.",
-      "Continuously improve quality, security, and operational excellence.",
-      "Build long-term partnerships with clients and stakeholders."
-    ]
-  },
-
-  "team": {
-    "title": "Meet Our Exceptional Team",
-    "subtitle": "The People Behind Permana Solutions",
-    "description": "Our experienced professionals work together to create innovative and impactful technology solutions."
-  }
-},
 "ContactHero": {
   "title": "Contact Us",
   "office": "Head Office - Jakarta",
@@ -654,14 +613,55 @@
 
   "powering": {
     "title": "Powering Innovation With"
-  }
+  
 },
 
 
 
 "Footer": {
   "copyright": "© 2026 PT Medianusa Permana"
+
+},
+"About": {
+  "hero": {
+    "title": "About Us",
+    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation through software development, professional IT services, and innovative technology solutions."
+  },
+
+  "profile": {
+    "title": "Our Profile",
+    "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through the PERMANA technology ecosystem."
+  },
+
+  "company": {
+    "title": "Permana Solutions",
+    "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of PERMANA Corporation, focusing on digital solutions, application development, connectivity services, and professional IT resources."
+  },
+
+  "visionMission": {
+    "title": "Vision & Mission",
+
+    "visionTitle": "Vision",
+
+    "visionDescription": "Driving innovation through collaboration and creativity, delivering solutions that transform the way people interact with technology.",
+
+    "missionTitle": "Mission",
+
+    "missions": [
+      "Provide innovative and high-quality IT solutions.",
+      "Deliver reliable and secure cloud connectivity.",
+      "Become a trusted software and IT partner.",
+      "Optimize technology resources for business productivity.",
+      "Deliver responsive service and excellent technical support."
+    ]
+  },
+
+  "team": {
+    "title": "Meet Our Exceptional Team",
+    "subtitle": "The People Behind Permana Solutions",
+    "description": "Driven by innovation and united by shared values, our professionals create impactful technology experiences."
+  }
+}
 }
 
 
-}
