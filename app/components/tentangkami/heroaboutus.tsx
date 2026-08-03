@@ -3,162 +3,155 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-export default function HeroAbout() {
-  const t = useTranslations("About.hero");
+export default function HeroAboutUs() {
+  const t = useTranslations("About");
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section
+      className="
+        relative
+        overflow-hidden
+        h-[760px]
+        bg-white
+      "
+    >
+      {/* ================= BACKGROUND ================= */}
 
-      {/* ================= HERO ================= */}
-
-      <div
-        className="
-          relative
-          h-[420px]
-          sm:h-[500px]
-          lg:h-[650px]
-          xl:h-[680px]
-        "
-      >
-
-        {/* Background */}
+      <div className="absolute inset-0">
 
         <Image
-          src="/images/orngdkk.png"
+          src="/images/AboutuS.png"
           alt="About Us"
           fill
           priority
-          sizes="100vw"
           className="
             object-cover
-
-            object-[72%_center]
-
-            md:object-[76%_center]
-
-            lg:object-[82%_center]
+            object-center
           "
         />
 
-        {/* Gradient Overlay */}
+        {/* Dark Overlay */}
+
+        <div className="absolute inset-0 bg-black/15" />
+
+        {/* Left Gradient */}
 
         <div
           className="
             absolute
-            inset-0
+            inset-y-0
+            left-0
+            w-[58%]
 
             bg-gradient-to-r
-
-            from-[#6A95AA]/75
-
-            via-[#88AFC0]/35
-
+            from-[#355062]/85
+            via-[#355062]/55
             to-transparent
           "
         />
+      </div>
 
-        {/* Content */}
+      {/* ================= CONTENT ================= */}
 
-        <div className="relative z-10 h-full">
+      <div
+        className="
+          relative
+          z-20
+
+          mx-auto
+
+          flex
+          items-center
+
+          h-full
+
+          max-w-[1440px]
+
+          px-[100px]
+        "
+      >
+        <div className="max-w-[560px]">
+
+          {/* Title */}
+
+          <h1
+            className="
+              text-white
+
+              text-[58px]
+
+              font-bold
+
+              leading-none
+            "
+          >
+            {t("hero.title")}
+          </h1>
+
+          {/* Description */}
+
+          <p
+            className="
+              mt-8
+
+              max-w-[500px]
+
+              text-[17px]
+
+              leading-[34px]
+
+              text-white/95
+            "
+          >
+            {t("hero.description")}
+          </p>
+
+          {/* Line */}
 
           <div
             className="
-              mx-auto
+              mt-10
 
-              flex
+              h-[5px]
 
-              h-full
+              w-[260px]
 
-              max-w-[1440px]
+              rounded-full
 
-              items-center
+              bg-gradient-to-r
 
-              px-7
+              from-cyan-300
 
-              md:px-10
-
-              lg:px-14
+              to-[#0098C9]
             "
-          >
-
-            <div
-              className="
-                max-w-[460px]
-
-                lg:max-w-[470px]
-              "
-            >
-
-              {/* Title */}
-
-              <h1
-                className="
-                  font-serif
-
-                  font-semibold
-
-                  text-white
-
-                  text-[38px]
-
-                  leading-tight
-
-                  md:text-[44px]
-
-                  lg:text-[50px]
-
-                  lg:leading-[58px]
-                "
-              >
-                {t("title")}
-              </h1>
-
-              {/* Description */}
-
-              <p
-                className="
-                  mt-7
-
-                  text-white
-
-                  text-[14px]
-
-                  leading-[24px]
-
-                  md:text-[15px]
-
-                  md:leading-[26px]
-
-                  lg:max-w-[430px]
-                "
-              >
-                {t("description")}
-              </p>
-
-              {/* Decoration */}
-
-              <Image
-                src="/images/Decore.png"
-                alt=""
-                width={220}
-                height={16}
-                className="
-                  mt-6
-
-                  w-[170px]
-
-                  lg:w-[220px]
-                "
-              />
-
-            </div>
-
-          </div>
+          />
 
         </div>
-
       </div>
 
+      {/* ================= BOTTOM GLOW ================= */}
+
+      <div
+        className="
+          absolute
+
+          -bottom-[210px]
+
+          left-1/2
+
+          h-[420px]
+
+          w-[1250px]
+
+          -translate-x-1/2
+
+          rounded-full
+
+          bg-cyan-300/40
+
+          blur-[150px]
+        "
+      />
     </section>
   );
 }

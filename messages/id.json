@@ -611,42 +611,39 @@
 },
 "About": {
   "hero": {
-    "title": "About Us",
-    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation through software development, professional IT services, and innovative technology solutions."
-  },
+    "title": "Tentang Kami",
+    "description": "Permana Solutions menawarkan solusi TI terintegrasi untuk mempercepat transformasi digital perusahaan Anda. Melalui pengembangan perangkat lunak inovatif serta layanan TI dan manajemen profesional, kami membantu meningkatkan efisiensi, mendorong pertumbuhan, dan memperkuat ekosistem digital bisnis Anda." },
 
   "profile": {
-    "title": "Our Profile",
-    "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through the PERMANA technology ecosystem."
-  },
+    "label": "Profil Kami",
+    "description": "PERMANA adalah perusahaan penyedia solusi teknologi yang berfokus pada inovasi berkelanjutan untuk membantu dunia bisnis menghadapi peluang masa depan dengan mengoptimalkan teknologi yang terhubung ke ekosistem teknologi PERMANA." },
 
   "company": {
     "title": "Permana Solutions",
-    "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of PERMANA Corporation, focusing on digital solutions, application development, connectivity services, and professional IT resources."
-  },
+    "description": "Didirikan pada bulan November 2020 di Jakarta, Permana Solutions merupakan bagian dari PERMANA Corporation. Perusahaan ini berfokus pada pengembangan solusi digital untuk meningkatkan produktivitas perusahaan, dengan layanan yang ditawarkan meliputi: Permana Applications, Permana Internet, dan Permana Expert."  },
 
   "visionMission": {
-    "title": "Vision & Mission",
+    "title": "Visi & Misi",
 
-    "visionTitle": "Vision",
+    "visionTitle": "Visi",
 
-    "visionDescription": "Driving innovation through collaboration and creativity, delivering solutions that transform the way people interact with technology.",
+    "visionDescription": "Mendorong inovasi melalui kolaborasi dan kreativitas, menghadirkan solusi yang mengubah cara orang berinteraksi dengan teknologi.",
 
-    "missionTitle": "Mission",
+    "missionTitle": "Misi",
 
     "missions": [
-      "Provide innovative and high-quality IT solutions.",
-      "Deliver reliable and secure cloud connectivity.",
-      "Become a trusted software and IT partner.",
-      "Optimize technology resources for business productivity.",
-      "Deliver responsive service and excellent technical support."
+      "Menyediakan Solusi TI Inovatif dan Berkualitas Tinggi untuk Mendukung Transformasi Digital Klien Kami.",
+      "Menyediakan Internet Cloud yang Andal dan Aman, Memastikan Konektivitas Tanpa Hambatan untuk Pertumbuhan Bisnis.",
+      "Menjadi Mitra Tepercaya dalam Pengembangan Perangkat Lunak dan TI, Membantu Klien Kami Mencapai Tujuan Strategis Mereka dengan Efisien.",
+      "Mengoptimalkan Sumber Daya TI untuk Membantu Perusahaan Meningkatkan Produktivitas dan Daya Saing di Era Digital.",
+      "Memberikan Layanan Responsif dan Dukungan Teknis yang Unggul, Memastikan Kepuasan Pelanggan dan Keberhasilan Proyek."
     ]
   },
 
   "team": {
-    "title": "Meet Our Exceptional Team",
-    "subtitle": "The People Behind Permana Solutions",
-    "description": "Driven by innovation and united by shared values, our professionals create impactful technology experiences."
+    "title": "Kenali Tim Kami yang Luar Biasa",
+    "subtitle": "Sosok di Balik Permana Solutions",
+    "description": "Didorong oleh inovasi dan dipersatukan oleh visi bersama, para profesional kami bekerja sama untuk menghadirkan pengalaman teknologi yang bermakna."
   }
 }
 }
