@@ -101,6 +101,7 @@ body {
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }}
 ::view-transition-old(root) {
   animation: slide-out 0.5s ease;
 }
