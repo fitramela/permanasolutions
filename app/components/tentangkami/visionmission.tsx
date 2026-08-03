@@ -1,56 +1,124 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export default function VisionMission() {
-  const t = useTranslations("About.visionMission");
+  const t = useTranslations("About");
 
-  const missions = t.raw("missions") as string[];
+  const missions = t.raw("visionMission.missions") as string[];
 
   return (
-    <section className="py-16">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:px-16">
+    <section
+      className="
+        relative
+        py-[130px]
+      "
+    >
+      {/* Left Decoration */}
 
-        {/* Left */}
+      <Image
+        src="/images/bgkiripng.png"
+        alt=""
+        aria-hidden
+        width={310}
+        height={1200}
+        className="
+          absolute
+          left-[-110px]
+          top-[60px]
+          w-[310px]
+          h-auto
+          opacity-90
+          select-none
+        "
+      />
+
+      <div
+        className="
+          relative
+          grid
+          items-start
+          gap-[90px]
+          lg:grid-cols-[360px_1fr]
+        "
+      >
+        {/* ================= LEFT ================= */}
 
         <div>
-
-          <div className="inline-flex items-center rounded-r-full bg-[#E4F3FB] px-10 py-5">
-            <h2 className="font-serif text-4xl font-bold text-[#005D86]">
-              {t("title")}
-            </h2>
-          </div>
-
+          <Image
+            src="/images/ourProfileRibbon.png"
+            alt="Vision & Mission"
+            width={430}
+            height={80}
+            priority
+            className="
+              w-[430px]
+              h-auto
+              select-none
+            "
+          />
         </div>
 
-        {/* Right */}
+        {/* ================= RIGHT ================= */}
 
         <div>
+          {/* Vision */}
 
-          <h3 className="font-serif text-4xl font-bold text-[#005D86]">
-            {t("visionTitle")}
-          </h3>
+          <h2
+            className="
+              text-[50px]
+              font-bold
+              leading-none
+              text-[#005D86]
+            "
+          >
+            {t("visionMission.visionTitle")}
+          </h2>
 
-          <p className="mt-4 text-gray-600 leading-8">
-            {t("visionDescription")}
+          <p
+            className="
+              mt-8
+              max-w-[760px]
+              text-[16px]
+              leading-[34px]
+              text-[#666666]
+            "
+          >
+            {t("visionMission.visionDescription")}
           </p>
 
-          <h3 className="mt-12 font-serif text-4xl font-bold text-[#005D86]">
-            {t("missionTitle")}
-          </h3>
+          {/* Mission */}
 
-          <ol className="mt-6 space-y-4 text-gray-600">
+          <h2
+            className="
+              mt-[80px]
+              text-[50px]
+              font-bold
+              leading-none
+              text-[#005D86]
+            "
+          >
+            {t("visionMission.missionTitle")}
+          </h2>
 
-            {missions.map((item, index) => (
-              <li key={index}>
-                {index + 1}. {item}
-              </li>
+          <ol
+            className="
+              mt-8
+              max-w-[800px]
+              space-y-6
+              pl-6
+              list-decimal
+              text-[16px]
+              leading-[34px]
+              text-[#666666]
+            "
+          >
+            {missions.map((mission, index) => (
+              <li key={index}>{mission}</li>
             ))}
-
           </ol>
-
         </div>
-
       </div>
     </section>
   );

@@ -633,7 +633,7 @@
 "About": {
   "hero": {
     "title": "About Us",
-    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation through software development, professional IT services, and innovative technology solutions."
+    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation. Through innovative software development and professional IT and managed services, we help enhance efficiency, drive growth, and strengthen your business's digital ecosystem."
   },
 
   "profile": {
@@ -656,18 +656,18 @@
     "missionTitle": "Mission",
 
     "missions": [
-      "Provide innovative and high-quality IT solutions.",
-      "Deliver reliable and secure cloud connectivity.",
-      "Become a trusted software and IT partner.",
-      "Optimize technology resources for business productivity.",
-      "Deliver responsive service and excellent technical support."
+      "Providing Innovative, High-Quality IT Solutions to Support Our Clients' Digital Transformation.",
+      "Providing Reliable and Secure Cloud Internet, Ensuring Seamless Connectivity for Business Growth.",
+      "Becoming a Trusted Partner in Software and IT Development, Helping Our Clients Efficiently Achieve Their Strategic Goals.",
+      "Optimizing IT Resources to Help Companies Boost Productivity and Competitiveness in the Digital Era.",
+      "Providing responsive service and superior technical support, driving customer satisfaction and project success."
     ]
   },
 
   "team": {
     "title": "Meet Our Exceptional Team",
     "subtitle": "The People Behind Permana Solutions",
-    "description": "Driven by innovation and united by shared values, our professionals create impactful technology experiences."
+    "description": "Driven by innovation and united by a shared vision, our professionals work together to deliver meaningful technology experiences."
   }
 }
 }
