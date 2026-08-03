@@ -93,50 +93,52 @@ export default function Asp() {
         </div>
 
         {/* ASP CARDS */}
-        <div className="mt-12 flex items-end justify-center gap-4 overflow-x-auto pb-4 lg:gap-6">
-          {/* IMAGE */}
-          <div className="relative h-[240px] w-[145px] flex-shrink-0 overflow-hidden rounded-[30px] lg:h-[320px] lg:w-[190px]">
-            <Image
-              src="/images/image 44.png"
-              alt="ASP"
-              fill
-              className="object-cover"
-            />
-          </div>
+<div className="mt-12 flex justify-center overflow-hidden">
+  <div className="flex items-end gap-3 origin-top scale-[0.58] sm:scale-[0.78] lg:scale-100 lg:gap-4">
+    {/* IMAGE */}
+    <div className="relative h-[320px] w-[190px] flex-shrink-0 overflow-hidden rounded-[30px]">
+      <Image
+        src="/images/image 44.png"
+        alt="ASP"
+        fill
+        className="object-cover"
+      />
+    </div>
 
-          {/* CARD 1 */}
-          <div className="flex h-[240px] w-[190px] items-center justify-center rounded-[30px] bg-[linear-gradient(180deg,#0D668A_0%,#0A5F7E_45%,#062F44_100%)] px-6 text-center text-white">
-            <p className="max-w-[300px] text-[14px] leading-5">
-              {t("card1")}
-            </p>
-          </div>
+    {/* CARD 1 */}
+    <div className="flex h-[240px] w-[190px] items-center justify-center rounded-[30px] bg-[linear-gradient(180deg,#0D668A_0%,#0A5F7E_45%,#062F44_100%)] px-6 text-center text-white">
+      <p className="max-w-[300px] text-[14px] leading-5">
+        {t("card1")}
+      </p>
+    </div>
 
-          {/* CARD 2 */}
-<div className="flex h-[155px] w-[150px] flex-shrink-0 items-center justify-center rounded-[28px] border border-[#1F3A5F]/8 bg-white/20 lg:h-[190px] lg:w-[190px]">
-  <p className="max-w-[130px] text-center text-[15px] leading-5 text-[#1F3A5F]">
-    {t("card2")}
-  </p>
+    {/* CARD 2 */}
+    <div className="flex h-[185px] w-[190px] items-center justify-center rounded-[30px] border border-gray-200 bg-white px-6 text-center shadow-sm">
+      <p className="text-[16px] leading-7 text-[#233B5A]">
+        {t("card2")}
+      </p>
+    </div>
+
+    {/* CARD 3 */}
+    <div className="flex h-[240px] w-[190px] flex-col items-center justify-center rounded-[30px] bg-[#9FC8DC] text-white">
+      <h3 className="text-5xl">5+</h3>
+
+      <p className="mt-3 w-36 text-center text-sm leading-6">
+        {t("card3")}
+      </p>
+    </div>
+
+    {/* CARD 4 */}
+    <div className="relative flex h-[320px] w-[190px] items-center justify-center overflow-hidden rounded-[30px] bg-[#0A4D69] px-4 text-center text-white">
+      <div className="absolute -left-7 -top-7 h-24 w-24 rounded-full border-[18px] border-[#0D7CA8]/30" />
+      <div className="absolute -left-2 -top-2 h-12 w-12 rounded-full bg-[#062F42]" />
+
+      <p className="relative text-sm leading-7">
+        {t("card4")}
+      </p>
+    </div>
+  </div>
 </div>
-
-          {/* CARD 3 */}
-          <div className="flex h-[185px] w-[150px] flex-shrink-0 flex-col items-center justify-center rounded-[30px] bg-[#9FC8DC] text-white lg:h-[240px] lg:w-[190px]">
-            <h3 className="text-4xl lg:text-5xl">5+</h3>
-
-            <p className="mt-3 w-28 text-center text-[16px] leading-5 lg:w-36 lg:text-sm lg:leading-6">
-              {t("card3")}
-            </p>
-          </div>
-
-          {/* CARD 4 */}
-          <div className="relative flex h-[240px] w-[145px] flex-shrink-0 items-center justify-center overflow-hidden rounded-[30px] bg-[#0A4D69] px-4 text-center text-white lg:h-[320px] lg:w-[190px]">
-            <div className="absolute -left-7 -top-7 h-20 w-20 rounded-full border-[14px] border-[#0D7CA8]/30 lg:h-24 lg:w-24 lg:border-[18px]" />
-            <div className="absolute -left-2 -top-2 h-10 w-10 rounded-full bg-[#062F42] lg:h-12 lg:w-12" />
-
-            <p className="relative text-xs leading-5 lg:text-sm lg:leading-7">
-              {t("card4")}
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 

@@ -600,5 +600,62 @@
         "subtitle": "The People Behind Permana Solutions",
         "description": "Driven by innovation and united by shared values, our professionals create impactful technology experiences."
       }
+
     }
   }
+
+    ]
+  },
+
+  "powering": {
+    "title": "Powering Innovation With"
+  
+},
+
+
+
+"Footer": {
+  "copyright": "© 2026 PT Medianusa Permana"
+
+},
+"About": {
+  "hero": {
+    "title": "About Us",
+    "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation. Through innovative software development and professional IT and managed services, we help enhance efficiency, drive growth, and strengthen your business's digital ecosystem."
+  },
+
+  "profile": {
+    "title": "Our Profile",
+    "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through the PERMANA technology ecosystem."
+  },
+
+  "company": {
+    "title": "Permana Solutions",
+    "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of PERMANA Corporation, focusing on digital solutions, application development, connectivity services, and professional IT resources."
+  },
+
+  "visionMission": {
+    "title": "Vision & Mission",
+
+    "visionTitle": "Vision",
+
+    "visionDescription": "Driving innovation through collaboration and creativity, delivering solutions that transform the way people interact with technology.",
+
+    "missionTitle": "Mission",
+
+    "missions": [
+      "Providing Innovative, High-Quality IT Solutions to Support Our Clients' Digital Transformation.",
+      "Providing Reliable and Secure Cloud Internet, Ensuring Seamless Connectivity for Business Growth.",
+      "Becoming a Trusted Partner in Software and IT Development, Helping Our Clients Efficiently Achieve Their Strategic Goals.",
+      "Optimizing IT Resources to Help Companies Boost Productivity and Competitiveness in the Digital Era.",
+      "Providing responsive service and superior technical support, driving customer satisfaction and project success."
+    ]
+  },
+
+  "team": {
+    "title": "Meet Our Exceptional Team",
+    "subtitle": "The People Behind Permana Solutions",
+    "description": "Driven by innovation and united by a shared vision, our professionals work together to deliver meaningful technology experiences."
+  }
+}
+

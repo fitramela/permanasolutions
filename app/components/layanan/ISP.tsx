@@ -98,6 +98,15 @@ export default function ISP() {
   <div className="absolute left-1/2 top-20 h-56 w-56 -translate-x-1/2 rounded-full bg-cyan-300/30 blur-[120px]" />
 
   <div className="relative mx-auto max-w-7xl px-6">
+    <div className="mb-12 text-center">
+  <h2 className="text-4xl font-semibold leading-none lg:text-5xl">
+    {t("premiumTitle")}
+    <br />
+    <span className="text-[#04BCBC]">
+      {t("premiumTitle2")}
+    </span>
+  </h2>
+</div>
 
    {/* Cards */}
 <div className="group grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -113,6 +122,7 @@ export default function ISP() {
         hover:!opacity-100
       "
     >
+      
       {/* Highlight */}
       <div
         className="
