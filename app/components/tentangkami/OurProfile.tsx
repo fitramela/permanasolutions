@@ -10,37 +10,56 @@ export default function OurProfile() {
     <section
       className="
         relative
-        pt-[90px]
-        pb-[110px]
+        pt-[120px]
+        pb-[140px]
       "
     >
-      {/* ========================= */}
       {/* Ribbon */}
-      {/* ========================= */}
-
-      <div className="flex justify-start">
+      <div className="relative h-[120px]">
+    
         <Image
-          src="/images/ourprofile.png"
-          alt="Our Profile"
-          width={512}
-          height={96}
+          src="/images/ourteks.png"
+          alt=""
+          width={850}
+          height={160}
           priority
           className="
+            absolute
+            left-[-510px]
+            top-[-90px]
+
+            w-[850px]
             h-auto
-            w-[430px]
+
             select-none
+            pointer-events-none
           "
         />
+
+        <h2
+          className="
+            absolute
+            left-[10px]
+            top-[-30px]
+
+            text-white
+            text-[43px]
+            font-bold
+            font-serif
+            leading-none
+          "
+        >
+          {t("ourProfile.title")}
+        </h2>
+
       </div>
 
-      {/* ========================= */}
       {/* Description */}
-      {/* ========================= */}
 
       <div
         className="
+          mt-[60px]
           mx-auto
-          mt-[50px]
           max-w-[1120px]
         "
       >
@@ -48,15 +67,14 @@ export default function OurProfile() {
           className="
             text-center
             text-[17px]
-            leading-[34px]
-            tracking-[0.01em]
-            font-normal
-            text-[#5C5C5C]
+            leading-[36px]
+            text-[#555555]
           "
         >
-          {t("profile.description")}
+          {t("ourProfile.description")}
         </p>
       </div>
+
     </section>
   );
 }

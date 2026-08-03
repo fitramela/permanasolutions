@@ -10,7 +10,8 @@ export default function PermanaSolutions() {
     <section
       className="
         relative
-        py-[120px]
+        pt-[150px]
+pb-[170px]
       "
     >
       <div
@@ -27,7 +28,7 @@ export default function PermanaSolutions() {
         <div>
           <h2
             className="
-              text-[52px]
+              text-[58px]
               font-bold
               leading-[1.1]
               text-[#005D86]
@@ -51,7 +52,7 @@ export default function PermanaSolutions() {
           <p
             className="
               mt-10
-              max-w-[610px]
+              max-w-[310px]
               text-[16px]
               leading-[34px]
               text-[#666666]
@@ -91,7 +92,7 @@ export default function PermanaSolutions() {
           {/* Logo */}
 
           <Image
-            src="/images/logoPermana.png"
+            src="/images/pErmana.png"
             alt="Permana Solutions"
             width={500}
             height={500}

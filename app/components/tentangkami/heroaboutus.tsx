@@ -11,8 +11,7 @@ export default function HeroAboutUs() {
       className="
         relative
         overflow-hidden
-        h-[760px]
-        bg-white
+        h-[900px]
       "
     >
       {/* ================= BACKGROUND ================= */}
@@ -20,7 +19,7 @@ export default function HeroAboutUs() {
       <div className="absolute inset-0">
 
         <Image
-          src="/images/AboutuS.png"
+          src="/images/AboutUs.png"
           alt="About Us"
           fill
           priority
@@ -30,26 +29,7 @@ export default function HeroAboutUs() {
           "
         />
 
-        {/* Dark Overlay */}
-
-        <div className="absolute inset-0 bg-black/15" />
-
-        {/* Left Gradient */}
-
-        <div
-          className="
-            absolute
-            inset-y-0
-            left-0
-            w-[58%]
-
-            bg-gradient-to-r
-            from-[#355062]/85
-            via-[#355062]/55
-            to-transparent
-          "
-        />
-      </div>
+       </div>
 
       {/* ================= CONTENT ================= */}
 
@@ -129,29 +109,7 @@ export default function HeroAboutUs() {
         </div>
       </div>
 
-      {/* ================= BOTTOM GLOW ================= */}
-
-      <div
-        className="
-          absolute
-
-          -bottom-[210px]
-
-          left-1/2
-
-          h-[420px]
-
-          w-[1250px]
-
-          -translate-x-1/2
-
-          rounded-full
-
-          bg-cyan-300/40
-
-          blur-[150px]
-        "
-      />
+      
     </section>
   );
 }

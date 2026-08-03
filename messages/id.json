@@ -621,8 +621,8 @@
     "title": "Tentang Kami",
     "description": "Permana Solutions menawarkan solusi TI terintegrasi untuk mempercepat transformasi digital perusahaan Anda. Melalui pengembangan perangkat lunak inovatif serta layanan TI dan manajemen profesional, kami membantu meningkatkan efisiensi, mendorong pertumbuhan, dan memperkuat ekosistem digital bisnis Anda." },
 
-  "profile": {
-    "label": "Profil Kami",
+  "ourProfile": {
+    "title": "Profil Kami",
     "description": "PERMANA adalah perusahaan penyedia solusi teknologi yang berfokus pada inovasi berkelanjutan untuk membantu dunia bisnis menghadapi peluang masa depan dengan mengoptimalkan teknologi yang terhubung ke ekosistem teknologi PERMANA." },
 
   "company": {

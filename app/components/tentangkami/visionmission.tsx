@@ -122,4 +122,4 @@ export default function VisionMission() {
       </div>
     </section>
   );
-}
+} 
