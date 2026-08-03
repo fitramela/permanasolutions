@@ -5,17 +5,19 @@ import OurProfile from "./OurProfile"
 import PermanaSolutions from "./PermanaSolutions";
 import VisionMission from "./visionmission";
 import  MeetTeam  from "./MeetTeam";
+import  TeamSection  from "./teamsection";
 
 export default function CompanySection() {
   return (
     <section
-      id="company"
-      className="
-        relative
-        overflow-hidden
-        bg-white
-      "
-    >
+  id="company"
+  className="
+    relative
+    overflow-hidden
+    -mt-[80px]
+    z-30
+  "
+>
       {/* Background Decoration */}
 
       <BackgroundCanvas />
@@ -51,6 +53,8 @@ export default function CompanySection() {
         <VisionMission />
 
         <MeetTeam />
+
+        <TeamSection />
       </div>
     </section>
   );

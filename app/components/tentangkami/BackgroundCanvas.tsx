@@ -12,26 +12,10 @@ export default function BackgroundCanvas() {
         pointer-events-none
       "
     >
-      {/* Glow */}
-
-      <div
-        className="
-          absolute
-          left-1/2
-          top-[-140px]
-          -translate-x-1/2
-          h-[300px]
-          w-[1100px]
-          rounded-full
-          bg-cyan-300/30
-          blur-[140px]
-        "
-      />
-
       {/* Background kiri */}
 
       <Image
-        src="/images/BGkiri.png"
+        src="/images/bgkiri2permana.png"
         alt=""
         width={320}
         height={1200}
@@ -45,10 +29,10 @@ export default function BackgroundCanvas() {
         "
       />
 
-      {/* Dot */}
+      {/* Dot Pattern */}
 
       <Image
-        src="/images/bgkiripermana.png"
+        src="/images/imageg.png"
         alt=""
         width={380}
         height={380}
