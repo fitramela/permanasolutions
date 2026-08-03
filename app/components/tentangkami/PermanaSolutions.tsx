@@ -10,102 +10,65 @@ export default function PermanaSolutions() {
     <section
       className="
         relative
-        pt-[150px]
-pb-[170px]
+        py-[150px]
       "
     >
-      <div
-        className="
-          grid
-          items-center
-          gap-[90px]
+      <div className="relative -mt-[120px]">
 
-          lg:grid-cols-[620px_1fr]
-        "
-      >
-        {/* ================= LEFT ================= */}
+        {/* Logo kanan */}
 
-        <div>
-          <h2
-            className="
-              text-[58px]
-              font-bold
-              leading-[1.1]
-              text-[#005D86]
-            "
-          >
-            {t("company.title")}
-          </h2>
-
-          <div
-            className="
-              mt-8
-              h-[5px]
-              w-[160px]
-              rounded-full
-              bg-gradient-to-r
-              from-cyan-300
-              to-cyan-500
-            "
-          />
-
-          <p
-            className="
-              mt-10
-              max-w-[310px]
-              text-[16px]
-              leading-[34px]
-              text-[#666666]
-            "
-          >
-            {t("company.description")}
-          </p>
-        </div>
-
-        {/* ================= RIGHT ================= */}
-
-        <div
+        <Image
+          src="/images/pErmana.png"
+          alt="Permana Solutions"
+          width={520}
+          height={220}
+          priority
           className="
-            relative
-            flex
-            justify-center
-            lg:justify-end
+            absolute
+            right-[-120px]
+            top-[-215px]
+
+            w-[350px]
+            h-auto
+
+            select-none
+          "
+        />
+
+        {/* Title */}
+
+        <h2
+          className="
+            max-w-[620px]
+
+            text-[38px]
+            font-bold
+            leading-[1.05]
+
+            text-[#005D86]
           "
         >
-          {/* Glow */}
+          {t("company.title")}
+        </h2>
 
-          <div
-            className="
-              absolute
-              left-1/2
-              top-1/2
-              h-[320px]
-              w-[320px]
-              -translate-x-1/2
-              -translate-y-1/2
-              rounded-full
-              bg-cyan-300/25
-              blur-[120px]
-            "
-          />
+        {/* Description */}
 
-          {/* Logo */}
+        <p
+  className="
+    mt-[18px]
 
-          <Image
-            src="/images/pErmana.png"
-            alt="Permana Solutions"
-            width={500}
-            height={500}
-            priority
-            className="
-              relative
-              h-auto
-              w-[420px]
-              select-none
-              xl:w-[500px]
-            "
-          />
-        </div>
+    max-w-[860px]
+
+    text-[17px]
+    leading-[34px]
+
+    tracking-[0.01em]
+
+    text-[#5C5C5C]
+  "
+>
+  {t("company.description")}
+</p>
       </div>
     </section>
   );
