@@ -22,8 +22,8 @@ export default function BackgroundCanvas() {
         className="
           absolute
           left-0
-          top-[150px]
-          w-[320px]
+          top-[110px]
+          w-[370px]
           h-auto
           select-none
         "
@@ -38,9 +38,9 @@ export default function BackgroundCanvas() {
         height={380}
         className="
           absolute
-          left-[-20px]
-          top-[1580px]
-          w-[360px]
+          left-[-50px]
+          top-[850px]
+          w-[450px]
           h-auto
           opacity-70
         "
