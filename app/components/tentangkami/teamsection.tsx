@@ -1,76 +1,183 @@
 "use client";
 
+import { useRef } from "react";
 import TeamCard from "./teamcard";
 import { teamData } from "./teamdata";
 
 export default function TeamSection() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+
+    const cardWidth = 320 + 24; // lebar card + gap
+
+    sliderRef.current.scrollBy({
+      left: direction === "left" ? -cardWidth : cardWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#F7FCFE] py-20 lg:py-28">
+    <section
+      className="
+        relative
+        py-[90px]
 
-      {/* Glow */}
-      <div className="absolute -left-40 top-20 h-[340px] w-[340px] rounded-full bg-[#7BE7FF]/20 blur-[120px]" />
+        overflow-visible
+      "
+    >
+      {/* Glow kiri */}
 
-      <div className="absolute -right-40 bottom-10 h-[340px] w-[340px] rounded-full bg-[#8DDFFF]/20 blur-[120px]" />
+      <div
+        className="
+          absolute
+          left-[-180px]
+          top-[180px]
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
+          h-[340px]
+          w-[340px]
 
-        {/* Heading */}
+          rounded-full
 
-        <div className="mx-auto max-w-3xl text-center">
+          bg-[#F3F3F3]
 
-          
+          blur-[120px]
+        "
+      />
 
-        </div>
+      {/* Glow kanan */}
 
-        {/* Team */}
+      <div
+        className="
+          absolute
+          right-[-180px]
+          bottom-[60px]
+
+          h-[340px]
+          w-[340px]
+
+          rounded-full
+
+          bg-[#B5F1FF]/20
+
+          blur-[120px]
+        "
+      />
+
+      <div className="relative">
+
+        {/* Arrow Left */}
+
+        <button
+          onClick={() => scroll("left")}
+          className="
+            absolute
+
+            left-[20px]
+            top-1/2
+
+            -translate-y-1/2
+
+            z-30
+
+            flex
+            items-center
+            justify-center
+
+            w-[54px]
+            h-[54px]
+
+            rounded-full
+
+            bg-white
+
+            shadow-lg
+
+            transition
+
+            hover:scale-105
+          "
+        >
+          ❮
+        </button>
+
+        {/* Arrow Right */}
+
+        <button
+          onClick={() => scroll("right")}
+          className="
+            absolute
+
+            right-[20px]
+            top-1/2
+
+            -translate-y-1/2
+
+            z-30
+
+            flex
+            items-center
+            justify-center
+
+            w-[54px]
+            h-[54px]
+
+            rounded-full
+
+            bg-white
+
+            shadow-lg
+
+            transition
+
+            hover:scale-105
+          "
+        >
+          ❯
+        </button>
+
+        {/* Slider */}
 
         <div
+          ref={sliderRef}
           className="
-          mt-20
+            flex
 
-          flex
+            gap-6
 
-          gap-6
+            overflow-x-auto
+            overflow-y-visible
+            
+            w-full
+            h-auto
+            
+            scroll-smooth
+            scrollbar-hide
 
-          overflow-x-auto
-
-          scroll-smooth
-
-          snap-x
-
-          snap-proximity
-
-          px-1
-
-          pt-24
-
-          pb-6
-
-          scrollbar-hide
-        "
+            px-[70px]
+            pt-[80px]
+            pb-[30px]
+          "
         >
           {teamData.map((member) => (
             <div
               key={member.id}
               className="
-                snap-start
-
                 shrink-0
 
-                w-[88%]
+                w-[320px]
 
-                sm:w-[340px]
+                md:w-[310px]
 
-                lg:w-[310px]
+                xl:w-[300px]
               "
             >
               <TeamCard member={member} />
             </div>
           ))}
         </div>
-
       </div>
-
     </section>
   );
 }

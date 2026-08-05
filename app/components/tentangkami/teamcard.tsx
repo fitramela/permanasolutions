@@ -11,51 +11,60 @@ export default function TeamCard({ member }: TeamCardProps) {
   return (
     <article
       className="
-        group
         relative
+
         flex
-        h-full
-        min-h-[390px]
         flex-col
-        rounded-[32px]
+        items-center
+
+        h-[345px]
+
+        rounded-[14px]
+
+        border
+        border-[#E9EEF3]
+
         bg-white
-        px-7
-        pb-8
-        pt-24
-        shadow-[0_12px_40px_rgba(0,93,134,.08)]
+
+        px-5
+        pt-[82px]
+        pb-5
+
+        shadow-[0_8px_22px_rgba(0,0,0,.04)]
+
         transition-all
         duration-300
+
         hover:-translate-y-2
-        hover:shadow-[0_20px_55px_rgba(0,93,134,.18)]
       "
     >
-      {/* Photo */}
+      {/* FOTO */}
 
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+      <div
+        className="
+          absolute
+          left-1/2
+          top-0
 
+          -translate-x-1/2
+          -translate-y-[48%]
+        "
+      >
         <div
           className="
             relative
 
-            h-[140px]
-            w-[140px]
+            h-[118px]
+            w-[118px]
 
             overflow-hidden
 
             rounded-full
 
-            border-[6px]
-            border-white
+            border-[4px]
+            border-[#DDE8EF]
 
-            shadow-xl
-
-            transition-transform
-            duration-500
-
-            group-hover:scale-105
-
-            lg:h-[160px]
-            lg:w-[160px]
+            bg-white
           "
         >
           <Image
@@ -65,79 +74,62 @@ export default function TeamCard({ member }: TeamCardProps) {
             className="object-cover object-top"
           />
         </div>
-
       </div>
 
-      {/* Position */}
+      {/* POSITION */}
 
-      <div className="flex justify-center">
+      <span
+        className="
+          rounded-full
 
-        <span
-          className="
-            rounded-full
+          bg-[#13C6D6]
 
-            bg-gradient-to-r
+          px-4
+          py-[3px]
 
-            from-cyan-400
-            to-sky-500
+          text-[10px]
+          font-semibold
 
-            px-5
-            py-2
+          text-white
+        "
+      >
+        {member.position}
+      </span>
 
-            text-xs
-
-            font-semibold
-
-            tracking-wide
-
-            text-white
-          "
-        >
-          {member.position}
-        </span>
-
-      </div>
-
-      {/* Name */}
+      {/* NAMA */}
 
       <h3
         className="
-          mt-6
+          mt-4
 
           text-center
 
-          text-xl
+          text-[16px]
+          font-semibold
 
-          font-bold
-
-          text-[#005D86]
-
-          lg:text-2xl
+          text-[#202020]
         "
       >
         {member.name}
       </h3>
 
-      {/* Description */}
+      {/* DESKRIPSI */}
 
       <p
         className="
-          mt-5
-
-          flex-1
+          mt-4
 
           text-center
 
-          text-sm
+          text-[12px]
 
-          leading-7
+          leading-[22px]
 
-          text-[#6B7280]
+          text-[#666]
         "
       >
         {member.description}
       </p>
-
     </article>
   );
 }

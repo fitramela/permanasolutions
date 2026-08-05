@@ -10,10 +10,10 @@ export default function PermanaSolutions() {
     <section
       className="
         relative
-        py-[150px]
+        py-[100px]
       "
     >
-      <div className="relative -mt-[120px]">
+      <div className="relative -mt-[60px]">
 
         {/* Logo kanan */}
 
@@ -26,22 +26,22 @@ export default function PermanaSolutions() {
           className="
             absolute
             right-[-120px]
-            top-[-215px]
+            top-[-139px]
 
-            w-[350px]
+            w-[330px]
             h-auto
 
             select-none
           "
         />
-
+<div className="ml-[-25px]">
         {/* Title */}
 
         <h2
           className="
             max-w-[620px]
 
-            text-[38px]
+            text-[35px]
             font-bold
             leading-[1.05]
 
@@ -55,12 +55,12 @@ export default function PermanaSolutions() {
 
         <p
   className="
-    mt-[18px]
+    mt-[14px]
 
-    max-w-[860px]
+    max-w-[1300px]
 
-    text-[17px]
-    leading-[34px]
+    text-[18px]
+    leading-[27px]
 
     tracking-[0.01em]
 
@@ -69,6 +69,7 @@ export default function PermanaSolutions() {
 >
   {t("company.description")}
 </p>
+</div>
       </div>
     </section>
   );

@@ -1,59 +1,68 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function MeetTeam() {
+  const t = useTranslations("About");
+
   return (
-    <section className="py-[120px]">
-       <h2
-            className="
-            text-3xl
+    <section className="py-[30px]">
+      <div
+        className="
+          mx-auto
+          flex
+          flex-col
+          items-center
+          text-center
+           -mt-[110px]   /* naik */
+        "
+      >
+        {/* Title */}
+
+        <h2
+          className="
+            text-[40px]
             font-bold
+            leading-none
             text-[#005D86]
-
-            md:text-4xl
-
-            lg:text-5xl
           "
-          >
-            Meet Our Exceptional Team
-          </h2>
+        >
+          {t("team.title")}
+        </h2>
 
-          <h3
-            className="
-            mt-3
+        {/* Subtitle */}
 
-            text-2xl
+        <h3
+          className="
+            mt-[8px]
+
+            text-[43px]
             font-bold
+            leading-none
 
             text-[#005D86]
-
-            md:text-3xl
-
-            lg:text-[38px]
           "
-          >
-            The People Behind Permana Solutions
-          </h3>
+        >
+          {t("team.subtitle")}
+        </h3>
 
-          <p
-            className="
-            mx-auto
+        {/* Description */}
 
-            mt-6
+        <p
+          className="
+            mt-[8px]
 
-            max-w-2xl
+            max-w-[1020px]
 
             text-[15px]
+            leading-[28px]
 
-            leading-8
-
-            text-[#6D6D6D]
-
-            lg:text-base
+            text-[#666666]
           "
-          >
-            Driven by innovation and united by a shared vision, our professionals work together to deliver reliable engineering,
-            technology, and digital solutions for every client.
-          </p>
+        >
+          {t("team.description")}
+        </p>
+      </div>
     </section>
   );
 }
