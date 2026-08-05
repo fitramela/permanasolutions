@@ -37,12 +37,15 @@ export default function Solutions() {
             </p>
 
             <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
-  <Link
-    href="/company-profile"
-    className="rounded-lg border border-white/30 bg-[#00628D]/30 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-[#00628D]/50"
+
+<a
+    href="/Compro Permana 2026 R1.pdf"
+   className="rounded-lg border border-white/30 bg-[#00628D]/30 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-[#00628D]/50"
   >
     {t("profileButton")}
-  </Link>
+   
+  </a>
+  
 
   <Link
     href="/contact"

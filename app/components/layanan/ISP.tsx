@@ -20,16 +20,16 @@ export default function ISP() {
 
       {/* ================= HERO ================= */}
 
-<section className="relative isolate overflow-hidden">
+ <section className="relative h-[720px] overflow-hidden">
 
   {/* Background */}
   <div className="absolute inset-y-0 left-0 w-full md:w-[100%]">
     <Image
-      src="/images/image 703.png"
+      src="/images/image 704.png"
       alt=""
       fill
       priority
-      className="object-contain object-left md:object-left object-center"
+      className="object-cover"
     />
   </div>
 
@@ -65,10 +65,10 @@ export default function ISP() {
   <Image
     src="/images/underline.png"
     alt=""
-    width={850}
+    width={900}
     height={8}
     priority
-    className="h-auto w-[220px] sm:w-[320px] md:w-[850px]"
+    className="h-auto w-[220px] sm:w-[850px] md:w-[850px]"
   />
     </div>
 
@@ -99,7 +99,7 @@ export default function ISP() {
 
   <div className="relative mx-auto max-w-7xl px-6">
     <div className="mb-12 text-center">
-  <h2 className="text-4xl font-semibold leading-none lg:text-5xl">
+  <h2 className="text-4xl font-bold leading-none lg:text-5xl text-black">
     {t("premiumTitle")}
     <br />
     <span className="text-[#04BCBC]">
@@ -130,9 +130,11 @@ export default function ISP() {
           -left-4
           bottom-0
           h-24
-          w-20
-          rounded-bl-3xl
-          rounded-tr-3xl
+          w-24
+          rounded-tl-[1px] //kanan atas 
+      rounded-tr-[28px] //kiri atas 
+      rounded-bl-[28px] //kanan bawah 
+      rounded-br-[1px]  //kiri bawah 
           bg-[#04BCBC]
           opacity-0
           transition-all
@@ -176,7 +178,7 @@ export default function ISP() {
           {product.title}
         </h3>
 
-        <p className="mt-4 text-sm leading-7 text-neutral-600">
+        <p className="mt-4 text-sm leading-7 text-medium text-black justify-center">
           {product.description}
         </p>
       </div>
@@ -339,109 +341,107 @@ export default function ISP() {
 </div>
 
 {/* ================= RIGHT CONTENT ================= */}
+
 <div className="absolute inset-0 pointer-events-none">
 
- {/* MOBILE */}
-<div className="lg:hidden overflow-hidden rounded-[30px] bg-[#00628D]">
-  <div className="px-8 pt-12 pb-15">
 
-     {/* Judul */}
-    <span className="block text-center text-[30px] font-light text-[#19D5D7]">
-      {t("managed.tag")}
-    </span>
 
-    <h2 className="mt-2 text-center text-[42px] font-extrabold leading-none text-white">
-      {t("managed.title 1")}
-    </h2>
+  {/* ================= MOBILE ================= */}
+<div className="block lg:hidden">
+  <div
+    className="
+      relative
+      mx-auto
+      h-[770px]
+      w-full
+      max-w-[380px]
+      overflow-hidden
+      rounded-[38px]
+    "
+  >
 
-    <h2 className="text-center text-[42px] font-extrabold leading-none text-white">
-      {t("managed.title 2")}
-    </h2>
-  {/* Card Biru */}
-    <div className="flex justify-center">
-      <Image
-        src="/images/model isp 2.png"
-        alt="Managed Connectivity"
-        width={420}
-        height={520}
-        className="w-[560x] h-auto"
-      />
+    {/* MOBILE BACKGROUND */}
+    <Image
+      src="/images/Android Compact - 1.png"
+      alt="Managed Connectivity"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover"
+    />
+
+    {/* ================= MOBILE TITLE ================= */}
+    <div className="absolute left-[29px] top-[40px] z-10">
+      <p className="block text-[32px] md:text-[40px] lg:text-[48px] font-regular text-[#19D5D7]">
+    {t("managed.tag")}
+  </p>
+
+    <h2 className="mt-2 text-[44px] md:text-[60px] lg:text-[75px] font-extrabold leading-[0.95] text-white">
+    {t("managed.title 1")}
+  </h2>
+  
+  <h2 className="mt-2 text-[44px] md:text-[60px] lg:text-[75px] font-extrabold leading-[0.95] text-white">
+    {t("managed.title 2")}
+  </h2>
+
     </div>
-  </div>
-  
-  
 
-  {/* Badges */}
-  <div className="mt-1 grid grid-cols-2 gap-8">
-    {/* Badge 1 */}
-    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
-      <div className="flex flex-col items-center gap-3 text-center">
-        <Image
-          src="/images/users.png"
-          alt=""
-          width={44}
-          height={44}
-          className="h-10 w-10"
-        />
-        <div className="text-[13px] font-medium leading-5 text-white">
+    {/* ================= BADGE 1 ================= */}
+    <div className="absolute left-[30px] top-[170px] z-10 rounded-[10px] border border-white/20 bg-[#04BCBC]/20 px-3 py-2 backdrop-blur-xl">
+      <div className="flex items-center gap-2">
+        <Image src="/images/Wi-Fi.png" alt="" width={28} height={28} />
+
+        <div className="text-[10px] font-medium leading-[1.15] text-white">
           <p>{t("managed.badge1.title")}</p>
           <p>{t("managed.badge1.subtitle")}</p>
         </div>
       </div>
     </div>
 
-    {/* Badge 2 */}
-    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
-      <div className="flex flex-col items-center gap-3 text-center">
-        <Image
-          src="/images/monitor.png"
-          alt=""
-          width={44}
-          height={44}
-          className="h-10 w-10"
-        />
-        <div className="text-[13px] font-medium leading-5 text-white">
+    {/* ================= BADGE 2 ================= */}
+    <div className="absolute right-[30px] top-[197px] z-10 rounded-[10px] border border-white/20 bg-[#04BCBC]/20 px-8 py-2 backdrop-blur-xl">
+      <div className="flex items-center gap-2">
+        <Image src="/images/monitor.png" alt="" width={28} height={28} />
+
+        <div className="text-[10px] font-medium leading-[1.15] text-white">
           <p>{t("managed.badge2.title")}</p>
           <p>{t("managed.badge2.subtitle")}</p>
         </div>
       </div>
     </div>
 
-    {/* Badge 3 */}
-    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
-      <div className="flex flex-col items-center gap-3 text-center">
-        <Image
-          src="/images/Location.png"
-          alt=""
-          width={44}
-          height={44}
-          className="h-10 w-10"
-        />
-        <div className="text-[13px] font-medium leading-5 text-white">
+    {/* ================= BADGE 3 ================= */}
+     <div className="absolute right-[35px] top-[304px] z-10 rounded-[10px] border border-white/20 bg-[#04BCBC]/20 px-8 py-2 backdrop-blur-xl">
+    
+      <div className="flex items-center gap-2">
+        <Image src="/images/GPS Signal.png" alt="" width={28} height={28} />
+
+        <div className="text-[10px] font-medium leading-[1.15] text-white">
           <p>{t("managed.badge3.title")}</p>
           <p>{t("managed.badge3.subtitle")}</p>
         </div>
       </div>
     </div>
 
-    {/* Badge 4 */}
-    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
-      <div className="flex flex-col items-center gap-3 text-center">
-        <Image
-          src="/images/Location.png"
-          alt=""
-          width={44}
-          height={44}
-          className="h-10 w-10"
-        />
-        <div className="text-[13px] font-medium leading-5 text-white">
+    {/* ================= BADGE 4 ================= */}
+   <div className="absolute left-[50px] top-[250px] z-10 rounded-[10px] border border-white/20 bg-[#04BCBC]/20 px-3 py-2 backdrop-blur-xl">
+      <div className="flex items-center gap-2">
+        <Image src="/images/World Markets.png" alt="" width={28} height={28} />
+
+        <div className="text-[10px] font-medium leading-[1.15] text-white">
           <p>{t("managed.badge4.title")}</p>
           <p>{t("managed.badge4.subtitle")}</p>
         </div>
       </div>
     </div>
+
   </div>
 </div>
+       
+
+
+
+ 
 
 
   {/* ================= DESKTOP ================= */}
@@ -455,14 +455,14 @@ export default function ISP() {
         left-[12%]
         rounded-[15px]
         border border-white/20
-        bg-[#1A9BC7]/70
+        bg-[#04BCBC]/20
         px-5 py-5
         backdrop-blur-xl
         shadow-xl
       "
     >
       <div className="flex items-center gap-3">
-        <Image src="/images/users.png" alt="" width={50} height={50} />
+        <Image src="/images/Wi-Fi.png" alt="" width={50} height={50} />
         <div className="text-[15px] font-medium leading-5 text-white">
           <p>{t("managed.badge1.title")}</p>
           <p>{t("managed.badge1.subtitle")}</p>
@@ -478,7 +478,7 @@ export default function ISP() {
         left-[62%]
         rounded-[15px]
         border border-white/20
-        bg-[#1A9BC7]/70
+         bg-[#04BCBC]/20
         px-5 py-5
         backdrop-blur-xl
         shadow-xl
@@ -501,14 +501,14 @@ export default function ISP() {
         left-[3%]
         rounded-[15px]
         border border-white/20
-        bg-[#1A9BC7]/70
+         bg-[#04BCBC]/20
         px-5 py-5
         backdrop-blur-xl
         shadow-xl
       "
     >
       <div className="flex items-center gap-3">
-        <Image src="/images/Location.png" alt="" width={50} height={50} />
+        <Image src="/images/GPS Signal.png" alt="" width={50} height={50} />
         <div className="text-[15px] font-medium leading-5 text-white">
           <p>{t("managed.badge3.title")}</p>
           <p>{t("managed.badge3.subtitle")}</p>
@@ -524,14 +524,14 @@ export default function ISP() {
         bottom-[17%]
         rounded-[15px]
         border border-white/20
-        bg-[#1A9BC7]/70
+        bg-[#04BCBC]/20
         px-5 py-5
         backdrop-blur-xl
         shadow-xl
       "
     >
       <div className="flex items-center gap-3">
-        <Image src="/images/Location.png" alt="" width={50} height={50} />
+        <Image src="/images/World Markets.png" alt="" width={50} height={50} />
         <div className="text-[15px] font-medium leading-5 text-white">
           <p>{t("managed.badge4.title")}</p>
           <p>{t("managed.badge4.subtitle")}</p>

@@ -555,7 +555,10 @@
     "descriptionPlaceholder": "Jelaskan kebutuhan Anda atau bagaimana kami dapat membantu...",
 
     "submit": "Kirim",
-    "download": "Unduh"
+    "download": "Unduh",
+"sending": "Mengirim...",
+"thankYouTitle": "Terima Kasih Atas Ketertarikan Anda Pada Layanan Kami.",
+"thankYouDescription": "Pengajuan Anda telah berhasil diterima. Kami akan segera menghubungi Anda."
   },
 
   "Resource": {

@@ -25,7 +25,7 @@ export default function OurProfile() {
           priority
           className="
             absolute
-            left-[-510px]
+            left-[-570px]
             top-[-90px]
 
             w-[850px]
@@ -39,11 +39,11 @@ export default function OurProfile() {
         <h2
           className="
             absolute
-            left-[10px]
-            top-[-30px]
+            left-[-35px]
+            top-[-25px]
 
             text-white
-            text-[43px]
+            text-[32px]
             font-bold
             font-serif
             leading-none
@@ -58,9 +58,10 @@ export default function OurProfile() {
 
       <div
         className="
-          mt-[60px]
+          -mt-[22px]
           mx-auto
           max-w-[1120px]
+          ml-[-45px]
         "
       >
         <p

@@ -433,7 +433,7 @@
       {
         "logo": "/images/image 261.png",
         "title": "Permana Dedicated",
-        "description": "Dedicated internet service dengan bandwidth simetris yang stabil, cepat, dan aman untuk kebutuhan bisnis, pemerintahan, industri, dan UKM, tersedia melalui Fiber Optic dan Wireless Radio."
+        "description": "Dedicated internet services with stable, fast, and secure bandwidth symmetry for business, government, industry, and SME needs, available via Fiber Optic and Wireless Radio."
       },
       {
         "logo": "/images/image 262.png",
@@ -514,7 +514,10 @@
     "description": "Brief Description of Your Needs",
     "descriptionPlaceholder": "Please describe your needs or how we can help you...",
     "submit": "Submit",
-    "download": "Download"
+    "download": "Download",
+"sending": "Sending...",
+"thankYouTitle": "Thank You For Your Interest In Our Services.",
+"thankYouDescription": "Your submission has been received successfully. We will get back to you as soon as possible."
   },
   "Resource": {
     "title": "Consulting & Resource",

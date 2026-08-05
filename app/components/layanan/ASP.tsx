@@ -14,10 +14,18 @@ export default function Asp() {
   {
     key: "primebiz",
     title: "PrimeBiz",
+   youtube: "https://www.youtube.com/embed/RZunaYdRoEU",
     description: t("primeDescription"),
     image: "/images/products/biz.png",
     items: t.raw("primebiz.items"),
   },
+  {
+    key: "primebiz",
+    title: "PrimeBiz",
+    description: t("primeDescription"),
+    image: "/images/products/jula.png",
+    items: t.raw("primebiz.items"),
+  },  
   {
     key: "primeteams",
     title: "PrimeTeams",
@@ -72,7 +80,7 @@ export default function Asp() {
   return (
   <main className="overflow-hidden bg-white">
     {/* ================= HERO ================= */}
-    <section className="bg-[#F5FBFD] pb-14 pt-[100px]">
+    <section className="bg-[#F5FBFD] pb-20 pt-[90px]">
       <div className="relative mx-auto w-full max-w-[1600px] px-10 lg:px-20">
         {/* Heading */}
         <div className="text-center">
@@ -92,11 +100,36 @@ export default function Asp() {
           </p>
         </div>
 
-        {/* ASP CARDS */}
-<div className="mt-12 flex justify-center overflow-hidden">
-  <div className="flex items-end gap-3 origin-top scale-[0.58] sm:scale-[0.78] lg:scale-100 lg:gap-4">
+       {/* ASP CARDS */}
+<div className="mt-8 w-full sm:mt-12">
+  <div
+    className="
+      grid
+      grid-cols-2
+      gap-3
+      px-2
+
+      lg:flex
+      lg:items-end
+      lg:justify-center
+      lg:gap-4
+      lg:px-0
+    "
+  >
+
     {/* IMAGE */}
-    <div className="relative h-[320px] w-[190px] flex-shrink-0 overflow-hidden rounded-[30px]">
+    <div
+      className="
+        relative
+        h-[240px]
+        w-full
+        overflow-hidden
+        rounded-[30px]
+
+        lg:h-[320px]
+        lg:w-[190px]
+      "
+    >
       <Image
         src="/images/image 44.png"
         alt="ASP"
@@ -105,41 +138,141 @@ export default function Asp() {
       />
     </div>
 
+
     {/* CARD 1 */}
-    <div className="flex h-[240px] w-[190px] items-center justify-center rounded-[30px] bg-[linear-gradient(180deg,#0D668A_0%,#0A5F7E_45%,#062F44_100%)] px-6 text-center text-white">
-      <p className="max-w-[300px] text-[14px] leading-5">
+    <div
+      className="
+        flex
+        h-[200px]
+        w-full
+        items-center
+        justify-center
+        rounded-[30px]
+        bg-[linear-gradient(180deg,#0D668A_0%,#0A5F7E_45%,#062F44_100%)]
+        px-5
+        text-center
+        text-white
+
+        lg:h-[240px]
+        lg:w-[190px]
+      "
+    >
+      <p className="text-[13px] leading-5 lg:text-[14px]">
         {t("card1")}
       </p>
     </div>
 
+
     {/* CARD 2 */}
-    <div className="flex h-[185px] w-[190px] items-center justify-center rounded-[30px] border border-gray-200 bg-white px-6 text-center shadow-sm">
-      <p className="text-[16px] leading-7 text-[#233B5A]">
+    <div
+      className="
+        flex
+        h-[180px]
+        w-full
+        items-center
+        justify-center
+        rounded-[30px]
+        border
+        border-gray-200
+        bg-white
+        px-5
+        text-center
+        shadow-sm
+
+        lg:h-[185px]
+        lg:w-[190px]
+      "
+    >
+      <p className="text-[14px] leading-6 text-[#233B5A] lg:text-[16px] lg:leading-7">
         {t("card2")}
       </p>
     </div>
 
-    {/* CARD 3 */}
-    <div className="flex h-[240px] w-[190px] flex-col items-center justify-center rounded-[30px] bg-[#9FC8DC] text-white">
-      <h3 className="text-5xl">5+</h3>
 
-      <p className="mt-3 w-36 text-center text-sm leading-6">
+    {/* CARD 3 */}
+    <div
+      className="
+        flex
+        h-[200px]
+        w-full
+        flex-col
+        items-center
+        justify-center
+        rounded-[30px]
+        bg-[#9FC8DC]
+        text-white
+
+        lg:h-[240px]
+        lg:w-[190px]
+      "
+    >
+      <h3 className="text-4xl lg:text-5xl">
+        5+
+      </h3>
+
+      <p className="mt-3 w-32 text-center text-xs leading-5 lg:text-sm lg:leading-6">
         {t("card3")}
       </p>
     </div>
 
-    {/* CARD 4 */}
-    <div className="relative flex h-[320px] w-[190px] items-center justify-center overflow-hidden rounded-[30px] bg-[#0A4D69] px-4 text-center text-white">
-      <div className="absolute -left-7 -top-7 h-24 w-24 rounded-full border-[18px] border-[#0D7CA8]/30" />
-      <div className="absolute -left-2 -top-2 h-12 w-12 rounded-full bg-[#062F42]" />
 
-      <p className="relative text-sm leading-7">
+    {/* CARD 4 */}
+    <div
+      className="
+        relative
+        col-span-2
+        flex
+        h-[240px]
+        w-full
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-[30px]
+        bg-[#0A4D69]
+        px-6
+        text-center
+        text-white
+
+        lg:col-span-1
+        lg:h-[320px]
+        lg:w-[190px]
+      "
+    >
+
+      <div
+        className="
+          absolute
+          -left-7
+          -top-7
+          h-24
+          w-24
+          rounded-full
+          border-[18px]
+          border-[#0D7CA8]/30
+        "
+      />
+
+      <div
+        className="
+          absolute
+          -left-2
+          -top-2
+          h-12
+          w-12
+          rounded-full
+          bg-[#062F42]
+        "
+      />
+
+      <p className="relative text-sm leading-6 lg:leading-7">
         {t("card4")}
       </p>
+
     </div>
+
   </div>
 </div>
-      </div>
+</div>
     </section>
 
    {/* ================= PRODUCTS ================= */}
@@ -186,17 +319,18 @@ export default function Asp() {
     </div>
 
    <div className="grid items-center gap-24 lg:grid-cols-[720px_1fr] xl:gap-32">
-    {/* LEFT */}
+    {/* LEFT - YOUTUBE VIDEO */}
 <div className="flex items-center justify-center">
-  <div className="drop-shadow-[0_25px_40px_rgba(0,0,0,0.18)]">
-    <Image
-      src={products[currentProduct].image}
-      alt={products[currentProduct].title}
-      width={1000}
-      height={900}
-      priority
-      className="h-auto w-full max-w-[650px] object-contain"
-    />
+  <div className="w-full max-w-[650px] overflow-hidden rounded-[28px] shadow-[0_25px_40px_rgba(0,0,0,0.18)]">
+    <div className="relative aspect-video w-full">
+      <iframe
+        src={products[currentProduct].youtube}
+        title={products[currentProduct].title}
+        className="absolute inset-0 h-full w-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    </div>
   </div>
 </div>
 

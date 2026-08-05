@@ -22,7 +22,7 @@ export default function BackgroundCanvas() {
         className="
           absolute
           left-0
-          top-[520px]
+          top-[150px]
           w-[320px]
           h-auto
           select-none
