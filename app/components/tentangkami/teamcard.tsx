@@ -13,7 +13,7 @@ export default function TeamCard({ member }: TeamCardProps) {
       className="
         relative
         w-[320px]
-        h-[515px]
+        h-[400px]
 
         rounded-[26px]
 

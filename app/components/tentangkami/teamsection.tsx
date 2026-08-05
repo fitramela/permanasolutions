@@ -19,22 +19,24 @@ export default function TeamSection() {
    <section
   className="
     relative
-
     w-full
-    min-h-screen
-
     overflow-hidden
-
-    bg-[#F3F3F3]
-
-    pt-24
-    md:pt-28
-    lg:pt-32
-
-    pb-24
-    md:pb-32
   "
 >
+  <div
+    className="
+      relative
+
+  
+      max-w-full
+
+      h-[581px]
+
+      bg-[#F3F3F3]
+
+      overflow-hidden
+    "
+  >
 
       {/* Pattern kiri */}
 
@@ -142,6 +144,7 @@ export default function TeamSection() {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
