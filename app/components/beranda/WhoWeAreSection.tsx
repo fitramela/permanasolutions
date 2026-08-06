@@ -24,7 +24,7 @@ export default function WhoWeAreSection() {
               absolute
               inset-0
               m-auto
-              w-[300px]
+              w-[260px]
               opacity-100
 
               sm:w-[320px]
@@ -49,11 +49,11 @@ export default function WhoWeAreSection() {
   {t("title")}
 </h2>
 
-          <p className="relative z-10 mb-8 text-justify text-[20px] leading-[2.1] text-[#4F5965]">
+          <p className="relative z-10 mb-8 text-justify text-[15px] leading-[2.2] text-[#4F5965]">
             {t("description1")}
           </p>
 
-          <p className="relative z-10 text-justify text-[21px] leading-[2.1] text-[#4F5965]">
+          <p className="relative z-10 text-justify text-[15px] leading-[2.2] text-[#4F5965]">
             {t("description2")}
           </p>
         </div>

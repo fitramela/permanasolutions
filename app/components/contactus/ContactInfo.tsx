@@ -3,26 +3,17 @@
 import { useTranslations } from "next-intl";
 
 export default function ContactInfo() {
+
   const t = useTranslations("ContactHero");
 
   return (
-    <div
-      className="
-        absolute
+    <div className="max-w-[320px] text-white">
 
-        left-[135px]
-        top-[165px]
-
-        w-[290px]
-
-        text-white
-      "
-    >
       <h1
         className="
-          text-[40px]
+          text-5xl
           font-bold
-          leading-none
+          leading-tight
         "
       >
         {t("title")}
@@ -30,9 +21,8 @@ export default function ContactInfo() {
 
       <h2
         className="
-          mt-[17px]
-
-          text-[24px]
+          mt-6
+          text-[32px]
           font-semibold
         "
       >
@@ -41,16 +31,20 @@ export default function ContactInfo() {
 
       <p
         className="
-          mt-[10px]
+          mt-8
 
           whitespace-pre-line
 
-          text-[15px]
-          leading-[20px]
+          text-[18px]
+
+          leading-9
+
+          text-white/95
         "
       >
         {t("address")}
       </p>
+
     </div>
   );
 }

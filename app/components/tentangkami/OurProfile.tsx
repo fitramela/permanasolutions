@@ -25,10 +25,10 @@ export default function OurProfile() {
           priority
           className="
             absolute
-            left-[-580px]
+            left-[-570px]
             top-[-90px]
 
-            w-[840px]
+            w-[850px]
             h-auto
 
             select-none
@@ -39,7 +39,7 @@ export default function OurProfile() {
         <h2
           className="
             absolute
-            left-[-25px]
+            left-[-35px]
             top-[-25px]
 
             text-white
@@ -57,35 +57,24 @@ export default function OurProfile() {
       {/* Description */}
 
       <div
-  className="
-    mt-[-30px]
-
-    flex
-    justify-center
-  "
->
-  <p
-  className="
-    relative
-
-    left-[-39px]
-
-    w-full
-    max-w-[1120px]
-
-    text-left
-
-    text-[19px]
-    font-normal
-    leading-[1.35]
-    tracking-[0.01em]
-
-    text-[#555555]
-  "
->
-  {t("ourProfile.description")}
-</p>
-</div>
+        className="
+          -mt-[22px]
+          mx-auto
+          max-w-[1120px]
+          ml-[-45px]
+        "
+      >
+        <p
+          className="
+            text-center
+            text-[17px]
+            leading-[36px]
+            text-[#555555]
+          "
+        >
+          {t("ourProfile.description")}
+        </p>
+      </div>
 
     </section>
   );

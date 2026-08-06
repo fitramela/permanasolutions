@@ -1,100 +1,59 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-
 export default function MeetTeam() {
-  const t = useTranslations("About");
-
   return (
-    <section
-      className="
-        relative
-        z-20
+    <section className="py-[120px]">
+       <h2
+            className="
+            text-3xl
+            font-bold
+            text-[#005D86]
 
-        w-full
+            md:text-4xl
 
-        -mt-10
-        md:-mt-16
-        lg:-mt-24
+            lg:text-5xl
+          "
+          >
+            Meet Our Exceptional Team
+          </h2>
 
-        pb-8
-        md:pb-12
-      "
-    >
-      <div
-        className="
-          mx-auto
+          <h3
+            className="
+            mt-3
 
-          w-full
-          max-w-[1200px]
-
-          px-6
-          md:px-10
-
-          flex
-          flex-col
-          items-center
-          text-center
-        "
-      >
-        {/* Title */}
-
-        <h2
-          className="
+            text-2xl
             font-bold
 
             text-[#005D86]
 
-            text-[28px]
-            sm:text-[34px]
-            lg:text-[40px]
+            md:text-3xl
 
-            leading-tight
+            lg:text-[38px]
           "
-        >
-          {t("team.title")}
-        </h2>
+          >
+            The People Behind Permana Solutions
+          </h3>
 
-        {/* Subtitle */}
+          <p
+            className="
+            mx-auto
 
-        <h3
-          className="
-            mt-2
+            mt-6
 
-            font-bold
+            max-w-2xl
 
-            text-[#005D86]
+            text-[15px]
 
-            text-[30px]
-            sm:text-[38px]
-            lg:text-[44px]
+            leading-8
 
-            leading-tight
+            text-[#6D6D6D]
+
+            lg:text-base
           "
-        >
-          {t("team.subtitle")}
-        </h3>
-
-        {/* Description */}
-
-        <p
-          className="
-            mt-1
-
-            max-w-[1000px]
-
-            text-[#666666]
-
-            text-[14px]
-            md:text-[15px]
-            lg:text-[15px]
-
-            leading-7
-          "
-        >
-          {t("team.description")}
-        </p>
-      </div>
+          >
+            Driven by innovation and united by a shared vision, our professionals work together to deliver reliable engineering,
+            technology, and digital solutions for every client.
+          </p>
     </section>
   );
 }

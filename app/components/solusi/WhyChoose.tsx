@@ -15,7 +15,7 @@ export default function WhyChoose() {
 
   return (
     <section className="bg-grey py-16 lg:py-24">
-      <div className="mx-auto max-w-[1700px] px-5 sm:px-6 lg:px-16">
+      <div className="mx-auto w-full px-5 sm:px-6 lg:px-16">
         {/* Title */}
         <h2 className="mb-10 text-center text-3xl font-bold text-[#111111] sm:text-4xl lg:mb-16 lg:text-5xl">
           {t("title")}

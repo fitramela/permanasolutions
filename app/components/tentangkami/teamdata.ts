@@ -1,80 +1,90 @@
 export interface TeamMember {
   id: number;
   image: string;
-  nameKey: string;
-  positionKey: string;
-  descriptionKey: string;
+  name: string;
+  position: string;
+  description: string;
 }
 
 export const teamData: TeamMember[] = [
   {
     id: 1,
     image: "/images/foto11.png",
-    nameKey: "ekie.name",
-    positionKey: "ekie.position",
-    descriptionKey: "ekie.description",
+    name: "Ekie Wachidie",
+    position: "Director",
+    description:
+      "Leading company growth through innovation, collaboration, and strategic decision-making to achieve sustainable business excellence.",
   },
   {
     id: 2,
     image: "/images/foto12.png",
-    nameKey: "putut.name",
-    positionKey: "putut.position",
-    descriptionKey: "putut.description",
+    name: "Putut Indriatmoko",
+    position: "Manager Operational",
+    description:
+      "Ensuring operational excellence by coordinating teams, improving efficiency, and delivering projects with consistent quality.",
   },
   {
     id: 3,
-    image: "/images/13foto.png",
-    nameKey: "indah.name",
-    positionKey: "indah.position",
-    descriptionKey: "indah.description",
+    image: "/images/foto13.png",
+    name: "Karina Sri Djubairah",
+    position: "Finance",
+    description:
+      "Managing budgeting, financial planning, accounting, and transparent reporting to support sustainable company growth.",
   },
   {
     id: 4,
-    image: "/images/14foto.png",
-    nameKey: "putri.name",
-    positionKey: "putri.position",
-    descriptionKey: "putri.description",
+    image: "/images/foto14.png",
+    name: "Putri Aulia M",
+    position: "Account Manager",
+    description:
+      "Building long-term client relationships while ensuring every project delivers maximum value and customer satisfaction.",
   },
   {
     id: 5,
     image: "/images/foto15.png",
-    nameKey: "serly.name",
-    positionKey: "serly.position",
-    descriptionKey: "serly.description",
+    name: "Serly Zumeri",
+    position: "Secretary Director",
+    description:
+      "Providing executive administrative support through professional coordination, scheduling, and organizational management.",
   },
   {
     id: 6,
     image: "/images/foto16.png",
-    nameKey: "palupi.name",
-    positionKey: "palupi.position",
-    descriptionKey: "palupi.description",
+    name: "Palupi Pebi Pratiwi",
+    position: "Finance",
+    description:
+      "Responsible for accounting, budgeting, financial reporting, and maintaining healthy financial operations across the company.",
   },
   {
     id: 7,
     image: "/images/foto17.png",
-    nameKey: "fitra.name",
-    positionKey: "fitra.position",
-    descriptionKey: "fitra.description",
+    name: "Fitra Melania Rais",
+    position: "HR & Recruitment",
+    description:
+      "Managing recruitment processes, employee development, talent acquisition, and fostering a positive workplace culture.",
   },
   {
     id: 8,
     image: "/images/foto18.png",
-    nameKey: "umar.name",
-    positionKey: "umar.position",
-    descriptionKey: "umar.description",
+    name: "Umar Dani Y",
+    position: "General Affair",
+    description:
+      "Ensuring office facilities, operational support, logistics, and company assets are managed efficiently every day.",
   },
   {
     id: 9,
     image: "/images/foto19.png",
-    nameKey: "mugi.name",
-    positionKey: "mugi.position",
-    descriptionKey: "mugi.description",
+    name: "Mugi Ardana",
+    position: "Project Manager",
+    description:
+      "Leading multidisciplinary engineering projects from planning through execution while maintaining quality and schedule.",
   },
   {
     id: 10,
     image: "/images/foto20.png",
-    nameKey: "ari.name",
-    positionKey: "ari.position",
-    descriptionKey: "ari.description",
+    name: "Mohammad Ari Wenandi",
+    position: "Software Engineer",
+    description:
+      "Developing scalable software solutions using modern technologies with a strong focus on performance and maintainability.",
   },
 ];

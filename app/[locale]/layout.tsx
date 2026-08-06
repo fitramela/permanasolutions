@@ -6,10 +6,6 @@ import { notFound } from "next/navigation";
 import { Poppins } from "next/font/google";
 import { locales } from "@/i18n";
 
-import Navbar from "@/app/components/layout/NavbarSection";
-import { FooterSection } from "@/app/components/layout/FooterSection";
-import FloatingLanguageButton from "@/app/components/FloatingLanguage"; // tambah ini
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -35,16 +31,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={poppins.className}>
         <NextIntlClientProvider messages={messages}>
-         <Navbar />
-
-<main className="pt-[70px]">
-  {children}
-</main>
-
-<FloatingLanguageButton />
-
-         
-          <FooterSection />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

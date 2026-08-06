@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+
 import Image from "next/image";
 import { TeamMember } from "./teamdata";
 
@@ -8,150 +8,136 @@ interface TeamCardProps {
 }
 
 export default function TeamCard({ member }: TeamCardProps) {
-  const t = useTranslations("Team");
   return (
     <article
       className="
+        group
         relative
-        w-[320px]
-        h-[400px]
-
-        rounded-[26px]
-
-        bg-white
-
-        border
-        border-white/80
-
-        shadow-[0_12px_45px_rgba(0,0,0,0.08)]
-
         flex
+        h-full
+        min-h-[390px]
         flex-col
-        items-center
-
-        overflow-visible
-
+        rounded-[32px]
+        bg-white
+        px-7
+        pb-8
+        pt-24
+        shadow-[0_12px_40px_rgba(0,93,134,.08)]
         transition-all
         duration-300
         hover:-translate-y-2
-        hover:shadow-[0_22px_60px_rgba(0,0,0,.12)]
+        hover:shadow-[0_20px_55px_rgba(0,93,134,.18)]
       "
     >
-      {/* FOTO */}
+      {/* Photo */}
 
-      <div
-        className="
-          absolute
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
 
-          left-1/2
-          -translate-x-1/2
+        <div
+          className="
+            relative
 
-          -top-[100px]
+            h-[140px]
+            w-[140px]
 
-          w-[200px]
-          h-[200px]
+            overflow-hidden
 
-          rounded-full
+            rounded-full
 
-          overflow-hidden
+            border-[6px]
+            border-white
 
-          bg-white
+            shadow-xl
 
-          border-[3px]
-          border-[#F4F4F4]
+            transition-transform
+            duration-500
 
-          shadow-[0_12px_35px_rgba(0,0,0,.16)]
-        "
-      >
-        <Image
-          src={member.image}
-          alt={t(member.nameKey)}
-          fill
-          className="object-cover"
-          sizes="200px"
-        />
+            group-hover:scale-105
+
+            lg:h-[160px]
+            lg:w-[160px]
+          "
+        >
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover object-top"
+          />
+        </div>
+
       </div>
 
-      {/* BADGE */}
+      {/* Position */}
 
-      <div
-        className="
-          mt-[122px]
+      <div className="flex justify-center">
 
-          w-[160px]
-          h-[32px]
-
-          rounded-full
-
-          bg-[#04BCBC]
-
-          flex
-          items-center
-          justify-center
-
-          shadow-[0_6px_15px_rgba(4,188,188,.28)]
-        "
-      >
         <span
           className="
-            text-white
+            rounded-full
 
-            text-[11px]
+            bg-gradient-to-r
+
+            from-cyan-400
+            to-sky-500
+
+            px-5
+            py-2
+
+            text-xs
 
             font-semibold
 
-            tracking-[0.2px]
+            tracking-wide
+
+            text-white
           "
         >
-          {t(member.positionKey)}
+          {member.position}
         </span>
+
       </div>
 
-      {/* NAMA */}
+      {/* Name */}
 
       <h3
         className="
-          mt-[16px]
-
-          w-[250px]
+          mt-6
 
           text-center
 
-          text-[#101A24]
-
-          text-[20px]
-
-          leading-[26px]
+          text-xl
 
           font-bold
 
-          font-['David_Libre']
+          text-[#005D86]
+
+          lg:text-2xl
         "
       >
-       {t(member.nameKey)}
+        {member.name}
       </h3>
 
-      {/* DESKRIPSI */}
+      {/* Description */}
 
       <p
         className="
-          mt-[28px]
+          mt-5
 
-          w-[250px]
+          flex-1
 
           text-center
 
-          text-[#5C6574]
+          text-sm
 
-          text-[15px]
+          leading-7
 
-          leading-[26px]
-
-          font-normal
+          text-[#6B7280]
         "
       >
-       {t(member.descriptionKey)}
+        {member.description}
       </p>
+
     </article>
   );
 }

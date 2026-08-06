@@ -2,8 +2,19 @@
 
 export default function MapSection() {
   return (
-    <section className="w-full bg-white py-200">
+    <section className="w-full bg-white py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+        {/* Heading */}
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold text-[#005D86] md:text-4xl">
+            Find Our Office
+          </h2>
+
+          <p className="mt-3 text-gray-500">
+            Visit us or contact our team directly.
+          </p>
+        </div>
 
         {/* Map Card */}
         <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_20px_50px_rgba(0,0,0,.08)]">
@@ -18,7 +29,7 @@ export default function MapSection() {
         </div>
 
         {/* Address Card */}
-        <div className="mt-1 rounded-2xl p-6 shadow-">
+        <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
 
           <h3 className="text-xl font-semibold text-[#005D86]">
             Medianusa Permana (Permana Solutions)

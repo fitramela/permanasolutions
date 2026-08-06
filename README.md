@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Permana
 
-First, run the development server:
+Proyek monorepo yang berisi:
+- **Frontend**: Next.js 16 (App Router) dengan i18n (`next-intl`)
+- **Backend**: Express + Prisma + TypeScript (folder `backend`)
+
+Keduanya dapat dijalankan bersamaan dengan skrip yang telah disediakan.
+
+**Prasyarat**
+- Node.js 18+
+- npm
+
+**Instalasi**
+1. Clone repositori.
+2. Install dependensi root dan backend:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cd backend && npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Atau dari root cukup jalankan `npm install` lalu `cd backend && npm install` jika diperlukan.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Skrip penting**
+- `npm run dev` — jalankan frontend (Next.js) pada `http://localhost:3000`
+- `cd backend && npm run dev` — jalankan backend (Express) pada `http://localhost:4000` (default)
+- `npm run dev:all` — jalankan frontend + backend bersamaan (menggunakan `concurrently`)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contoh menjalankan semuanya dari root:
 
-## Learn More
+```bash
+npm run dev:all
+```
 
-To learn more about Next.js, take a look at the following resources:
+Jika terjadi error saat `npm run dev:all`, pastikan kamu menjalankan perintah dari folder root proyek dan sudah menginstal dependensi di `backend/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Backend API (ringkasan)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Beberapa endpoint yang tersedia di backend:
+- `GET /api/health` — cek status layanan
+- `POST /api/login` — autentikasi dan kembalikan JWT
+- `GET /api/users` — daftar pengguna
+- `GET /api/users/:id` — detail pengguna
+- `POST /api/users` — buat pengguna
+- `PUT /api/users/:id` — update pengguna
+- `DELETE /api/users/:id` — hapus pengguna
 
-## Deploy on Vercel
+Contoh `curl` singkat:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+curl http://localhost:4000/api/users
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+curl -X POST http://localhost:4000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Fathi","email":"fathirafifm@gmail.com","password":"secret123"}'
+```
+
+## Environment
+
+Environment variables backend ditempatkan di `backend/.env` (contoh):
+- `DATABASE_URL`
+- `JWT_SECRET`
+- `PORT`
+- `CORS_ORIGIN`
+
+Jangan commit file `.env`. Jika perlu, tambahkan `backend/.env.example` berisi contoh variabel.
+
+## Prisma
+
+Jika perlu meng-generate Prisma Client secara manual:
+
+```bash
+cd backend && npm run generate
+```
+
+Untuk men-seed database (jika ada):
+
+```bash
+cd backend && npm run prisma:seed
+```
+
+## .gitignore
+
+Repository sudah memiliki `.gitignore` di root dan di `backend/`. Secara umum sudah benar, namun ada beberapa catatan kecil pada pengaturan monorepo (lihat bagian pemeriksaan `.gitignore` di bawah).
+
+## Kontak
+Jika ada pertanyaan, buka issue atau hubungi pemilik repo.
+
+

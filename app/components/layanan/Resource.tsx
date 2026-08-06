@@ -272,22 +272,28 @@ text-[#4B5563]
 
         {cards.map((item, index) => (
 
-         <button
-  key={item.title}
-  type="button"
-  className="
-    group
-    relative
-    h-[320px]
-    w-[240px]
-    sm:h-[380px]
-    sm:w-[290px]
-    flex-shrink-0
-    overflow-hidden
-    rounded-[24px]
-    text-left
-  "
->
+          <button
+            key={item.title}
+            type="button"
+            onClick={() =>
+              setActiveCard(activeCard === index ? null : index)
+            }
+            className="
+              group 
+              relative 
+
+              h-[320px]
+              w-[240px]
+
+              sm:h-[380px]
+              sm:w-[290px]
+
+              flex-shrink-0 
+              overflow-hidden 
+              rounded-[24px] 
+              text-left
+            "
+          >
 
             <Image
               src={item.image}
@@ -332,18 +338,12 @@ text-[#4B5563]
 
 
               <div
-  className="
-    mt-0
-    max-h-0
-    overflow-hidden
-    opacity-0
-    transition-all
-    duration-500
-    group-hover:mt-3
-    group-hover:max-h-40
-    group-hover:opacity-100
-  "
->
+                className={`overflow-hidden transition-all duration-500 ${
+                  activeCard === index
+                    ? "mt-3 max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
 
                 <p className="text-sm leading-6">
                   {item.desc}
@@ -400,8 +400,8 @@ text-[#4B5563]
                 <Image
                   src={logo}
                   alt=""
-                  width={100}
-                  height={100}
+                  width={48}
+                  height={48}
                   className="object-contain"
                 />
 
@@ -416,30 +416,54 @@ text-[#4B5563]
 
 
 
-     {/* ================= CLIENT ================= */}
+      {/* ================= CLIENT ================= */}
 
-<section className="relative overflow-hidden py-5">
+      <section className="relative z-20 w-full bg-white pb-20">
 
 
-  <div className="overflow-hidden py-10">
-    <div className="marquee flex w-max gap-8">
-      {[...technologies, ...technologies].map((logo, index) => (
-        <div
-          key={index}
-          className="flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-lg"
-        >
-          <Image
-            src={logo}
-            alt=""
-            width={100}
-            height={100}
-            className="object-contain"
-          />
+        
+
+
+        <div className="w-full overflow-hidden">
+
+          <div className="flex w-max animate-scroll gap-10 px-10">
+
+
+            {[...clients, ...clients].map((client,index)=>(
+
+              <div
+                key={index}
+                className="
+                  flex
+                  h-20
+                  min-w-[180px]
+                  items-center
+                  justify-center
+                "
+              >
+
+                <Image
+                  src={client.src}
+                  alt={client.alt}
+                  className="
+                    h-auto
+                    max-h-16
+                    w-auto
+                    object-contain
+                  "
+                />
+
+              </div>
+
+            ))}
+
+
+          </div>
+
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+
+
+      </section>
 
 
     </main>

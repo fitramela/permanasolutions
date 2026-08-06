@@ -37,7 +37,7 @@ export default function SmartSystemShowcaseSection() {
 
             <h2
               id="smart-system-showcase-heading"
-              className="text-center text-6xl font-thin text-black md:text-5xl"
+              className="text-center text-4xl font-extralight text-black md:text-5xl"
             >
               {t("heading")}
             </h2>

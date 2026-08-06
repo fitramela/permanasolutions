@@ -54,8 +54,8 @@ export default function CompanySection() {
 
         <MeetTeam />
 
+        <TeamSection />
       </div>
-       <TeamSection />
     </section>
   );
 }

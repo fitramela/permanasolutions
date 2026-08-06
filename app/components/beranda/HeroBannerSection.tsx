@@ -30,19 +30,18 @@ export default function HeroBannerSection() {
               className="object-cover object-[40%_center]"
             />
 
-       {/* TEXT */}
-<div className="absolute inset-0 flex items-center z-10">
-  <div className="w-full px-[clamp(24px,5vw,80px)]">
-    <h1
-      className="
-        max-w-[clamp(340px,60vw,1050px)]
+            {/* TEXT */}
+            <div className="absolute inset-0 flex items-center z-10">
+              <div className="w-full px-[clamp(24px,5vw,80px)]">
+                <h1
+                  className="
+        max-w-[clamp(320px,60vw,1050px)]
         text-white
         font-semibold
-         text-[clamp(24px,5vw,50px)]
-      
-        leading-[1.2]
-        tracking-[-0.0em]
-        drop-shadow-[0_5px_1px_rgba(1,10,10)]
+        text-[clamp(28px,4vw,60px)]
+        leading-[1.1]
+        tracking-[-0.04em]
+        drop-shadow-[0_5px_1px_rgba(0,0,0,.5)]
       "
                 >
                   {t("heading1")} {t("heading2")}
@@ -103,7 +102,7 @@ function Statistic({
         +
       </h2>
 
-      <p className="mt-2 text-[#05638B] font-medium text-[11px] sm:text-[14px] lg:text-[22px]">
+      <p className="mt-2 text-[#05638B] font-medium text-[11px] sm:text-[14px] lg:text-[22px] drop-shadow-[0_5px_7px_rgba(0,0,0,0.50)]">
         {label}
       </p>
     </div>

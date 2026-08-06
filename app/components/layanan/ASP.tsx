@@ -19,15 +19,6 @@ export default function Asp() {
     items: t.raw("primebiz.items"),
   },
   {
-    key: "primejula",
-    title: "Jula",
-    youtube: "https://www.youtube.com/embed/1Dn7QDKUXoI",
-    description: t("primeJulaDescription"),
-    image: "/images/products/jula.png",
-    items: t.raw("primejula.items"),
-  },  
-  {
-
     key: "primeteams",
     title: "PrimeTeams",
     description: t("primeTeamsDescription"),
@@ -44,7 +35,6 @@ export default function Asp() {
   {
     key: "primecafe",
     title: "PrimeCafe",
-    youtube: "https://www.youtube.com/embed/5_tTysgmcTo",
     description: t("primeCafeDescription"),
     image: "/images/products/cafe.png",
     items: t.raw("primecafe.items"),
@@ -52,7 +42,6 @@ export default function Asp() {
   {
     key: "primecare",
     title: "PrimeCare",
-    youtube: "https://www.youtube.com/embed/qja1nkN_S5U",
     description: t("primeCareDescription"),
     image: "/images/products/care.png",
     items: t.raw("primecare.items"),
