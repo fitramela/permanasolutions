@@ -30,21 +30,12 @@ export default function HeroBannerSection() {
               className="object-cover object-[40%_center]"
             />
 
-<<<<<<< HEAD
-            {/* TEXT */}
-            <div className="absolute inset-0 flex items-center z-10">
-              <div className="w-full px-[clamp(24px,5vw,80px)]">
-                <h1
-                  className="
-        max-w-[clamp(320px,60vw,1050px)]
-=======
        {/* TEXT */}
 <div className="absolute inset-0 flex items-center z-10">
   <div className="w-full px-[clamp(24px,5vw,80px)]">
     <h1
       className="
         max-w-[clamp(340px,60vw,1050px)]
->>>>>>> 0217fb6 (update nayla)
         text-white
         font-semibold
          text-[clamp(24px,5vw,50px)]
