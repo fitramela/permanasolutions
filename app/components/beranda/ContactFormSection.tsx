@@ -130,6 +130,13 @@ export const ContactFormSection = () => {
           </div>
 
         </div>
+<<<<<<< HEAD
+=======
+
+        {/* Bottom Curve */}
+        <div className="absolute -bottom-44 left-1/2 h-[300px] w-[150%] 
+        -translate-x-1/2 rounded-full bg-white" />
+>>>>>>> 0217fb6 (update nayla)
       </div>
     </section>
   );
