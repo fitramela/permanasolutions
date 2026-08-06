@@ -1,7 +1,6 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-
 import TeamCard from "./teamcard";
 import { teamData } from "./teamdata";
 import ArrowButton from "./ArrowButton";
