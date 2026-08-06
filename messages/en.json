@@ -222,6 +222,7 @@
     "showLess": "show less...",
     "seeMore": "see more...",
     "primeDescription": "Manage your business smarter, faster, and more efficiently.",
+     "primeJulaDescription": "Manage your business smarter, faster, and more efficiently.",
     "primeTeamsDescription": "Digital form solution to streamline every business process.",
     "primeRestoDescription": "Smart asset and inventory management system.",
     "primeCafeDescription": "Modern POS solution for cafés and restaurants.",
@@ -253,6 +254,31 @@
         }
       ]
     },
+     "primejula": {
+      "items": [
+        {
+          "title": "PrimeBiz is an ited ERP platform.",
+          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
+        },
+        {
+          "title": "Complete operational modules.",
+          "description": "All business operations are connected in real time."
+        },
+        {
+          "title": "Increase productivity.",
+          "description": "Automation reduces repetitive work and improves efficiency."
+        },
+        {
+          "title": "Flexible for every business.",
+          "description": "Suitable for small businesses up to enterprise companies."
+        },
+        {
+          "title": "Easy implementation.",
+          "description": "Starts from consultation, implementation, and user training."
+        }
+      ]
+    },
+
     "primeteams": {
       "items": [
         {
@@ -501,7 +527,7 @@
   },
   "Contact": {
     "title": "Trusted Technology\nService Partner",
-    "companyProfile": "Company Profile  →",
+    "companyProfile": "Company Profile    →",
     "formTitle": "Explore The Best Solution\nFor Your Organization",
     "fullName": "Full Name",
     "fullNamePlaceholder": "Enter your full name",

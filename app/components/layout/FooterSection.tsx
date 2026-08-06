@@ -561,7 +561,7 @@ whitespace-pre-line
               <div className="mt-5 flex gap-1">
 
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/permananet/posts/?feedView=all"
                   target="_blank"
                 >
                   <Image
