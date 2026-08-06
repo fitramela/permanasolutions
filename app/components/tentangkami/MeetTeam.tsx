@@ -79,7 +79,7 @@ export default function MeetTeam() {
 
         <p
           className="
-            mt-4
+            mt-1
 
             max-w-[1000px]
 
@@ -87,7 +87,7 @@ export default function MeetTeam() {
 
             text-[14px]
             md:text-[15px]
-            lg:text-[16px]
+            lg:text-[15px]
 
             leading-7
           "
