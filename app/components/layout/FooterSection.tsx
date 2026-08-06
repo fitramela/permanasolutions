@@ -323,7 +323,7 @@ whitespace-pre-line
               <div className="mt-8 flex gap-4">
 
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/permananet/posts/?feedView=all"
                   target="_blank"
                 >
                   <Image
