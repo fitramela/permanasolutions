@@ -669,7 +669,59 @@
     "subtitle": "The People Behind Permana Solutions",
     "description": "Driven By Innovation And United By A Shared Vision, Our Professionals Work Together To Deliver Meaningful Technology Experiences."
   }
-}
+},
+  "Team": {
+    "ekie": {
+      "name": "Ekie Wachidie",
+      "position": "Director",
+      "description": "I believe company growth comes from innovation, collaboration, and the courage to take strategic steps toward the future."
+    },
+    "putut": {
+      "name": "Putut Indriatmoko",
+      "position": "Manager Operational",
+      "description": "I am committed to maintaining the company's financial stability through careful, transparent, and measurable financial management."
+    },
+    "indah": {
+      "name": "Indah Sundari",
+      "position": "Finance",
+      "description": "I am committed to maintaining the company's financial stability through careful, transparent, and measurable financial management."
+    },
+    "putri": {
+      "name": "Putri Aulia M",
+      "position": "Account Manager",
+      "description": "Building strong relationships with clients is my priority, ensuring every need is understood and addressed effectively."
+    },
+    "serly": {
+      "name": "Serly Zumeri",
+      "position": "Business Development",
+      "description": "I continuously seek new opportunities to expand business networks and create mutually beneficial partnerships."
+    },
+    "palupi": {
+      "name": "Palupi Pebi Pratiwi",
+      "position": "UI/UX Business Analyst",
+      "description": "I bridge business needs with user experience to create solutions that are relevant, intuitive, and impactful."
+    },
+    "fitra": {
+      "name": "Fitra Melania Rais",
+      "position": "Full Stack Developer",
+      "description": "I enjoy building systems from frontend to backend to deliver reliable and scalable digital solutions."
+    },
+    "umar": {
+      "name": "Umar Dani Y",
+      "position": "Full Stack Developer",
+      "description": "To me, great code is not only functional but also maintainable and capable of creating real impact."
+    },
+    "mugi": {
+      "name": "Mugi Ardana",
+      "position": "Technical Support",
+      "description": "I ensure all infrastructure and devices operate optimally so daily operations can run smoothly without disruption."
+    },
+    "ari": {
+      "name": "Mohammad Ari Wenandi",
+      "position": "NOC",
+      "description": "Real-time system monitoring is my responsibility to keep services stable, secure, and responsive."
+    }
+  }
 }
 
 

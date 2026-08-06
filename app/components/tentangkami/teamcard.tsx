@@ -1,5 +1,5 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { TeamMember } from "./teamdata";
 
@@ -8,6 +8,7 @@ interface TeamCardProps {
 }
 
 export default function TeamCard({ member }: TeamCardProps) {
+  const t = useTranslations("Team");
   return (
     <article
       className="
@@ -64,7 +65,7 @@ export default function TeamCard({ member }: TeamCardProps) {
       >
         <Image
           src={member.image}
-          alt={member.name}
+          alt={t(member.nameKey)}
           fill
           className="object-cover"
           sizes="200px"
@@ -102,7 +103,7 @@ export default function TeamCard({ member }: TeamCardProps) {
             tracking-[0.2px]
           "
         >
-          {member.position}
+          {t(member.positionKey)}
         </span>
       </div>
 
@@ -127,7 +128,7 @@ export default function TeamCard({ member }: TeamCardProps) {
           font-['David_Libre']
         "
       >
-        {member.name}
+       {t(member.nameKey)}
       </h3>
 
       {/* DESKRIPSI */}
@@ -149,7 +150,7 @@ export default function TeamCard({ member }: TeamCardProps) {
           font-normal
         "
       >
-        {member.description}
+       {t(member.descriptionKey)}
       </p>
     </article>
   );
