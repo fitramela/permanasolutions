@@ -306,8 +306,8 @@ export default function ISP() {
         alt="Managed Connectivity"
         fill
         priority
-        sizes="100vw"
-        className="rounded-[28px] object-cover lg:rounded-[40px]"
+        sizes=""
+        className="rounded-[30px] object-cover lg:rounded-[40px]"
       />
 
       {/* Content */}
@@ -316,15 +316,11 @@ export default function ISP() {
         {/* ================= LEFT ================= */}
 <div
   className="
-    order-1
-    px-6
-    pt-15
-    md:pt-20
+    hidden lg:block
     lg:col-span-5
     lg:pl-16
     lg:pt-20
-    text-center
-    lg:text-left
+    text-left
   "
 >
   <span className="block text-[32px] md:text-[40px] lg:text-[48px] font-regular text-[#19D5D7]">
@@ -445,7 +441,7 @@ export default function ISP() {
 
 
   {/* ================= DESKTOP ================= */}
-  <div className="hidden lg:block absolute right-0 top-0 h-full w-[55%]">
+ <div className="hidden lg:block absolute right-0 top-0 h-full w-[55%]">
 
     {/* Badge 1 */}
     <div

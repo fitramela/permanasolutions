@@ -270,7 +270,30 @@
         }
       ]
     },
-
+"primejula": {
+      "items": [
+        {
+          "title": "PrimeBiz is an ited ERP platform.",
+          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
+        },
+        {
+          "title": "Complete operational modules.",
+          "description": "All business operations are connected in real time."
+        },
+        {
+          "title": "Increase productivity.",
+          "description": "Automation reduces repetitive work and improves efficiency."
+        },
+        {
+          "title": "Flexible for every business.",
+          "description": "Suitable for small businesses up to enterprise companies."
+        },
+        {
+          "title": "Easy implementation.",
+          "description": "Starts from consultation, implementation, and user training."
+        }
+      ]
+    },
     "primeteams": {
       "items": [
         {
