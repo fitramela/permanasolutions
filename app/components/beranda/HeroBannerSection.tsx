@@ -94,26 +94,18 @@ function Statistic({
 }) {
   return (
     <div className="min-w-[80px] sm:min-w-[110px] lg:min-w-[120px] text-center">
-
-      {/* <h2 className="text-[#05638B] font-bold leading-none text-[32px] sm:text-[42px] lg:text-[58px] drop-shadow-[0_5px_7px_rgba(0,0,0,0.30)]">
-        {number}
-        </h2> */}
-
-      <h2 className="text-[#05638B] font-bold leading-none text-[32px] sm:text-[42px] lg:text-[58px] drop-shadow-[0_5px_7px_rgba(0,0,0,0.30)]">
+      <h2 className="text-[#05638B] font-bold leading-none text-[32px] sm:text-[42px] lg:text-[58px]">
         <SlotCounter
           value={number}
           duration={4}
           animateOnVisible
         />
         +
-
       </h2>
 
       <p className="mt-2 text-[#05638B] font-medium text-[11px] sm:text-[14px] lg:text-[22px]">
         {label}
       </p>
-
     </div>
-  
   );
 }

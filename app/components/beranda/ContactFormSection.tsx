@@ -68,7 +68,7 @@ export const ContactFormSection = () => {
           <div
             className="relative w-full overflow-hidden rounded-[40px]"
             style={{
-              backgroundImage: "url('/images/bgBaru.png')",
+              backgroundImage: "url('/images/bg our service.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -131,6 +131,10 @@ export const ContactFormSection = () => {
 
         </div>
 
+        {/* Bottom Curve */}
+        <div className="absolute -bottom-44 left-1/2 h-[300px] w-[150%] 
+        -translate-x-1/2 rounded-full bg-white" />
+      </div>
     </section>
   );
 };
