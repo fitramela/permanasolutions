@@ -18,13 +18,23 @@ export default function BestSolutionsSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
 
   const scrollRight = () => {
-    scrollRef.current?.scrollBy({
-      left: 320,
-      behavior: "smooth",
-    });
-  };
+  scrollRef.current?.scrollBy({
+    left: 320,
+    behavior: "smooth",
+  });
+
+  setShowLeftArrow(true);
+};
+
+const scrollLeft = () => {
+  scrollRef.current?.scrollBy({
+    left: -320,
+    behavior: "smooth",
+  });
+};
 
   return (
     <section className="bg-white py-16 lg:py-24">
@@ -120,10 +130,10 @@ export default function BestSolutionsSection() {
       w-fit
       max-w-full
       cursor-pointer
-      rounded-tl-[28px]
-      rounded-tr-[1px]
-      rounded-bl-[28px]
-      rounded-br-[1px]
+      rounded-tl-[1px] //kanan atas 
+      rounded-tr-[28px] //kiri atas 
+      rounded-bl-[28px] //kanan bawah 
+      rounded-br-[1px]  //kiri bawah 
       border border-[#E6EDF2]
       bg-white
       px-5
@@ -168,16 +178,29 @@ export default function BestSolutionsSection() {
             ))}
           </div>
 
-          {/* Swipe Indicator */}
-          <button
-            type="button"
-            onClick={scrollRight}
-            className="absolute right-[-24px] top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-xl backdrop-blur-sm transition duration-300 hover:scale-110"
-          >
-            <span className="text-3xl leading-none text-[#04BCBC]/70">
-              ❯
-            </span>
-          </button>
+       {/* Left Arrow */}
+{showLeftArrow && (
+  <button
+    type="button"
+    onClick={scrollLeft}
+    className="absolute left-[-24px] top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-xl backdrop-blur-sm transition duration-300 hover:scale-110"
+  >
+    <span className="text-3xl leading-none text-[#04BCBC]/70">
+      ❮
+    </span>
+  </button>
+)}
+
+{/* Right Arrow */}
+<button
+  type="button"
+  onClick={scrollRight}
+  className="absolute right-[-24px] top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-xl backdrop-blur-sm transition duration-300 hover:scale-110"
+>
+  <span className="text-3xl leading-none text-[#04BCBC]/70">
+    ❯
+  </span>
+</button>
         </div>
       </div>
     </section>

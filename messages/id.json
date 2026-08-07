@@ -270,7 +270,30 @@
         }
       ]
     },
-
+"primejula": {
+      "items": [
+        {
+          "title": "PrimeBiz is an ited ERP platform.",
+          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
+        },
+        {
+          "title": "Complete operational modules.",
+          "description": "All business operations are connected in real time."
+        },
+        {
+          "title": "Increase productivity.",
+          "description": "Automation reduces repetitive work and improves efficiency."
+        },
+        {
+          "title": "Flexible for every business.",
+          "description": "Suitable for small businesses up to enterprise companies."
+        },
+        {
+          "title": "Easy implementation.",
+          "description": "Starts from consultation, implementation, and user training."
+        }
+      ]
+    },
     "primeteams": {
       "items": [
         {
@@ -506,9 +529,8 @@
 
      "managed": {
       "tag": "Mengelola",
-
-      "title1": "Layanan",
-      "title2": "Konektivitas",
+      "title 1": "Layanan",
+      "title 2": "Konektivitas",
 
       "badge1": {
       "title": "Manajemen",
@@ -556,7 +578,10 @@
     "descriptionPlaceholder": "Jelaskan kebutuhan Anda atau bagaimana kami dapat membantu...",
 
     "submit": "Kirim",
-    "download": "Unduh"
+    "download": "Unduh",
+"sending": "Mengirim...",
+"thankYouTitle": "Terima Kasih Atas Ketertarikan Anda Pada Layanan Kami.",
+"thankYouDescription": "Pengajuan Anda telah berhasil diterima. Kami akan segera menghubungi Anda."
   },
 
   "Resource": {
@@ -652,5 +677,57 @@
     "subtitle": "Sosok di Balik Permana Solutions",
     "description": "Didorong oleh inovasi dan dipersatukan oleh visi bersama, para profesional kami bekerja sama untuk menghadirkan pengalaman teknologi yang bermakna."
   }
-}
+},
+  "Team": {
+    "ekie": {
+      "name": "Ekie Wachidie",
+      "position": "Direktur",
+      "description": "Saya percaya bahwa pertumbuhan perusahaan berasal dari inovasi, kolaborasi, dan keberanian untuk mengambil langkah-langkah strategis demi masa depan."
+    },
+    "putut": {
+      "name": "Putut Indriatmoko",
+      "position": "Manajer Operasional",
+      "description": "Saya berkomitmen untuk menjaga stabilitas keuangan perusahaan melalui pengelolaan keuangan yang cermat, transparan, dan terukur."
+    },
+    "indah": {
+      "name": "Indah Sundari",
+      "position": "Keuangan",
+      "description": "Saya berkomitmen untuk menjaga stabilitas keuangan perusahaan melalui pengelolaan keuangan yang cermat, transparan, dan terukur."
+    },
+    "putri": {
+      "name": "Putri Aulia M",
+      "position": "Manajer Akun",
+      "description": "Membangun hubungan yang kuat dengan klien adalah prioritas saya, guna memastikan setiap kebutuhan dipahami dan ditangani secara efektif."
+    },
+    "serly": {
+      "name": "Serly Zumeri",
+      "position": "Pengembangan Bisnis",
+      "description": "Saya terus mencari peluang baru untuk memperluas jaringan bisnis dan membangun kemitraan yang saling menguntungkan."
+    },
+    "palupi": {
+      "name": "Palupi Pebi Pratiwi",
+      "position": "UI/UX & Analis Bisnis",
+      "description": "Saya menjembatani kebutuhan bisnis dengan pengalaman pengguna untuk menciptakan solusi yang relevan, intuitif, dan berdampak."
+    },
+    "fitra": {
+      "name": "Fitra Melania Rais",
+      "position": "Full Stack Developer",
+      "description": "Saya menikmati membangun sistem, mulai dari frontend hingga backend, untuk menghadirkan solusi digital yang andal dan dapat dikembangkan."
+    },
+    "umar": {
+      "name": "Umar Dani Y",
+      "position": "Full Stack Developer",
+      "description": "Bagi saya, kode yang hebat tidak hanya fungsional, tetapi juga mudah dipelihara dan mampu memberikan dampak nyata."
+    },
+    "mugi": {
+      "name": "Mugi Ardana",
+      "position": "Teknisi Support",
+      "description": "Saya memastikan seluruh infrastruktur dan perangkat beroperasi secara optimal agar kegiatan operasional sehari-hari dapat berjalan lancar tanpa gangguan."
+    },
+    "ari": {
+      "name": "Mohammad Ari Wenandi",
+      "position": "NOC",
+      "description": "Pemantauan sistem secara real-time merupakan tanggung jawab saya untuk menjaga layanan tetap stabil, aman, dan responsif."
+    }
+  }
 }

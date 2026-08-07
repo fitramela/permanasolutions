@@ -68,7 +68,7 @@ export const ContactFormSection = () => {
           <div
             className="relative w-full overflow-hidden rounded-[40px]"
             style={{
-              backgroundImage: "url('/images/bg our service.png')",
+              backgroundImage: "url('/images/bgBaru.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -130,7 +130,7 @@ export const ContactFormSection = () => {
           </div>
 
         </div>
-      </div>
+
     </section>
   );
 };

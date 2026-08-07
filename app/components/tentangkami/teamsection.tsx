@@ -19,6 +19,7 @@ export default function TeamSection() {
   className="
     relative
     w-full
+    top-[-45px]
     overflow-hidden
   "
 >

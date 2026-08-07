@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 type ShowcaseItem = {
@@ -15,6 +15,27 @@ export default function SmartSystemShowcaseSection() {
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+
+    const {
+      scrollLeft,
+      scrollWidth,
+      clientWidth,
+    } = scrollRef.current;
+
+    setShowLeftArrow(scrollLeft > 10);
+
+    setShowRightArrow(
+      scrollLeft + clientWidth < scrollWidth - 10
+    );
+  };
+
+
   const scrollRight = () => {
     scrollRef.current?.scrollBy({
       left: 320,
@@ -22,38 +43,74 @@ export default function SmartSystemShowcaseSection() {
     });
   };
 
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({
+      left: -320,
+      behavior: "smooth",
+    });
+  };
+
+
   return (
     <section
       aria-labelledby="smart-system-showcase-heading"
-      className="w-full bg-[#04bcbc0a] py-16"
+      className="w-full bg-[#04bcbc0a] py-20"
     >
+
       <div className="mx-auto max-w-7xl px-6">
+
         {/* Heading */}
         <header className="mb-12 flex flex-col items-center">
+
           <div className="flex flex-col items-center md:flex-row md:gap-3">
+
             <span className="text-6xl font-bold text-[#00628d]">
               {t("why")}
             </span>
 
             <h2
               id="smart-system-showcase-heading"
-              className="text-center text-4xl font-extralight text-black md:text-5xl"
+              className="
+                px-4
+                text-center
+                text-5xl
+                font-thin
+                leading-tight
+                break-words
+                text-black
+
+                sm:px-6
+                md:px-0
+                md:text-5xl
+                lg:text-6xl
+              "
+              className="text-center text-6xl font-thin text-black md:text-5xl"
             >
               {t("heading")}
             </h2>
+
           </div>
+
         </header>
+
+
 
         {/* Cards */}
         <div className="relative">
+
+
           <div
             ref={scrollRef}
+            onScroll={handleScroll}
             role="list"
             aria-label={t("aria")}
             className="
-              flex gap-4
+              flex
+              gap-4
               overflow-x-auto
-              snap-x snap-mandatory
+              snap-x
+              snap-mandatory
               scroll-smooth
               no-scrollbar
 
@@ -63,84 +120,175 @@ export default function SmartSystemShowcaseSection() {
               md:pb-4
             "
           >
+
             {showcaseItems.map((item, index) => (
+
               <article
                 key={index}
                 role="listitem"
                 className="
-  snap-center
-  min-w-full
-  rounded-xl
-  bg-white
-  p-6
+                  snap-center
+                  min-w-full
+                  rounded-xl
+                  bg-white
+                  p-6
 
-  md:min-w-[300px]
-"
+                  md:min-w-[300px]
+                "
               >
+
                 <div className="mb-5 flex justify-center">
-                  <div className="flex h-[78px] w-[250px] items-center justify-center rounded-full bg-[#04bcbc] shadow">
-                    <h3 className="px-5 text-center text-base font-semibold leading-tight text-white">
+
+                  <div
+                    className="
+                      flex
+                      h-[78px]
+                      w-[250px]
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#04bcbc]
+                      shadow
+                    "
+                  >
+
+                    <h3
+                      className="
+                        px-5
+                        text-center
+                        text-base
+                        font-semibold
+                        leading-tight
+                        text-white
+                      "
+                    >
                       {item.title}
                     </h3>
+
                   </div>
+
                 </div>
 
+
                 <p
-  className="
-    mx-auto
-    max-w-[350px]
-    text-center
-    text-[14px]
-    font-medium
-    leading-[22px]
-    tracking-[0.01em]
-    text-[#5F6368]
-  "
->
-  {item.description}
-</p>
+                  className="
+                    mx-auto
+                    max-w-[350px]
+                    text-center
+                    text-[14px]
+                    font-medium
+                    leading-[22px]
+                    tracking-[0.01em]
+                    text-[#5F6368]
+                  "
+                >
+                  {item.description}
+                </p>
+
+
               </article>
+
             ))}
+
           </div>
 
-       {/* Swipe Indicator */}
-<button
-  type="button"
-  onClick={scrollRight}
-  className="
-    absolute
-    z-10
 
-    right-[-12px]
-    md:right-[-24px]
 
-    top-1/2
-    -translate-y-1/2
+          {/* LEFT ARROW */}
+          {showLeftArrow && (
 
-    flex
-    h-10
-    w-10
-    md:h-12
-    md:w-12
-    items-center
-    justify-center
+            <button
+              type="button"
+              onClick={scrollLeft}
+              className="
+                absolute
+                z-10
 
-    rounded-full
-    bg-white/90
-    shadow-xl
-    backdrop-blur-sm
+                left-[-12px]
+                md:left-[-24px]
 
-    transition
-    duration-300
-    hover:scale-110
-  "
->
-  <span className="text-2xl md:text-3xl leading-none text-[#04BCBC]/70">
-    ❯
-  </span>
-</button>
+                top-1/2
+                -translate-y-1/2
+
+                flex
+                h-10
+                w-10
+                md:h-12
+                md:w-12
+
+                items-center
+                justify-center
+
+                rounded-full
+                bg-white/90
+                shadow-xl
+                backdrop-blur-sm
+
+                transition
+                duration-300
+                hover:scale-110
+              "
+            >
+
+              <span className="text-2xl md:text-3xl leading-none text-[#04BCBC]/70">
+                ❮
+              </span>
+
+            </button>
+
+          )}
+
+
+
+          {/* RIGHT ARROW */}
+          {showRightArrow && (
+
+            <button
+              type="button"
+              onClick={scrollRight}
+              className="
+                absolute
+                z-10
+
+                right-[-12px]
+                md:right-[-24px]
+
+                top-1/2
+                -translate-y-1/2
+
+                flex
+                h-10
+                w-10
+                md:h-12
+                md:w-12
+
+                items-center
+                justify-center
+
+                rounded-full
+                bg-white/90
+                shadow-xl
+                backdrop-blur-sm
+
+                transition
+                duration-300
+                hover:scale-110
+              "
+            >
+
+              <span className="text-2xl md:text-3xl leading-none text-[#04BCBC]/70">
+                ❯
+              </span>
+
+            </button>
+
+          )}
+
+
         </div>
+
       </div>
+
     </section>
   );
 }

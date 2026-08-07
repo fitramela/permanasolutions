@@ -24,7 +24,7 @@ export default function WhoWeAreSection() {
               absolute
               inset-0
               m-auto
-              w-[260px]
+              w-[300px]
               opacity-100
 
               sm:w-[320px]
@@ -49,11 +49,11 @@ export default function WhoWeAreSection() {
   {t("title")}
 </h2>
 
-          <p className="relative z-10 mb-8 text-justify text-[15px] leading-[2.2] text-[#4F5965]">
+          <p className="relative z-10 mb-8 text-justify text-[20px] leading-[2.1] text-[#4F5965]">
             {t("description1")}
           </p>
 
-          <p className="relative z-10 text-justify text-[15px] leading-[2.2] text-[#4F5965]">
+          <p className="relative z-10 text-justify text-[21px] leading-[2.1] text-[#4F5965]">
             {t("description2")}
           </p>
         </div>
@@ -61,12 +61,12 @@ export default function WhoWeAreSection() {
         {/* RIGHT */}
         <div className="flex w-full items-center justify-center lg:w-[55%]">
          <Image
-  src="/images/who-we-are.png"
+  src="/images/whoWeAre.png"
   alt="Who We Are"
-  width={2048}
-  height={1651}
+  width={3000}
+  height={2000}
   priority
-  className="w-full max-w-[700px] h-auto"
+  className="w-full max-w-[7000px] h-auto"
 />
         </div>
 
