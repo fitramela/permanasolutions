@@ -320,6 +320,37 @@ text-[#4B5563]
             w-max 
             gap-3
             pb-3
+        {cards.map((item, index) => (
+
+         <button
+  key={item.title}
+  type="button"
+  className="
+    group
+    relative
+    h-[320px]
+    w-[240px]
+    sm:h-[380px]
+    sm:w-[290px]
+    flex-shrink-0
+    overflow-hidden
+    rounded-[24px]
+    text-left
+  "
+>
+
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              className="
+                object-cover 
+                transition 
+                duration-500 
+                group-hover:scale-105
+              "
+            />
+
 
             sm:gap-9
           "
@@ -384,6 +415,19 @@ text-[#4B5563]
                   sm:right-6
                 "
               >
+              <div
+  className="
+    mt-0
+    max-h-0
+    overflow-hidden
+    opacity-0
+    transition-all
+    duration-500
+    group-hover:mt-3
+    group-hover:max-h-40
+    group-hover:opacity-100
+  "
+>
 
                 <h3 
                   className="
@@ -571,6 +615,11 @@ text-[#4B5563]
     animationIterationCount: "infinite",
   }}
 >
+<section className="relative overflow-hidden py-5">
+
+
+  <div className="overflow-hidden py-10">
+    <div className="marquee flex w-max gap-8">
       {[...technologies, ...technologies].map((logo, index) => (
         <div
           key={index}

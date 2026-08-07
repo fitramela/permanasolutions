@@ -131,9 +131,6 @@ export const ContactFormSection = () => {
 
         </div>
 
-      
-
-      </div>
     </section>
   );
 };

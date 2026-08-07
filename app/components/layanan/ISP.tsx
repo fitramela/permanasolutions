@@ -302,12 +302,12 @@ export default function ISP() {
     <div className="relative min-h-[650px] overflow-visible rounded-[28px] lg:min-h-[720px] lg:rounded-[40px]">
 
       <Image
-        src="/images/ISP Connectivity new.png" 
+        src="/images/ISP Connectivity Service.png" 
         alt="Managed Connectivity"
         fill
         priority
-        sizes=""
-        className="rounded-[30px] object-cover lg:rounded-[40px]"
+        sizes="100vw"
+        className="rounded-[28px] object-cover lg:rounded-[40px]"
       />
 
       {/* Content */}
@@ -321,6 +321,15 @@ export default function ISP() {
     lg:pl-16
     lg:pt-20
     text-left
+    order-1
+    px-6
+    pt-15
+    md:pt-20
+    lg:col-span-5
+    lg:pl-16
+    lg:pt-20
+    text-center
+    lg:text-left
   "
 >
   <span className="block text-[32px] md:text-[40px] lg:text-[48px] font-regular text-[#19D5D7]">
@@ -390,6 +399,77 @@ export default function ISP() {
         <div className="text-[10px] font-medium leading-[1.15] text-white">
           <p>{t("managed.badge1.title")}</p>
           <p>{t("managed.badge1.subtitle")}</p>
+
+  <h2 className="mt-2 text-[44px] md:text-[60px] lg:text-[75px] font-extrabold leading-[0.95] text-white">
+    {t("managed.title 2")}
+  </h2>
+</div>
+
+{/* ================= RIGHT CONTENT ================= */}
+<div className="absolute inset-0 pointer-events-none">
+
+ {/* MOBILE */}
+<div className="lg:hidden overflow-hidden rounded-[30px] bg-[#00628D]">
+  <div className="px-8 pt-12 pb-15">
+
+     {/* Judul */}
+    <span className="block text-center text-[30px] font-light text-[#19D5D7]">
+      {t("managed.tag")}
+    </span>
+
+    <h2 className="mt-2 text-center text-[42px] font-extrabold leading-none text-white">
+      {t("managed.title 1")}
+    </h2>
+
+    <h2 className="text-center text-[42px] font-extrabold leading-none text-white">
+      {t("managed.title 2")}
+    </h2>
+  {/* Card Biru */}
+    <div className="flex justify-center">
+      <Image
+        src="/images/model isp 2.png"
+        alt="Managed Connectivity"
+        width={420}
+        height={520}
+        className="w-[560x] h-auto"
+      />
+    </div>
+  </div>
+  
+  
+
+  {/* Badges */}
+  <div className="mt-1 grid grid-cols-2 gap-8">
+    {/* Badge 1 */}
+    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Image
+          src="/images/users.png"
+          alt=""
+          width={44}
+          height={44}
+          className="h-10 w-10"
+        />
+        <div className="text-[13px] font-medium leading-5 text-white">
+          <p>{t("managed.badge1.title")}</p>
+          <p>{t("managed.badge1.subtitle")}</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Badge 2 */}
+    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Image
+          src="/images/monitor.png"
+          alt=""
+          width={44}
+          height={44}
+          className="h-10 w-10"
+        />
+        <div className="text-[13px] font-medium leading-5 text-white">
+          <p>{t("managed.badge2.title")}</p>
+          <p>{t("managed.badge2.subtitle")}</p>
         </div>
       </div>
     </div>
@@ -427,6 +507,88 @@ export default function ISP() {
         <div className="text-[10px] font-medium leading-[1.15] text-white">
           <p>{t("managed.badge4.title")}</p>
           <p>{t("managed.badge4.subtitle")}</p>
+    {/* Badge 3 */}
+    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Image
+          src="/images/Location.png"
+          alt=""
+          width={44}
+          height={44}
+          className="h-10 w-10"
+        />
+        <div className="text-[13px] font-medium leading-5 text-white">
+          <p>{t("managed.badge3.title")}</p>
+          <p>{t("managed.badge3.subtitle")}</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Badge 4 */}
+    <div className="rounded-[18px] border border-white/20 bg-[#1A9BC7]/80 p-4 backdrop-blur-xl shadow-lg">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Image
+          src="/images/Location.png"
+          alt=""
+          width={44}
+          height={44}
+          className="h-10 w-10"
+        />
+        <div className="text-[13px] font-medium leading-5 text-white">
+          <p>{t("managed.badge4.title")}</p>
+          <p>{t("managed.badge4.subtitle")}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  {/* ================= DESKTOP ================= */}
+  <div className="hidden lg:block absolute right-0 top-0 h-full w-[55%]">
+
+    {/* Badge 1 */}
+    <div
+      className="
+        absolute
+        top-[40%]
+        left-[12%]
+        rounded-[15px]
+        border border-white/20
+        bg-[#1A9BC7]/70
+        px-5 py-5
+        backdrop-blur-xl
+        shadow-xl
+      "
+    >
+      <div className="flex items-center gap-3">
+        <Image src="/images/users.png" alt="" width={50} height={50} />
+        <div className="text-[15px] font-medium leading-5 text-white">
+          <p>{t("managed.badge1.title")}</p>
+          <p>{t("managed.badge1.subtitle")}</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Badge 2 */}
+    <div
+      className="
+        absolute
+        top-[40%]
+        left-[62%]
+        rounded-[15px]
+        border border-white/20
+        bg-[#1A9BC7]/70
+        px-5 py-5
+        backdrop-blur-xl
+        shadow-xl
+      "
+    >
+      <div className="flex items-center gap-3">
+        <Image src="/images/monitor.png" alt="" width={50} height={50} />
+        <div className="text-[15px] font-medium leading-5 text-white">
+          <p>{t("managed.badge2.title")}</p>
+          <p>{t("managed.badge2.subtitle")}</p>
         </div>
       </div>
     </div>
@@ -475,6 +637,15 @@ export default function ISP() {
         rounded-[15px]
         border border-white/20
          bg-[#04BCBC]/20
+    {/* Badge 3 */}
+    <div
+      className="
+        absolute
+        top-[63%]
+        left-[3%]
+        rounded-[15px]
+        border border-white/20
+        bg-[#1A9BC7]/70
         px-5 py-5
         backdrop-blur-xl
         shadow-xl
@@ -485,6 +656,10 @@ export default function ISP() {
         <div className="text-[15px] font-medium leading-5 text-white">
           <p>{t("managed.badge2.title")}</p>
           <p>{t("managed.badge2.subtitle")}</p>
+        <Image src="/images/Location.png" alt="" width={50} height={50} />
+        <div className="text-[15px] font-medium leading-5 text-white">
+          <p>{t("managed.badge3.title")}</p>
+          <p>{t("managed.badge3.subtitle")}</p>
         </div>
       </div>
     </div>
@@ -498,6 +673,15 @@ export default function ISP() {
         rounded-[15px]
         border border-white/20
          bg-[#04BCBC]/20
+    {/* Badge 4 */}
+    <div
+      className="
+        absolute
+        left-[66%]
+        bottom-[17%]
+        rounded-[15px]
+        border border-white/20
+        bg-[#1A9BC7]/70
         px-5 py-5
         backdrop-blur-xl
         shadow-xl
@@ -508,6 +692,10 @@ export default function ISP() {
         <div className="text-[15px] font-medium leading-5 text-white">
           <p>{t("managed.badge3.title")}</p>
           <p>{t("managed.badge3.subtitle")}</p>
+        <Image src="/images/Location.png" alt="" width={50} height={50} />
+        <div className="text-[15px] font-medium leading-5 text-white">
+          <p>{t("managed.badge4.title")}</p>
+          <p>{t("managed.badge4.subtitle")}</p>
         </div>
       </div>
     </div>

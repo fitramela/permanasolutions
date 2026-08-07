@@ -1,5 +1,5 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { TeamMember } from "./teamdata";
 
@@ -8,34 +8,33 @@ interface TeamCardProps {
 }
 
 export default function TeamCard({ member }: TeamCardProps) {
+  const t = useTranslations("Team");
   return (
     <article
       className="
         relative
+        w-[320px]
+        h-[400px]
+
+        rounded-[26px]
+
+        bg-white
+
+        border
+        border-white/80
+
+        shadow-[0_12px_45px_rgba(0,0,0,0.08)]
 
         flex
         flex-col
         items-center
 
-        h-[345px]
-
-        rounded-[14px]
-
-        border
-        border-[#E9EEF3]
-
-        bg-white
-
-        px-5
-        pt-[82px]
-        pb-5
-
-        shadow-[0_8px_22px_rgba(0,0,0,.04)]
+        overflow-visible
 
         transition-all
         duration-300
-
         hover:-translate-y-2
+        hover:shadow-[0_22px_60px_rgba(0,0,0,.12)]
       "
     >
       {/* FOTO */}
@@ -43,92 +42,115 @@ export default function TeamCard({ member }: TeamCardProps) {
       <div
         className="
           absolute
+
           left-1/2
-          top-0
-
           -translate-x-1/2
-          -translate-y-[48%]
-        "
-      >
-        <div
-          className="
-            relative
 
-            h-[118px]
-            w-[118px]
+          -top-[100px]
 
-            overflow-hidden
+          w-[200px]
+          h-[200px]
 
-            rounded-full
-
-            border-[4px]
-            border-[#DDE8EF]
-
-            bg-white
-          "
-        >
-          <Image
-            src={member.image}
-            alt={member.name}
-            fill
-            className="object-cover object-top"
-          />
-        </div>
-      </div>
-
-      {/* POSITION */}
-
-      <span
-        className="
           rounded-full
 
-          bg-[#13C6D6]
+          overflow-hidden
 
-          px-4
-          py-[3px]
+          bg-white
 
-          text-[10px]
-          font-semibold
+          border-[3px]
+          border-[#F4F4F4]
 
-          text-white
+          shadow-[0_12px_35px_rgba(0,0,0,.16)]
         "
       >
-        {member.position}
-      </span>
+        <Image
+          src={member.image}
+          alt={t(member.nameKey)}
+          fill
+          className="object-cover"
+          sizes="200px"
+        />
+      </div>
+
+      {/* BADGE */}
+
+      <div
+        className="
+          mt-[122px]
+
+          w-[160px]
+          h-[32px]
+
+          rounded-full
+
+          bg-[#04BCBC]
+
+          flex
+          items-center
+          justify-center
+
+          shadow-[0_6px_15px_rgba(4,188,188,.28)]
+        "
+      >
+        <span
+          className="
+            text-white
+
+            text-[11px]
+
+            font-semibold
+
+            tracking-[0.2px]
+          "
+        >
+          {t(member.positionKey)}
+        </span>
+      </div>
 
       {/* NAMA */}
 
       <h3
         className="
-          mt-4
+          mt-[16px]
+
+          w-[250px]
 
           text-center
 
-          text-[16px]
-          font-semibold
+          text-[#101A24]
 
-          text-[#202020]
+          text-[20px]
+
+          leading-[26px]
+
+          font-bold
+
+          font-['David_Libre']
         "
       >
-        {member.name}
+       {t(member.nameKey)}
       </h3>
 
       {/* DESKRIPSI */}
 
       <p
         className="
-          mt-4
+          mt-[28px]
+
+          w-[250px]
 
           text-center
 
-          text-[12px]
+          text-[#5C6574]
 
-          leading-[22px]
+          text-[15px]
 
-          text-[#666]
+          leading-[26px]
+
+          font-normal
         "
       >
-        {member.description}
+       {t(member.descriptionKey)}
       </p>
     </article>
   );

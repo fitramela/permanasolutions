@@ -50,7 +50,13 @@ export default function HeroAboutUs() {
           px-[100px]
         "
       >
-        <div className="max-w-[560px]">
+        <div className=" relative
+
+    max-w-[640px]
+
+    -mt-[190px]      
+    ml-[-30px]"
+    >
 
           {/* Title */}
 
@@ -74,11 +80,11 @@ export default function HeroAboutUs() {
             className="
               mt-8
 
-              max-w-[500px]
+              max-w-[900px]
 
-              text-[17px]
+              text-[15px]
 
-              leading-[34px]
+              leading-[20px]
 
               text-white/95
             "
@@ -86,25 +92,24 @@ export default function HeroAboutUs() {
             {t("hero.description")}
           </p>
 
-          {/* Line */}
+         {/* Line Image */}
 
-          <div
-            className="
-              mt-10
+<Image
+  src="/images/Decore.png"
+  alt="Line Decoration"
+  width={260}
+  height={8}
+  priority
+  className="
+    mt-3
 
-              h-[5px]
+    w-[750px]
+    h-auto
 
-              w-[260px]
-
-              rounded-full
-
-              bg-gradient-to-r
-
-              from-cyan-300
-
-              to-[#0098C9]
-            "
-          />
+    select-none
+    pointer-events-none
+  "
+/>
 
         </div>
       </div>

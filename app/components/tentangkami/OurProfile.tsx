@@ -68,8 +68,7 @@ export default function OurProfile() {
   className="
     relative
 
-    left-[40px]     /* geser ke kanan */
-    /* left-[-40px]  geser ke kiri */
+    left-[-39px]
 
     w-full
     max-w-[1120px]
