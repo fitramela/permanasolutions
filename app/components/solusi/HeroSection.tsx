@@ -15,7 +15,7 @@ export default function Solutions() {
         
         {/* Background */}
         <Image
-          src="/images/solutions.png"
+          src="/images/solutions new.png"
           alt="Solutions Hero"
           fill
           priority
@@ -58,7 +58,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* PART 2 */}
+     
     </main>
   );
 }

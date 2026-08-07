@@ -302,7 +302,7 @@ export default function ISP() {
     <div className="relative min-h-[650px] overflow-visible rounded-[28px] lg:min-h-[720px] lg:rounded-[40px]">
 
       <Image
-        src="/images/ISP Connectivity Service.png" 
+        src="/images/ISP Connectivity new.png" 
         alt="Managed Connectivity"
         fill
         priority
@@ -358,7 +358,7 @@ export default function ISP() {
 
     {/* MOBILE BACKGROUND */}
     <Image
-      src="/images/Android Compact - 1.png"
+      src="/images/mobile.png"
       alt="Managed Connectivity"
       fill
       priority
