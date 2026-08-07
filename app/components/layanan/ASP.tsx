@@ -7,18 +7,26 @@ import { useTranslations } from "next-intl";
 export default function Asp() {
   const t = useTranslations("Asp");
 
- const [activeIndex, setActiveIndex] = useState<string | null>("primebiz-0");
- const [currentProduct, setCurrentProduct] = useState(0);
+const [activeIndex, setActiveIndex] = useState<string | null>("primebiz-0");
+const [currentProduct, setCurrentProduct] = useState(0);
+const [playVideo, setPlayVideo] = useState(false);
 
  const products = [
   {
     key: "primebiz",
     title: "PrimeBiz",
+   youtube: "https://www.youtube.com/embed/RZunaYdRoEU",
     description: t("primeDescription"),
-    image: "/images/products/biz.png",
+    image: "/images/products/image.png",
     items: t.raw("primebiz.items"),
   },
   {
+    key: "primecafe",
+    title: "PrimeCafe",
+    youtube: "https://www.youtube.com/embed/5_tTysgmcTo",
+    description: t("primeCafeDescription"),
+    image: "/images/products/Image cafe.png",
+    items: t.raw("primecafe.items"),
     key: "primejula",
     title: "Jula",
     youtube: "https://www.youtube.com/embed/1Dn7QDKUXoI",
@@ -38,9 +46,10 @@ export default function Asp() {
     key: "primeresto",
     title: "PrimeResto",
     description: t("primeRestoDescription"),
-    image: "/images/products/resto.png",
+    image: "/images/products/Image Resto.png",
     items: t.raw("primeresto.items"),
   },
+
   {
     key: "primecafe",
     title: "PrimeCafe",
@@ -54,21 +63,23 @@ export default function Asp() {
     title: "PrimeCare",
     youtube: "https://www.youtube.com/embed/qja1nkN_S5U",
     description: t("primeCareDescription"),
-    image: "/images/products/care.png",
+    image: "/images/products/Image care.png",
     items: t.raw("primecare.items"),
   },
+  
+
   {
     key: "primeedu",
     title: "PrimeEdu",
     description: t("primeEduDescription"),
-    image: "/images/products/edu.png",
+    image: "/images/products/Image Edu.png",
     items: t.raw("primeedu.items"),
   },
   {
     key: "primecourse",
     title: "PrimeCourse",
     description: t("primeCourseDescription"),
-    image: "/images/products/course.png",
+    image: "/images/products/Image Edu.png",
     items: t.raw("primecourse.items"),
   },
   {
@@ -78,12 +89,29 @@ export default function Asp() {
     image: "/images/products/puffy.png",
     items: t.raw("petpuffy.items"),
   },
+
+  {
+
+    key: "primeteams",
+    title: "PrimeTeams",
+    description: t("primeTeamsDescription"),
+    image: "/images/products/ImageTeam.png",
+    items: t.raw("primeteams.items"),
+  },
+  {
+    key: "primejula",
+    title: "Jula",
+    youtube: "https://www.youtube.com/embed/1Dn7QDKUXoI",
+    description: t("primeJulaDescription"),
+    image: "/images/products/jula.png",
+    items: t.raw("primejula.items"),
+  }
 ];
 
   return (
   <main className="overflow-hidden bg-white">
     {/* ================= HERO ================= */}
-    <section className="bg-[#F5FBFD] pb-14 pt-[100px]">
+    <section className="bg-[#F5FBFD] pb-20 pt-[90px]">
       <div className="relative mx-auto w-full max-w-[1600px] px-10 lg:px-20">
         {/* Heading */}
         <div className="text-center">
@@ -103,85 +131,216 @@ export default function Asp() {
           </p>
         </div>
 
-        {/* ASP CARDS */}
-        <div className="mt-12 flex items-end justify-center gap-4 overflow-x-auto pb-4 lg:gap-6">
-          {/* IMAGE */}
-          <div className="relative h-[240px] w-[145px] flex-shrink-0 overflow-hidden rounded-[30px] lg:h-[320px] lg:w-[190px]">
-            <Image
-              src="/images/image 44.png"
-              alt="ASP"
-              fill
-              className="object-cover"
-            />
-          </div>
+       {/* ASP CARDS */}
+<div className="mt-8 w-full sm:mt-12">
+  <div
+    className="
+      grid
+      grid-cols-2
+      gap-3
+      px-2
 
-          {/* CARD 1 */}
-          <div className="flex h-[240px] w-[190px] items-center justify-center rounded-[30px] bg-[linear-gradient(180deg,#0D668A_0%,#0A5F7E_45%,#062F44_100%)] px-6 text-center text-white">
-            <p className="max-w-[300px] text-[14px] leading-5">
-              {t("card1")}
-            </p>
-          </div>
+      lg:flex
+      lg:items-end
+      lg:justify-center
+      lg:gap-4
+      lg:px-0
+    "
+  >
 
-          {/* CARD 2 */}
-<div className="flex h-[155px] w-[150px] flex-shrink-0 items-center justify-center rounded-[28px] border border-[#1F3A5F]/8 bg-white/20 lg:h-[190px] lg:w-[190px]">
-  <p className="max-w-[130px] text-center text-[15px] leading-5 text-[#1F3A5F]">
-    {t("card2")}
-  </p>
+    {/* IMAGE */}
+    <div
+      className="
+        relative
+        h-[240px]
+        w-full
+        overflow-hidden
+        rounded-[30px]
+
+        lg:h-[320px]
+        lg:w-[190px]
+      "
+    >
+      <Image
+        src="/images/image 44.png"
+        alt="ASP"
+        fill
+        className="object-cover"
+      />
+    </div>
+
+
+    {/* CARD 1 */}
+    <div
+      className="
+        flex
+        h-[200px]
+        w-full
+        items-center
+        justify-center
+        rounded-[30px]
+        bg-[linear-gradient(180deg,#0D668A_0%,#0A5F7E_45%,#062F44_100%)]
+        px-5
+        text-center
+        text-white
+
+        lg:h-[240px]
+        lg:w-[190px]
+      "
+    >
+      <p className="text-[13px] leading-5 lg:text-[14px]">
+        {t("card1")}
+      </p>
+    </div>
+
+
+    {/* CARD 2 */}
+    <div
+      className="
+        flex
+        h-[180px]
+        w-full
+        items-center
+        justify-center
+        rounded-[30px]
+        border
+        border-gray-200
+        bg-white
+        px-5
+        text-center
+        shadow-sm
+
+        lg:h-[185px]
+        lg:w-[190px]
+      "
+    >
+      <p className="text-[14px] leading-6 text-[#233B5A] lg:text-[16px] lg:leading-7">
+        {t("card2")}
+      </p>
+    </div>
+
+
+    {/* CARD 3 */}
+    <div
+      className="
+        flex
+        h-[200px]
+        w-full
+        flex-col
+        items-center
+        justify-center
+        rounded-[30px]
+        bg-[#9FC8DC]
+        text-white
+
+        lg:h-[240px]
+        lg:w-[190px]
+      "
+    >
+      <h3 className="text-4xl lg:text-5xl">
+        5+
+      </h3>
+
+      <p className="mt-3 w-32 text-center text-xs leading-5 lg:text-sm lg:leading-6">
+        {t("card3")}
+      </p>
+    </div>
+
+
+    {/* CARD 4 */}
+    <div
+      className="
+        relative
+        col-span-2
+        flex
+        h-[240px]
+        w-full
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-[30px]
+        bg-[#0A4D69]
+        px-6
+        text-center
+        text-white
+
+        lg:col-span-1
+        lg:h-[320px]
+        lg:w-[190px]
+      "
+    >
+
+      <div
+        className="
+          absolute
+          -left-7
+          -top-7
+          h-24
+          w-24
+          rounded-full
+          border-[18px]
+          border-[#0D7CA8]/30
+        "
+      />
+
+      <div
+        className="
+          absolute
+          -left-2
+          -top-2
+          h-12
+          w-12
+          rounded-full
+          bg-[#062F42]
+        "
+      />
+
+      <p className="relative text-sm leading-6 lg:leading-7">
+        {t("card4")}
+      </p>
+
+    </div>
+
+  </div>
 </div>
-
-          {/* CARD 3 */}
-          <div className="flex h-[185px] w-[150px] flex-shrink-0 flex-col items-center justify-center rounded-[30px] bg-[#9FC8DC] text-white lg:h-[240px] lg:w-[190px]">
-            <h3 className="text-4xl lg:text-5xl">5+</h3>
-
-            <p className="mt-3 w-28 text-center text-[16px] leading-5 lg:w-36 lg:text-sm lg:leading-6">
-              {t("card3")}
-            </p>
-          </div>
-
-          {/* CARD 4 */}
-          <div className="relative flex h-[240px] w-[145px] flex-shrink-0 items-center justify-center overflow-hidden rounded-[30px] bg-[#0A4D69] px-4 text-center text-white lg:h-[320px] lg:w-[190px]">
-            <div className="absolute -left-7 -top-7 h-20 w-20 rounded-full border-[14px] border-[#0D7CA8]/30 lg:h-24 lg:w-24 lg:border-[18px]" />
-            <div className="absolute -left-2 -top-2 h-10 w-10 rounded-full bg-[#062F42] lg:h-12 lg:w-12" />
-
-            <p className="relative text-xs leading-5 lg:text-sm lg:leading-7">
-              {t("card4")}
-            </p>
-          </div>
-        </div>
-      </div>
+</div>
     </section>
 
    {/* ================= PRODUCTS ================= */}
 <section className="relative py-20">
   <div className="absolute left-0 top-10 h-80 w-80 rounded-full bg-cyan-100 opacity-40 blur-3xl" />
 
-  {/* Previous */}
-  {currentProduct > 0 && (
-    <button
-      onClick={() => {
-        const prev = currentProduct - 1;
-        setCurrentProduct(prev);
-        setActiveIndex(`${products[prev].key}-0`);
-      }}
-      className="absolute left-4 top-1/2 z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8]"
-    >
-      &#10094;
-    </button>
-  )}
+  
+{/* Previous */}
+{currentProduct > 0 && (
+  <button
+    onClick={() => {
+      const prev = currentProduct - 1;
+      setCurrentProduct(prev);
+      setActiveIndex(`${products[prev].key}-0`);
+      setPlayVideo(false);
+    }}
+    className="absolute left-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
+  >
+    ❮
+  </button>
+)}
 
-  {/* Next */}
-  {currentProduct < products.length - 1 && (
-    <button
-      onClick={() => {
-        const next = currentProduct + 1;
-        setCurrentProduct(next);
-        setActiveIndex(`${products[next].key}-0`);
-      }}
-      className="absolute right-4 top-1/2 z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8]"
-    >
-      &#10095;
-    </button>
-  )}
+{/* Next */}
+{currentProduct < products.length - 1 && (
+  <button
+    onClick={() => {
+      const next = currentProduct + 1;
+      setCurrentProduct(next);
+      setActiveIndex(`${products[next].key}-0`);
+      setPlayVideo(false);
+    }}
+    className="absolute right-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
+  >
+    ❯
+  </button>
+)}
+
 
   <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
     <div className="mb-12">
@@ -195,17 +354,50 @@ export default function Asp() {
     </div>
 
    <div className="grid items-center gap-24 lg:grid-cols-[720px_1fr] xl:gap-32">
-    {/* LEFT */}
+    {/* LEFT - PRODUCT PREVIEW */}
 <div className="flex items-center justify-center">
-  <div className="drop-shadow-[0_25px_40px_rgba(0,0,0,0.18)]">
-    <Image
-      src={products[currentProduct].image}
-      alt={products[currentProduct].title}
-      width={1000}
-      height={900}
-      priority
-      className="h-auto w-full max-w-[650px] object-contain"
-    />
+  <div className="w-full max-w-[650px] overflow-hidden rounded-[28px] shadow-[0_25px_40px_rgba(0,0,0,0.18)]">
+    <div className="relative aspect-video w-full">
+
+      {!playVideo ? (
+        <>
+         <div className="relative aspect-video w-full bg-white">
+  <Image
+    src={products[currentProduct].image}
+    alt={products[currentProduct].title}
+    fill
+    className="object-contain p- transition-all duration-300"
+  />
+</div>
+
+          <button
+            type="button"
+            onClick={() => setPlayVideo(true)}
+            className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition"
+          >
+            <div className="flex h-20 w-20 items-center justify-center rounded-full border-4 border-white bg-white/20 backdrop-blur-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="ml-1 h-10 w-10 fill-white"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </button>
+        </>
+      ) : (
+       <iframe
+  src={products[currentProduct].youtube}
+  title={products[currentProduct].title}
+  className="absolute inset-0 h-full w-full"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+/>
+      )}
+
+    </div>
   </div>
 </div>
 

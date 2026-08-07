@@ -459,7 +459,7 @@
       {
         "logo": "/images/image 261.png",
         "title": "Permana Dedicated",
-        "description": "Dedicated internet service dengan bandwidth simetris yang stabil, cepat, dan aman untuk kebutuhan bisnis, pemerintahan, industri, dan UKM, tersedia melalui Fiber Optic dan Wireless Radio."
+        "description": "Dedicated internet services with stable, fast, and secure bandwidth symmetry for business, government, industry, and SME needs, available via Fiber Optic and Wireless Radio."
       },
       {
         "logo": "/images/image 262.png",
@@ -540,7 +540,54 @@
     "description": "Brief Description of Your Needs",
     "descriptionPlaceholder": "Please describe your needs or how we can help you...",
     "submit": "Submit",
-    "download": "Download"
+    "download": "Download",
+"sending": "Sending...",
+"thankYouTitle": "Thank You For Your Interest In Our Services.",
+"thankYouDescription": "Your submission has been received successfully. We will get back to you as soon as possible."
+  },
+  "Resource": {
+    "title": "Consulting & Resource",
+    "subtitle": "Simplify IT. Amplify Performance.",
+    "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>",
+    "standOut": {
+      "title": "Why We Stand Out?",
+      "subtitle": "We focus on quality, speed, and efficiency to deliver real results for every client.",
+      "cards": [
+        {
+          "image": "/images/card1.png",
+          "title": "PJP Consulting",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card2.png",
+          "title": "ISO Consulting",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card3.png",
+          "title": "Digital Compliance",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card4.png",
+          "title": "IT Consulting",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card5.png",
+          "title": "IT Resource Outsourcing",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card6.png",
+          "title": "Infrastructure Managed Services",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        }
+      ]
+    },
+    "powering": {
+      "title": "Powering Innovation With"
+    }
   },
   "Resource": {
     "title": "Consulting & Resource",
@@ -632,7 +679,6 @@
   "powering": {
     "title": "Powering Innovation With"
   
-<<<<<<< HEAD
 },
 
 
@@ -680,6 +726,7 @@
     "subtitle": "The People Behind Permana Solutions",
     "description": "Driven By Innovation And United By A Shared Vision, Our Professionals Work Together To Deliver Meaningful Technology Experiences."
   }
+}
 },
   "Team": {
     "ekie": {
@@ -733,9 +780,8 @@
       "description": "Real-time system monitoring is my responsibility to keep services stable, secure, and responsive."
     }
   }
-=======
->>>>>>> 609cf28b631340e261588c4014d9edc49dd60204
 }
+
 
 
 
