@@ -299,16 +299,28 @@ export default function ISP() {
       {/* ================= MANAGED CONNECTIVITY ================= */}
 <section className="py-12 lg:py-24">
   <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-8">
-    <div className="relative min-h-[650px] overflow-visible rounded-[28px] lg:min-h-[720px] lg:rounded-[40px]">
 
+   <div className="relative aspect-[9/20] overflow-hidden rounded-[28px] lg:aspect-auto lg:min-h-[720px] lg:rounded-[40px]">
+    
+      {/* ================= DESKTOP IMAGE ================= */}
       <Image
-        src="/images/ISP Connectivity new.png" 
+        src="/images/ISP Connectivity new.png"
         alt="Managed Connectivity"
-        fill
+        width={2048}
+        height={848}
         priority
-        sizes=""
-        className="rounded-[30px] object-cover lg:rounded-[40px]"
+        className="absolute inset-0 hidden h-full w-full object-fill lg:block"
       />
+
+      {/* ================= MOBILE IMAGE ================= */}
+<Image
+  src="/images/mobile.png"
+  alt="Managed Connectivity"
+  fill
+  priority
+  sizes="100vw"
+  className="absolute inset-0 block object-cover lg:hidden"
+/>
 
       {/* Content */}
       <div className="relative z-10 grid min-h-[650px] grid-cols-1 items-center lg:min-h-[720px] lg:grid-cols-12">
@@ -356,27 +368,19 @@ export default function ISP() {
     "
   >
 
-    {/* MOBILE BACKGROUND */}
-    <Image
-      src="/images/mobile.png"
-      alt="Managed Connectivity"
-      fill
-      priority
-      sizes="100vw"
-      className="object-cover"
-    />
+    
 
     {/* ================= MOBILE TITLE ================= */}
     <div className="absolute left-[29px] top-[40px] z-10">
-      <p className="block text-[32px] md:text-[40px] lg:text-[48px] font-regular text-[#19D5D7]">
+      <p className="block text-[25px] md:text-[20px] lg:text-[48px] font-regular text-[#04BCBC]">
     {t("managed.tag")}
   </p>
 
-    <h2 className="mt-2 text-[44px] md:text-[60px] lg:text-[75px] font-extrabold leading-[0.95] text-white">
+    <h2 className="mt-2 text-[30px] md:text-[40px] lg:text-[75px] font-extrabold leading-[0.95] text-white">
     {t("managed.title 1")}
   </h2>
   
-  <h2 className="mt-2 text-[44px] md:text-[60px] lg:text-[75px] font-extrabold leading-[0.95] text-white">
+  <h2 className="mt-2 text-[30px] md:text-[60px] lg:text-[75px] font-extrabold leading-[0.95] text-white">
     {t("managed.title 2")}
   </h2>
 

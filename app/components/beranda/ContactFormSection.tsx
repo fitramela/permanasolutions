@@ -65,15 +65,9 @@ export const ContactFormSection = () => {
           </div>
 
           {/* Background */}
-          <div
-            className="relative w-full overflow-hidden rounded-[40px]"
-            style={{
-              backgroundImage: "url('/images/bgBaru.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+         <div
+  className="service-background relative w-full overflow-hidden rounded-[40px]"
+>
             {/* Overlay */}
             <div className="absolute inset-0 bg-white/35" />
 

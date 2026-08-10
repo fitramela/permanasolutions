@@ -61,10 +61,10 @@ export default function WhoWeAreSection() {
         {/* RIGHT */}
         <div className="flex w-full items-center justify-center lg:w-[55%]">
          <Image
-  src="/images/whoWeAre.png"
+  src="/images/newWHO.png"
   alt="Who We Are"
-  width={3000}
-  height={2000}
+  width={2000}
+  height={5000}
   priority
   className="w-full max-w-[7000px] h-auto"
 />

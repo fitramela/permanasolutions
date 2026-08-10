@@ -24,11 +24,11 @@ export default function HeroBannerSection() {
             <Image
               src="/images/heroHome.png"
               alt="Permana Solutions Hero"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-[40%_center]"
-            />
+             width={2048}
+        height={848}
+        priority
+        className="absolute inset-0 hidden h-full w-full object-fill lg:block"
+      />
 
 
        {/* TEXT */}

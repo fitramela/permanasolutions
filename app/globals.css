@@ -134,3 +134,31 @@ body {
   }
 }
 
+.service-background {
+  background-image: url("/images/bgBaru.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .service-background {
+    background-image: url("/images/bgMobile.png");
+  }
+}
+
+.resource-hero {
+  background-image: url("/images/RESOURCE NEW.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .resource-hero {
+    background-image: url("/images/RESOURCE MOBILE.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
