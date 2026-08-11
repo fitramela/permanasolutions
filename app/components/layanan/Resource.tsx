@@ -338,11 +338,7 @@ const scrollLeft = () => {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="
-          overflow-x-auto
-          scrollbar-hide
-          scroll-smooth
-        "
+        className="overflow-x-auto scrollbar-hide scroll-smooth"
       >
 
         <div 
