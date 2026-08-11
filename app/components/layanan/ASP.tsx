@@ -27,8 +27,24 @@ const [currentProduct, setCurrentProduct] = useState(0);
     description: t("primeCafeDescription"),
     image: "/images/products/Image cafe.png",
     items: t.raw("primecafe.items"),
+  },  
+  {
+
+    key: "primeteams",
+    title: "PrimeTeams",
+    description: t("primeTeamsDescription"),
+    image: "/images/products/teams.png",
+    items: t.raw("primeteams.items"),
   },
 
+  {
+    key: "primecafe",
+    title: "PrimeCafe",
+    youtube: "https://www.youtube.com/embed/5_tTysgmcTo",
+    description: t("primeCafeDescription"),
+    image: "/images/products/cafe.png",
+    items: t.raw("primecafe.items"),
+  },
   {
     key: "primecare",
     title: "PrimeCare",

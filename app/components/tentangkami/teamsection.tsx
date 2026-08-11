@@ -1,182 +1,150 @@
 "use client";
 
-import { useRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import TeamCard from "./teamcard";
 import { teamData } from "./teamdata";
+import ArrowButton from "./ArrowButton";
+import DotPattern from "./DotPattern";
 
 export default function TeamSection() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (!sliderRef.current) return;
-
-    const cardWidth = 320 + 24; // lebar card + gap
-
-    sliderRef.current.scrollBy({
-      left: direction === "left" ? -cardWidth : cardWidth,
-      behavior: "smooth",
-    });
-  };
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    containScroll: "keepSnaps",
+    dragFree: true,
+    loop: false,
+  });
 
   return (
-    <section
-      className="
-        relative
-        py-[90px]
+   <section
+  className="
+    relative
+    w-full
+    top-[-45px]
+    overflow-hidden
+  "
+>
+  <div
+    className="
+      relative
 
-        overflow-visible
-      "
-    >
-      {/* Glow kiri */}
+  
+      max-w-full
 
-      <div
+      h-[581px]
+
+      bg-[#F3F3F3]
+
+      overflow-hidden
+    "
+  >
+
+      {/* Pattern kiri */}
+
+      <DotPattern
         className="
           absolute
-          left-[-180px]
-          top-[180px]
+          hidden
+          lg:block
 
-          h-[340px]
-          w-[340px]
-
-          rounded-full
-
-          bg-[#F3F3F3]
-
-          blur-[120px]
+          left-10
+          top-40
+          z-0
         "
       />
 
-      {/* Glow kanan */}
+      {/* Pattern kanan */}
 
-      <div
+      <DotPattern
         className="
           absolute
-          right-[-180px]
-          bottom-[60px]
+          hidden
+          lg:block
 
-          h-[340px]
-          w-[340px]
-
-          rounded-full
-
-          bg-[#B5F1FF]/20
-
-          blur-[120px]
+          right-10
+          bottom-20
+          rotate-180
+          z-0
         "
       />
 
-      <div className="relative">
+   <div className="relative w-full z-10">
+        {/* Arrow kiri */}
 
-        {/* Arrow Left */}
-
-        <button
-          onClick={() => scroll("left")}
+        <ArrowButton
+          direction="left"
+          onClick={() => emblaApi?.scrollPrev()}
           className="
             absolute
 
-            left-[20px]
-            top-1/2
+            left-2
+            md:left-4
+            lg:left-6
+
+            top-[320px]
+            lg:top-[360px]
 
             -translate-y-1/2
-
             z-30
-
-            flex
-            items-center
-            justify-center
-
-            w-[54px]
-            h-[54px]
-
-            rounded-full
-
-            bg-white
-
-            shadow-lg
-
-            transition
-
-            hover:scale-105
           "
-        >
-          ❮
-        </button>
+        />
 
-        {/* Arrow Right */}
+        {/* Arrow kanan */}
 
-        <button
-          onClick={() => scroll("right")}
+        <ArrowButton
+          direction="right"
+          onClick={() => emblaApi?.scrollNext()}
           className="
             absolute
 
-            right-[20px]
-            top-1/2
+            right-2
+            md:right-4
+            lg:right-6
+
+            top-[320px]
+            lg:top-[360px]
 
             -translate-y-1/2
-
             z-30
-
-            flex
-            items-center
-            justify-center
-
-            w-[54px]
-            h-[54px]
-
-            rounded-full
-
-            bg-white
-
-            shadow-lg
-
-            transition
-
-            hover:scale-105
           "
-        >
-          ❯
-        </button>
+        />
 
-        {/* Slider */}
+        {/* Embla */}
 
-        <div
-          ref={sliderRef}
-          className="
-            flex
+       <div
+  ref={emblaRef}
+  className="
+    overflow-hidden
+    cursor-grab
+    active:cursor-grabbing
+  "
+>
+          <div
+            className="
+              flex
 
-            gap-6
+              gap-6
+              lg:gap-[34px]
 
-            overflow-x-auto
-            overflow-y-visible
-            
-            w-full
-            h-auto
-            
-            scroll-smooth
-            scrollbar-hide
+              items-start
 
-            px-[70px]
-            pt-[80px]
-            pb-[30px]
-          "
-        >
-          {teamData.map((member) => (
-            <div
-              key={member.id}
-              className="
-                shrink-0
-
-                w-[320px]
-
-                md:w-[310px]
-
-                xl:w-[300px]
-              "
-            >
-              <TeamCard member={member} />
-            </div>
-          ))}
+              pt-[110px]
+              pb-5
+            "
+          >
+            {teamData.map((member) => (
+              <div
+                key={member.id}
+                className="
+                  flex-[0_0_320px]
+                  select-none
+                "
+              >
+                <TeamCard member={member} />
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
       </div>
     </section>
   );

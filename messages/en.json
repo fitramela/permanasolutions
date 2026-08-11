@@ -589,6 +589,50 @@
       "title": "Powering Innovation With"
     }
   },
+  "Resource": {
+    "title": "Consulting & Resource",
+    "subtitle": "Simplify IT. Amplify Performance.",
+    "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>",
+    "standOut": {
+      "title": "Why We Stand Out?",
+      "subtitle": "We focus on quality, speed, and efficiency to deliver real results for every client.",
+      "cards": [
+        {
+          "image": "/images/card1.png",
+          "title": "PJP Consulting",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card2.png",
+          "title": "ISO Consulting",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card3.png",
+          "title": "Digital Compliance",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card4.png",
+          "title": "IT Consulting",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card5.png",
+          "title": "IT Resource Outsourcing",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        },
+        {
+          "image": "/images/card6.png",
+          "title": "Infrastructure Managed Services",
+          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        }
+      ]
+    },
+    "powering": {
+      "title": "Powering Innovation With"
+    }
+  },
 
     "ContactHero": {
       "title": "Contact Us",
@@ -629,11 +673,7 @@
         "subtitle": "The People Behind Permana Solutions",
         "description": "Driven by innovation and united by shared values, our professionals create impactful technology experiences."
       }
-
-    }
-  }
-
-    ]
+    
   },
 
   "powering": {
@@ -686,5 +726,65 @@
     "subtitle": "The People Behind Permana Solutions",
     "description": "Driven By Innovation And United By A Shared Vision, Our Professionals Work Together To Deliver Meaningful Technology Experiences."
   }
+},
+  "Team": {
+    "ekie": {
+      "name": "Ekie Wachidie",
+      "position": "Director",
+      "description": "I believe company growth comes from innovation, collaboration, and the courage to take strategic steps toward the future."
+    },
+    "putut": {
+      "name": "Putut Indriatmoko",
+      "position": "Manager Operational",
+      "description": "I am committed to maintaining the company's financial stability through careful, transparent, and measurable financial management."
+    },
+    "indah": {
+      "name": "Indah Sundari",
+      "position": "Finance",
+      "description": "I am committed to maintaining the company's financial stability through careful, transparent, and measurable financial management."
+    },
+    "putri": {
+      "name": "Putri Aulia M",
+      "position": "Account Manager",
+      "description": "Building strong relationships with clients is my priority, ensuring every need is understood and addressed effectively."
+    },
+    "serly": {
+      "name": "Serly Zumeri",
+      "position": "Business Development",
+      "description": "I continuously seek new opportunities to expand business networks and create mutually beneficial partnerships."
+    },
+    "palupi": {
+      "name": "Palupi Pebi Pratiwi",
+      "position": "UI/UX Business Analyst",
+      "description": "I bridge business needs with user experience to create solutions that are relevant, intuitive, and impactful."
+    },
+    "fitra": {
+      "name": "Fitra Melania Rais",
+      "position": "Full Stack Developer",
+      "description": "I enjoy building systems from frontend to backend to deliver reliable and scalable digital solutions."
+    },
+    "umar": {
+      "name": "Umar Dani Y",
+      "position": "Full Stack Developer",
+      "description": "To me, great code is not only functional but also maintainable and capable of creating real impact."
+    },
+    "mugi": {
+      "name": "Mugi Ardana",
+      "position": "Technical Support",
+      "description": "I ensure all infrastructure and devices operate optimally so daily operations can run smoothly without disruption."
+    },
+    "ari": {
+      "name": "Mohammad Ari Wenandi",
+      "position": "NOC",
+      "description": "Real-time system monitoring is my responsibility to keep services stable, secure, and responsive."
+    }
+  }
 }
+
+
+
+
+
+}
+  
 

@@ -30,15 +30,12 @@ export default function HeroBannerSection() {
         className="absolute inset-0 hidden h-full w-full object-fill lg:block"
       />
 
-
        {/* TEXT */}
 <div className="absolute inset-0 flex items-center z-10">
   <div className="w-full px-[clamp(24px,5vw,80px)]">
     <h1
       className="
         max-w-[clamp(340px,60vw,1050px)]
-
-    
         text-white
         font-semibold
          text-[clamp(24px,5vw,50px)]
@@ -97,27 +94,18 @@ function Statistic({
 }) {
   return (
     <div className="min-w-[80px] sm:min-w-[110px] lg:min-w-[120px] text-center">
-
-      {/* <h2 className="text-[#05638B] font-bold leading-none text-[32px] sm:text-[42px] lg:text-[58px] drop-shadow-[0_5px_7px_rgba(0,0,0,0.30)]">
-        {number}
-        </h2> */}
-
-      <h2 className="text-[#05638B] font-bold leading-none text-[32px] sm:text-[42px] lg:text-[58px] drop-shadow-[0_5px_7px_rgba(0,0,0,0.30)]">
+      <h2 className="text-[#05638B] font-bold leading-none text-[32px] sm:text-[42px] lg:text-[58px]">
         <SlotCounter
           value={number}
           duration={4}
           animateOnVisible
         />
         +
-
       </h2>
 
       <p className="mt-2 text-[#05638B] font-medium text-[11px] sm:text-[14px] lg:text-[22px]">
         {label}
       </p>
-
     </div>
-  
   );
-
 }
