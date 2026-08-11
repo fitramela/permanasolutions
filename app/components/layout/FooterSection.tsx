@@ -51,8 +51,8 @@ const locale = useLocale();
 
 const companyProfile =
   locale === "en"
-    ? "/Compro Permana 2026 EN.pdf"
-    : "/Compro Permana 2026 ID.pdf";
+  ? "/Permana_Company_Profile_2026_English.pdf"
+      : "/Permana_Company_Profile_2026_Indonesia.pdf";
 
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
