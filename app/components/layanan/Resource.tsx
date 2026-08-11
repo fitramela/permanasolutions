@@ -356,9 +356,7 @@ const scrollLeft = () => {
          <button
   key={item.title}
   type="button"
-  className="
-    group
-    relative
+  className={`group relative
     h-[320px]
     w-[240px]
     sm:h-[380px]
@@ -367,7 +365,7 @@ const scrollLeft = () => {
     overflow-hidden
     rounded-[24px]
     text-left
-  "
+  `}
 >
 
             <Image
