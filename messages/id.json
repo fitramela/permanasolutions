@@ -220,7 +220,7 @@
   "seeMore": "Selengkapnya",
   "asp": "ASP",
   "isp": "ISP",
-  "resource": "Consulting\n&\nResource"
+  "resource": "Konsultasi\n&\nLayanan Profesional"
 },
 
  "Asp": {
@@ -585,7 +585,7 @@
   },
 
   "Resource": {
-  "title": "Consulting & Resource",
+  "title": "Konsultasi & Layanan Profesional",
   "subtitle": "Sederhanakan TI. Tingkatkan Kinerja.",
   "description": "Mitra Tepercaya Anda dalam <managed>Layanan Terkelola </managed> & <outsourcing>Alih Daya</outsourcing>",
 
@@ -596,32 +596,32 @@
       {
         "image": "/images/card1.png",
         "title": "PJP Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Pendampingan profesional untuk kebutuhan perizinan dan regulasi."
       },
       {
         "image": "/images/card2.png",
         "title": "ISO Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Mendorong kepatuhan terhadap standar ISO dan peningkatan kualitas operasional."
       },
       {
         "image": "/images/card3.png",
         "title": "Digital Compliance",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Solusi untuk memenuhi kebutuhan regulasi dan kepatuhan digital."
       },
       {
         "image": "/images/card4.png",
         "title": "IT Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Mengoptimalkan teknologi untuk meningkatkan kinerja bisnis dan operasional."
       },
       {
         "image": "/images/card5.png",
         "title": "IT Resource Outsourcing",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Menyediakan tenaga ahli IT untuk mendukung kebutuhan bisnis Anda."
       },
       {
         "image": "/images/card6.png",
         "title": "Infrastructure Managed Services",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Mengelola infrastruktur IT untuk memastikan operasional yang andal dan optimal."
       }
     ]
   },

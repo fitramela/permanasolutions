@@ -556,32 +556,32 @@
         {
           "image": "/images/card1.png",
           "title": "PJP Consulting",
-          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+          "desc": "Professional consulting to support licensing, regulatory, and business needs."
         },
         {
           "image": "/images/card2.png",
           "title": "ISO Consulting",
-          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+          "desc": "Guidance to help businesses achieve ISO standards and improve operational quality."
         },
         {
           "image": "/images/card3.png",
           "title": "Digital Compliance",
-          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+          "desc": "Digital solutions that help businesses meet regulatory and compliance requirements."
         },
         {
           "image": "/images/card4.png",
           "title": "IT Consulting",
-          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+          "desc": "Expert IT guidance to optimize technology, systems, and business operations."
         },
         {
           "image": "/images/card5.png",
           "title": "IT Resource Outsourcing",
-          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+          "desc": "Skilled IT professionals to support your business needs."
         },
         {
           "image": "/images/card6.png",
           "title": "Infrastructure Managed Services",
-          "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+          "desc": "Reliable IT infrastructure management for seamless operations."
         }
       ]
     },

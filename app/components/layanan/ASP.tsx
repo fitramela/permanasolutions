@@ -9,7 +9,7 @@ export default function Asp() {
 
 const [activeIndex, setActiveIndex] = useState<string | null>("primebiz-0");
 const [currentProduct, setCurrentProduct] = useState(0);
-const [playVideo, setPlayVideo] = useState(false);
+
 
  const products = [
   {
@@ -36,13 +36,6 @@ const [playVideo, setPlayVideo] = useState(false);
     image: "/images/products/teams.png",
     items: t.raw("primeteams.items"),
   },
-  {
-    key: "primeresto",
-    title: "PrimeResto",
-    description: t("primeRestoDescription"),
-    image: "/images/products/Image Resto.png",
-    items: t.raw("primeresto.items"),
-  },
 
   {
     key: "primecafe",
@@ -60,6 +53,24 @@ const [playVideo, setPlayVideo] = useState(false);
     image: "/images/products/Image care.png",
     items: t.raw("primecare.items"),
   },
+
+  {
+    key: "primejula",
+    title: "Jula",
+    youtube: "https://www.youtube.com/embed/1Dn7QDKUXoI",
+    description: t("primeJulaDescription"),
+    image: "/images/products/jula.png",
+    items: t.raw("primejula.items"),
+  },
+  {
+    key: "primeresto",
+    title: "PrimeResto",
+    description: t("primeRestoDescription"),
+    image: "/images/products/Image Resto.png",
+    items: t.raw("primeresto.items"),
+  },
+
+  
   
 
   {
@@ -91,15 +102,8 @@ const [playVideo, setPlayVideo] = useState(false);
     description: t("primeTeamsDescription"),
     image: "/images/products/ImageTeam.png",
     items: t.raw("primeteams.items"),
-  },
-  {
-    key: "primejula",
-    title: "Jula",
-    youtube: "https://www.youtube.com/embed/1Dn7QDKUXoI",
-    description: t("primeJulaDescription"),
-    image: "/images/products/jula.png",
-    items: t.raw("primejula.items"),
   }
+  
 ];
 
   return (
@@ -309,11 +313,10 @@ const [playVideo, setPlayVideo] = useState(false);
 {currentProduct > 0 && (
   <button
     onClick={() => {
-      const prev = currentProduct - 1;
-      setCurrentProduct(prev);
-      setActiveIndex(`${products[prev].key}-0`);
-      setPlayVideo(false);
-    }}
+  const prev = currentProduct - 1;
+  setCurrentProduct(prev);
+  setActiveIndex(`${products[prev].key}-0`);
+}}
     className="absolute left-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
   >
     ❮
@@ -324,11 +327,10 @@ const [playVideo, setPlayVideo] = useState(false);
 {currentProduct < products.length - 1 && (
   <button
     onClick={() => {
-      const next = currentProduct + 1;
-      setCurrentProduct(next);
-      setActiveIndex(`${products[next].key}-0`);
-      setPlayVideo(false);
-    }}
+  const next = currentProduct + 1;
+  setCurrentProduct(next);
+  setActiveIndex(`${products[next].key}-0`);
+}}
     className="absolute right-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
   >
     ❯
@@ -348,49 +350,24 @@ const [playVideo, setPlayVideo] = useState(false);
     </div>
 
    <div className="grid items-center gap-24 lg:grid-cols-[720px_1fr] xl:gap-32">
-    {/* LEFT - PRODUCT PREVIEW */}
+   {/* LEFT - YOUTUBE VIDEO */}
 <div className="flex items-center justify-center">
   <div className="w-full max-w-[650px] overflow-hidden rounded-[28px] shadow-[0_25px_40px_rgba(0,0,0,0.18)]">
-    <div className="relative aspect-video w-full">
-
-      {!playVideo ? (
-        <>
-         <div className="relative aspect-video w-full bg-white">
-  <Image
-    src={products[currentProduct].image}
-    alt={products[currentProduct].title}
-    fill
-    className="object-contain p- transition-all duration-300"
-  />
-</div>
-
-          <button
-            type="button"
-            onClick={() => setPlayVideo(true)}
-            className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition"
-          >
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border-4 border-white bg-white/20 backdrop-blur-sm">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="ml-1 h-10 w-10 fill-white"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-          </button>
-        </>
+    <div className="relative aspect-video w-full bg-black">
+      {products[currentProduct].youtube ? (
+        <iframe
+          src={products[currentProduct].youtube}
+          title={products[currentProduct].title}
+          className="absolute inset-0 h-full w-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
       ) : (
-       <iframe
-  src={products[currentProduct].youtube}
-  title={products[currentProduct].title}
-  className="absolute inset-0 h-full w-full"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-/>
+        <div className="flex h-full items-center justify-center text-white">
+          Video belum tersedia
+        </div>
       )}
-
     </div>
   </div>
 </div>

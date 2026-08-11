@@ -181,8 +181,8 @@ const scrollLeft = () => {
             text-[#04BCBC]
             sm:text-[36px]
             md:text-[44px]
-            lg:text-[56px]
-            xl:text-[64px]
+            lg:text-[50px]
+            xl:text-[40px]
           "
         >
           {t("title")}
@@ -220,12 +220,12 @@ const scrollLeft = () => {
         >
           {t.rich("description", {
             managed: (chunks) => (
-              <span className="font-semibold text-[#05638B]">
+              <span className="font-regular text-[#05638B]">
                 {chunks}
               </span>
             ),
             outsourcing: (chunks) => (
-              <span className="font-semibold text-[#05638B]">
+              <span className="font-regular text-[#05638B]">
                 {chunks}
               </span>
             ),

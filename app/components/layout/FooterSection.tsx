@@ -62,9 +62,7 @@ const companyProfile =
     description: "",
   });
 
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  // };
+ 
 
   const [loading, setLoading] = useState(false);
 const [submitted, setSubmitted] = useState(false);
