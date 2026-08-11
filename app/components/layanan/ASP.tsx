@@ -27,6 +27,14 @@ const [playVideo, setPlayVideo] = useState(false);
     description: t("primeCafeDescription"),
     image: "/images/products/Image cafe.png",
     items: t.raw("primecafe.items"),
+  },  
+  {
+
+    key: "primeteams",
+    title: "PrimeTeams",
+    description: t("primeTeamsDescription"),
+    image: "/images/products/teams.png",
+    items: t.raw("primeteams.items"),
   },
   {
     key: "primeresto",
@@ -36,6 +44,14 @@ const [playVideo, setPlayVideo] = useState(false);
     items: t.raw("primeresto.items"),
   },
 
+  {
+    key: "primecafe",
+    title: "PrimeCafe",
+    youtube: "https://www.youtube.com/embed/5_tTysgmcTo",
+    description: t("primeCafeDescription"),
+    image: "/images/products/cafe.png",
+    items: t.raw("primecafe.items"),
+  },
   {
     key: "primecare",
     title: "PrimeCare",

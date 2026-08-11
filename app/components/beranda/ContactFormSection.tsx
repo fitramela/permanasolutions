@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image, { type StaticImageData } from "next/image";
@@ -53,26 +54,26 @@ export const ContactFormSection = () => {
             <h2
               id="service-heading"
               className="
-            text-4xl
-            font-bold
-            text-[#05638B]
-            drop-shadow-[0_5px_8px_rgba(0,0,0,0.25)]
-            md:text-5xl
-          "
+                text-4xl
+                font-bold
+                text-[#05638B]
+                drop-shadow-[0_5px_8px_rgba(0,0,0,0.25)]
+                md:text-5xl
+              "
             >
               {t("title")}
             </h2>
           </div>
 
           {/* Background */}
-         <div
-  className="service-background relative w-full overflow-hidden rounded-[40px]"
->
+          <div className="service-background relative w-full overflow-hidden rounded-[40px]">
+
             {/* Overlay */}
             <div className="absolute inset-0 bg-white/35" />
 
             {/* Content */}
             <div className="relative z-10 flex min-h-[650px] items-center justify-center px-10 py-20 md:px-20">
+
               <div className="grid w-full grid-cols-1 place-items-center gap-10 md:grid-cols-3">
 
                 {services.map((service) => (
@@ -80,6 +81,8 @@ export const ContactFormSection = () => {
                     key={service.key}
                     className="flex flex-col items-center"
                   >
+
+                    {/* Service Circle */}
                     <div className="flex h-[290px] w-[290px] flex-col items-center justify-center rounded-full bg-[#19C5CB] p-8 shadow-xl">
 
                       <h3 className="mb-6 whitespace-pre-line text-center text-2xl font-bold leading-tight text-white">
@@ -92,14 +95,17 @@ export const ContactFormSection = () => {
                         width={110}
                         height={110}
                       />
+
                     </div>
 
+                    {/* See More */}
                     <Link
                       href={service.href}
                       className="mt-6 rounded-full bg-white px-8 py-3 font-semibold text-[#05638B] shadow-lg transition hover:bg-gray-100"
                     >
                       {t("seeMore")}
                     </Link>
+
                   </div>
                 ))}
 
@@ -107,27 +113,27 @@ export const ContactFormSection = () => {
             </div>
 
             {/* Bottom Curve */}
-            <div className="    absolute
-    left-1/2
-    -translate-x-1/2
-    rounded-[100%]
-    bg-white
+            <div
+              className="
+                absolute
+                -bottom-44
+                left-1/2
+                h-[320px]
+                w-[200%]
+                -translate-x-1/2
+                rounded-[100%]
+                bg-white
+                sm:w-[140%]
+                md:w-[125%]
+                lg:w-[108%]
+                xl:w-[105%]
+              "
+            />
 
-    -bottom-44
-    h-[320px]
-
-    w-[200%]
-    sm:w-[140%]
-    md:w-[125%]
-    lg:w-[108%]
-    xl:w-[105%]" />
           </div>
-
         </div>
-
-      
-
       </div>
     </section>
   );
 };
+

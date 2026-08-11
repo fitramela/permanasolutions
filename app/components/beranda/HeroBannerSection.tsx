@@ -30,15 +30,12 @@ export default function HeroBannerSection() {
         className="absolute inset-0 hidden h-full w-full object-fill lg:block"
       />
 
-
        {/* TEXT */}
 <div className="absolute inset-0 flex items-center z-10">
   <div className="w-full px-[clamp(24px,5vw,80px)]">
     <h1
       className="
         max-w-[clamp(340px,60vw,1050px)]
-
-    
         text-white
         font-semibold
          text-[clamp(24px,5vw,50px)]
@@ -119,5 +116,4 @@ function Statistic({
     </div>
   
   );
-
 }

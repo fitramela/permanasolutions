@@ -105,6 +105,10 @@ body {
 
   
 
+
+  
+
+ 
 ::view-transition-old(root) {
   animation: slide-out 0.5s ease;
 }

@@ -6,25 +6,50 @@ export default function MeetTeam() {
   const t = useTranslations("About");
 
   return (
-    <section className="py-[30px]">
+    <section
+      className="
+        relative
+        z-20
+
+        w-full
+
+        -mt-10
+        md:-mt-16
+        lg:-mt-24
+
+        pb-8
+        md:pb-12
+      "
+    >
       <div
         className="
           mx-auto
+
+          w-full
+          max-w-[1200px]
+
+          px-6
+          md:px-10
+
           flex
           flex-col
           items-center
           text-center
-           -mt-[110px]   /* naik */
         "
       >
         {/* Title */}
 
         <h2
           className="
-            text-[40px]
             font-bold
-            leading-none
+
             text-[#005D86]
+
+            text-[28px]
+            sm:text-[34px]
+            lg:text-[40px]
+
+            leading-tight
           "
         >
           {t("team.title")}
@@ -34,13 +59,17 @@ export default function MeetTeam() {
 
         <h3
           className="
-            mt-[8px]
+            mt-2
 
-            text-[43px]
             font-bold
-            leading-none
 
             text-[#005D86]
+
+            text-[30px]
+            sm:text-[38px]
+            lg:text-[44px]
+
+            leading-tight
           "
         >
           {t("team.subtitle")}
@@ -50,14 +79,17 @@ export default function MeetTeam() {
 
         <p
           className="
-            mt-[8px]
+            mt-1
 
-            max-w-[1020px]
-
-            text-[15px]
-            leading-[28px]
+            max-w-[1000px]
 
             text-[#666666]
+
+            text-[14px]
+            md:text-[15px]
+            lg:text-[15px]
+
+            leading-7
           "
         >
           {t("team.description")}

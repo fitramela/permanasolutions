@@ -85,6 +85,7 @@ export default function SmartSystemShowcaseSection() {
                 md:text-5xl
                 lg:text-6xl
               "
+              className="text-center text-6xl font-thin text-black md:text-5xl"
             >
               {t("heading")}
             </h2>
