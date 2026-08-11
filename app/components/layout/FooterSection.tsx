@@ -3,7 +3,7 @@
 import { FormEvent, useId, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 
 
@@ -45,7 +45,14 @@ const formFields = [
 export const FooterSection = () => {
   const formId = useId();
   const t = useTranslations("Contact");
-  const tf = useTranslations("Footer");
+const tf = useTranslations("Footer");
+
+const locale = useLocale();
+
+const companyProfile =
+  locale === "en"
+  ? "/Permana_Company_Profile_2026_English.pdf"
+      : "/Permana_Company_Profile_2026_Indonesia.pdf";
 
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
@@ -141,21 +148,22 @@ whitespace-pre-line
               </h2>
              <div className="mt-10 flex items-center gap-5">
   
-  <a
-    href="/Compro Permana 2026 R1.pdf"
-    className="rounded-full bg-[#04BCBC] px-7 py-3 font-semibold text-white"
-  >
-    {t("companyProfile")}
-  </a>
+ <a
+  href={companyProfile}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-full bg-[#04BCBC] px-7 py-3 font-semibold text-white"
+>
+  {t("companyProfile")}
+</a>
 
-  
-  <a
-    href="/Compro Permana 2026 R1.pdf"
-    download
-    className="font-semibold text-primary hover:underline"
-  >
-    {t("download")}
-  </a>
+<a
+  href={companyProfile}
+  download
+  className="font-semibold text-primary hover:underline"
+>
+  {t("download")}
+</a>
 </div>
 
             </div>

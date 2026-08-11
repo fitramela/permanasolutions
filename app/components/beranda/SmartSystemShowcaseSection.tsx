@@ -65,7 +65,7 @@ export default function SmartSystemShowcaseSection() {
 
           <div className="flex flex-col items-center md:flex-row md:gap-3">
 
-            <span className="text-6xl font-bold text-[#00628d]">
+            <span className="text-5xl font-bold text-[#00628d]">
               {t("why")}
             </span>
 
@@ -74,7 +74,7 @@ export default function SmartSystemShowcaseSection() {
               className="
                 px-4
                 text-center
-                text-5xl
+                text-4xl
                 font-thin
                 leading-tight
                 break-words

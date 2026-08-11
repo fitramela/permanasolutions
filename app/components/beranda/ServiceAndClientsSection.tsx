@@ -94,9 +94,7 @@ export default function ServiceAndClientsSection() {
               aria-labelledby={carouselId}
               className="relative mt-10"
             >
-              <span id={carouselId} className="sr-only">
-                System Carousel
-              </span>
+             
 
               <div className="relative mx-auto h-[220px] w-full">
                 <Image
@@ -152,11 +150,11 @@ export default function ServiceAndClientsSection() {
 
           {/* Right Card */}
           <div className="rounded-3xl bg-white p-8 shadow-lg">
-            <h3 className="mb-8 text-3xl font-semibold text-black">
+            <h3 className="mb-8 text-2xl font-semibold text-black">
               {t("monitoring")}
             </h3>
 
-           <div className="relative flex h-[480px] items-center justify-center overflow-hidden rounded-2xl">
+           <div className="relative mx-auto flex h-[250px] w-[100%] items-center justify-center overflow-hidden rounded-2xl sm:h-[400px] sm:w-[95%] lg:h-[480px] lg:w-full">
   <Image
     src="/images/dashboard-preview.png"
     alt="Dashboard Preview"

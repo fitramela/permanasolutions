@@ -2,10 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Solutions() {
   const t = useTranslations("Solutions.hero");
+  const locale = useLocale();
+
+  const companyProfile =
+    locale === "en"
+      ? "/Permana_Company_Profile_2026_English.pdf"
+      : "/Permana_Company_Profile_2026_Indonesia.pdf";
 
   return (
     <main className="overflow-x-hidden bg-white">
@@ -39,12 +45,13 @@ export default function Solutions() {
             <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
 
 <a
-    href="/Compro Permana 2026 R1.pdf"
-   className="rounded-lg border border-white/30 bg-[#00628D]/30 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-[#00628D]/50"
-  >
-    {t("profileButton")}
-   
-  </a>
+  href={companyProfile}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-lg border border-white/30 bg-[#00628D]/30 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-[#00628D]/50"
+>
+  {t("profileButton")}
+</a>
   
 
   <Link

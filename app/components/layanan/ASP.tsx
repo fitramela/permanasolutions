@@ -27,12 +27,6 @@ const [playVideo, setPlayVideo] = useState(false);
     description: t("primeCafeDescription"),
     image: "/images/products/Image cafe.png",
     items: t.raw("primecafe.items"),
-    key: "primejula",
-    title: "Jula",
-    youtube: "https://www.youtube.com/embed/1Dn7QDKUXoI",
-    description: t("primeJulaDescription"),
-    image: "/images/products/jula.png",
-    items: t.raw("primejula.items"),
   },  
   {
 

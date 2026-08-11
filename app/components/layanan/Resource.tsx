@@ -132,79 +132,110 @@ const scrollLeft = () => {
 
         {/* ================= HERO ================= */}
 
-       <section className="relative h-[420px] sm:h-[520px] md:h-[600px] lg:h-[680px] xl:h-[760px] 2xl:h-[860px] overflow-hidden">
-          <Image
-    src="/images/hero-resource.png"
-    alt={t("title")}
-    fill
-    priority
-    className="object-cover object-[center_top]"
-  />
+<section
+  className="
+    resource-hero
+    relative
+    h-[calc(100vw*2.222)]
+    overflow-hidden
+    md:h-[600px]
+    lg:h-[680px]
+    xl:h-[760px]
+    2xl:h-[860px]
+  "
+>
+ <div className="absolute inset-0">
+  <div
+    className="
+      mx-auto flex h-full w-full max-w-[1440px]
+      items-start
+      px-5 pt-[85px]
+      sm:items-center sm:px-8 sm:pt-0
+      md:px-10
+      lg:px-16
+      xl:px-20
+      2xl:px-24
+    "
+  >
+    
+      <div
+  className="
+    max-w-[320px]
+    translate-y-16
+    sm:max-w-[480px]
+    sm:translate-y-0
+    md:max-w-[560px]
+    lg:max-w-[600px]
+    xl:max-w-[640px]
+    lg:-translate-y-8
+  "
+>
 
-          <div className="absolute inset-0">
-           <div className="mx-auto flex h-full w-full max-w-[1440px] items-center px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
-             <div className="max-w-[340px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[600px] xl:max-w-[640px] lg:-translate-y-8">
-                 <h1
+        {/* TITLE */}
+        <h1
           className="
             whitespace-nowrap
             text-[28px]
+            font-extrabold
+            leading-[1]
+            text-[#04BCBC]
             sm:text-[36px]
             md:text-[44px]
             lg:text-[56px]
             xl:text-[64px]
-            font-extrabold
-            leading-[1]
-            text-[#04BCBC]
           "
         >
           {t("title")}
         </h1>
 
-                <h2
-                 className="
-mt-3
-text-[18px]
-sm:text-[22px]
-md:text-[26px]
-lg:text-[34px]
-xl:text-[30px]
-font-bold
-leading-tight
-text-[#111827]
-"
-                >
-                  {t("subtitle")}
-                </h2>
+        {/* SUBTITLE */}
+        <h2
+          className="
+            mt-3
+            text-[18px]
+            font-bold
+            leading-tight
+            text-[#111827]
+            sm:text-[20px]
+            md:text-[26px]
+            lg:text-[34px]
+            xl:text-[30px]
+          "
+        >
+          {t("subtitle")}
+        </h2>
 
-                <p
-                  className="
-mt-3
-max-w-[520px]
-text-[13px]
-sm:text-[14px]
-md:text-[10px]
-lg:text-[16px]
-leading-relaxed
-text-[#4B5563]
-"
-                >
-                  {t.rich("description", {
-                    managed: (chunks) => (
-                      <span className="font-medium text-[#05638B]">
-                        {chunks}
-                      </span>
-                    ),
-                    outsourcing: (chunks) => (
-                      <span className="font-medium text-[#05638B]">
-                        {chunks}
-                      </span>
-                    ),
-                  })}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* DESCRIPTION */}
+        <p
+          className="
+            mt-3
+            max-w-[520px]
+            text-[13px]
+            leading-relaxed
+            text-[#4B5563]
+            sm:text-[14px]
+            md:text-[10px]
+            lg:text-[16px]
+          "
+        >
+          {t.rich("description", {
+            managed: (chunks) => (
+              <span className="font-semibold text-[#05638B]">
+                {chunks}
+              </span>
+            ),
+            outsourcing: (chunks) => (
+              <span className="font-semibold text-[#05638B]">
+                {chunks}
+              </span>
+            ),
+          })}
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
 
      {/* ================= WHY WE STAND OUT ================= */}
 
@@ -474,75 +505,96 @@ text-[#4B5563]
 
 
 
-     {/* LEFT ARROW */}
+      {/* LEFT ARROW */}
+          {showLeftArrow && (
 
-{showLeftArrow && (
-  <button
-    type="button"
-    onClick={scrollLeft}
-    className="
-      absolute
-      left-4
-      top-1/2
-      -translate-y-1/2
-      z-20
+            <button
+              type="button"
+              onClick={scrollLeft}
+              className="
+                absolute
+                z-10
 
-      flex
-      h-12
-      w-12
-      items-center
-      justify-center
+                left-[-12px]
+                md:left-[-24px]
 
-      rounded-full
-      bg-white/90
-      shadow-lg
+                top-1/2
+                -translate-y-1/2
 
-      text-[#05638B]
-      text-2xl
+                flex
+                h-10
+                w-10
+                md:h-12
+                md:w-12
 
-      transition
-      hover:scale-110
-    "
-  >
-    &lt;
-  </button>
-)}
+                items-center
+                justify-center
+
+                rounded-full
+                bg-white/90
+                shadow-xl
+                backdrop-blur-sm
+
+                transition
+                duration-300
+                hover:scale-110
+              "
+            >
+
+              <span className="text-2xl md:text-3xl leading-none text-[#04BCBC]/70">
+                ❮
+              </span>
+
+            </button>
+
+          )}
 
 
 
-{/* RIGHT ARROW */}
+          {/* RIGHT ARROW */}
+          {showRightArrow && (
 
-{showRightArrow && (
-  <button
-    type="button"
-    onClick={scrollRight}
-    className="
-      absolute
-      right-4
-      top-1/2
-      -translate-y-1/2
-      z-20
+            <button
+              type="button"
+              onClick={scrollRight}
+              className="
+                absolute
+                z-10
 
-      flex
-      h-12
-      w-12
-      items-center
-      justify-center
+                right-[-12px]
+                md:right-[-24px]
 
-      rounded-full
-      bg-white/90
-      shadow-lg
+                top-1/2
+                -translate-y-1/2
 
-      text-[#05638B]
-      text-2xl
+                flex
+                h-10
+                w-10
+                md:h-12
+                md:w-12
 
-      transition
-      hover:scale-110
-    "
-  >
-    &gt;
-  </button>
-)}
+                items-center
+                justify-center
+
+                rounded-full
+                bg-white/90
+                shadow-xl
+                backdrop-blur-sm
+
+                transition
+                duration-300
+                hover:scale-110
+              "
+            >
+
+              <span className="text-2xl md:text-3xl leading-none text-[#04BCBC]/70">
+                ❯
+              </span>
+
+            </button>
+
+          )}
+
     </div>
 
 
