@@ -101,12 +101,8 @@ body {
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }}
-
-  
-
-
-  
+  }
+  }
 
  
 ::view-transition-old(root) {
