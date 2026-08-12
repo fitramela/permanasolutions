@@ -28,8 +28,6 @@ export default function Solutions() {
           className="object-cover"
         />
 
-        {/* Overlay */}
-        {/* <div className="absolute inset-0 bg-[#0A5E83]/45" /> */}
 
         {/* Content */}
         <div className="relative mx-auto flex h-full max-w-[1440px] items-center justify-center px-6 lg:px-16">
