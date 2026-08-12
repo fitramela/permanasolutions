@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -11,56 +10,65 @@ export default function HeroAboutUs() {
     <section
       className="
         relative
-        min-h-[760px]
         overflow-hidden
+        h-[1156px]
       "
     >
       {/* ================= BACKGROUND ================= */}
 
-      <Image
-        src="/images/hero-home.png"
-        alt="About Us"
-        fill
-        priority
-        className="object-cover object-center"
-      />
+      <div className="absolute inset-0">
 
-      {/* Optional Overlay */}
+        <Image
+          src="/images/GGyups.png"
+          alt="About Us"
+          fill
+          priority
+          className="
+            object-cover
+            object-center
+          "
+        />
 
-      <div className="absolute inset-0 bg-black/25" />
+       </div>
 
       {/* ================= CONTENT ================= */}
 
       <div
         className="
           relative
-          z-10
+          z-20
+
           mx-auto
+
           flex
-          min-h-[760px]
-          max-w-[1440px]
           items-center
-          px-6
-          sm:px-10
-          lg:px-[100px]
+
+          h-full
+
+          max-w-[1440px]
+
+          px-[100px]
         "
       >
-        <div
-          className="
-            max-w-[720px]
-          "
-        >
+        <div className=" relative
+
+    max-w-[640px]
+
+    -mt-[435px]      
+    ml-[-30px]"
+    >
+
           {/* Title */}
 
           <h1
             className="
-              text-4xl
-              font-bold
-              leading-tight
               text-white
 
-              sm:text-5xl
-              lg:text-[58px]
+              text-[58px]
+
+              font-bold
+
+              leading-none
             "
           >
             {t("hero.title")}
@@ -71,37 +79,42 @@ export default function HeroAboutUs() {
           <p
             className="
               mt-8
-              max-w-[900px]
-              text-sm
-              leading-7
-              text-white/95
 
-              lg:text-[15px]
+              max-w-[900px]
+
+              text-[15px]
+
+              leading-[20px]
+
+              text-white/95
             "
           >
             {t("hero.description")}
           </p>
 
-          {/* Decoration */}
+         {/* Line Image */}
 
-          <Image
-            src="/images/Decore.png"
-            alt="Line Decoration"
-            width={750}
-            height={12}
-            priority
-            className="
-              mt-6
-              h-auto
-              w-full
-              max-w-[750px]
-              select-none
-              pointer-events-none
-            "
-          />
+<Image
+  src="/images/Decore.png"
+  alt="Line Decoration"
+  width={260}
+  height={8}
+  priority
+  className="
+    mt-3
+
+    w-[750px]
+    h-auto
+
+    select-none
+    pointer-events-none
+  "
+/>
+
         </div>
       </div>
+
+      
     </section>
   );
 }
-
