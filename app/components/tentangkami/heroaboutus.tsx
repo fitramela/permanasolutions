@@ -11,7 +11,7 @@ export default function HeroAboutUs() {
       className="
         relative
         overflow-hidden
-        h-[900px]
+        h-[1156px]
       "
     >
       {/* ================= BACKGROUND ================= */}
@@ -19,7 +19,7 @@ export default function HeroAboutUs() {
       <div className="absolute inset-0">
 
         <Image
-          src="/images/bgTK.png"
+          src="/images/GGyups.png"
           alt="About Us"
           fill
           priority
@@ -54,7 +54,7 @@ export default function HeroAboutUs() {
 
     max-w-[640px]
 
-    -mt-[190px]      
+    -mt-[435px]      
     ml-[-30px]"
     >
 
