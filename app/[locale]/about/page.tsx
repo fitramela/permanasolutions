@@ -1,13 +1,11 @@
 import HeroAbout from "@/app/components/tentangkami/heroaboutus";
-import CompanySection from "@/app/components/tentangkami/companysection";
-import BackgroundCanvas from "@/app/components/tentangkami/BackgroundCanvas";
+import AboutContent from "@/app/components/tentangkami/AboutContent";
 
 export default function AboutPage() {
   return (
     <>
       <HeroAbout />
-      <CompanySection />
-      <BackgroundCanvas/>
+      <AboutContent />
     </>
   );
-}
+} 
