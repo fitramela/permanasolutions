@@ -27,7 +27,7 @@ export default function HeroBannerSection() {
              width={2048}
         height={848}
         priority
-        className="absolute inset-0 hidden h-full w-full object-fill lg:block"
+        className="absolute inset-0 h-full w-full object-fill lg:block"
       />
 
        {/* TEXT */}
@@ -51,7 +51,7 @@ export default function HeroBannerSection() {
             </div>
 
             {/* Desktop Stats */}
-            <div
+            {/* <div
               className="
     hidden
     lg:block
@@ -68,17 +68,17 @@ export default function HeroBannerSection() {
                 <Statistic number="20" label={t("customer")} />
                 <Statistic number="30" label={t("employee")} />
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile Stats */}
-          <div className="bg-white py-5 lg:hidden">
+          {/* <div className="bg-white py-5 lg:hidden">
             <div className="flex justify-center gap-6">
               <Statistic number="20" label={t("partner")} />
               <Statistic number="20" label={t("customer")} />
               <Statistic number="30" label={t("employee")} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
