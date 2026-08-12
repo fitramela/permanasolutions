@@ -7,13 +7,20 @@ export default function HeroAboutUs() {
   const t = useTranslations("About");
 
   return (
+    // <section
+    //   className="
+    //     relative
+    //     overflow-hidden
+    //     h-[1156px]
+    //   "
+    // >
     <section
-      className="
-        relative
-        overflow-hidden
-        h-[1156px]
-      "
-    >
+  className="
+    relative
+    h-[760px]
+    overflow-hidden
+  "
+>
       {/* ================= BACKGROUND ================= */}
 
       <div className="absolute inset-0">
