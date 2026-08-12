@@ -2,7 +2,7 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import TeamCard from "./teamcard";
-import { teamData } from "./teamdata";
+import { teamData } from "./teamdat";
 import ArrowButton from "./ArrowButton";
 import DotPattern from "./DotPattern";
 
