@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <>
       <HeroAbout />
-      <BackgroundCanvas />
+      <AboutContent />
     </>
   );
 } 
