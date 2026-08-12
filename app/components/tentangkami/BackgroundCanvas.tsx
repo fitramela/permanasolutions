@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { teamData, TeamMember } from "./aboutData";
+import { teamData, TeamMember } from "./teamdata";
 
 /* =========================================================
    ABOUT CONTENT
