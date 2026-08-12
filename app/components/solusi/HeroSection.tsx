@@ -1,69 +1,332 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
-export default function Solutions() {
-  const t = useTranslations("Solutions.hero");
-  const locale = useLocale();
+type SolutionItem = {
+  title: string;
+  description: string;
+  includesTitle: string;
+  includes: string[];
+};
 
-  const companyProfile =
-    locale === "en"
-      ? "/Permana_Company_Profile_2026_English.pdf"
-      : "/Permana_Company_Profile_2026_Indonesia.pdf";
+export default function BestSolutionsSection() {
+  const t = useTranslations("Solutions.bestSolutions");
+
+  const items = t.raw("items") as SolutionItem[];
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+
+    const {
+      scrollLeft,
+      scrollWidth,
+      clientWidth,
+    } = scrollRef.current;
+
+    setShowLeftArrow(scrollLeft > 10);
+
+    setShowRightArrow(
+      scrollLeft + clientWidth < scrollWidth - 10
+    );
+  };
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({
+      left: 320,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({
+      left: -320,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <main className="overflow-x-hidden bg-white">
-      {/* ================= HERO ================= */}
+    <section className="bg-white py-16 lg:py-24">
+      <div className="mx-auto flex w-full flex-col gap-15 px-6 md:px-10 lg:flex-row lg:gap-20 lg:px-20">
 
-      <section className="relative h-[720px] overflow-hidden">
-        
-        {/* Background */}
-        <Image
-          src="/images/solutions new.png"
-          alt="Solutions Hero"
-          fill
-          priority
-          className="object-cover"
-        />
+        {/* ================= LEFT ================= */}
+        <div className="w-full lg:w-[280px] lg:shrink-0">
+          <p className="text-3xl font-bold text-[#04BCBC] md:text-4xl">
+            {t("our")}
+          </p>
 
-
-        {/* Content */}
-        <div className="relative mx-auto flex h-full max-w-[1440px] items-center justify-center px-6 lg:px-16">
-          <div className="max-w-[820px] text-center text-white">
-            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              {t("title")}
-            </h1>
-
-            <p className="mx-auto mt-6 max-w-[720px] text-base leading-8 text-white/90 md:text-lg">
-              {t("description")}
-            </p>
-
-            <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
-
-<a
-  href={companyProfile}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="rounded-lg border border-white/30 bg-[#00628D]/30 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-[#00628D]/50"
->
-  {t("profileButton")}
-</a>
-  
-
-  <Link
-    href="/contact"
-    className="rounded-lg border border-white/30 bg-white/20 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-white/15"
-  >
-    {t("contactButton")}
-  </Link>
-</div>
-          </div>
+          <h2 className="mt-2 text-3xl font-bold leading-tight text-[#00628D] md:text-4xl">
+            {t("title")}
+          </h2>
         </div>
-      </section>
 
-     
-    </main>
+        {/* ================= MOBILE & TABLET ================= */}
+        <div className="grid flex-1 gap-6 md:grid-cols-2 lg:hidden">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="rounded-3xl border border-[#E8EEF3] bg-white p-6 shadow-sm"
+            >
+              <h3 className="min-h-[60px] text-xl font-bold leading-7 text-[#00628D]">
+                {item.title}
+              </h3>
+
+              <div className="mt-4">
+                {openIndex === index ? (
+                  /* ================= OPEN ================= */
+                  <div
+                    onClick={() => setOpenIndex(null)}
+                    className="
+                      mt-5
+                      w-fit
+                      max-w-full
+                      cursor-pointer
+                      rounded-tl-[1px]
+                      rounded-tr-[28px]
+                      rounded-bl-[28px]
+                      rounded-br-[1px]
+                      border border-[#E6EDF2]
+                      bg-white
+                      px-5
+                      py-4
+                      shadow-[0_4px_12px_rgba(0,0,0,0.25)]
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    <h4 className="mb-2 text-[13px] font-semibold text-[#04BCBC]">
+                      {item.includesTitle}
+                    </h4>
+
+                    <ul className="space-y-1">
+                      {item.includes.map((include, i) => (
+                        <li
+                          key={i}
+                          className="
+                            ml-4
+                            list-disc
+                            text-[13px]
+                            leading-6
+                            text-[#6B7280]
+                          "
+                        >
+                          {include}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  /* ================= CLOSED ================= */
+                  <>
+                    <p className="text-sm leading-7 text-[#6B7280]">
+                      {item.description}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => setOpenIndex(index)}
+                      className="
+                        mt-6
+                        flex
+                        items-center
+                        gap-2
+                        font-semibold
+                        text-[#04BCBC]
+                        transition-all
+                        duration-300
+                        hover:gap-3
+                      "
+                    >
+                      {t("button")}
+                      <span>→</span>
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ================= DESKTOP ================= */}
+        <div className="relative hidden flex-1 lg:block">
+
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="
+              flex
+              gap-12
+              overflow-x-auto
+              pb-4
+              scrollbar-hide
+              scroll-smooth
+            "
+          >
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="
+                  min-w-[calc((100%-6rem)/3)]
+                  max-w-[calc((100%-6rem)/3)]
+                  flex-shrink-0
+                "
+              >
+                <h3 className="min-h-[65px] text-[20px] font-bold leading-7 text-[#00628D]">
+                  {item.title}
+                </h3>
+
+                <div className="mt-4">
+                  {openIndex === index ? (
+                    /* ================= OPEN ================= */
+                    <div
+                      onClick={() => setOpenIndex(null)}
+                      className="
+                        mt-5
+                        w-fit
+                        max-w-full
+                        cursor-pointer
+                        rounded-tl-[1px]
+                        rounded-tr-[28px]
+                        rounded-bl-[28px]
+                        rounded-br-[1px]
+                        border border-[#E6EDF2]
+                        bg-white
+                        px-5
+                        py-4
+                        shadow-[0_4px_12px_rgba(0,0,0,0.25)]
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      <h4 className="mb-2 text-[13px] font-semibold text-[#04BCBC]">
+                        {item.includesTitle}
+                      </h4>
+
+                      <ul className="space-y-1">
+                        {item.includes.map((include, i) => (
+                          <li
+                            key={i}
+                            className="
+                              ml-4
+                              list-disc
+                              text-[13px]
+                              leading-6
+                              text-[#6B7280]
+                            "
+                          >
+                            {include}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    /* ================= CLOSED ================= */
+                    <>
+                      <p className="text-sm leading-7 text-[#6B7280]">
+                        {item.description}
+                      </p>
+
+                      <button
+                        type="button"
+                        onClick={() => setOpenIndex(index)}
+                        className="
+                          mt-6
+                          flex
+                          items-center
+                          gap-2
+                          font-semibold
+                          text-[#04BCBC]
+                          transition-all
+                          duration-300
+                          hover:gap-3
+                        "
+                      >
+                        {t("button")}
+                        <span>→</span>
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ================= LEFT ARROW ================= */}
+          {showLeftArrow && (
+            <button
+              type="button"
+              onClick={scrollLeft}
+              className="
+                absolute
+                z-10
+                left-[-12px]
+                top-1/2
+                flex
+                h-10
+                w-10
+                -translate-y-1/2
+                items-center
+                justify-center
+                rounded-full
+                bg-white/90
+                shadow-xl
+                backdrop-blur-sm
+                transition
+                duration-300
+                hover:scale-110
+                md:left-[-24px]
+                md:h-12
+                md:w-12
+              "
+            >
+              <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
+                ❮
+              </span>
+            </button>
+          )}
+
+          {/* ================= RIGHT ARROW ================= */}
+          {showRightArrow && (
+            <button
+              type="button"
+              onClick={scrollRight}
+              className="
+                absolute
+                z-10
+                right-[-12px]
+                top-1/2
+                flex
+                h-10
+                w-10
+                -translate-y-1/2
+                items-center
+                justify-center
+                rounded-full
+                bg-white/90
+                shadow-xl
+                backdrop-blur-sm
+                transition
+                duration-300
+                hover:scale-110
+                md:right-[-24px]
+                md:h-12
+                md:w-12
+              "
+            >
+              <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
+                ❯
+              </span>
+            </button>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
