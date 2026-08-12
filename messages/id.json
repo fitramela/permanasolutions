@@ -632,7 +632,9 @@
 },
 
 "ContactHero": {
-  "title": "Kontak Kami",
+  "contactUs": "Hubungi Kami",
+   "titleStart": "Kami Di Sini untuk Membantu",
+  "titleEnd": "Anda!",
   "office": "Kantor Pusat - Jakarta",
   "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nKecamatan Gambir\nKota Jakarta Pusat\nDaerah Khusus Ibukota Jakarta\n10140"
 },
