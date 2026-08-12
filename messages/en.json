@@ -23,7 +23,7 @@
       "title": "Technology Solutions for Business Growth.",
       "description": "Empowering organizations with integrated technology, connectivity, compliance, and digital transformation solutions designed to improve performance and accelerate growth.",
       "profileButton": "Company Profile",
-      "contactButton": "Contact Us"
+      "contactButton": ""
     },
     "bestSolutions": {
       "our": "Our",
@@ -635,7 +635,9 @@
   },
 
     "ContactHero": {
-      "title": "Contact Us",
+      "contactUs": "Contact Us",
+       "titleStart": "We're Here to help",
+  "titleEnd": "you!",
       "office": "Head Office - Jakarta",
       "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nGambir District\nCentral Jakarta\nSpecial Capital Region of Jakarta\n10140"
     },
