@@ -20,7 +20,7 @@ export default function HeroAboutUs() {
 
         <Image
           src="/images/hero-home.png"
-          alt="About Us"
+          alt="About Us1"
           fill
           priority
           className="
