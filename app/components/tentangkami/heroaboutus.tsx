@@ -19,7 +19,7 @@ export default function HeroAboutUs() {
       <div className="absolute inset-0">
 
         <Image
-          src="/images/AboutUs.png"
+          src="/images/GGyups.png"
           alt="About Us"
           fill
           priority
