@@ -22,13 +22,13 @@ export default function HeroBannerSection() {
         "
           >
             <Image
-              src="/images/heroHome.png"
-              alt="Permana Solutions Hero"
-             width={2048}
-        height={848}
-        priority
-        className="absolute inset-0 h-full w-full object-fill lg:block"
-      />
+  src="/images/bgHome.png"
+  alt="Permana Solutions Hero"
+  width={2048}
+  height={848}
+  priority
+  className="absolute inset-0 h-full w-full object-cover"
+/>
 
        {/* TEXT */}
 <div className="absolute inset-0 flex items-center z-10">
