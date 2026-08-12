@@ -1,172 +1,148 @@
-"use client";
+  "use client";
 
-import { useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+  import { useRef, useState } from "react";
+  import { useTranslations } from "next-intl";
 
-type SolutionItem = {
-  title: string;
-  description: string;
-  includesTitle: string;
-  includes: string[];
-};
+  type SolutionItem = {
+    title: string;
+    description: string;
+    includesTitle: string;
+    includes: string[];
+  };
 
-export default function BestSolutionsSection() {
-  const t = useTranslations("Solutions.bestSolutions");
+  export default function BestSolutionsSection() {
+    const t = useTranslations("Solutions.bestSolutions");
 
-  const items = t.raw("items") as SolutionItem[];
+    const items = t.raw("items") as SolutionItem[];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
+    const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollRight = () => {
-  scrollRef.current?.scrollBy({
-    left: 320,
-    behavior: "smooth",
-  });
+    const [showLeftArrow, setShowLeftArrow] = useState(false);
+    const [showRightArrow, setShowRightArrow] = useState(true);
 
-  setShowLeftArrow(true);
-};
+    const handleScroll = () => {
+      if (!scrollRef.current) return;
 
-const scrollLeft = () => {
-  scrollRef.current?.scrollBy({
-    left: -320,
-    behavior: "smooth",
-  });
-};
+      const {
+        scrollLeft,
+        scrollWidth,
+        clientWidth,
+      } = scrollRef.current;
 
-  return (
-    <section className="bg-white py-16 lg:py-24">
-      <div className="mx-auto flex w-full flex-col gap-15 px-6 md:px-10 lg:flex-row lg:gap-20 lg:px-20">
-        {/* Left */}
-        <div className="w-full lg:w-[280px] lg:shrink-0">
-          <p className="text-3xl font-bold text-[#04BCBC] md:text-4xl">
-            {t("our")}
-          </p>
+      setShowLeftArrow(scrollLeft > 10);
 
-          <h2 className="mt-2 text-3xl font-bold leading-tight text-[#00628D] md:text-4xl">
-            {t("title")}
-          </h2>
-        </div>
+      setShowRightArrow(
+        scrollLeft + clientWidth < scrollWidth - 10
+      );
+    };
 
-        {/* ================= MOBILE & TABLET ================= */}
-        <div className="grid flex-1 gap-6 md:grid-cols-2 lg:hidden">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="rounded-3xl border border-[#E8EEF3] bg-white p-6 shadow-sm"
-            >
-              <h3 className="min-h-[60px] text-xl font-bold leading-7 text-[#00628D]">
-                {item.title}
-              </h3>
+    const scrollRight = () => {
+      scrollRef.current?.scrollBy({
+        left: 320,
+        behavior: "smooth",
+      });
+    };
 
-              <p className="mt-4 text-sm leading-7 text-[#6B7280]">
-                {item.description}
-              </p>
+    const scrollLeft = () => {
+      scrollRef.current?.scrollBy({
+        left: -320,
+        behavior: "smooth",
+      });
+    };
 
-              <button
-                onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-                className="mt-6 flex items-center gap-2 font-semibold text-[#04BCBC]"
-              >
-                {t("button")}
-                <span
-                  className={`transition-transform duration-300 ${
-                    openIndex === index ? "rotate-90" : ""
-                  }`}
-                >
-                  →
-                </span>
-              </button>
+    return (
+      <section className="bg-white py-16 lg:py-24">
+        <div className="mx-auto flex w-full flex-col gap-15 px-6 md:px-10 lg:flex-row lg:gap-20 lg:px-20">
 
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "mt-5 max-h-[500px]" : "max-h-0"
-                }`}
-              >
-                <h4 className="mb-3 text-sm font-semibold text-[#04BCBC]">
-                  {item.includesTitle}
-                </h4>
+          {/* ================= LEFT ================= */}
+          <div className="w-full lg:w-[280px] lg:shrink-0">
+            <p className="text-3xl font-bold text-[#04BCBC] md:text-4xl">
+              {t("our")}
+            </p>
 
-                <ul className="space-y-2">
-                  {item.includes.map((include, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-sm text-[#6B7280]"
-                    >
-                      <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[#04BCBC]" />
-                      <span>{include}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+            <h2 className="mt-2 text-3xl font-bold leading-tight text-[#00628D] md:text-4xl">
+              {t("title")}
+            </h2>
+          </div>
 
-        {/* ================= DESKTOP ================= */}
-        <div className="relative hidden flex-1 lg:block">
-          <div
-            ref={scrollRef}
-            className="flex gap-12 overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
-          >
+          {/* ================= MOBILE & TABLET ================= */}
+          <div className="grid flex-1 gap-6 md:grid-cols-2 lg:hidden">
             {items.map((item, index) => (
               <div
                 key={index}
-                className="min-w-[calc((100%-6rem)/3)] max-w-[calc((100%-6rem)/3)] flex-shrink-0"
+                className="rounded-3xl border border-[#E8EEF3] bg-white p-6 shadow-sm"
               >
-                <h3 className="min-h-[65px] text-[20px] font-bold leading-7 text-[#00628D]">
+                <h3 className="min-h-[60px] text-xl font-bold leading-7 text-[#00628D]">
                   {item.title}
                 </h3>
 
                 <div className="mt-4">
                   {openIndex === index ? (
-  <div
-    onClick={() => setOpenIndex(null)}
-    className="
-      mt-5
-      w-fit
-      max-w-full
-      cursor-pointer
-      rounded-tl-[1px] //kanan atas 
-      rounded-tr-[28px] //kiri atas 
-      rounded-bl-[28px] //kanan bawah 
-      rounded-br-[1px]  //kiri bawah 
-      border border-[#E6EDF2]
-      bg-white
-      px-5
-      py-4
-      shadow-[0_4px_12px_rgba(0,0,0,0.25)]
-      transition-all
-      duration-300
-    "
-  >
-    <h4 className="mb-2 text-[13px] font-semibold text-[#04BCBC]">
-      {item.includesTitle}
-    </h4>
+                    /* ================= OPEN ================= */
+                    <div
+                      onClick={() => setOpenIndex(null)}
+                      className="
+                        mt-5
+                        w-fit
+                        max-w-full
+                        cursor-pointer
+                        rounded-tl-[1px]
+                        rounded-tr-[28px]
+                        rounded-bl-[28px]
+                        rounded-br-[1px]
+                        border border-[#E6EDF2]
+                        bg-white
+                        px-5
+                        py-4
+                        shadow-[0_4px_12px_rgba(0,0,0,0.25)]
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      <h4 className="mb-2 text-[13px] font-semibold text-[#04BCBC]">
+                        {item.includesTitle}
+                      </h4>
 
-    <ul className="space-y-1">
-      {item.includes.map((include, i) => (
-        <li
-          key={i}
-          className="ml-4 list-disc text-[13px] leading-6 text-[#6B7280]"
-        >
-          {include}
-        </li>
-      ))}
-    </ul>
-  </div>
-) : (
+                      <ul className="space-y-1">
+                        {item.includes.map((include, i) => (
+                          <li
+                            key={i}
+                            className="
+                              ml-4
+                              list-disc
+                              text-[13px]
+                              leading-6
+                              text-[#6B7280]
+                            "
+                          >
+                            {include}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    /* ================= CLOSED ================= */
                     <>
                       <p className="text-sm leading-7 text-[#6B7280]">
                         {item.description}
                       </p>
 
                       <button
+                        type="button"
                         onClick={() => setOpenIndex(index)}
-                        className="mt-6 flex items-center gap-2 font-semibold text-[#04BCBC] transition-all duration-300 hover:gap-3"
+                        className="
+                          mt-6
+                          flex
+                          items-center
+                          gap-2
+                          font-semibold
+                          text-[#04BCBC]
+                          transition-all
+                          duration-300
+                          hover:gap-3
+                        "
                       >
                         {t("button")}
                         <span>→</span>
@@ -178,31 +154,179 @@ const scrollLeft = () => {
             ))}
           </div>
 
-       {/* Left Arrow */}
-{showLeftArrow && (
-  <button
-    type="button"
-    onClick={scrollLeft}
-    className="absolute left-[-24px] top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-xl backdrop-blur-sm transition duration-300 hover:scale-110"
-  >
-    <span className="text-3xl leading-none text-[#04BCBC]/70">
-      ❮
-    </span>
-  </button>
-)}
+          {/* ================= DESKTOP ================= */}
+          <div className="relative hidden flex-1 lg:block">
 
-{/* Right Arrow */}
-<button
-  type="button"
-  onClick={scrollRight}
-  className="absolute right-[-24px] top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-xl backdrop-blur-sm transition duration-300 hover:scale-110"
->
-  <span className="text-3xl leading-none text-[#04BCBC]/70">
-    ❯
-  </span>
-</button>
+            <div
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="
+                flex
+                gap-12
+                overflow-x-auto
+                pb-4
+                scrollbar-hide
+                scroll-smooth
+              "
+            >
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className="
+                    min-w-[calc((100%-6rem)/3)]
+                    max-w-[calc((100%-6rem)/3)]
+                    flex-shrink-0
+                  "
+                >
+                  <h3 className="min-h-[65px] text-[20px] font-bold leading-7 text-[#00628D]">
+                    {item.title}
+                  </h3>
+
+                  <div className="mt-4">
+                    {openIndex === index ? (
+                      /* ================= OPEN ================= */
+                      <div
+                        onClick={() => setOpenIndex(null)}
+                        className="
+                          mt-5
+                          w-fit
+                          max-w-full
+                          cursor-pointer
+                          rounded-tl-[1px]
+                          rounded-tr-[28px]
+                          rounded-bl-[28px]
+                          rounded-br-[1px]
+                          border border-[#E6EDF2]
+                          bg-white
+                          px-5
+                          py-4
+                          shadow-[0_4px_12px_rgba(0,0,0,0.25)]
+                          transition-all
+                          duration-300
+                        "
+                      >
+                        <h4 className="mb-2 text-[13px] font-semibold text-[#04BCBC]">
+                          {item.includesTitle}
+                        </h4>
+
+                        <ul className="space-y-1">
+                          {item.includes.map((include, i) => (
+                            <li
+                              key={i}
+                              className="
+                                ml-4
+                                list-disc
+                                text-[13px]
+                                leading-6
+                                text-[#6B7280]
+                              "
+                            >
+                              {include}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      /* ================= CLOSED ================= */
+                      <>
+                        <p className="text-sm leading-7 text-[#6B7280]">
+                          {item.description}
+                        </p>
+
+                        <button
+                          type="button"
+                          onClick={() => setOpenIndex(index)}
+                          className="
+                            mt-6
+                            flex
+                            items-center
+                            gap-2
+                            font-semibold
+                            text-[#04BCBC]
+                            transition-all
+                            duration-300
+                            hover:gap-3
+                          "
+                        >
+                          {t("button")}
+                          <span>→</span>
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* ================= LEFT ARROW ================= */}
+            {showLeftArrow && (
+              <button
+                type="button"
+                onClick={scrollLeft}
+                className="
+                  absolute
+                  z-10
+                  left-[-12px]
+                  top-1/2
+                  flex
+                  h-10
+                  w-10
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white/90
+                  shadow-xl
+                  backdrop-blur-sm
+                  transition
+                  duration-300
+                  hover:scale-110
+                  md:left-[-24px]
+                  md:h-12
+                  md:w-12
+                "
+              >
+                <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
+                  ❮
+                </span>
+              </button>
+            )}
+
+            {/* ================= RIGHT ARROW ================= */}
+            {showRightArrow && (
+              <button
+                type="button"
+                onClick={scrollRight}
+                className="
+                  absolute
+                  z-10
+                  right-[-12px]
+                  top-1/2
+                  flex
+                  h-10
+                  w-10
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white/90
+                  shadow-xl
+                  backdrop-blur-sm
+                  transition
+                  duration-300
+                  hover:scale-110
+                  md:right-[-24px]
+                  md:h-12
+                  md:w-12
+                "
+              >
+                <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
+                  ❯
+                </span>
+              </button>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }
