@@ -62,7 +62,7 @@ export default function HeroContact() {
         ${
           locale === "id"
             ? "max-w-[360px] text-[30px] xl:max-w-[500px] xl:text-[50px]"
-            : "max-w-[300px] text-[30px] xl:max-w-[420px] xl:text-[50px]"
+            : "max-w-[300px] text-[40px] xl:max-w-[420px] xl:text-[55px]"
         }
       `}
     >
