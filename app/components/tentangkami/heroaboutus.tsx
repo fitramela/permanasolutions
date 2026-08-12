@@ -1,3 +1,4 @@
+```tsx
 "use client";
 
 import Image from "next/image";
@@ -7,75 +8,59 @@ export default function HeroAboutUs() {
   const t = useTranslations("About");
 
   return (
-    // <section
-    //   className="
-    //     relative
-    //     overflow-hidden
-    //     h-[1156px]
-    //   "
-    // >
     <section
-  className="
-    relative
-    h-[760px]
-    overflow-hidden
-  "
->
+      className="
+        relative
+        min-h-[760px]
+        overflow-hidden
+      "
+    >
       {/* ================= BACKGROUND ================= */}
 
-      <div className="absolute inset-0">
+      <Image
+        src="/images/hero-home.png"
+        alt="About Us"
+        fill
+        priority
+        className="object-cover object-center"
+      />
 
-        <Image
-          src="/images/hero-home.png"
-          alt="About Us1"
-          fill
-          priority
-          className="
-            object-cover
-            object-center
-          "
-        />
+      {/* Optional Overlay */}
 
-       </div>
+      <div className="absolute inset-0 bg-black/25" />
 
       {/* ================= CONTENT ================= */}
 
       <div
         className="
           relative
-          z-20
-
+          z-10
           mx-auto
-
           flex
-          items-center
-
-          h-full
-
+          min-h-[760px]
           max-w-[1440px]
-
-          px-[100px]
+          items-center
+          px-6
+          sm:px-10
+          lg:px-[100px]
         "
       >
-        <div className=" relative
-
-    max-w-[640px]
-
-    -mt-[435px]      
-    ml-[-30px]"
-    >
-
+        <div
+          className="
+            max-w-[720px]
+          "
+        >
           {/* Title */}
 
           <h1
             className="
+              text-4xl
+              font-bold
+              leading-tight
               text-white
 
-              text-[58px]
-
-              font-bold
-
-              leading-none
+              sm:text-5xl
+              lg:text-[58px]
             "
           >
             {t("hero.title")}
@@ -86,42 +71,37 @@ export default function HeroAboutUs() {
           <p
             className="
               mt-8
-
               max-w-[900px]
-
-              text-[15px]
-
-              leading-[20px]
-
+              text-sm
+              leading-7
               text-white/95
+
+              lg:text-[15px]
             "
           >
             {t("hero.description")}
           </p>
 
-         {/* Line Image */}
+          {/* Decoration */}
 
-<Image
-  src="/images/Decore.png"
-  alt="Line Decoration"
-  width={260}
-  height={8}
-  priority
-  className="
-    mt-3
-
-    w-[750px]
-    h-auto
-
-    select-none
-    pointer-events-none
-  "
-/>
-
+          <Image
+            src="/images/Decore.png"
+            alt="Line Decoration"
+            width={750}
+            height={12}
+            priority
+            className="
+              mt-6
+              h-auto
+              w-full
+              max-w-[750px]
+              select-none
+              pointer-events-none
+            "
+          />
         </div>
       </div>
-
-      
     </section>
   );
 }
+```
