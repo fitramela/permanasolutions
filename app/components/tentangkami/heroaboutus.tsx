@@ -20,7 +20,7 @@ export default function HeroAboutUs() {
 
         <Image
           src="/images/GGyups.png"
-          alt="About Us"
+          alt="About kami"
           fill
           priority
           className="
