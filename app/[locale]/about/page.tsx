@@ -4,7 +4,7 @@ import AboutContent from "@/app/components/tentangkami/BackgroundCanvas";
 export default function AboutPage() {
   return (
     <>
-      <HeroAbout />
+      <heroaboutus />
       <BackgroundCanvas />
     </>
   );
