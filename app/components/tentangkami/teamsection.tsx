@@ -1,151 +1,151 @@
-"use client";
+// "use client";
 
-import useEmblaCarousel from "embla-carousel-react";
-import TeamCard from "./teamcard";
-import { teamData } from "./teamdat";
-import ArrowButton from "./ArrowButton";
-import DotPattern from "./DotPattern";
+// import useEmblaCarousel from "embla-carousel-react";
+// import TeamCard from "./teamcard";
+// import { teamData } from "./teamdat";
+// import ArrowButton from "./ArrowButton";
+// import DotPattern from "./DotPattern";
 
-export default function TeamSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    containScroll: "keepSnaps",
-    dragFree: true,
-    loop: false,
-  });
+// export default function TeamSection() {
+//   const [emblaRef, emblaApi] = useEmblaCarousel({
+//     align: "start",
+//     containScroll: "keepSnaps",
+//     dragFree: true,
+//     loop: false,
+//   });
 
-  return (
-   <section
-  className="
-    relative
-    w-full
-    top-[-45px]
-    overflow-hidden
-  "
->
-  <div
-    className="
-      relative
+//   return (
+//    <section
+//   className="
+//     relative
+//     w-full
+//     top-[-45px]
+//     overflow-hidden
+//   "
+// >
+//   <div
+//     className="
+//       relative
 
   
-      max-w-full
+//       max-w-full
 
-      h-[581px]
+//       h-[581px]
 
-      bg-[#F3F3F3]
+//       bg-[#F3F3F3]
 
-      overflow-hidden
-    "
-  >
+//       overflow-hidden
+//     "
+//   >
 
-      {/* Pattern kiri */}
+//       {/* Pattern kiri */}
 
-      <DotPattern
-        className="
-          absolute
-          hidden
-          lg:block
+//       <DotPattern
+//         className="
+//           absolute
+//           hidden
+//           lg:block
 
-          left-10
-          top-40
-          z-0
-        "
-      />
+//           left-10
+//           top-40
+//           z-0
+//         "
+//       />
 
-      {/* Pattern kanan */}
+//       {/* Pattern kanan */}
 
-      <DotPattern
-        className="
-          absolute
-          hidden
-          lg:block
+//       <DotPattern
+//         className="
+//           absolute
+//           hidden
+//           lg:block
 
-          right-10
-          bottom-20
-          rotate-180
-          z-0
-        "
-      />
+//           right-10
+//           bottom-20
+//           rotate-180
+//           z-0
+//         "
+//       />
 
-   <div className="relative w-full z-10">
-        {/* Arrow kiri */}
+//    <div className="relative w-full z-10">
+//         {/* Arrow kiri */}
 
-        <ArrowButton
-          direction="left"
-          onClick={() => emblaApi?.scrollPrev()}
-          className="
-            absolute
+//         <ArrowButton
+//           direction="left"
+//           onClick={() => emblaApi?.scrollPrev()}
+//           className="
+//             absolute
 
-            left-2
-            md:left-4
-            lg:left-6
+//             left-2
+//             md:left-4
+//             lg:left-6
 
-            top-[320px]
-            lg:top-[360px]
+//             top-[320px]
+//             lg:top-[360px]
 
-            -translate-y-1/2
-            z-30
-          "
-        />
+//             -translate-y-1/2
+//             z-30
+//           "
+//         />
 
-        {/* Arrow kanan */}
+//         {/* Arrow kanan */}
 
-        <ArrowButton
-          direction="right"
-          onClick={() => emblaApi?.scrollNext()}
-          className="
-            absolute
+//         <ArrowButton
+//           direction="right"
+//           onClick={() => emblaApi?.scrollNext()}
+//           className="
+//             absolute
 
-            right-2
-            md:right-4
-            lg:right-6
+//             right-2
+//             md:right-4
+//             lg:right-6
 
-            top-[320px]
-            lg:top-[360px]
+//             top-[320px]
+//             lg:top-[360px]
 
-            -translate-y-1/2
-            z-30
-          "
-        />
+//             -translate-y-1/2
+//             z-30
+//           "
+//         />
 
-        {/* Embla */}
+//         {/* Embla */}
 
-       <div
-  ref={emblaRef}
-  className="
-    overflow-hidden
-    cursor-grab
-    active:cursor-grabbing
-  "
->
-          <div
-            className="
-              flex
+//        <div
+//   ref={emblaRef}
+//   className="
+//     overflow-hidden
+//     cursor-grab
+//     active:cursor-grabbing
+//   "
+// >
+//           <div
+//             className="
+//               flex
 
-              gap-6
-              lg:gap-[34px]
+//               gap-6
+//               lg:gap-[34px]
 
-              items-start
+//               items-start
 
-              pt-[110px]
-              pb-5
-            "
-          >
-            {teamData.map((member) => (
-              <div
-                key={member.id}
-                className="
-                  flex-[0_0_320px]
-                  select-none
-                "
-              >
-                <TeamCard member={member} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-  );
-}
+//               pt-[110px]
+//               pb-5
+//             "
+//           >
+//             {teamData.map((member) => (
+//               <div
+//                 key={member.id}
+//                 className="
+//                   flex-[0_0_320px]
+//                   select-none
+//                 "
+//               >
+//                 <TeamCard member={member} />
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//       </div>
+//     </section>
+//   );
+// }
