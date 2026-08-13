@@ -1,120 +1,184 @@
-"use client";
+  "use client";
 
-import Image from "next/image";
-import { useTranslations } from "next-intl";
+  import Image from "next/image";
+  import { useTranslations } from "next-intl";
 
-export default function HeroAboutUs() {
-  const t = useTranslations("About");
+  export default function HeroAboutUs() {
+    const t = useTranslations("About");
 
-  return (
-    <section
+    return (
+      <section className="relative w-full overflow-hidden bg-white">
+
+        {/* =====================================================
+            DESKTOP
+            Hanya aktif pada layar lg ke atas
+        ===================================================== */}
+        <div className="relative hidden h-[1200px] overflow-hidden lg:block">
+          {/* BACKGROUND DESKTOP */}
+          <Image
+            src="/images/GGyups.png"
+            alt="Solutions Hero"
+            fill
+            priority
+            className="object-cover"
+          />
+
+          {/* CONTENT DESKTOP */}
+          <div
+            className="
+              relative
+              z-20
+              mx-auto
+              flex
+              h-full
+              max-w-[1440px]
+              items-center
+              px-[100px]
+            "
+          >
+            <div
+              className="
+                relative
+                -mt-[435px]
+                ml-[-30px]
+                max-w-[640px]
+              "
+            >
+              {/* TITLE */}
+              <h1
+                className="
+                  text-[58px]
+                  font-bold
+                  leading-none
+                  text-white
+                "
+              >
+                {t("hero.title")}
+              </h1>
+
+              {/* DESCRIPTION */}
+              <p
+                className="
+                  mt-8
+                  max-w-[900px]
+                  text-[15px]
+                  leading-[20px]
+                  text-white/95
+                "
+              >
+                {t("hero.description")}
+              </p>
+
+              {/* LINE */}
+              <Image
+                src="/images/Decore.png"
+                alt="Line Decoration"
+                width={750}
+                height={8}
+                priority
+                className="
+                  mt-3
+                  h-auto
+                  w-[750px]
+                  select-none
+                  pointer-events-none
+                "
+              />
+            </div>
+          </div>
+        </div>
+
+
+       {/* =====================================================
+    MOBILE
+    Hanya aktif di bawah lg
+===================================================== */}
+<div
+  className="
+    relative
+    block
+    min-h-[970px]
+    overflow-hidden
+    lg:hidden
+  "
+>
+  {/* BACKGROUND MOBILE */}
+  <Image
+    src="/images/herohp.png"
+    alt="About Permana Solutions"
+    fill
+    priority
+    className="
+      object-cover
+      object-top
+      select-none
+    "
+  />
+
+  {/* CONTENT MOBILE */}
+  <div
+    className="
+      absolute
+      left-[6%]
+      top-[13%]
+      z-20
+      w-[400px]
+    "
+  >
+    {/* TITLE */}
+    <h1
       className="
-        relative
-        overflow-hidden
-        h-[1156px]
+        max-w-[240px]
+        text-[40px]
+        font-bold
+        leading-[1.05]
+        tracking-[-0.02em]
+        text-white
+
+        sm:max-w-[280px]
+        sm:text-[40px]
       "
     >
-      {/* ================= BACKGROUND ================= */}
+      {t("hero.title")}
+    </h1>
 
-      <div className="absolute inset-0">
+    {/* DESCRIPTION */}
+    <p
+      className="
+        mt-1
+        max-w-[280px]
+        text-[11px]
+        leading-[1.5]
+        text-white/95
 
-        <Image
-          src="/putrii.png"
-          alt="About Us"
-          fill
-          priority
-          className="
-            object-cover
-            object-center
-          "
-        />
-
-       </div>
-
-      {/* ================= CONTENT ================= */}
-
-      <div
-        className="
-          relative
-          z-20
-
-          mx-auto
-
-          flex
-          items-center
-
-          h-full
-
-          max-w-[1440px]
-
-          px-[100px]
-        "
-      >
-        <div className=" relative
-
-    max-w-[640px]
-
-    -mt-[435px]      
-    ml-[-30px]"
+        sm:max-w-[350px]
+        sm:text-[13px]
+      "
     >
+      {t("hero.description")}
+    </p>
 
-          {/* Title */}
+    {/* LINE */}
+    <Image
+      src="/images/Decore.png"
+      alt="Line Decoration"
+      width={330}
+      height={8}
+      priority
+      className="
+        mt-4
+        h-auto
+        w-[280px]
 
-          <h1
-            className="
-              text-white
+        sm:w-[330px]
 
-              text-[58px]
+        select-none
+        pointer-events-none
+      "
+    />
+  </div>
+</div>
 
-              font-bold
-
-              leading-none
-            "
-          >
-            {t("hero.title")}
-          </h1>
-
-          {/* Description */}
-
-          <p
-            className="
-              mt-8
-
-              max-w-[900px]
-
-              text-[15px]
-
-              leading-[20px]
-
-              text-white/95
-            "
-          >
-            {t("hero.description")}
-          </p>
-
-         {/* Line Image */}
-
-<Image
-  src="/images/Decore.png"
-  alt="Line Decoration"
-  width={260}
-  height={8}
-  priority
-  className="
-    mt-3
-
-    w-[750px]
-    h-auto
-
-    select-none
-    pointer-events-none
-  "
-/>
-
-        </div>
-      </div>
-
-      
-    </section>
-  );
-}
+      </section>
+    );
+  }
