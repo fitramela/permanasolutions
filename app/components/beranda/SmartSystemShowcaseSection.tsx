@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRef, useState } from "react";
@@ -19,6 +18,11 @@ export default function SmartSystemShowcaseSection() {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
+  // ================= MOUSE DRAG =================
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [startScrollLeft, setStartScrollLeft] = useState(0);
+
   const handleScroll = () => {
     if (!scrollRef.current) return;
 
@@ -35,6 +39,46 @@ export default function SmartSystemShowcaseSection() {
     );
   };
 
+  // ================= MOUSE DOWN =================
+  const handleMouseDown = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
+    if (!scrollRef.current) return;
+
+    setIsDragging(true);
+
+    setStartX(
+      e.pageX - scrollRef.current.offsetLeft
+    );
+
+    setStartScrollLeft(
+      scrollRef.current.scrollLeft
+    );
+  };
+
+  // ================= MOUSE MOVE =================
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
+    if (!isDragging || !scrollRef.current) return;
+
+    e.preventDefault();
+
+    const x =
+      e.pageX - scrollRef.current.offsetLeft;
+
+    const walk = (x - startX) * 1.5;
+
+    scrollRef.current.scrollLeft =
+      startScrollLeft - walk;
+  };
+
+  // ================= MOUSE UP =================
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // ================= ARROW RIGHT =================
   const scrollRight = () => {
     scrollRef.current?.scrollBy({
       left: 320,
@@ -42,6 +86,7 @@ export default function SmartSystemShowcaseSection() {
     });
   };
 
+  // ================= ARROW LEFT =================
   const scrollLeft = () => {
     scrollRef.current?.scrollBy({
       left: -320,
@@ -52,7 +97,7 @@ export default function SmartSystemShowcaseSection() {
   return (
     <section
       aria-labelledby="smart-system-showcase-heading"
-      className="relative w-full overflow-hidden bg-white py-12 sm:py-16 lg:py-20"
+      className="w-full bg-[#04bcbc0a] py-20"
     >
       <div className="mx-auto max-w-7xl px-6">
 
@@ -75,6 +120,7 @@ export default function SmartSystemShowcaseSection() {
                 leading-tight
                 break-words
                 text-black
+
                 sm:px-6
                 md:px-0
                 md:text-5xl
@@ -87,7 +133,6 @@ export default function SmartSystemShowcaseSection() {
           </div>
         </header>
 
-
         {/* ================= CARDS ================= */}
 
         <div className="relative">
@@ -95,40 +140,55 @@ export default function SmartSystemShowcaseSection() {
           <div
             ref={scrollRef}
             onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
             role="list"
             aria-label={t("aria")}
-            className="
-              no-scrollbar
+            className={`
               flex
               gap-4
               overflow-x-auto
               snap-x
               snap-mandatory
               scroll-smooth
+              no-scrollbar
+
               md:gap-2
               md:flex-row
               md:overflow-x-auto
               md:pb-4
-            "
+
+              ${
+                isDragging
+                  ? "cursor-grabbing"
+                  : "cursor-grab"
+              }
+            `}
           >
 
             {showcaseItems.map((item, index) => (
               <article
-                key={`${item.title}-${index}`}
+                key={index}
                 role="listitem"
                 className="
-                  min-w-full
                   snap-center
+                  min-w-full
                   rounded-xl
                   bg-white
                   p-6
+
                   md:min-w-[300px]
+
+                  select-none
                 "
               >
 
-                {/* Service Title */}
+                {/* ================= TITLE ================= */}
 
                 <div className="mb-5 flex justify-center">
+
                   <div
                     className="
                       flex
@@ -141,6 +201,7 @@ export default function SmartSystemShowcaseSection() {
                       shadow
                     "
                   >
+
                     <h3
                       className="
                         px-5
@@ -153,11 +214,12 @@ export default function SmartSystemShowcaseSection() {
                     >
                       {item.title}
                     </h3>
+
                   </div>
+
                 </div>
 
-
-                {/* Description */}
+                {/* ================= DESCRIPTION ================= */}
 
                 <p
                   className="
@@ -179,50 +241,46 @@ export default function SmartSystemShowcaseSection() {
 
           </div>
 
-
           {/* ================= LEFT ARROW ================= */}
 
           {showLeftArrow && (
             <button
               type="button"
               onClick={scrollLeft}
-              aria-label="Scroll left"
               className="
                 absolute
-                left-[-12px]
-                top-1/2
                 z-10
+
+                left-[-12px]
+                md:left-[-24px]
+
+                top-1/2
+                -translate-y-1/2
+
                 flex
                 h-10
                 w-10
-                -translate-y-1/2
+                md:h-12
+                md:w-12
+
                 items-center
                 justify-center
+
                 rounded-full
                 bg-white/90
                 shadow-xl
                 backdrop-blur-sm
+
                 transition
                 duration-300
                 hover:scale-110
-                md:left-[-24px]
-                md:h-12
-                md:w-12
               "
             >
-              <span
-                className="
-                  text-2xl
-                  leading-none
-                  text-[#04BCBC]/70
-                  md:text-3xl
-                "
-              >
+              <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
                 ❮
               </span>
             </button>
           )}
-
 
           {/* ================= RIGHT ARROW ================= */}
 
@@ -230,47 +288,43 @@ export default function SmartSystemShowcaseSection() {
             <button
               type="button"
               onClick={scrollRight}
-              aria-label="Scroll right"
               className="
                 absolute
-                right-[-12px]
-                top-1/2
                 z-10
+
+                right-[-12px]
+                md:right-[-24px]
+
+                top-1/2
+                -translate-y-1/2
+
                 flex
                 h-10
                 w-10
-                -translate-y-1/2
+                md:h-12
+                md:w-12
+
                 items-center
                 justify-center
+
                 rounded-full
                 bg-white/90
                 shadow-xl
                 backdrop-blur-sm
+
                 transition
                 duration-300
                 hover:scale-110
-                md:right-[-24px]
-                md:h-12
-                md:w-12
               "
             >
-              <span
-                className="
-                  text-2xl
-                  leading-none
-                  text-[#04BCBC]/70
-                  md:text-3xl
-                "
-              >
+              <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
                 ❯
               </span>
             </button>
           )}
 
         </div>
-
       </div>
     </section>
   );
 }
-
