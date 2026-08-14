@@ -8,6 +8,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { teamData, TeamMember } from "./aboutData";
 
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
+
 export default function AboutContent() {
   const t = useTranslations("About");
 
@@ -16,41 +20,39 @@ export default function AboutContent() {
   ========================================================= */
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
+    align: "center",
     containScroll: "keepSnaps",
-    dragFree: true,
+    dragFree: false,
     loop: false,
-    skipSnaps: true,
-    duration: 45,
+    skipSnaps: false,
+    duration: 25,
   });
 
   /* =========================================================
-     CAROUSEL CONFIG
-  ========================================================= */
-
-  const CAROUSEL_CONFIG = {
-    gap: 15,
-    paddingLeft: 30,
-    paddingRight: 40,
-    paddingTop: 110,
-    cardTranslateY: 10,
-  };
-
-  /* =========================================================
-     ARROW STATE
+     CAROUSEL STATE
   ========================================================= */
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const updateScrollButtons = useCallback(() => {
+  /* =========================================================
+     UPDATE CAROUSEL
+  ========================================================= */
+
+  const updateCarouselState = useCallback(() => {
     if (!emblaApi) return;
 
     const progress = emblaApi.scrollProgress();
-    const threshold = 0.01;
+    const EDGE_THRESHOLD = 0.01;
 
-    setCanScrollPrev(progress > threshold);
-    setCanScrollNext(progress < 1 - threshold);
+    const isAtStart = progress <= EDGE_THRESHOLD;
+    const isAtEnd = progress >= 1 - EDGE_THRESHOLD;
+
+    setCanScrollPrev(!isAtStart);
+    setCanScrollNext(!isAtEnd);
+
+    setActiveIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
   /* =========================================================
@@ -61,7 +63,7 @@ export default function AboutContent() {
     if (!emblaApi) return;
 
     const update = () => {
-      requestAnimationFrame(updateScrollButtons);
+      requestAnimationFrame(updateCarouselState);
     };
 
     update();
@@ -79,7 +81,7 @@ export default function AboutContent() {
       emblaApi.off("reInit", update);
       emblaApi.off("pointerUp", update);
     };
-  }, [emblaApi, updateScrollButtons]);
+  }, [emblaApi, updateCarouselState]);
 
   /* =========================================================
      MISSIONS
@@ -104,7 +106,6 @@ export default function AboutContent() {
         lg:-mt-[310px]
       "
     >
-
       {/* =====================================================
           BACKGROUND
       ===================================================== */}
@@ -117,11 +118,6 @@ export default function AboutContent() {
           overflow-hidden
         "
       >
-
-        {/* =================================================
-            LEFT DECORATION
-        ================================================= */}
-
         <Image
           src="/images/bgkiri2permana.png"
           alt=""
@@ -129,9 +125,9 @@ export default function AboutContent() {
           height={1200}
           className="
             absolute
+
             left-[-70px]
             top-[290px]
-
             w-[360px]
 
             sm:left-[-120px]
@@ -150,10 +146,6 @@ export default function AboutContent() {
           "
         />
 
-        {/* =================================================
-            LOWER DECORATION
-        ================================================= */}
-
         <Image
           src="/images/imageg.png"
           alt=""
@@ -164,7 +156,6 @@ export default function AboutContent() {
 
             left-[-120px]
             top-[1350px]
-
             w-[330px]
 
             sm:left-[-100px]
@@ -183,10 +174,6 @@ export default function AboutContent() {
             select-none
           "
         />
-
-        {/* =================================================
-            RIGHT GLOW
-        ================================================= */}
 
         <div
           className="
@@ -215,7 +202,6 @@ export default function AboutContent() {
         />
       </div>
 
-
       {/* =====================================================
           MAIN CONTENT
       ===================================================== */}
@@ -239,7 +225,6 @@ export default function AboutContent() {
           xl:px-[100px]
         "
       >
-
         {/* ===================================================
             OUR PROFILE
         =================================================== */}
@@ -261,11 +246,6 @@ export default function AboutContent() {
             lg:pb-[140px]
           "
         >
-
-          {/* =================================================
-              TITLE AREA
-          ================================================= */}
-
           <div
             className="
               relative
@@ -279,7 +259,6 @@ export default function AboutContent() {
               lg:h-[120px]
             "
           >
-
             <Image
               src="/images/ourteks.png"
               alt=""
@@ -291,7 +270,6 @@ export default function AboutContent() {
 
                 left-[-180px]
                 top-[-40px]
-
                 w-[500px]
 
                 sm:left-[-230px]
@@ -327,7 +305,6 @@ export default function AboutContent() {
                 text-[17px]
 
                 sm:text-[30px]
-
                 md:text-[32px]
 
                 lg:left-[-25px]
@@ -339,18 +316,9 @@ export default function AboutContent() {
             </h2>
           </div>
 
-
-          {/* =================================================
-              DESCRIPTION
-          ================================================= */}
-
           <div
             className="
               mt-[5px]
-
-              sm:mt-[5px]
-
-              md:mt-[5px]
 
               lg:mt-[-30px]
 
@@ -364,7 +332,6 @@ export default function AboutContent() {
                 left-0
 
                 w-full
-
                 max-w-[100%]
 
                 text-left
@@ -392,7 +359,6 @@ export default function AboutContent() {
           </div>
         </section>
 
-
         {/* ===================================================
             COMPANY
         =================================================== */}
@@ -410,7 +376,6 @@ export default function AboutContent() {
             lg:py-[100px]
           "
         >
-
           <div
             className="
               relative
@@ -418,11 +383,6 @@ export default function AboutContent() {
               lg:-mt-[60px]
             "
           >
-
-            {/* =================================================
-                COMPANY LOGO
-            ================================================= */}
-
             <Image
               src="/images/pErmana.png"
               alt="Permana Solutions"
@@ -434,7 +394,6 @@ export default function AboutContent() {
 
                 right-[-20px]
                 top-[-120px]
-
                 w-[170px]
 
                 sm:right-[-55px]
@@ -450,15 +409,9 @@ export default function AboutContent() {
                 lg:w-[330px]
 
                 h-auto
-
                 select-none
               "
             />
-
-
-            {/* =================================================
-                COMPANY CONTENT
-            ================================================= */}
 
             <div
               className="
@@ -467,7 +420,6 @@ export default function AboutContent() {
                 lg:ml-[-25px]
               "
             >
-
               <h2
                 className="
                   max-w-[330px]
@@ -491,7 +443,6 @@ export default function AboutContent() {
               >
                 {t("company.title")}
               </h2>
-
 
               <p
                 className="
@@ -518,11 +469,9 @@ export default function AboutContent() {
               >
                 {t("company.description")}
               </p>
-
             </div>
           </div>
         </section>
-
 
         {/* ===================================================
             VISION & MISSION
@@ -542,11 +491,6 @@ export default function AboutContent() {
             lg:py-[170px]
           "
         >
-
-          {/* =================================================
-              VISION DECORATION
-          ================================================= */}
-
           <Image
             src="/images/visimisits.png"
             alt=""
@@ -558,7 +502,6 @@ export default function AboutContent() {
 
               left-[-43px]
               top-[50px]
-
               w-[290px]
 
               sm:left-[-205px]
@@ -578,11 +521,6 @@ export default function AboutContent() {
             "
           />
 
-
-          {/* =================================================
-              CONTENT
-          ================================================= */}
-
           <div
             className="
               relative
@@ -599,11 +537,6 @@ export default function AboutContent() {
               lg:items-start
             "
           >
-
-            {/* =================================================
-                SECTION TITLE
-            ================================================= */}
-
             <div
               className="
                 relative
@@ -614,7 +547,6 @@ export default function AboutContent() {
                 lg:mb-0
               "
             >
-
               <h2
                 className="
                   relative
@@ -641,13 +573,7 @@ export default function AboutContent() {
               >
                 {t("visionMission.title")}
               </h2>
-
             </div>
-
-
-            {/* =================================================
-                VISION + MISSION
-            ================================================= */}
 
             <div
               className="
@@ -656,9 +582,6 @@ export default function AboutContent() {
                 lg:mt-[-140px]
               "
             >
-
-              {/* VISION */}
-
               <h2
                 className="
                   text-[25px]
@@ -676,7 +599,6 @@ export default function AboutContent() {
               >
                 {t("visionMission.visionTitle")}
               </h2>
-
 
               <p
                 className="
@@ -702,9 +624,6 @@ export default function AboutContent() {
                 {t("visionMission.visionDescription")}
               </p>
 
-
-              {/* MISSION */}
-
               <h2
                 className="
                   mt-[35px]
@@ -725,7 +644,6 @@ export default function AboutContent() {
               >
                 {t("visionMission.missionTitle")}
               </h2>
-
 
               <ol
                 className="
@@ -758,16 +676,12 @@ export default function AboutContent() {
                 "
               >
                 {missions.map((mission, index) => (
-                  <li key={index}>
-                    {mission}
-                  </li>
+                  <li key={index}>{mission}</li>
                 ))}
               </ol>
-
             </div>
           </div>
         </section>
-
 
         {/* ===================================================
             MEET TEAM
@@ -790,7 +704,6 @@ export default function AboutContent() {
             lg:-mt-24
           "
         >
-
           <div
             className="
               mx-auto
@@ -808,7 +721,6 @@ export default function AboutContent() {
               text-center
             "
           >
-
             <h2
               className="
                 font-bold
@@ -827,7 +739,6 @@ export default function AboutContent() {
             >
               {t("team.title")}
             </h2>
-
 
             <h3
               className="
@@ -849,7 +760,6 @@ export default function AboutContent() {
             >
               {t("team.subtitle")}
             </h3>
-
 
             <p
               className="
@@ -878,11 +788,9 @@ export default function AboutContent() {
             >
               {t("team.description")}
             </p>
-
           </div>
         </section>
       </div>
-
 
       {/* =====================================================
           TEAM CAROUSEL
@@ -899,16 +807,17 @@ export default function AboutContent() {
 
           md:mt-[30px]
 
-          overflow-hidden
+          lg:mt-[-40px]
+
+          overflow-visible
         "
       >
-
         <div
           className="
             relative
             w-full
 
-            h-[535px]
+            h-[510px]
 
             sm:h-[560px]
 
@@ -921,7 +830,6 @@ export default function AboutContent() {
             overflow-hidden
           "
         >
-
           {/* DOT LEFT */}
 
           <DotPattern
@@ -936,7 +844,6 @@ export default function AboutContent() {
               z-0
             "
           />
-
 
           {/* DOT RIGHT */}
 
@@ -955,99 +862,145 @@ export default function AboutContent() {
             "
           />
 
-
-          {/* =================================================
-              CAROUSEL
-          ================================================= */}
-
           <div className="relative z-10 h-full w-full">
 
-            {/* LEFT */}
+            {/* =================================================
+                LEFT ARROW
+            ================================================= */}
 
-            <ArrowButton
-              direction="left"
-              visible={canScrollPrev}
-              onClick={() => {
-                emblaApi?.scrollPrev();
-              }}
-              className="
-                absolute
+            {canScrollPrev && (
+              <button
+                type="button"
+                onClick={() => emblaApi?.scrollPrev()}
+                aria-label="Scroll left"
+                className="
+                  absolute
 
-                left-1
+                  left-[8px]
+                  top-[300px]
 
-                sm:left-3
+                  z-30
 
-                md:left-4
+                  flex
+                  h-10
+                  w-10
 
-                lg:left-6
+                  -translate-y-1/2
 
-                top-[315px]
+                  items-center
+                  justify-center
 
-                sm:top-[325px]
+                  rounded-full
 
-                md:top-[340px]
+                  bg-white/90
 
-                lg:top-[360px]
+                  shadow-xl
 
-                -translate-y-1/2
+                  backdrop-blur-sm
 
-                z-30
+                  transition-all
+                  duration-200
 
-                scale-[0.72]
+                  hover:scale-110
+                  active:scale-95
 
-                sm:scale-[0.82]
+                  sm:left-[-5px]
+                  sm:top-[330px]
+                  sm:h-12
+                  sm:w-12
 
-                lg:scale-100
-              "
-            />
+                  md:left-[-10px]
+                  md:top-[345px]
 
+                  lg:left-6
+                  lg:top-[360px]
+                "
+              >
+                <ChevronLeft
+                  size={24}
+                  strokeWidth={2.5}
+                  className="
+                    text-[#04BCBC]/70
 
-            {/* RIGHT */}
+                    sm:size-[28px]
+                  "
+                />
+              </button>
+            )}
 
-            <ArrowButton
-              direction="right"
-              visible={canScrollNext}
-              onClick={() => {
-                emblaApi?.scrollNext();
-              }}
-              className="
-                absolute
+            {/* =================================================
+                RIGHT ARROW
+            ================================================= */}
 
-                right-1
+            {canScrollNext && (
+              <button
+                type="button"
+                onClick={() => emblaApi?.scrollNext()}
+                aria-label="Scroll right"
+                className="
+                  absolute
 
-                sm:right-3
+                  right-[8px]
+                  top-[300px]
 
-                md:right-4
+                  z-30
 
-                lg:right-6
+                  flex
+                  h-10
+                  w-10
 
-                top-[315px]
+                  -translate-y-1/2
 
-                sm:top-[325px]
+                  items-center
+                  justify-center
 
-                md:top-[340px]
+                  rounded-full
 
-                lg:top-[360px]
+                  bg-white/90
 
-                -translate-y-1/2
+                  shadow-xl
 
-                z-30
+                  backdrop-blur-sm
 
-                scale-[0.72]
+                  transition-all
+                  duration-200
 
-                sm:scale-[0.82]
+                  hover:scale-110
+                  active:scale-95
 
-                lg:scale-100
-              "
-            />
+                  sm:right-[-5px]
+                  sm:top-[330px]
+                  sm:h-12
+                  sm:w-12
 
+                  md:right-[-10px]
+                  md:top-[345px]
 
-            {/* EMBLA */}
+                  lg:right-6
+                  lg:top-[360px]
+                "
+              >
+                <ChevronRight
+                  size={24}
+                  strokeWidth={2.5}
+                  className="
+                    text-[#04BCBC]/70
+
+                    sm:size-[28px]
+                  "
+                />
+              </button>
+            )}
+
+            {/* =================================================
+                EMBLA VIEWPORT
+            ================================================= */}
 
             <div
               ref={emblaRef}
               className="
                 h-full
+                w-full
 
                 overflow-hidden
 
@@ -1055,45 +1008,64 @@ export default function AboutContent() {
                 active:cursor-grabbing
 
                 touch-pan-y
+
                 select-none
 
                 will-change-transform
               "
             >
-
               <div
                 className="
                   flex
                   items-start
 
-                  will-change-transform
+                  h-full
+
+                  gap-0
+
+                  sm:gap-[15px]
+
+                  pt-[110px]
+
+                  sm:pt-[105px]
+
+                  md:pt-[110px]
+
+                  lg:pt-[120px]
+
+                  lg:pl-[50px]
+
+                  xl:pl-[25px]
                 "
-                style={{
-                  gap: `${CAROUSEL_CONFIG.gap}px`,
-                  paddingTop: `${CAROUSEL_CONFIG.paddingTop}px`,
-                  paddingLeft: `${CAROUSEL_CONFIG.paddingLeft}px`,
-                  paddingRight: `${CAROUSEL_CONFIG.paddingRight}px`,
-                }}
               >
+                {/* =================================================
+                    TEAM CARDS
+                ================================================= */}
 
                 {teamData.map((member, index) => (
                   <div
                     key={member.id}
                     className="
-                      flex-[0_0_300px]
+                      flex
+                      flex-[0_0_100%]
+
+                      justify-center
+
                       select-none
+                      translate-y-[15px]
+
+                      sm:flex-[0_0_300px]
+
+                      lg:translate-y-[25px]
                     "
-                    style={{
-                      transform: `translateY(${CAROUSEL_CONFIG.cardTranslateY}px)`,
-                    }}
                   >
                     <TeamCard
                       member={member}
                       index={index}
+                      isActive={index === activeIndex}
                     />
                   </div>
                 ))}
-
               </div>
             </div>
           </div>
@@ -1103,7 +1075,6 @@ export default function AboutContent() {
   );
 }
 
-
 /* =========================================================
    TEAM CARD
 ========================================================= */
@@ -1111,11 +1082,13 @@ export default function AboutContent() {
 interface TeamCardProps {
   member: TeamMember;
   index: number;
+  isActive: boolean;
 }
 
 function TeamCard({
   member,
   index,
+  isActive,
 }: TeamCardProps) {
   const t = useTranslations("Team");
 
@@ -1173,15 +1146,32 @@ function TeamCard({
         border
         border-white/70
 
-        bg-white/35
-
         backdrop-blur-[2px]
 
-        shadow-[0_4px_20px_rgba(255,255,255,0.30)]
-
-        transition-[transform,background-color,box-shadow,border-color]
-        duration-300
+        transition-all
+        duration-500
         ease-out
+
+        ${
+          isActive
+            ? `
+              bg-white
+              border-white
+
+              shadow-[0_12px_35px_rgba(255,255,255,0.90)]
+
+              -translate-y-[8px]
+
+              sm:bg-white/35
+              sm:border-white/70
+              sm:shadow-[0_4px_20px_rgba(255,255,255,0.30)]
+              sm:translate-y-0
+            `
+            : `
+              bg-white/35
+              shadow-[0_4px_20px_rgba(255,255,255,0.30)]
+            `
+        }
 
         hover:bg-white
         hover:border-white
@@ -1195,7 +1185,6 @@ function TeamCard({
         height: `${CARD_CONFIG.height}px`,
       }}
     >
-
       {/* FOTO */}
 
       <div
@@ -1231,7 +1220,6 @@ function TeamCard({
           draggable={false}
         />
       </div>
-
 
       {/* JABATAN */}
 
@@ -1275,7 +1263,6 @@ function TeamCard({
         </span>
       </div>
 
-
       {/* NAMA */}
 
       <h3
@@ -1296,7 +1283,6 @@ function TeamCard({
       >
         {t(member.nameKey)}
       </h3>
-
 
       {/* DESKRIPSI */}
 
@@ -1322,92 +1308,9 @@ function TeamCard({
       >
         {t(member.descriptionKey)}
       </p>
-
     </article>
   );
 }
-
-
-/* =========================================================
-   ARROW BUTTON
-========================================================= */
-
-interface ArrowButtonProps {
-  direction: "left" | "right";
-  visible: boolean;
-  onClick: () => void;
-  className?: string;
-}
-
-function ArrowButton({
-  direction,
-  visible,
-  onClick,
-  className = "",
-}: ArrowButtonProps) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={
-        direction === "left"
-          ? "Previous team member"
-          : "Next team member"
-      }
-      className={`
-        flex
-        items-center
-        justify-center
-
-        w-[64px]
-        h-[64px]
-
-        rounded-full
-
-        bg-white/90
-
-        shadow-xl
-
-        backdrop-blur-sm
-
-        transition-[opacity,transform]
-        duration-200
-        ease-out
-
-        ${
-          visible
-            ? `
-              opacity-100
-              scale-100
-              pointer-events-auto
-            `
-            : `
-              opacity-0
-              scale-90
-              pointer-events-none
-            `
-        }
-
-        ${className}
-      `}
-    >
-      {direction === "left" ? (
-        <ChevronLeft
-          size={28}
-          strokeWidth={2.5}
-          className="text-[#04BCBC]/70"
-        />
-      ) : (
-        <ChevronRight
-          size={28}
-          strokeWidth={2.5}
-          className="text-[#04BCBC]/70"
-        />
-      )}
-    </button>
-  );
-}
-
 
 /* =========================================================
    DOT PATTERN
