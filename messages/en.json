@@ -639,7 +639,9 @@
        "titleStart": "We're Here to help",
   "titleEnd": "you!",
       "office": "Office - Jakarta",
-      "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nGambir District\nCentral Jakarta\nSpecial Capital Region of Jakarta\n10140"
+      "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nGambir District\nCentral Jakarta\nSpecial Capital Region of Jakarta\n10140",
+      "findOffice": "Find Our Office",
+  "visitContact": "Visit us or contact our team directly."
     },
     "Footer": {
       "copyright": "© 2026 PT Medianusa Permana"
