@@ -222,35 +222,37 @@
     "showLess": "show less...",
     "seeMore": "see more...",
     "primeDescription": "Manage your business smarter, faster, and more efficiently.",
-     "primeJulaDescription": "Manage your business smarter, faster, and more efficiently.",
-    "primeTeamsDescription": "Digital form solution to streamline every business process.",
-    "primeRestoDescription": "Smart asset and inventory management system.",
-    "primeCafeDescription": "Modern POS solution for cafés and restaurants.",
-    "primeCareDescription": "Integrated healthcare management platform.",
-    "primeEduDescription": "Digital education management system.",
-    "primeCourseDescription": "Complete organization management platform.",
-    "petPuffyDescription": "Smart pet care management solution.",
+    "primeJulaDescription": "Smart Solutions, Seamless Transactions.",
+    "primeTeamsDescription": "Smart Collaboration, Project Completed.",
+    "primeRestoDescription": "POS Solutions for Easier Business.",
+    "primeCafeDescription": "Smart Solutions, Smooth Business Operations.",
+    "primeCareDescription": "IIntegrated Solutions, More Efficient Services.",
+    "primeEduDescription": "Smart Solutions, More Integrated Schools.",
+    "primeCourseDescription": "Smart Solutions, Easier Learning.",
+    "petPuffyDescription": "Smart Solution, Easier Pet Shop Management.",
+    "videoUnavailable": "Video is not available yet",
+    
     "primebiz": {
       "items": [
         {
-          "title": "PrimeBiz is an integrated ERP platform.",
-          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
+          "title": "PrimeBiz is an integrated ERP platform that helps businesses manage operations in one real-time system.",
+          "description": "PrimeBiz unites various business processes such as finance, HR, sales and operations into one centralized dashboard so that monitoring and decision making becomes faster and more accurate."
         },
         {
-          "title": "Complete operational modules.",
-          "description": "All business operations are connected in real time."
+          "title": "PrimeBiz provides various main modules for business operational needs.",
+          "description": "Available modules include HR, Finance, Project Management, Sales, Purchasing, and Warehouse, which can be adjusted to suit the company's needs."
         },
         {
-          "title": "Increase productivity.",
-          "description": "Automation reduces repetitive work and improves efficiency."
+          "title": "PrimeBiz helps increase business efficiency and productivity.",
+          "description": "By automating work processes and data integration, PrimeBiz reduces manual work, minimizes errors, and provides accurate data to support strategic decision making."
         },
         {
-          "title": "Flexible for every business.",
-          "description": "Suitable for small businesses up to enterprise companies."
+          "title": "PrimeBiz is designed to be flexible for various business scales.",
+          "description": "SThis solution is suitable for use by MSMEs, medium-sized companies, and large companies because it can be adjusted to operational needs and business growth."
         },
         {
-          "title": "Easy implementation.",
-          "description": "Starts from consultation, implementation, and user training."
+          "title": "Getting started with PrimeBiz is easy with an initial consultation.",
+          "description": "You can contact the PrimeBiz team for consultation, see product demos, and get implementation guidance that suits your business needs."
         }
       ]
     },
@@ -282,24 +284,24 @@
     "primeteams": {
       "items": [
         {
-          "title": "Digital Forms.",
-          "description": "Create and manage digital forms with ease."
+          "title": "PrimeTeams is a PMaaS solution that helps manage projects in one integrated platform.",
+          "description": "PrimeTeams is designed to make it easier for companies to manage project operations, team coordination, and real-time progress monitoring so that work is more structured and efficient."
         },
         {
-          "title": "Workflow Automation.",
-          "description": "Automate approval and submission processes."
+          "title": "PrimeTeams provides key features to support project and team management.",
+          "description": "Available features include Project Management, Recruitment Management, and Sales & Prospect Management to help manage projects from inception to execution."
         },
         {
-          "title": "Real-time Submission.",
-          "description": "Monitor submitted forms instantly."
+          "title": "PrimeTeams helps increase team productivity and efficiency.",
+          "description": "With an integrated workflow, PrimeTeams makes collaboration easier, speeds up decision making, and ensures every project runs according to targets and timelines."
         },
         {
-          "title": "Cloud Storage.",
-          "description": "Store every form securely in the cloud."
+          "title": "PrimeTeams is suitable for a variety of companies that manage projects dynamically.",
+          "description": "This solution is ideal for small to large companies that need a centralized system to manage teams, resources and project progress effectively."
         },
         {
-          "title": "Easy Reporting.",
-          "description": "Generate reports from collected data."
+          "title": "Getting started with PrimeTeams can be done through initial consultation with the relevant team.",
+          "description": "You can contact the PrimeTeams team to consult on business needs, try product demos, and get implementation guidance that suits your company's workflow."
         }
       ]
     },
@@ -330,24 +332,24 @@
     "primecafe": {
       "items": [
         {
-          "title": "Restaurant POS.",
-          "description": "Fast and reliable cashier system."
+          "title": "PrimeCafe is a digital solution designed to help cafés manage transactions and products more efficiently.",
+          "description": "With its flexible system, PrimeCafe makes the sales process faster, more organized, and easier to manage."
         },
         {
-          "title": "Kitchen Display.",
-          "description": "Orders are sent directly to the kitchen."
+          "title": "PrimeCafe supports customizable barcodes tailored to your business needs.",
+          "description": "Barcodes can be customized for different products, menu items, and specific café operational needs."
         },
         {
-          "title": "Sales Analytics.",
-          "description": "View sales performance in real time."
+          "title": "PrimeCafe helps speed up the checkout process at the cashier.",
+          "description": "Simply scan the barcode to quickly identify products, making transactions more convenient while minimizing errors."
         },
         {
-          "title": "Inventory Integration.",
-          "description": "Stock updates automatically after every sale."
+          "title": "PrimeCafe offers flexibility to meet the diverse needs of café businesses.",
+          "description": "From menu and product management to transactions, everything can be tailored to fit your business workflow."
         },
         {
-          "title": "Multi Outlet.",
-          "description": "Manage multiple branches from one dashboard."
+          "title": "PrimeCafe is ideal for cafés and F&B businesses looking for a flexible POS system.",
+          "description": "With customizable barcodes and streamlined transaction management, PrimeCafe helps make your café operations more efficient."
         }
       ]
     },
