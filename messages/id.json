@@ -238,35 +238,38 @@
     "seeMore": "see more...",
 
     "primeDescription": "Manage your business smarter, faster, and more efficiently.",
-    "primeTeamsDescription": "Digital form solution to streamline every business process.",
-    "primeRestoDescription": "Smart asset and inventory management system.",
-    "primeCafeDescription": "Modern POS solution for cafés and restaurants.",
-    "primeCareDescription": "Integrated healthcare management platform.",
-    "primeEduDescription": "Digital education management system.",
-    "primeCourseDescription": "Complete organization management platform.",
-    "petPuffyDescription": "Smart pet care management solution.",
+    "primeJulaDescription": "Solusi Cerdas, Transaksi Lancar.",
+    "primeTeamsDescription": "Kolaborasi Cerdas, Proyek Tuntas.",
+    "primeRestoDescription": "Solusi POS untuk Bisnis Lebih Mudah.",
+    "primeCafeDescription": "Solusi Cerdas, Bisnis Lancar.",
+    "primeCareDescription": "Solusi Terintegrasi, Layanan Lebih Efisien.",
+    "primeEduDescription": "Solusi Cerdas, Sekolah Lebih Terintegrasi.",
+    "primeCourseDescription": "Solusi Cerdas, Pembelajaran Lebih Mudah.",
+    "petPuffyDescription": "Solusi Cerdas, Petshop Lebih Mudah.",
+
+    "videoUnavailable": "Video belum tersedia",
 
     "primebiz": {
       "items": [
         {
-          "title": "PrimeBiz is an integrated ERP platform.",
-          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
+          "title": "PrimeBiz adalah platform ERP terintegrasi yang membantu bisnis mengelola operasional dalam satu sistem real-time.",
+          "description": "PrimeBiz menyatukan berbagai proses bisnis seperti keuangan, SDM, penjualan, dan operasional ke dalam satu dashboard terpusat sehingga monitoring dan pengambilan keputusan menjadi lebih cepat dan akurat."
         },
         {
-          "title": "Complete operational modules.",
-          "description": "All business operations are connected in real time."
+          "title": "CPrimeBiz menyediakan berbagai modul utama untuk kebutuhan operasional bisnis.",
+          "description": "Modul yang tersedia meliputi HR, Finance, Project Management, Sales, Purchasing, dan Warehouse, yang dapat disesuaikan dengan kebutuhan perusahaan."
         },
         {
-          "title": "Increase productivity.",
-          "description": "Automation reduces repetitive work and improves efficiency."
+          "title": "PrimeBiz membantu meningkatkan efisiensi dan produktivitas bisnis.",
+          "description": "Dengan otomatisasi proses kerja dan integrasi data, PrimeBiz mengurangi pekerjaan manual, meminimalkan kesalahan, serta menyediakan data akurat untuk mendukung pengambilan keputusan strategis."
         },
         {
-          "title": "Flexible for every business.",
-          "description": "Suitable for small businesses up to enterprise companies."
+          "title": "PrimeBiz dirancang fleksibel untuk berbagai skala bisnis.",
+          "description": "Solusi ini cocok digunakan oleh UMKM, perusahaan menengah, hingga perusahaan besar karena dapat disesuaikan dengan kebutuhan operasional dan pertumbuhan bisnis."
         },
         {
-          "title": "Easy implementation.",
-          "description": "Starts from consultation, implementation, and user training."
+          "title": "Memulai dengan PrimeBiz cukup mudah melalui konsultasi awal.",
+          "description": "Anda dapat menghubungi tim PrimeBiz untuk konsultasi, melihat demo produk, dan mendapatkan panduan implementasi yang sesuai dengan kebutuhan bisnis Anda."
         }
       ]
     },
@@ -297,24 +300,24 @@
     "primeteams": {
       "items": [
         {
-          "title": "Digital Forms.",
-          "description": "Create and manage digital forms with ease."
+          "title": "PrimeTeams adalah solusi PMaaS yang membantu pengelolaan proyek dalam satu platform terintegrasi.",
+          "description": "PrimeTeams dirancang untuk mempermudah perusahaan dalam mengelola operasional proyek, koordinasi tim, serta monitoring progres secara real-time agar pekerjaan lebih terstruktur dan efisien."
         },
         {
-          "title": "Workflow Automation.",
-          "description": "Automate approval and submission processes."
+          "title": "PrimeTeams menyediakan fitur utama untuk mendukung pengelolaan proyek dan tim.",
+          "description": "Fitur yang tersedia meliputi Project Management, Recruitment Management, serta Sales & Prospect Management untuk membantu pengelolaan proyek dari awal hingga eksekusi."
         },
         {
-          "title": "Real-time Submission.",
-          "description": "Monitor submitted forms instantly."
+          "title": "PrimeTeams membantu meningkatkan produktivitas dan efisiensi kerja tim.",
+          "description": "Dengan workflow yang terintegrasi, PrimeTeams memudahkan kolaborasi, mempercepat pengambilan keputusan, serta memastikan setiap proyek berjalan sesuai target dan timeline."
         },
         {
-          "title": "Cloud Storage.",
-          "description": "Store every form securely in the cloud."
+          "title": "PrimeTeams cocok untuk berbagai perusahaan yang mengelola proyek secara dinamis.",
+          "description": "Solusi ini ideal untuk perusahaan kecil hingga besar yang membutuhkan sistem terpusat untuk mengelola tim, resource, dan progress proyek secara efektif."
         },
         {
-          "title": "Easy Reporting.",
-          "description": "Generate reports from collected data."
+          "title": "Memulai PrimeTeams dapat dilakukan melalui konsultasi awal dengan tim terkait.",
+          "description": "Anda dapat menghubungi tim PrimeTeams untuk konsultasi kebutuhan bisnis, mencoba demo produk, serta mendapatkan panduan implementasi yang sesuai dengan workflow perusahaan Anda."
         }
       ]
     },
