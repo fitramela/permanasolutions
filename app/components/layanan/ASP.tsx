@@ -27,24 +27,8 @@ const [currentProduct, setCurrentProduct] = useState(0);
     description: t("primeCafeDescription"),
     image: "/images/products/Image cafe.png",
     items: t.raw("primecafe.items"),
-  },  
-  {
-
-    key: "primeteams",
-    title: "PrimeTeams",
-    description: t("primeTeamsDescription"),
-    image: "/images/products/teams.png",
-    items: t.raw("primeteams.items"),
   },
 
-  {
-    key: "primecafe",
-    title: "PrimeCafe",
-    youtube: "https://www.youtube.com/embed/5_tTysgmcTo",
-    description: t("primeCafeDescription"),
-    image: "/images/products/cafe.png",
-    items: t.raw("primecafe.items"),
-  },
   {
     key: "primecare",
     title: "PrimeCare",
@@ -66,7 +50,7 @@ const [currentProduct, setCurrentProduct] = useState(0);
     key: "primeresto",
     title: "PrimeResto",
     description: t("primeRestoDescription"),
-    image: "/images/products/Image Resto.png",
+    image: "/images/products/restaurant.png",
     items: t.raw("primeresto.items"),
   },
 
@@ -77,21 +61,21 @@ const [currentProduct, setCurrentProduct] = useState(0);
     key: "primeedu",
     title: "PrimeEdu",
     description: t("primeEduDescription"),
-    image: "/images/products/Image Edu.png",
+    image: "/images/products/PEDU.png",
     items: t.raw("primeedu.items"),
   },
   {
     key: "primecourse",
     title: "PrimeCourse",
     description: t("primeCourseDescription"),
-    image: "/images/products/Image Edu.png",
+    image: "/images/products/PCOURSE.png",
     items: t.raw("primecourse.items"),
   },
   {
     key: "petpuffy",
     title: "PetPuffy",
     description: t("petPuffyDescription"),
-    image: "/images/products/puffy.png",
+    image: "/images/products/PPFFY.png",
     items: t.raw("petpuffy.items"),
   },
 
@@ -349,24 +333,27 @@ const [currentProduct, setCurrentProduct] = useState(0);
       </p>
     </div>
 
-   <div className="grid items-center gap-24 lg:grid-cols-[720px_1fr] xl:gap-32">
-   {/* LEFT - YOUTUBE VIDEO */}
-<div className="flex items-center justify-center">
-  <div className="w-full max-w-[650px] overflow-hidden rounded-[28px] shadow-[0_25px_40px_rgba(0,0,0,0.18)]">
-    <div className="relative aspect-video w-full bg-black">
+   <div className="grid items-center gap-24 lg:grid-cols-[720px_1fr] xl:gap-5">
+   {/* LEFT - VIDEO / IMAGE */}
+<div className="flex items-center justify-center lg:-translate-y-10">
+  <div className="w-full max-w-[650px]">
+    <div className="relative aspect-video w-full">
       {products[currentProduct].youtube ? (
         <iframe
           src={products[currentProduct].youtube}
           title={products[currentProduct].title}
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0 h-full w-full rounded-[28px]"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
       ) : (
-        <div className="flex h-full items-center justify-center text-white">
-          Video belum tersedia
-        </div>
+        <Image
+          src={products[currentProduct].image}
+          alt={products[currentProduct].title}
+          fill
+          className="object-contain"
+        />
       )}
     </div>
   </div>
