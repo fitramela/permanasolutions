@@ -30,23 +30,19 @@ export default function MapSection() {
           />
         </div>
 
-        {/* Address Card */}
+          {/* Address Card */}
         <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
           <h3 className="text-xl font-semibold text-[#005D86]">
             Medianusa Permana (Permana Solutions)
           </h3>
 
           <p className="mt-3 leading-7 text-gray-600">
             Jl. Cideng Barat No.21B 3,
-            <br />
             RT.11/RW.11,
-            <br />
             Duri Pulo,
-            <br />
             Kecamatan Gambir,
-            <br />
             Kota Jakarta Pusat,
-            <br />
             Daerah Khusus Ibukota Jakarta 10140
           </p>
 
@@ -71,8 +67,8 @@ export default function MapSection() {
           >
             Open in Google Maps
           </a>
-        </div>
 
+        </div>
       </div>
     </section>
   );
