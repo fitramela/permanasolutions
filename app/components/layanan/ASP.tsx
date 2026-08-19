@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 export default function Asp() {
   const t = useTranslations("Asp");
 
-const [activeIndex, setActiveIndex] = useState<string | null>("primebiz-0");
+const [activeIndex, setActiveIndex] = useState<string | null>(null);
 const [currentProduct, setCurrentProduct] = useState(0);
 
 
@@ -296,10 +296,10 @@ const [currentProduct, setCurrentProduct] = useState(0);
 {/* Previous */}
 {currentProduct > 0 && (
   <button
-    onClick={() => {
+   onClick={() => {
   const prev = currentProduct - 1;
   setCurrentProduct(prev);
-  setActiveIndex(`${products[prev].key}-0`);
+  setActiveIndex(null);
 }}
     className="absolute left-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
   >
@@ -311,9 +311,10 @@ const [currentProduct, setCurrentProduct] = useState(0);
 {currentProduct < products.length - 1 && (
   <button
     onClick={() => {
+  onClick={() => {
   const next = currentProduct + 1;
   setCurrentProduct(next);
-  setActiveIndex(`${products[next].key}-0`);
+  setActiveIndex(null);
 }}
     className="absolute right-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
   >
