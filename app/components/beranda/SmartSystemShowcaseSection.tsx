@@ -124,7 +124,7 @@ export default function SmartSystemShowcaseSection() {
                 sm:px-6
                 md:px-0
                 md:text-5xl
-                lg:text-6xl
+                lg:text-5xl
               "
             >
               {t("heading")}
