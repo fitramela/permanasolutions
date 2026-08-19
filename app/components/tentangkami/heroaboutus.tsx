@@ -74,7 +74,7 @@ export default function HeroAboutUs() {
               hidden
               max-w-[640px]
               lg:block
-              lg:-mt-[435px]
+              lg:-mt-[500px]
               lg:ml-[-30px]
             "
           >
