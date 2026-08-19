@@ -210,7 +210,7 @@
     "isp": "ISP",
     "resource": "Consulting\n&\nResource"
   },
-  "Asp": {
+ "Asp": {
     "title": "ASP",
     "subtitle": "Application Service Provider",
     "description": "Build Dynamic Web Applications with ASP",
@@ -233,222 +233,229 @@
     "videoUnavailable": "Video is not available yet",
     
     "primebiz": {
-      "items": [
-        {
-          "title": "PrimeBiz is an integrated ERP platform that helps businesses manage operations in one real-time system.",
-          "description": "PrimeBiz unites various business processes such as finance, HR, sales and operations into one centralized dashboard so that monitoring and decision making becomes faster and more accurate."
-        },
-        {
-          "title": "PrimeBiz provides various main modules for business operational needs.",
-          "description": "Available modules include HR, Finance, Project Management, Sales, Purchasing, and Warehouse, which can be adjusted to suit the company's needs."
-        },
-        {
-          "title": "PrimeBiz helps increase business efficiency and productivity.",
-          "description": "By automating work processes and data integration, PrimeBiz reduces manual work, minimizes errors, and provides accurate data to support strategic decision making."
-        },
-        {
-          "title": "PrimeBiz is designed to be flexible for various business scales.",
-          "description": "SThis solution is suitable for use by MSMEs, medium-sized companies, and large companies because it can be adjusted to operational needs and business growth."
-        },
-        {
-          "title": "Getting started with PrimeBiz is easy with an initial consultation.",
-          "description": "You can contact the PrimeBiz team for consultation, see product demos, and get implementation guidance that suits your business needs."
-        }
-      ]
+  "items": [
+    {
+      "title": "PrimeBiz is an integrated ERP platform that helps businesses manage operations in one real-time system.",
+      "description": "PrimeBiz unites various business processes such as finance, HR, sales and operations into one centralized dashboard so that monitoring and decision making becomes faster and more accurate."
     },
-     "primejula": {
-      "items": [
-        {
-          "title": "PrimeBiz is an ited ERP platform.",
-          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
-        },
-        {
-          "title": "Complete operational modules.",
-          "description": "All business operations are connected in real time."
-        },
-        {
-          "title": "Increase productivity.",
-          "description": "Automation reduces repetitive work and improves efficiency."
-        },
-        {
-          "title": "Flexible for every business.",
-          "description": "Suitable for small businesses up to enterprise companies."
-        },
-        {
-          "title": "Easy implementation.",
-          "description": "Starts from consultation, implementation, and user training."
-        }
-      ]
+    {
+      "title": "PrimeBiz provides various main modules for business operational needs.",
+      "description": "Available modules include HR, Finance, Project Management, Sales, Purchasing, and Warehouse, which can be adjusted to suit the company's needs."
     },
-
-    "primeteams": {
-      "items": [
-        {
-          "title": "PrimeTeams is a PMaaS solution that helps manage projects in one integrated platform.",
-          "description": "PrimeTeams is designed to make it easier for companies to manage project operations, team coordination, and real-time progress monitoring so that work is more structured and efficient."
-        },
-        {
-          "title": "PrimeTeams provides key features to support project and team management.",
-          "description": "Available features include Project Management, Recruitment Management, and Sales & Prospect Management to help manage projects from inception to execution."
-        },
-        {
-          "title": "PrimeTeams helps increase team productivity and efficiency.",
-          "description": "With an integrated workflow, PrimeTeams makes collaboration easier, speeds up decision making, and ensures every project runs according to targets and timelines."
-        },
-        {
-          "title": "PrimeTeams is suitable for a variety of companies that manage projects dynamically.",
-          "description": "This solution is ideal for small to large companies that need a centralized system to manage teams, resources and project progress effectively."
-        },
-        {
-          "title": "Getting started with PrimeTeams can be done through initial consultation with the relevant team.",
-          "description": "You can contact the PrimeTeams team to consult on business needs, try product demos, and get implementation guidance that suits your company's workflow."
-        }
-      ]
+    {
+      "title": "PrimeBiz helps increase business efficiency and productivity.",
+      "description": "By automating work processes and data integration, PrimeBiz reduces manual work, minimizes errors, and provides accurate data to support strategic decision making."
     },
-    "primeresto": {
-      "items": [
-        {
-          "title": "Asset Management.",
-          "description": "Manage company assets efficiently."
-        },
-        {
-          "title": "Inventory Tracking.",
-          "description": "Track stock movement in real time."
-        },
-        {
-          "title": "Maintenance Schedule.",
-          "description": "Plan maintenance automatically."
-        },
-        {
-          "title": "QR Code Integration.",
-          "description": "Scan assets quickly with QR codes."
-        },
-        {
-          "title": "Comprehensive Reports.",
-          "description": "Access complete asset reports anytime."
-        }
-      ]
+    {
+      "title": "PrimeBiz is designed to be flexible for various business scales.",
+      "description": "This solution is suitable for use by MSMEs, medium-sized companies, and large companies because it can be adjusted to operational needs and business growth."
     },
-    "primecafe": {
-      "items": [
-        {
-          "title": "PrimeCafe is a digital solution designed to help cafés manage transactions and products more efficiently.",
-          "description": "With its flexible system, PrimeCafe makes the sales process faster, more organized, and easier to manage."
-        },
-        {
-          "title": "PrimeCafe supports customizable barcodes tailored to your business needs.",
-          "description": "Barcodes can be customized for different products, menu items, and specific café operational needs."
-        },
-        {
-          "title": "PrimeCafe helps speed up the checkout process at the cashier.",
-          "description": "Simply scan the barcode to quickly identify products, making transactions more convenient while minimizing errors."
-        },
-        {
-          "title": "PrimeCafe offers flexibility to meet the diverse needs of café businesses.",
-          "description": "From menu and product management to transactions, everything can be tailored to fit your business workflow."
-        },
-        {
-          "title": "PrimeCafe is ideal for cafés and F&B businesses looking for a flexible POS system.",
-          "description": "With customizable barcodes and streamlined transaction management, PrimeCafe helps make your café operations more efficient."
-        }
-      ]
-    },
-    "primecare": {
-      "items": [
-        {
-          "title": "Patient Management.",
-          "description": "Manage patient records digitally."
-        },
-        {
-          "title": "Doctor Scheduling.",
-          "description": "Organize appointments efficiently."
-        },
-        {
-          "title": "Medical Records.",
-          "description": "Secure electronic medical records."
-        },
-        {
-          "title": "Billing System.",
-          "description": "Integrated healthcare billing."
-        },
-        {
-          "title": "Healthcare Reports.",
-          "description": "Generate medical reports instantly."
-        }
-      ]
-    },
-    "primeedu": {
-      "items": [
-        {
-          "title": "Student Management.",
-          "description": "Manage student information easily."
-        },
-        {
-          "title": "Attendance.",
-          "description": "Digital attendance management."
-        },
-        {
-          "title": "Online Grading.",
-          "description": "Manage grades in one platform."
-        },
-        {
-          "title": "Learning Management.",
-          "description": "Support online learning activities."
-        },
-        {
-          "title": "Parent Portal.",
-          "description": "Parents can monitor student progress."
-        }
-      ]
-    },
-    "primecourse": {
-      "items": [
-        {
-          "title": "Organization Management.",
-          "description": "Manage organization activities centrally."
-        },
-        {
-          "title": "Collaboration Tools.",
-          "description": "Improve team collaboration."
-        },
-        {
-          "title": "Workflow Automation.",
-          "description": "Automate daily operational tasks."
-        },
-        {
-          "title": "Real-time Dashboard.",
-          "description": "Monitor activities anytime."
-        },
-        {
-          "title": "Enterprise Security.",
-          "description": "Protected with enterprise-grade security."
-        }
-      ]
-    },
-    "petpuffy": {
-      "items": [
-        {
-          "title": "Pet Management.",
-          "description": "Manage pet data digitally."
-        },
-        {
-          "title": "Vaccination Reminder.",
-          "description": "Automatic reminders for vaccinations."
-        },
-        {
-          "title": "Medical Records.",
-          "description": "Complete health records for every pet."
-        },
-        {
-          "title": "Grooming Schedule.",
-          "description": "Manage grooming appointments."
-        },
-        {
-          "title": "Owner Portal.",
-          "description": "Owners can access pet information online."
-        }
-      ]
+    {
+      "title": "Getting started with PrimeBiz is easy with an initial consultation.",
+      "description": "You can contact the PrimeBiz team for consultation, see product demos, and get implementation guidance that suits your business needs."
     }
+  ]
+},
+
+"primejula": {
+  "items": [
+    {
+      "title": "Jula makes sales and payment processes faster and more organized.",
+      "description": "Jula makes sales and payment processes faster and more organized, helping businesses streamline their daily operations."
+    },
+    {
+      "title": "Jula supports various payment methods.",
+      "description": "From cash and card payments to bank transfers and other digital payment methods, everything can be managed more conveniently."
+    },
+    {
+      "title": "Jula helps cashiers process transactions faster.",
+      "description": "Its user-friendly system helps cashiers process transactions faster while reducing errors."
+    },
+    {
+      "title": "Jula makes it easier to monitor sales and operational activities.",
+      "description": "Recorded transaction data makes it easier for business owners to monitor sales and daily operational activities."
+    },
+    {
+      "title": "Jula is flexible for various business operational needs.",
+      "description": "With features designed to support sales and payments, Jula can be customized to meet the specific operational needs of your business."
+    }
+  ]
+},
+
+"primeteams": {
+  "items": [
+    {
+      "title": "PrimeTeams is a PMaaS solution that helps manage projects in one integrated platform.",
+      "description": "PrimeTeams is designed to make it easier for companies to manage project operations, team coordination, and real-time progress monitoring so that work is more structured and efficient."
+    },
+    {
+      "title": "PrimeTeams provides key features to support project and team management.",
+      "description": "Available features include Project Management, Recruitment Management, and Sales & Prospect Management to help manage projects from inception to execution."
+    },
+    {
+      "title": "PrimeTeams helps increase team productivity and efficiency.",
+      "description": "With an integrated workflow, PrimeTeams makes collaboration easier, speeds up decision making, and ensures every project runs according to targets and timelines."
+    },
+    {
+      "title": "PrimeTeams is suitable for a variety of companies that manage projects dynamically.",
+      "description": "This solution is ideal for small to large companies that need a centralized system to manage teams, resources and project progress effectively."
+    },
+    {
+      "title": "Getting started with PrimeTeams can be done through initial consultation with the relevant team.",
+      "description": "You can contact the PrimeTeams team to consult on business needs, try product demos, and get implementation guidance that suits your company's workflow."
+    }
+  ]
+},
+
+"primeresto": {
+  "items": [
+    {
+      "title": "PrimeResto brings all your operational needs together in one system.",
+      "description": "PrimeResto helps make your business more efficient, streamlined, and easy to manage by integrating various operational needs into one platform."
+    },
+    {
+      "title": "PrimeResto supports various F&B operational needs.",
+      "description": "From cashier and ordering to kitchen operations, inventory, and business reporting, everything can be managed on one platform."
+    },
+    {
+      "title": "PrimeResto helps improve operational efficiency.",
+      "description": "With integrated and automated processes, your team can work faster, reduce errors, and focus on delivering the best customer experience."
+    },
+    {
+      "title": "PrimeResto provides centralized business data and reports.",
+      "description": "Centralized sales data and reports provide clear insights to help you monitor business performance and track growth."
+    },
+    {
+      "title": "PrimeResto is flexible for various types of businesses.",
+      "description": "From restaurants and cafés to hospitality and entertainment businesses, PrimeResto can be tailored to meet the operational needs of your business."
+    }
+  ]
+},
+
+"primecafe": {
+  "items": [
+    {
+      "title": "PrimeCafe makes the sales process faster and more organized.",
+      "description": "With its flexible system, PrimeCafe makes the sales process faster, more organized, and easier to manage."
+    },
+    {
+      "title": "PrimeCafe supports customizable barcodes for different business needs.",
+      "description": "Barcodes can be customized for different products, menu items, and specific café operational needs."
+    },
+    {
+      "title": "PrimeCafe helps speed up the transaction process.",
+      "description": "Simply scan the barcode to quickly identify products, making transactions more convenient while minimizing errors."
+    },
+    {
+      "title": "PrimeCafe offers flexibility for different business workflows.",
+      "description": "From menu and product management to transactions, everything can be tailored to fit your business workflow."
+    },
+    {
+      "title": "PrimeCafe helps improve café operational efficiency.",
+      "description": "With customizable barcodes and streamlined transaction management, PrimeCafe helps make your café operations more efficient."
+    }
+  ]
+},
+
+"primecare": {
+  "items": [
+    {
+      "title": "PrimeCare integrates patient care, administration, and hospital data management.",
+      "description": "PrimeCare integrates patient care, administration, and hospital data management into one comprehensive system."
+    },
+    {
+      "title": "PrimeCare supports integration with the national healthcare ecosystem.",
+      "description": "This integration helps hospitals manage and synchronize data and healthcare services with the national healthcare ecosystem."
+    },
+    {
+      "title": "PrimeCare helps make workflows more efficient.",
+      "description": "With an integrated system, workflows become more structured and efficient, while reducing repetitive administrative tasks."
+    },
+    {
+      "title": "PrimeCare provides integrated data to support better decisions.",
+      "description": "Integrated data provides healthcare professionals and management with easier access to information, supporting better patient care and more informed decision-making."
+    },
+    {
+      "title": "PrimeCare helps hospitals manage operations more effectively.",
+      "description": "With its flexible and integrated system, PrimeCare helps hospitals manage healthcare services, administration, and operations more effectively."
+    }
+  ]
+},
+
+"primeedu": {
+  "items": [
+    {
+      "title": "PrimeEdu integrates administration, student data, and academic management.",
+      "description": "From administration and student data to academic management, everything can be managed through an integrated system."
+    },
+    {
+      "title": "PrimeEdu supports school data and administrative management.",
+      "description": "The system helps manage student and teacher data, academics, finances, and various school administrative needs."
+    },
+    {
+      "title": "PrimeEdu helps make school administration more efficient.",
+      "description": "With an integrated system, administrative processes become faster, more organized, and easier to monitor."
+    },
+    {
+      "title": "PrimeEdu provides centralized data to support better decision-making.",
+      "description": "Centralized data provides schools with more accurate information to support better decision-making."
+    },
+    {
+      "title": "PrimeEdu is flexible for various school needs.",
+      "description": "The system can be customized to meet the school's needs in managing both academic activities and administrative processes."
+    }
+  ]
+},
+
+"primecourse": {
+  "items": [
+    {
+      "title": "PrimeCourse integrates learning management into one system.",
+      "description": "From managing learning materials and participants to tracking learning activities, everything can be managed through an integrated system."
+    },
+    {
+      "title": "PrimeCourse makes learning management easier for instructors.",
+      "description": "Instructors can easily manage courses, learning materials, participants, and learning activities."
+    },
+    {
+      "title": "PrimeCourse makes learning more flexible and organized.",
+      "description": "With an integrated system, the learning process becomes more flexible, organized, and easier to monitor."
+    },
+    {
+      "title": "PrimeCourse makes it easier to monitor courses and participant progress.",
+      "description": "Course information and participant progress can be managed in one system, making them easier to track and monitor."
+    },
+    {
+      "title": "PrimeCourse supports various learning and training needs.",
+      "description": "From educational institutions and companies to training organizations, PrimeCourse can be tailored to meet a variety of learning and training needs."
+    }
+  ]
+},
+
+"petpuffy": {
+  "items": [
+    {
+      "title": "PetPuffy integrates transactions, products, inventory, and customer data.",
+      "description": "From transactions and products to inventory and customer data, everything can be managed more efficiently through an integrated system."
+    },
+    {
+      "title": "PetPuffy helps manage inventory and product information.",
+      "description": "Inventory levels and product information can be monitored more systematically, helping reduce errors and prevent stock shortages."
+    },
+    {
+      "title": "PetPuffy helps speed up cashier operations.",
+      "description": "The system helps speed up cashier operations while keeping transaction records organized and accurate."
+    },
+    {
+      "title": "PetPuffy provides operational data to support business decisions.",
+      "description": "Transaction, sales, and operational data can be monitored in one system to support better business decisions."
+    },
+    {
+      "title": "PetPuffy is flexible for different pet shop business scales.",
+      "description": "From small pet shops to businesses with more complex operations, the system can be tailored to meet different business needs."
+    }
+  ]
+}
   },
   "ISP": {
     "tagline": "Internet Service Provider",
