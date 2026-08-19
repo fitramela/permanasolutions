@@ -217,21 +217,22 @@ export default function Resource() {
             >
               {/* TITLE */}
 
-              <h1
-                className="
-                  whitespace-nowrap
-                  text-[28px]
-                  font-extrabold
-                  leading-[1]
-                  text-[#04BCBC]
-                  sm:text-[36px]
-                  md:text-[44px]
-                  lg:text-[50px]
-                  xl:text-[40px]
-                "
-              >
-                {t("title")}
-              </h1>
+             <h1
+  className="
+    text-[28px]
+    font-extrabold
+    leading-[1.1]
+    text-[#04BCBC]
+
+    sm:whitespace-nowrap
+    sm:text-[36px]
+    md:text-[40px]
+    lg:text-[40px]
+    xl:text-[40px]
+  "
+>
+  {t("title")}
+</h1>
 
               {/* SUBTITLE */}
 
