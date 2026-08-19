@@ -274,7 +274,7 @@ export default function Asp() {
               setCurrentProduct(prev);
               setActiveIndex(null);
             }}
-            className="absolute left-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
+            className="absolute left-4 top-[40%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
           >
             ❮
           </button>
@@ -288,7 +288,7 @@ export default function Asp() {
               setCurrentProduct(next);
               setActiveIndex(null);
             }}
-            className="absolute right-4 top-[45%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
+            className="absolute right-4 top-[40%] z-20 -translate-y-1/2 text-5xl font-light text-[#05638B] transition hover:text-[#03A8A8] sm:top-1/2"
           >
             ❯
           </button>
