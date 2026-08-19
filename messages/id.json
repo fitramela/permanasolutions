@@ -224,7 +224,257 @@
 },
 
  
+"Asp": {
+    "title": "ASP",
+    "subtitle": "Application Service Provider",
+    "description": "Build Dynamic Web Applications with ASP",
+    "technology": "Technology",
 
+    "card1": "Empower Your Web with Modern ASP Solutions",
+    "card2": "Dynamic Web Development, Simplified with ASP",
+    "card3": "Years of Web Development Expertise",
+    "card4": "ASP technology that grows together with your business.",
+
+    "showLess": "show less...",
+    "seeMore": "see more...",
+
+    "primeDescription": "Manage your business smarter, faster, and more efficiently.",
+    "primeJulaDescription": "Solusi Cerdas, Transaksi Lancar.",
+    "primeTeamsDescription": "Kolaborasi Cerdas, Proyek Tuntas.",
+    "primeRestoDescription": "Solusi POS untuk Bisnis Lebih Mudah.",
+    "primeCafeDescription": "Solusi Cerdas, Bisnis Lancar.",
+    "primeCareDescription": "Solusi Terintegrasi, Layanan Lebih Efisien.",
+    "primeEduDescription": "Solusi Cerdas, Sekolah Lebih Terintegrasi.",
+    "primeCourseDescription": "Solusi Cerdas, Pembelajaran Lebih Mudah.",
+    "petPuffyDescription": "Solusi Cerdas, Petshop Lebih Mudah.",
+
+    "videoUnavailable": "Video belum tersedia",
+
+    "primebiz": {
+  "items": [
+    {
+      "title": "PrimeBiz adalah platform ERP terintegrasi yang membantu bisnis mengelola operasional dalam satu sistem secara real-time.",
+      "description": "PrimeBiz menyatukan berbagai proses bisnis seperti keuangan, HR, penjualan, dan operasional dalam satu dashboard terpusat sehingga monitoring dan pengambilan keputusan menjadi lebih cepat dan akurat."
+    },
+    {
+      "title": "PrimeBiz menyediakan berbagai modul utama untuk kebutuhan operasional bisnis.",
+      "description": "Modul yang tersedia meliputi HR, Finance, Project Management, Sales, Purchasing, dan Warehouse yang dapat disesuaikan dengan kebutuhan perusahaan."
+    },
+    {
+      "title": "PrimeBiz membantu meningkatkan efisiensi dan produktivitas bisnis.",
+      "description": "Dengan otomatisasi proses kerja dan integrasi data, PrimeBiz mengurangi pekerjaan manual, meminimalkan kesalahan, dan menyediakan data yang akurat untuk mendukung pengambilan keputusan strategis."
+    },
+    {
+      "title": "PrimeBiz dirancang fleksibel untuk berbagai skala bisnis.",
+      "description": "Solusi ini cocok digunakan oleh UMKM, perusahaan menengah, hingga perusahaan besar karena dapat disesuaikan dengan kebutuhan operasional dan perkembangan bisnis."
+    },
+    {
+      "title": "Memulai PrimeBiz menjadi lebih mudah dengan konsultasi awal.",
+      "description": "Anda dapat menghubungi tim PrimeBiz untuk berkonsultasi, melihat demo produk, dan mendapatkan panduan implementasi yang sesuai dengan kebutuhan bisnis."
+    }
+  ]
+},
+
+"primejula": {
+  "items": [
+    {
+      "title": "Jula memudahkan proses penjualan dan pembayaran.",
+      "description": "Jula memudahkan proses penjualan dan pembayaran agar operasional bisnis lebih cepat dan terorganisir."
+    },
+    {
+      "title": "Jula mendukung berbagai metode pembayaran.",
+      "description": "Mulai dari cash, kartu, hingga pembayaran melalui transfer dan metode digital lainnya dapat dikelola dengan lebih praktis."
+    },
+    {
+      "title": "Jula membantu mempercepat proses transaksi.",
+      "description": "Sistem yang praktis membantu kasir bekerja lebih cepat sekaligus mengurangi kesalahan dalam proses transaksi."
+    },
+    {
+      "title": "Jula memudahkan pemantauan penjualan dan aktivitas operasional.",
+      "description": "Data transaksi yang tercatat dalam sistem memudahkan pemilik bisnis dalam memantau penjualan dan aktivitas operasional."
+    },
+    {
+      "title": "Jula dapat disesuaikan dengan kebutuhan operasional bisnis.",
+      "description": "Dengan fitur yang mendukung transaksi dan pembayaran, Jula dapat disesuaikan dengan kebutuhan operasional bisnis."
+    }
+  ]
+},
+
+"primeteams": {
+  "items": [
+    {
+      "title": "PrimeTeams adalah solusi PMaaS yang membantu mengelola proyek dalam satu platform terintegrasi.",
+      "description": "PrimeTeams dirancang untuk memudahkan perusahaan mengelola operasional proyek, koordinasi tim, dan pemantauan progres secara real-time agar pekerjaan lebih terstruktur dan efisien."
+    },
+    {
+      "title": "PrimeTeams menyediakan fitur utama untuk mendukung pengelolaan proyek dan tim.",
+      "description": "Fitur yang tersedia meliputi Project Management, Recruitment Management, dan Sales & Prospect Management untuk membantu mengelola proyek dari awal hingga pelaksanaan."
+    },
+    {
+      "title": "PrimeTeams membantu meningkatkan produktivitas dan efisiensi tim.",
+      "description": "Dengan alur kerja yang terintegrasi, PrimeTeams memudahkan kolaborasi, mempercepat pengambilan keputusan, dan memastikan setiap proyek berjalan sesuai target dan timeline."
+    },
+    {
+      "title": "PrimeTeams cocok untuk berbagai perusahaan yang mengelola proyek secara dinamis.",
+      "description": "Solusi ini ideal untuk perusahaan kecil hingga besar yang membutuhkan sistem terpusat untuk mengelola tim, sumber daya, dan progres proyek secara efektif."
+    },
+    {
+      "title": "Memulai PrimeTeams dapat dilakukan melalui konsultasi awal dengan tim terkait.",
+      "description": "Anda dapat menghubungi tim PrimeTeams untuk berkonsultasi mengenai kebutuhan bisnis, mencoba demo produk, dan mendapatkan panduan implementasi yang sesuai dengan alur kerja perusahaan."
+    }
+  ]
+},
+
+"primeresto": {
+  "items": [
+    {
+      "title": "PrimeResto menyatukan berbagai kebutuhan operasional dalam satu sistem.",
+      "description": "PrimeResto membantu bisnis berjalan lebih praktis, cepat, dan terkontrol dengan mengintegrasikan berbagai kebutuhan operasional dalam satu platform."
+    },
+    {
+      "title": "PrimeResto mendukung berbagai kebutuhan operasional bisnis F&B.",
+      "description": "Mulai dari kasir, pemesanan, dapur, stok, hingga laporan bisnis, semuanya dapat dikelola dalam satu platform."
+    },
+    {
+      "title": "PrimeResto membantu meningkatkan efisiensi operasional.",
+      "description": "Dengan proses yang terintegrasi dan otomatis, tim dapat bekerja lebih cepat, mengurangi kesalahan, dan fokus memberikan pelayanan terbaik."
+    },
+    {
+      "title": "PrimeResto menyediakan data dan laporan bisnis yang terpusat.",
+      "description": "Data penjualan dan laporan yang terpusat memberikan informasi yang jelas untuk memantau performa dan perkembangan bisnis."
+    },
+    {
+      "title": "PrimeResto fleksibel untuk berbagai jenis bisnis.",
+      "description": "Mulai dari restoran, kafe, hingga bisnis hospitality dan entertainment, PrimeResto dapat disesuaikan dengan kebutuhan operasional setiap bisnis."
+    }
+  ]
+},
+
+"primecafe": {
+  "items": [
+    {
+      "title": "PrimeCafe membantu proses penjualan menjadi lebih cepat dan terorganisir.",
+      "description": "Dengan sistem yang fleksibel, PrimeCafe membantu proses penjualan menjadi lebih cepat dan terorganisir."
+    },
+    {
+      "title": "PrimeCafe mendukung custom barcode sesuai kebutuhan bisnis.",
+      "description": "Barcode dapat disesuaikan untuk berbagai produk, menu, maupun kebutuhan operasional cafe."
+    },
+    {
+      "title": "PrimeCafe membantu mempercepat proses transaksi.",
+      "description": "Cukup dengan scan barcode, produk dapat dikenali dengan cepat sehingga transaksi menjadi lebih praktis dan minim kesalahan."
+    },
+    {
+      "title": "PrimeCafe fleksibel untuk berbagai alur bisnis.",
+      "description": "Mulai dari pengelolaan menu dan produk hingga transaksi, semuanya dapat disesuaikan dengan alur bisnis Anda."
+    },
+    {
+      "title": "PrimeCafe membantu meningkatkan efisiensi operasional cafe.",
+      "description": "Dengan fitur custom barcode dan pengelolaan transaksi yang praktis, PrimeCafe membantu operasional menjadi lebih efisien."
+    }
+  ]
+},
+
+"primecare": {
+  "items": [
+    {
+      "title": "PrimeCare mengintegrasikan pelayanan pasien, administrasi, dan pengelolaan data rumah sakit.",
+      "description": "Mulai dari pelayanan pasien, administrasi, hingga pengelolaan data rumah sakit dapat dikelola secara terintegrasi."
+    },
+    {
+      "title": "PrimeCare mendukung integrasi dengan ekosistem kesehatan nasional.",
+      "description": "Integrasi ini membantu rumah sakit dalam mengelola dan menyinkronkan data serta proses layanan dengan ekosistem kesehatan nasional."
+    },
+    {
+      "title": "PrimeCare membantu membuat proses kerja lebih efisien.",
+      "description": "Dengan sistem yang terintegrasi, proses kerja menjadi lebih terstruktur, cepat, dan mengurangi pekerjaan administratif yang berulang."
+    },
+    {
+      "title": "PrimeCare menyediakan data terintegrasi untuk mendukung pengambilan keputusan.",
+      "description": "Data yang terintegrasi membantu tenaga kesehatan dan manajemen mendapatkan informasi yang lebih mudah diakses untuk mendukung pelayanan dan pengambilan keputusan."
+    },
+    {
+      "title": "PrimeCare membantu rumah sakit mengelola operasional secara lebih efektif.",
+      "description": "Dengan sistem yang fleksibel dan terintegrasi, PrimeCare dapat membantu rumah sakit mengelola pelayanan, administrasi, dan operasional secara lebih efektif."
+    }
+  ]
+},
+
+"primeedu": {
+  "items": [
+    {
+      "title": "PrimeEdu mengintegrasikan administrasi, data siswa, dan pengelolaan akademik.",
+      "description": "Mulai dari administrasi, data siswa, hingga pengelolaan akademik dapat dilakukan secara lebih terintegrasi."
+    },
+    {
+      "title": "PrimeEdu membantu mengelola berbagai data dan kebutuhan administrasi sekolah.",
+      "description": "Sistem membantu mengelola data siswa, guru, akademik, keuangan, hingga kebutuhan administrasi sekolah."
+    },
+    {
+      "title": "PrimeEdu membantu membuat proses administrasi lebih cepat dan terstruktur.",
+      "description": "Dengan sistem yang terintegrasi, proses administrasi menjadi lebih cepat, terstruktur, dan mudah dipantau."
+    },
+    {
+      "title": "PrimeEdu menyediakan data terpusat untuk mendukung pengambilan keputusan.",
+      "description": "Data yang tersaji dalam satu sistem membantu pihak sekolah mendapatkan informasi yang lebih akurat untuk mendukung pengambilan keputusan."
+    },
+    {
+      "title": "PrimeEdu dapat disesuaikan dengan berbagai kebutuhan sekolah.",
+      "description": "Sistem ini dapat disesuaikan dengan kebutuhan sekolah dalam mengelola aktivitas akademik maupun administrasi."
+    }
+  ]
+},
+
+"primecourse": {
+  "items": [
+    {
+      "title": "PrimeCourse mengintegrasikan pengelolaan pembelajaran dalam satu sistem.",
+      "description": "Mulai dari pengelolaan materi, peserta, hingga aktivitas pembelajaran dapat dilakukan secara terintegrasi."
+    },
+    {
+      "title": "PrimeCourse memudahkan pengajar mengelola pembelajaran.",
+      "description": "Pengajar dapat mengelola course, materi, peserta, dan aktivitas pembelajaran dengan lebih mudah."
+    },
+    {
+      "title": "PrimeCourse membuat proses belajar lebih fleksibel dan terorganisir.",
+      "description": "Dengan sistem yang terintegrasi, proses belajar menjadi lebih fleksibel, terorganisir, dan mudah dipantau."
+    },
+    {
+      "title": "PrimeCourse memudahkan pemantauan course dan perkembangan peserta.",
+      "description": "Informasi course dan perkembangan peserta dapat dikelola dalam satu sistem sehingga lebih mudah dipantau."
+    },
+    {
+      "title": "PrimeCourse cocok untuk berbagai kebutuhan pembelajaran dan pelatihan.",
+      "description": "Mulai dari institusi pendidikan, perusahaan, hingga lembaga pelatihan dapat memanfaatkan PrimeCourse sesuai kebutuhan."
+    }
+  ]
+},
+
+"petpuffy": {
+  "items": [
+    {
+      "title": "PetPuffy mengintegrasikan transaksi, produk, stok, dan data pelanggan.",
+      "description": "Mulai dari transaksi, produk, stok, hingga data pelanggan dapat dikelola dengan lebih praktis dan terintegrasi."
+    },
+    {
+      "title": "PetPuffy membantu mengelola stok dan informasi produk dengan lebih teratur.",
+      "description": "Pemantauan stok dan informasi produk menjadi lebih teratur sehingga membantu mengurangi kesalahan dan kehabisan stok."
+    },
+    {
+      "title": "PetPuffy membantu mempercepat pelayanan kasir.",
+      "description": "Sistem membantu mempercepat pelayanan kasir sekaligus mencatat transaksi secara lebih rapi dan akurat."
+    },
+    {
+      "title": "PetPuffy membantu memantau data transaksi dan operasional bisnis.",
+      "description": "Data transaksi, penjualan, dan operasional dapat dipantau dalam satu sistem untuk mendukung keputusan bisnis."
+    },
+    {
+      "title": "PetPuffy fleksibel untuk berbagai skala bisnis petshop.",
+      "description": "Mulai dari petshop skala kecil hingga bisnis dengan operasional yang lebih kompleks dapat menggunakan sistem sesuai kebutuhan."
+    }
+  ]
+}
+  },
 
   "ISP": {
     "tagline": "Penyedia Layanan Internet",
