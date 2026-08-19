@@ -23,7 +23,7 @@ export default function HeroAboutUs() {
 
         {/* ================= BACKGROUND DESKTOP ================= */}
         <Image
-          src="/images/GGyups.png"
+          src="/images/cchero.png"
           alt="Solutions Hero Desktop"
           fill
           priority
