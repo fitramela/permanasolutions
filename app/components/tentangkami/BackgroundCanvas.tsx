@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { teamData, TeamMember } from "./aboutData";
+import { teamData, TeamMember } from "./teamdata";
 
 /* =========================================================
    ABOUT CONTENT
@@ -1152,9 +1152,8 @@ function TeamCard({
         duration-500
         ease-out
 
-        ${
-          isActive
-            ? `
+        ${isActive
+          ? `
               bg-white
               border-white
 
@@ -1167,7 +1166,7 @@ function TeamCard({
               sm:shadow-[0_4px_20px_rgba(255,255,255,0.30)]
               sm:translate-y-0
             `
-            : `
+          : `
               bg-white/35
               shadow-[0_4px_20px_rgba(255,255,255,0.30)]
             `
