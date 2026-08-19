@@ -51,7 +51,7 @@ const locale = useLocale();
 
 const companyProfile =
   locale === "en"
-  ? "/Permana_Company_Profile_2026_English.pdf"
+     ? "/Permana_Company_Profile_2026_English.pdf"
       : "/Permana_Company_Profile_2026_Indonesia.pdf";
 
   const [formData, setFormData] = useState<FormData>({
