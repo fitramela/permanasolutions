@@ -17,7 +17,7 @@ import {
 import {
   teamData,
   TeamMember,
-} from "./aboutData";
+} from "./teamdata";
 
 /* =========================================================
    ABOUT CONTENT
