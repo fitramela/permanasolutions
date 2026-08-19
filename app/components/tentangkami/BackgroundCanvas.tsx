@@ -1,12 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useTranslations } from "next-intl";
-import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
-import { teamData, TeamMember } from "./teamdata";
+import {
+  teamData,
+  TeamMember,
+} from "./aboutData";
 
 /* =========================================================
    ABOUT CONTENT
@@ -16,72 +26,431 @@ export default function AboutContent() {
   const t = useTranslations("About");
 
   /* =========================================================
-     EMBLA
+     MOBILE / TABLET SCROLL
   ========================================================= */
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
-    containScroll: "keepSnaps",
-    dragFree: false,
-    loop: false,
-    skipSnaps: false,
-    duration: 25,
-  });
+  const mobileScrollRef =
+    useRef<HTMLDivElement>(null);
+
+  const [canScrollPrev, setCanScrollPrev] =
+    useState(false);
+
+  const [canScrollNext, setCanScrollNext] =
+    useState(true);
+
+  const [activeIndex, setActiveIndex] =
+    useState(0);
 
   /* =========================================================
-     CAROUSEL STATE
+     DESKTOP MANUAL SCROLL
   ========================================================= */
 
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const desktopScrollRef =
+    useRef<HTMLDivElement>(null);
+
+  const [isDesktopDragging, setIsDesktopDragging] =
+    useState(false);
+
+  const [desktopStartX, setDesktopStartX] =
+    useState(0);
+
+  const [
+    desktopStartScrollLeft,
+    setDesktopStartScrollLeft,
+  ] = useState(0);
+
+  const [
+    showDesktopLeftArrow,
+    setShowDesktopLeftArrow,
+  ] = useState(false);
+
+  const [
+    showDesktopRightArrow,
+    setShowDesktopRightArrow,
+  ] = useState(true);
 
   /* =========================================================
-     UPDATE CAROUSEL
+     MOBILE SCROLL STATE
   ========================================================= */
 
-  const updateCarouselState = useCallback(() => {
-    if (!emblaApi) return;
+  const updateMobileScroll =
+    useCallback(() => {
+      const element =
+        mobileScrollRef.current;
 
-    const progress = emblaApi.scrollProgress();
-    const EDGE_THRESHOLD = 0.01;
+      if (!element) return;
 
-    const isAtStart = progress <= EDGE_THRESHOLD;
-    const isAtEnd = progress >= 1 - EDGE_THRESHOLD;
+      const maxScroll = Math.max(
+        0,
+        element.scrollWidth -
+          element.clientWidth
+      );
 
-    setCanScrollPrev(!isAtStart);
-    setCanScrollNext(!isAtEnd);
+      const scrollLeft = Math.max(
+        0,
+        Math.min(
+          element.scrollLeft,
+          maxScroll
+        )
+      );
 
-    setActiveIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
+      const EDGE = 2;
+
+      const atStart =
+        scrollLeft <= EDGE;
+
+      const atEnd =
+        scrollLeft >=
+        maxScroll - EDGE;
+
+      setCanScrollPrev(!atStart);
+      setCanScrollNext(!atEnd);
+
+      /* =====================================================
+         ACTIVE CARD
+      ===================================================== */
+
+      const cardStep =
+        window.innerWidth < 640
+          ? element.clientWidth
+          : 315;
+
+      const calculatedIndex =
+        Math.round(
+          scrollLeft / cardStep
+        );
+
+      const safeIndex =
+        Math.max(
+          0,
+          Math.min(
+            calculatedIndex,
+            teamData.length - 1
+          )
+        );
+
+      setActiveIndex(
+        safeIndex
+      );
+    }, []);
 
   /* =========================================================
-     EMBLA EVENTS
+     MOBILE SCROLL EVENT
   ========================================================= */
 
   useEffect(() => {
-    if (!emblaApi) return;
+    const element =
+      mobileScrollRef.current;
 
-    const update = () => {
-      requestAnimationFrame(updateCarouselState);
+    if (!element) return;
+
+    let frame = 0;
+
+    const handleScroll = () => {
+      cancelAnimationFrame(frame);
+
+      frame =
+        requestAnimationFrame(() => {
+          updateMobileScroll();
+        });
     };
 
-    update();
+    element.addEventListener(
+      "scroll",
+      handleScroll,
+      {
+        passive: true,
+      }
+    );
 
-    emblaApi.on("scroll", update);
-    emblaApi.on("select", update);
-    emblaApi.on("settle", update);
-    emblaApi.on("reInit", update);
-    emblaApi.on("pointerUp", update);
+    updateMobileScroll();
 
     return () => {
-      emblaApi.off("scroll", update);
-      emblaApi.off("select", update);
-      emblaApi.off("settle", update);
-      emblaApi.off("reInit", update);
-      emblaApi.off("pointerUp", update);
+      cancelAnimationFrame(frame);
+
+      element.removeEventListener(
+        "scroll",
+        handleScroll
+      );
     };
-  }, [emblaApi, updateCarouselState]);
+  }, [
+    updateMobileScroll,
+  ]);
+
+  /* =========================================================
+     MOBILE RESIZE
+  ========================================================= */
+
+  useEffect(() => {
+    const handleResize = () => {
+      updateMobileScroll();
+    };
+
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
+
+    return () => {
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
+    };
+  }, [
+    updateMobileScroll,
+  ]);
+
+  /* =========================================================
+     MOBILE RIGHT
+  ========================================================= */
+
+  const scrollMobileRight = () => {
+    const element =
+      mobileScrollRef.current;
+
+    if (!element) return;
+
+    const maxScroll =
+      Math.max(
+        0,
+        element.scrollWidth -
+          element.clientWidth
+      );
+
+    const step =
+      window.innerWidth < 640
+        ? element.clientWidth
+        : 315;
+
+    const nextPosition =
+      Math.min(
+        element.scrollLeft + step,
+        maxScroll
+      );
+
+    element.scrollTo({
+      left: nextPosition,
+      behavior: "smooth",
+    });
+  };
+
+  /* =========================================================
+     MOBILE LEFT
+  ========================================================= */
+
+  const scrollMobileLeft = () => {
+    const element =
+      mobileScrollRef.current;
+
+    if (!element) return;
+
+    const step =
+      window.innerWidth < 640
+        ? element.clientWidth
+        : 315;
+
+    const nextPosition =
+      Math.max(
+        element.scrollLeft - step,
+        0
+      );
+
+    element.scrollTo({
+      left: nextPosition,
+      behavior: "smooth",
+    });
+  };
+
+  /* =========================================================
+     DESKTOP SCROLL STATE
+  ========================================================= */
+
+  const handleDesktopScroll =
+    () => {
+      const element =
+        desktopScrollRef.current;
+
+      if (!element) return;
+
+      const {
+        scrollLeft,
+        scrollWidth,
+        clientWidth,
+      } = element;
+
+      const maxScroll =
+        Math.max(
+          0,
+          scrollWidth -
+            clientWidth
+        );
+
+      const EDGE = 10;
+
+      setShowDesktopLeftArrow(
+        scrollLeft > EDGE
+      );
+
+      setShowDesktopRightArrow(
+        scrollLeft <
+          maxScroll - EDGE
+      );
+    };
+
+  /* =========================================================
+     DESKTOP MOUSE DOWN
+  ========================================================= */
+
+  const handleDesktopMouseDown = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
+    const element =
+      desktopScrollRef.current;
+
+    if (!element) return;
+
+    setIsDesktopDragging(true);
+
+    setDesktopStartX(
+      e.pageX -
+        element.offsetLeft
+    );
+
+    setDesktopStartScrollLeft(
+      element.scrollLeft
+    );
+  };
+
+  /* =========================================================
+     DESKTOP MOUSE MOVE
+  ========================================================= */
+
+  const handleDesktopMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
+    const element =
+      desktopScrollRef.current;
+
+    if (
+      !isDesktopDragging ||
+      !element
+    ) {
+      return;
+    }
+
+    e.preventDefault();
+
+    const x =
+      e.pageX -
+      element.offsetLeft;
+
+    const walk =
+      (x - desktopStartX) * 1.5;
+
+    const maxScroll =
+      Math.max(
+        0,
+        element.scrollWidth -
+          element.clientWidth
+      );
+
+    const nextScroll =
+      desktopStartScrollLeft -
+      walk;
+
+    element.scrollLeft =
+      Math.max(
+        0,
+        Math.min(
+          nextScroll,
+          maxScroll
+        )
+      );
+  };
+
+  /* =========================================================
+     DESKTOP MOUSE UP
+  ========================================================= */
+
+  const handleDesktopMouseUp =
+    () => {
+      const element =
+        desktopScrollRef.current;
+
+      if (element) {
+        const maxScroll =
+          Math.max(
+            0,
+            element.scrollWidth -
+              element.clientWidth
+          );
+
+        element.scrollLeft =
+          Math.max(
+            0,
+            Math.min(
+              element.scrollLeft,
+              maxScroll
+            )
+          );
+
+        handleDesktopScroll();
+      }
+
+      setIsDesktopDragging(false);
+    };
+
+  /* =========================================================
+     DESKTOP RIGHT
+  ========================================================= */
+
+  const scrollDesktopRight = () => {
+    const element =
+      desktopScrollRef.current;
+
+    if (!element) return;
+
+    const maxScroll =
+      Math.max(
+        0,
+        element.scrollWidth -
+          element.clientWidth
+      );
+
+    const nextPosition =
+      Math.min(
+        element.scrollLeft + 320,
+        maxScroll
+      );
+
+    element.scrollTo({
+      left: nextPosition,
+      behavior: "smooth",
+    });
+  };
+
+  /* =========================================================
+     DESKTOP LEFT
+  ========================================================= */
+
+  const scrollDesktopLeft = () => {
+    const element =
+      desktopScrollRef.current;
+
+    if (!element) return;
+
+    const nextPosition =
+      Math.max(
+        element.scrollLeft - 320,
+        0
+      );
+
+    element.scrollTo({
+      left: nextPosition,
+      behavior: "smooth",
+    });
+  };
 
   /* =========================================================
      MISSIONS
@@ -106,6 +475,7 @@ export default function AboutContent() {
         lg:-mt-[310px]
       "
     >
+
       {/* =====================================================
           BACKGROUND
       ===================================================== */}
@@ -215,16 +585,13 @@ export default function AboutContent() {
           max-w-[1440px]
 
           px-5
-
           sm:px-7
-
           md:px-[40px]
-
           lg:px-[70px]
-
           xl:px-[100px]
         "
       >
+
         {/* ===================================================
             OUR PROFILE
         =================================================== */}
@@ -253,9 +620,7 @@ export default function AboutContent() {
               h-[60px]
 
               sm:h-[95px]
-
               md:h-[105px]
-
               lg:h-[120px]
             "
           >
@@ -370,9 +735,7 @@ export default function AboutContent() {
             py-[65px]
 
             sm:py-[80px]
-
             md:py-[95px]
-
             lg:py-[100px]
           "
         >
@@ -404,7 +767,7 @@ export default function AboutContent() {
                 md:top-[-85px]
                 md:w-[260px]
 
-                lg:right-[-120px]
+                lg:right-[-130px]
                 lg:top-[-139px]
                 lg:w-[330px]
 
@@ -458,7 +821,6 @@ export default function AboutContent() {
                   text-[#5C5C5C]
 
                   sm:text-[15px]
-
                   md:text-[17px]
 
                   lg:mt-[14px]
@@ -485,9 +847,7 @@ export default function AboutContent() {
             py-[85px]
 
             sm:py-[105px]
-
             md:py-[125px]
-
             lg:py-[170px]
           "
         >
@@ -561,7 +921,6 @@ export default function AboutContent() {
                   font-bold
 
                   sm:text-[34px]
-
                   md:text-[38px]
 
                   lg:absolute
@@ -591,9 +950,7 @@ export default function AboutContent() {
                   font-bold
 
                   sm:text-[32px]
-
                   md:text-[36px]
-
                   lg:text-[40px]
                 "
               >
@@ -612,7 +969,6 @@ export default function AboutContent() {
                   text-[#5C5C5C]
 
                   sm:text-[15px]
-
                   md:text-[17px]
 
                   lg:mt-5
@@ -638,7 +994,6 @@ export default function AboutContent() {
                   sm:text-[32px]
 
                   md:text-[36px]
-
                   lg:text-[40px]
                 "
               >
@@ -675,9 +1030,13 @@ export default function AboutContent() {
                   lg:leading-[28px]
                 "
               >
-                {missions.map((mission, index) => (
-                  <li key={index}>{mission}</li>
-                ))}
+                {missions.map(
+                  (mission, index) => (
+                    <li key={index}>
+                      {mission}
+                    </li>
+                  )
+                )}
               </ol>
             </div>
           </div>
@@ -698,7 +1057,6 @@ export default function AboutContent() {
             pb-8
 
             sm:pb-10
-
             md:pb-12
 
             lg:-mt-24
@@ -712,7 +1070,6 @@ export default function AboutContent() {
               px-0
 
               sm:px-4
-
               md:px-10
 
               flex
@@ -729,9 +1086,7 @@ export default function AboutContent() {
                 text-[16px]
 
                 sm:text-[30px]
-
                 md:text-[34px]
-
                 lg:text-[40px]
 
                 leading-tight
@@ -750,9 +1105,7 @@ export default function AboutContent() {
                 text-[16px]
 
                 sm:text-[32px]
-
                 md:text-[38px]
-
                 lg:text-[44px]
 
                 leading-tight
@@ -804,7 +1157,6 @@ export default function AboutContent() {
           mt-[-20px]
 
           sm:mt-[25px]
-
           md:mt-[30px]
 
           lg:mt-[-40px]
@@ -820,9 +1172,7 @@ export default function AboutContent() {
             h-[510px]
 
             sm:h-[560px]
-
             md:h-[580px]
-
             lg:h-[591px]
 
             bg-[#F3F3F3]
@@ -830,7 +1180,10 @@ export default function AboutContent() {
             overflow-hidden
           "
         >
-          {/* DOT LEFT */}
+
+          {/* =================================================
+              DOT LEFT
+          ================================================= */}
 
           <DotPattern
             className="
@@ -845,7 +1198,9 @@ export default function AboutContent() {
             "
           />
 
-          {/* DOT RIGHT */}
+          {/* =================================================
+              DOT RIGHT
+          ================================================= */}
 
           <DotPattern
             className="
@@ -862,16 +1217,275 @@ export default function AboutContent() {
             "
           />
 
-          <div className="relative z-10 h-full w-full">
+          {/* =================================================
+              DESKTOP
+          ================================================= */}
+
+          <div
+            className="
+              hidden
+              lg:block
+
+              relative
+              z-10
+
+              h-full
+              w-full
+            "
+          >
 
             {/* =================================================
-                LEFT ARROW
+                DESKTOP LEFT ARROW
+            ================================================= */}
+
+            {showDesktopLeftArrow && (
+              <button
+                type="button"
+                onClick={
+                  scrollDesktopLeft
+                }
+                aria-label="Scroll left"
+                className="
+                  absolute
+
+                  left-6
+                  top-[320px]
+
+                  z-30
+
+                  flex
+                  h-10
+                  w-10
+
+                  -translate-y-1/2
+
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  bg-white/90
+
+                  shadow-xl
+                  backdrop-blur-sm
+
+                  transition-all
+                  duration-200
+
+                  hover:scale-110
+                  active:scale-95
+
+                  xl:h-12
+                  xl:w-12
+                "
+              >
+                <ChevronLeft
+                  size={24}
+                  strokeWidth={2.5}
+                  className="
+                    text-[#04BCBC]/70
+                  "
+                />
+              </button>
+            )}
+
+            {/* =================================================
+                DESKTOP RIGHT ARROW
+            ================================================= */}
+
+            {showDesktopRightArrow && (
+              <button
+                type="button"
+                onClick={
+                  scrollDesktopRight
+                }
+                aria-label="Scroll right"
+                className="
+                  absolute
+
+                  right-6
+                  top-[320px]
+
+                  z-30
+
+                  flex
+                  h-10
+                  w-10
+
+                  -translate-y-1/2
+
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  bg-white/90
+
+                  shadow-xl
+                  backdrop-blur-sm
+
+                  transition-all
+                  duration-200
+
+                  hover:scale-110
+                  active:scale-95
+
+                  xl:h-12
+                  xl:w-12
+                "
+              >
+                <ChevronRight
+                  size={24}
+                  strokeWidth={2.5}
+                  className="
+                    text-[#04BCBC]/70
+                  "
+                />
+              </button>
+            )}
+
+            {/* =================================================
+                DESKTOP SCROLL
+            ================================================= */}
+
+            <div
+              ref={desktopScrollRef}
+              onScroll={
+                handleDesktopScroll
+              }
+              onMouseDown={
+                handleDesktopMouseDown
+              }
+              onMouseMove={
+                handleDesktopMouseMove
+              }
+              onMouseUp={
+                handleDesktopMouseUp
+              }
+              onMouseLeave={
+                handleDesktopMouseUp
+              }
+              className={`
+                flex
+                h-full
+                w-full
+
+                gap-[15px]
+
+                overflow-x-auto
+                overflow-y-hidden
+
+                scrollbar-hide
+
+                select-none
+
+                overscroll-x-none
+
+                pt-[120px]
+
+                ${
+                  isDesktopDragging
+                    ? "cursor-grabbing"
+                    : "cursor-grab"
+                }
+              `}
+              style={{
+                overscrollBehaviorX:
+                  "none",
+              }}
+            >
+
+              {/* =================================================
+                  LEFT SPACING
+                  SAMA DENGAN RIGHT SPACING
+              ================================================= */}
+
+              <div
+                aria-hidden="true"
+                className="
+                  flex-shrink-0
+
+                  w-[50px]
+
+                  xl:w-[15px]
+                "
+              />
+
+              {/* =================================================
+                  TEAM CARDS
+              ================================================= */}
+
+              {teamData.map(
+                (member, index) => (
+                  <div
+                    key={member.id}
+                    className="
+                      flex
+                      flex-[0_0_300px]
+
+                      justify-center
+
+                      select-none
+
+                      translate-y-[25px]
+                    "
+                  >
+                    <TeamCard
+                      member={member}
+                      index={index}
+                      isActive={
+                        index ===
+                        activeIndex
+                      }
+                    />
+                  </div>
+                )
+              )}
+
+              {/* =================================================
+                  RIGHT SPACING
+                  SAMA DENGAN LEFT SPACING
+              ================================================= */}
+
+              <div
+                aria-hidden="true"
+                className="
+                  flex-shrink-0
+
+                  w-[50px]
+
+                  xl:w-[15px]
+                "
+              />
+            </div>
+          </div>
+
+          {/* =================================================
+              MOBILE / TABLET
+          ================================================= */}
+
+          <div
+            className="
+              relative
+              z-10
+
+              h-full
+              w-full
+
+              lg:hidden
+            "
+          >
+
+            {/* =================================================
+                MOBILE LEFT ARROW
             ================================================= */}
 
             {canScrollPrev && (
               <button
                 type="button"
-                onClick={() => emblaApi?.scrollPrev()}
+                onClick={
+                  scrollMobileLeft
+                }
                 aria-label="Scroll left"
                 className="
                   absolute
@@ -895,7 +1509,6 @@ export default function AboutContent() {
                   bg-white/90
 
                   shadow-xl
-
                   backdrop-blur-sm
 
                   transition-all
@@ -911,9 +1524,6 @@ export default function AboutContent() {
 
                   md:left-[-10px]
                   md:top-[345px]
-
-                  lg:left-6
-                  lg:top-[360px]
                 "
               >
                 <ChevronLeft
@@ -929,13 +1539,15 @@ export default function AboutContent() {
             )}
 
             {/* =================================================
-                RIGHT ARROW
+                MOBILE RIGHT ARROW
             ================================================= */}
 
             {canScrollNext && (
               <button
                 type="button"
-                onClick={() => emblaApi?.scrollNext()}
+                onClick={
+                  scrollMobileRight
+                }
                 aria-label="Scroll right"
                 className="
                   absolute
@@ -959,7 +1571,6 @@ export default function AboutContent() {
                   bg-white/90
 
                   shadow-xl
-
                   backdrop-blur-sm
 
                   transition-all
@@ -975,9 +1586,6 @@ export default function AboutContent() {
 
                   md:right-[-10px]
                   md:top-[345px]
-
-                  lg:right-6
-                  lg:top-[360px]
                 "
               >
                 <ChevronRight
@@ -993,26 +1601,48 @@ export default function AboutContent() {
             )}
 
             {/* =================================================
-                EMBLA VIEWPORT
+                MOBILE NATIVE SCROLL
             ================================================= */}
 
             <div
-              ref={emblaRef}
+              ref={mobileScrollRef}
               className="
+                relative
+
                 h-full
                 w-full
 
-                overflow-hidden
+                overflow-x-auto
+                overflow-y-hidden
 
-                cursor-grab
-                active:cursor-grabbing
-
-                touch-pan-y
+                scrollbar-hide
 
                 select-none
 
-                will-change-transform
+                touch-pan-x
+
+                overscroll-x-none
+
+                snap-x
+                snap-mandatory
+
+                scroll-smooth
+
+                [scrollbar-width:none]
+                [-ms-overflow-style:none]
+
+                will-change-scroll
               "
+              style={{
+                overscrollBehaviorX:
+                  "none",
+
+                WebkitOverflowScrolling:
+                  "touch",
+
+                scrollSnapType:
+                  "x mandatory",
+              }}
             >
               <div
                 className="
@@ -1028,44 +1658,42 @@ export default function AboutContent() {
                   pt-[110px]
 
                   sm:pt-[105px]
-
                   md:pt-[110px]
-
-                  lg:pt-[120px]
-
-                  lg:pl-[50px]
-
-                  xl:pl-[25px]
                 "
               >
-                {/* =================================================
-                    TEAM CARDS
-                ================================================= */}
+                {teamData.map(
+                  (member, index) => (
+                    <div
+                      key={member.id}
+                      className="
+                        flex
 
-                {teamData.map((member, index) => (
-                  <div
-                    key={member.id}
-                    className="
-                      flex
-                      flex-[0_0_100%]
+                        flex-[0_0_100%]
 
-                      justify-center
+                        justify-center
 
-                      select-none
-                      translate-y-[15px]
+                        select-none
 
-                      sm:flex-[0_0_300px]
+                        translate-y-[15px]
 
-                      lg:translate-y-[25px]
-                    "
-                  >
-                    <TeamCard
-                      member={member}
-                      index={index}
-                      isActive={index === activeIndex}
-                    />
-                  </div>
-                ))}
+                        snap-center
+
+                        sm:flex-[0_0_300px]
+
+                        sm:snap-start
+                      "
+                    >
+                      <TeamCard
+                        member={member}
+                        index={index}
+                        isActive={
+                          index ===
+                          activeIndex
+                        }
+                      />
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -1090,7 +1718,12 @@ function TeamCard({
   index,
   isActive,
 }: TeamCardProps) {
-  const t = useTranslations("Team");
+  const t =
+    useTranslations("Team");
+
+  /* =========================================================
+     CARD CONFIG
+  ========================================================= */
 
   const CARD_CONFIG = {
     width: 300,
@@ -1101,9 +1734,13 @@ function TeamCard({
 
     positionTop: 93,
     positionHeight: 22,
-    positionMinWidth: 105,
-    positionMaxWidth: 190,
     positionFontSize: 11,
+
+    /*
+      Background jabatan mengikuti
+      ukuran teks + padding kiri/kanan.
+    */
+    positionPaddingX: 18,
 
     nameTop: 10,
     nameWidth: 250,
@@ -1115,6 +1752,10 @@ function TeamCard({
     descriptionFontSize: 14,
     descriptionLineHeight: 19,
   };
+
+  /* =========================================================
+     CARD RADIUS
+  ========================================================= */
 
   const cardRadius =
     index === 0
@@ -1158,112 +1799,181 @@ function TeamCard({
               bg-white
               border-white
 
-              shadow-[0_12px_35px_rgba(255,255,255,0.90)]
-
               -translate-y-[8px]
 
               sm:bg-white/35
               sm:border-white/70
-              sm:shadow-[0_4px_20px_rgba(255,255,255,0.30)]
               sm:translate-y-0
             `
             : `
               bg-white/35
-              shadow-[0_4px_20px_rgba(255,255,255,0.30)]
             `
         }
 
         hover:bg-white
         hover:border-white
-        hover:shadow-[0_10px_35px_rgba(255,255,255,0.85)]
+
         hover:-translate-y-1
 
         ${cardRadius}
       `}
       style={{
-        width: `${CARD_CONFIG.width}px`,
-        height: `${CARD_CONFIG.height}px`,
+        width:
+          `${CARD_CONFIG.width}px`,
+        height:
+          `${CARD_CONFIG.height}px`,
       }}
     >
-      {/* FOTO */}
+
+      {/* ===================================================
+          FOTO
+      =================================================== */}
 
       <div
         className="
           absolute
+
           left-1/2
           -translate-x-1/2
 
-          rounded-full
-          overflow-hidden
-
-          bg-white
-
-          border-[2px]
-          border-white
-
-          shadow-[0_7px_20px_rgba(255,255,255,0.55)]
-
           z-20
+
+          rounded-full
+
+          overflow-visible
+
+          bg-transparent
+
+          border
+          border-[#D9DEE1]
+
+          shadow-[0_8px_8px_rgba(0,0,0,0.18)]
+
+          after:pointer-events-none
+          after:absolute
+
+          after:left-[4%]
+          after:right-[4%]
+
+          after:bottom-[-18px]
+
+          after:h-[35px]
+
+          after:rounded-[50%]
+
+          after:bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28)_0%,rgba(0,0,0,0.18)_35%,rgba(0,0,0,0.08)_60%,transparent_80%)]
+
+          after:blur-[7px]
+
+          after:-z-10
         "
         style={{
-          width: `${CARD_CONFIG.photoSize}px`,
-          height: `${CARD_CONFIG.photoSize}px`,
-          top: `${CARD_CONFIG.photoTop}px`,
+          width:
+            `${CARD_CONFIG.photoSize}px`,
+          height:
+            `${CARD_CONFIG.photoSize}px`,
+          top:
+            `${CARD_CONFIG.photoTop}px`,
         }}
       >
-        <Image
-          src={member.image}
-          alt={t(member.nameKey)}
-          fill
-          className="object-cover"
-          sizes={`${CARD_CONFIG.photoSize}px`}
-          draggable={false}
-        />
+        <div
+          className="
+            relative
+
+            h-full
+            w-full
+
+            overflow-hidden
+
+            rounded-full
+
+            bg-transparent
+          "
+        >
+          <Image
+            src={member.image}
+            alt={t(member.nameKey)}
+            fill
+            className="
+              rounded-full
+              object-cover
+              select-none
+            "
+            sizes={`${CARD_CONFIG.photoSize}px`}
+            draggable={false}
+          />
+        </div>
       </div>
 
-      {/* JABATAN */}
+      {/* ===================================================
+          JABATAN
+
+          BACKGROUND OTOMATIS MENGIKUTI
+          PANJANG TEKS JABATAN.
+          
+          Teks tetap HTML sehingga
+          bisa diseleksi dan disalin.
+      =================================================== */}
 
       <div
         className="
           relative
           z-30
 
-          px-4
+          inline-flex
+          w-fit
+          max-w-[calc(100%-24px)]
+
+          items-center
+          justify-center
 
           rounded-full
 
           bg-[#04BCBC]
 
-          flex
-          items-center
-          justify-center
-
           shadow-[0_5px_14px_rgba(4,188,188,0.25)]
+
+          whitespace-nowrap
+
+          select-text
+
+          text-center
         "
         style={{
-          marginTop: `${CARD_CONFIG.positionTop}px`,
-          height: `${CARD_CONFIG.positionHeight}px`,
-          minWidth: `${CARD_CONFIG.positionMinWidth}px`,
-          maxWidth: `${CARD_CONFIG.positionMaxWidth}px`,
+          marginTop:
+            `${CARD_CONFIG.positionTop}px`,
+          minHeight:
+            `${CARD_CONFIG.positionHeight}px`,
+          paddingLeft:
+            `${CARD_CONFIG.positionPaddingX}px`,
+          paddingRight:
+            `${CARD_CONFIG.positionPaddingX}px`,
         }}
       >
         <span
           className="
+            block
+
             whitespace-nowrap
+
+            select-text
 
             text-white
             font-semibold
             leading-none
           "
           style={{
-            fontSize: `${CARD_CONFIG.positionFontSize}px`,
+            fontSize:
+              `${CARD_CONFIG.positionFontSize}px`,
           }}
         >
           {t(member.positionKey)}
         </span>
       </div>
 
-      {/* NAMA */}
+      {/* ===================================================
+          NAMA
+      =================================================== */}
 
       <h3
         className="
@@ -1273,18 +1983,26 @@ function TeamCard({
 
           font-bold
           font-['David_Libre']
+
+          select-text
         "
         style={{
-          marginTop: `${CARD_CONFIG.nameTop}px`,
-          width: `${CARD_CONFIG.nameWidth}px`,
-          fontSize: `${CARD_CONFIG.nameFontSize}px`,
-          lineHeight: `${CARD_CONFIG.nameLineHeight}px`,
+          marginTop:
+            `${CARD_CONFIG.nameTop}px`,
+          width:
+            `${CARD_CONFIG.nameWidth}px`,
+          fontSize:
+            `${CARD_CONFIG.nameFontSize}px`,
+          lineHeight:
+            `${CARD_CONFIG.nameLineHeight}px`,
         }}
       >
         {t(member.nameKey)}
       </h3>
 
-      {/* DESKRIPSI */}
+      {/* ===================================================
+          DESKRIPSI
+      =================================================== */}
 
       <p
         className="
@@ -1298,12 +2016,18 @@ function TeamCard({
           text-[#5C6574]
 
           font-normal
+
+          select-text
         "
         style={{
-          top: `${CARD_CONFIG.descriptionTop}px`,
-          width: `${CARD_CONFIG.descriptionWidth}px`,
-          fontSize: `${CARD_CONFIG.descriptionFontSize}px`,
-          lineHeight: `${CARD_CONFIG.descriptionLineHeight}px`,
+          top:
+            `${CARD_CONFIG.descriptionTop}px`,
+          width:
+            `${CARD_CONFIG.descriptionWidth}px`,
+          fontSize:
+            `${CARD_CONFIG.descriptionFontSize}px`,
+          lineHeight:
+            `${CARD_CONFIG.descriptionLineHeight}px`,
         }}
       >
         {t(member.descriptionKey)}
