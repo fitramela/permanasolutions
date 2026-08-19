@@ -56,8 +56,6 @@ const clients: ClientLogo[] = [
 export default function Resource() {
   const t = useTranslations("Resource");
 
-  const [activeCard, setActiveCard] = useState<number | null>(null);
-
   const technologies = [
     "/images/powering/react.png",
     "/images/powering/node.png",
@@ -79,10 +77,18 @@ export default function Resource() {
     desc: string;
   }[];
 
+  /* =========================================================
+     WHY STAND OUT - CAROUSEL
+  ========================================================= */
+
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [startScrollLeft, setStartScrollLeft] = useState(0);
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
@@ -100,19 +106,59 @@ export default function Resource() {
     );
   };
 
-  const scrollRight = () => {
+  /* ================= MOUSE DOWN ================= */
+
+  const handleMouseDown = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
     if (!scrollRef.current) return;
 
-    scrollRef.current.scrollBy({
+    setIsDragging(true);
+
+    setStartX(
+      e.pageX - scrollRef.current.offsetLeft
+    );
+
+    setStartScrollLeft(
+      scrollRef.current.scrollLeft
+    );
+  };
+
+  /* ================= MOUSE MOVE ================= */
+
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
+    if (!isDragging || !scrollRef.current) return;
+
+    e.preventDefault();
+
+    const x =
+      e.pageX - scrollRef.current.offsetLeft;
+
+    const walk = (x - startX) * 1.5;
+
+    scrollRef.current.scrollLeft =
+      startScrollLeft - walk;
+  };
+
+  /* ================= MOUSE UP ================= */
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  /* ================= ARROWS ================= */
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({
       left: 320,
       behavior: "smooth",
     });
   };
 
   const scrollLeft = () => {
-    if (!scrollRef.current) return;
-
-    scrollRef.current.scrollBy({
+    scrollRef.current?.scrollBy({
       left: -320,
       behavior: "smooth",
     });
@@ -121,7 +167,9 @@ export default function Resource() {
   return (
     <main className="overflow-hidden bg-white">
 
-      {/* ================= HERO ================= */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section
         className="
@@ -163,11 +211,10 @@ export default function Resource() {
                 sm:translate-y-0
                 md:max-w-[560px]
                 lg:max-w-[600px]
-                xl:max-w-[640px]
                 lg:-translate-y-8
+                xl:max-w-[640px]
               "
             >
-
               {/* TITLE */}
 
               <h1
@@ -231,14 +278,14 @@ export default function Resource() {
                   ),
                 })}
               </p>
-
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* ================= WHY WE STAND OUT ================= */}
+      {/* =====================================================
+          WHY WE STAND OUT
+      ===================================================== */}
 
       <section
         className="
@@ -250,8 +297,7 @@ export default function Resource() {
           lg:py-20
         "
       >
-
-        {/* Decorative Circle Left */}
+        {/* LEFT DECORATION */}
 
         <div
           className="
@@ -268,7 +314,7 @@ export default function Resource() {
           "
         />
 
-        {/* Decorative Circle Right */}
+        {/* RIGHT DECORATION */}
 
         <div
           className="
@@ -298,16 +344,9 @@ export default function Resource() {
             2xl:px-20
           "
         >
+          {/* TITLE */}
 
-          {/* Section Heading */}
-
-          <div
-            className="
-              mb-8
-              text-center
-              sm:mb-10
-            "
-          >
+          <div className="mb-8 text-center sm:mb-10">
             <h2
               className="
                 text-2xl
@@ -331,130 +370,133 @@ export default function Resource() {
             </p>
           </div>
 
-
-          {/* CARD SCROLL */}
+          {/* =================================================
+              CAROUSEL
+          ================================================= */}
 
           <div className="relative">
 
             <div
               ref={scrollRef}
               onScroll={handleScroll}
-              className="scrollbar-hide overflow-x-auto scroll-smooth"
-            >
-              <div
-                className="
-                  flex
-                  w-max
-                  gap-3
-                  pb-3
-                  sm:gap-9
-                "
-              >
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              className={`
+                flex
+                gap-9
+                overflow-x-auto
+                pb-4
+                scrollbar-hide
 
-                {cards.map((item, index) => (
-                  <button
-                    key={item.title}
-                    type="button"
-                    onClick={() =>
-                      setActiveCard(
-                        activeCard === index ? null : index
-                      )
-                    }
+                ${
+                  isDragging
+                    ? "cursor-grabbing"
+                    : "cursor-grab"
+                }
+              `}
+            >
+              {cards.map((item) => (
+                <div
+                  key={item.title}
+                  className="
+                    group
+                    relative
+                    h-[320px]
+                    w-[240px]
+                    flex-shrink-0
+                    overflow-hidden
+                    rounded-[24px]
+                    sm:h-[380px]
+                    sm:w-[290px]
+                  "
+                >
+                  {/* IMAGE */}
+
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    draggable={false}
                     className="
-                      group
-                      relative
-                      h-[320px]
-                      w-[240px]
-                      flex-shrink-0
-                      overflow-hidden
-                      rounded-[24px]
-                      text-left
-                      sm:h-[380px]
-                      sm:w-[290px]
+                      object-cover
+                      transition
+                      duration-500
+                      group-hover:scale-105
+                    "
+                  />
+
+                  {/* GRADIENT */}
+
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      inset-0
+                      bg-gradient-to-t
+                      from-[#05638B]
+                      via-[#05638B]/40
+                      to-transparent
+                    "
+                  />
+
+                  {/* TEXT */}
+
+                  <div
+                    className="
+                      absolute
+                      bottom-5
+                      left-5
+                      right-5
+                      text-white
+                      sm:bottom-6
+                      sm:left-6
+                      sm:right-6
                     "
                   >
-
-                    {/* Card Image */}
-
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
+                    <h3
                       className="
-                        object-cover
-                        transition
-                        duration-500
-                        group-hover:scale-105
-                      "
-                    />
-
-
-                    {/* Overlay */}
-
-                    <div
-                      className="
-                        absolute
-                        inset-0
-                        bg-gradient-to-t
-                        from-[#05638B]
-                        via-[#05638B]/40
-                        to-transparent
-                      "
-                    />
-
-
-                    {/* Card Content */}
-
-                    <div
-                      className="
-                        absolute
-                        bottom-5
-                        left-5
-                        right-5
-                        text-white
-                        sm:bottom-6
-                        sm:left-6
-                        sm:right-6
+                        select-text
+                        text-xl
+                        font-light
+                        sm:text-2xl
                       "
                     >
+                      {item.title}
+                    </h3>
 
-                      <h3
+                    <div
+                      className="
+                        mt-0
+                        max-h-0
+                        overflow-hidden
+                        opacity-0
+                        transition-all
+                        duration-500
+                        group-hover:mt-3
+                        group-hover:max-h-40
+                        group-hover:opacity-100
+                      "
+                    >
+                      <p
                         className="
-                          text-xl
-                          font-light
-                          sm:text-2xl
+                          select-text
+                          text-sm
+                          leading-6
                         "
                       >
-                        {item.title}
-                      </h3>
-
-                      <div
-                        className={`
-                          overflow-hidden
-                          transition-all
-                          duration-500
-                          ${
-                            activeCard === index
-                              ? "mt-3 max-h-40 opacity-100"
-                              : "mt-0 max-h-0 opacity-0"
-                          }
-                        `}
-                      >
-                        <p className="text-sm leading-6">
-                          {item.desc}
-                        </p>
-                      </div>
-
+                        {item.desc}
+                      </p>
                     </div>
-
-                  </button>
-                ))}
-
-              </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-
-            {/* LEFT ARROW */}
+            {/* =================================================
+                LEFT ARROW
+            ================================================= */}
 
             {showLeftArrow && (
               <button
@@ -484,14 +526,22 @@ export default function Resource() {
                   md:w-12
                 "
               >
-                <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
+                <span
+                  className="
+                    text-2xl
+                    leading-none
+                    text-[#04BCBC]/70
+                    md:text-3xl
+                  "
+                >
                   ❮
                 </span>
               </button>
             )}
 
-
-            {/* RIGHT ARROW */}
+            {/* =================================================
+                RIGHT ARROW
+            ================================================= */}
 
             {showRightArrow && (
               <button
@@ -521,34 +571,36 @@ export default function Resource() {
                   md:w-12
                 "
               >
-                <span className="text-2xl leading-none text-[#04BCBC]/70 md:text-3xl">
+                <span
+                  className="
+                    text-2xl
+                    leading-none
+                    text-[#04BCBC]/70
+                    md:text-3xl
+                  "
+                >
                   ❯
                 </span>
               </button>
             )}
 
           </div>
-
         </div>
-
       </section>
 
-
-      {/* ================= POWERING ================= */}
+      {/* =====================================================
+          POWERING
+      ===================================================== */}
 
       <section className="relative overflow-hidden py-16">
-
         <div className="bg-[#05BDBD] py-4">
           <h2 className="text-center text-2xl font-bold text-white">
             {t("powering.title")}
           </h2>
         </div>
 
-
         <div className="overflow-hidden py-10">
-
           <div className="marquee flex w-max gap-8">
-
             {[...technologies, ...technologies].map(
               (logo, index) => (
                 <div
@@ -574,20 +626,16 @@ export default function Resource() {
                 </div>
               )
             )}
-
           </div>
-
         </div>
-
       </section>
 
+      {/* =====================================================
+          CLIENT
+      ===================================================== */}
 
-      {/* ================= CLIENT ================= */}
-
-      <section className="relative overflow-hidden py-5">
-
+      <section className="relative overflow-hidden py-3">
         <div className="overflow-hidden py-10">
-
           <div
             className="animate-scroll flex w-max gap-8"
             style={{
@@ -596,16 +644,14 @@ export default function Resource() {
               animationIterationCount: "infinite",
             }}
           >
-
-            {[...clients, ...clients].map(
-              (client, index) => (
+            {[...technologies, ...technologies].map(
+              (logo, index) => (
                 <div
-                  key={`${client.alt}-${index}`}
+                  key={index}
                   className="
                     flex
                     h-24
-                    w-32
-                    flex-shrink-0
+                    w-24
                     items-center
                     justify-center
                     rounded-full
@@ -614,8 +660,8 @@ export default function Resource() {
                   "
                 >
                   <Image
-                    src={client.src}
-                    alt={client.alt}
+                    src={logo}
+                    alt=""
                     width={100}
                     height={100}
                     className="object-contain"
@@ -623,11 +669,8 @@ export default function Resource() {
                 </div>
               )
             )}
-
           </div>
-
         </div>
-
       </section>
 
     </main>
