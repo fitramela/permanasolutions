@@ -27,7 +27,7 @@ const systemSlides = [
   },
   {
     id: 6,
-    image: "/images/image 684.png",
+    image: "/images/PrimeTeams color.png",
   },
 ];
 
