@@ -75,7 +75,7 @@ export default function Asp() {
       key: "primeteams",
       title: "PrimeTeams",
       description: t("primeTeamsDescription"),
-      image: "/images/products/ImageTeam.png",
+      image: "/images/products/Pteams.png",
       items: t.raw("primeteams.items"),
     },
   ];
