@@ -239,7 +239,7 @@ export default function BestSolutionsSection() {
               overflow-x-auto
               pb-4
               scrollbar-hide
-              select-none
+              
 
               ${
                 isDragging
