@@ -49,8 +49,8 @@ export const FooterSection = () => {
 
   const companyProfile =
     locale === "en"
-      ? "/Permana_Company_Profile_2026_English.pdf"
-      : "/Permana_Company_Profile_2026_Indonesia.pdf";
+      ? "/Compro English Permana 2026 Partnerships .pdf"
+      : "/Compro Indo Permana 2026 Partnerships .pdf";
 
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
