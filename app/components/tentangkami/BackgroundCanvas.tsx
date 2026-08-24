@@ -42,11 +42,11 @@ const DESKTOP_LOGO_CONFIG = {
   ======================================================= */
 
   logo: {
-    width: 152,
+    width: 167,
     xlWidth: 300,
 
     /* Posisi logo relatif terhadap wrapper */
-    x: 212,
+    x: 230,
     y: 10,
 
     /* Jika ingin logo sedikit lebih besar/kecil */
