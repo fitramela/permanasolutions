@@ -1,0 +1,361 @@
+import { Router } from 'express';
+import bcrypt from 'bcrypt';
+import crypto from 'crypto';
+import { prisma } from '../prisma.js';
+import { asyncHandler } from '../middlewares/asyncHandler.js';
+import { generateTotpSecret, generateQrCodeDataUrl, verifyTotpToken, buildOtpAuthUrl } from '../utils/totp.js';
+import { signToken } from '../utils/jwt.js';
+import { sendOtpEmail, sendResetPasswordEmail } from '../utils/email.js';
+import { generateOtp } from '../utils/otp.js';
+import { normalizeEmail, normalizeString, normalizeUuid, sanitizeUser } from '../utils/helpers.js';
+
+const router = Router();
+
+const cooldownSeconds = Number(process.env.OTP_COOLDOWN_SECONDS) || 60;
+const expiryMinutes = Number(process.env.OTP_EXPIRY_MINUTES) || 5;
+const otpLength = Number(process.env.OTP_LENGTH) || 6;
+
+
+router.post(
+  '/login',
+  asyncHandler(async (req, res) => {
+    const email = normalizeEmail(req.body?.email);
+    const password = normalizeString(req.body?.password, 'Password');
+
+    const user = await prisma.users.findUnique({ where: { email } });
+    if (!user) {
+      return res.status(401).json({ success: false, message: 'Invalid email or password' });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password || '');
+    if (!isPasswordValid) {
+      return res.status(401).json({ success: false, message: 'Invalid email or password' });
+    }
+
+    if (!user.two_fa_enabled) {
+      if (!user.two_fa_secret) {
+        const { base32 } = generateTotpSecret(user.email);
+        await prisma.users.update({
+          where: { id: user.id },
+          data: { two_fa_secret: base32 },
+        });
+        user.two_fa_secret = base32;
+      }
+
+      const otpauthUrl = buildOtpAuthUrl(user.two_fa_secret, user.email);
+      const qrCode = await generateQrCodeDataUrl(otpauthUrl);
+
+      return res.json({
+        success: true,
+        needsSetup: true,
+        userId: user.id,
+        qrCode,
+        message: 'Scan QR code with Google Authenticator, then submit the 6-digit code',
+      });
+    }
+
+    return res.json({
+      success: true,
+      needsOtp: true,
+      userId: user.id,
+      message: 'Enter the 6-digit code from your Google Authenticator app',
+    });
+  })
+);
+
+router.post(
+  '/setup-totp',
+  asyncHandler(async (req, res) => {
+    const { userId, token } = req.body;
+    normalizeString(token, 'Token');
+
+    const user = await prisma.users.findUnique({
+      where: { id: normalizeUuid(userId) },
+    });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+
+    if (!user.two_fa_secret) {
+      return res.status(400).json({ success: false, message: 'User has no TOTP secret. Please contact admin.' });
+    }
+
+    const isValid = verifyTotpToken(user.two_fa_secret, token);
+    if (!isValid) {
+      return res.status(400).json({ success: false, message: 'Invalid TOTP code. Please try again.' });
+    }
+
+    await prisma.users.update({
+      where: { id: user.id },
+      data: { two_fa_enabled: true },
+    });
+
+    const jwtToken = signToken({ id: user.id.toString(), email: user.email });
+    const userSafe = sanitizeUser(user);
+
+    return res.json({
+      success: true,
+      message: '2FA successfully enabled. Welcome!',
+      user: userSafe,
+      token: jwtToken,
+    });
+  })
+);
+
+router.post(
+  '/verify-totp',
+  asyncHandler(async (req, res) => {
+    const { userId, token } = req.body;
+    normalizeString(token, 'Token');
+
+    const user = await prisma.users.findUnique({
+      where: { id: normalizeUuid(userId) },
+    });
+    if (!user || !user.two_fa_secret) {
+      return res.status(400).json({ success: false, message: 'User not found or TOTP not set up' });
+    }
+
+    const isValid = verifyTotpToken(user.two_fa_secret, token);
+    if (!isValid) {
+      return res.status(400).json({ success: false, message: 'Invalid TOTP code' });
+    }
+
+    const jwtToken = signToken({ id: user.id.toString(), email: user.email });
+    const userSafe = sanitizeUser(user);
+
+    return res.json({
+      success: true,
+      message: 'Login successful',
+      user: userSafe,
+      token: jwtToken,
+    });
+  })
+);
+
+router.post(
+  '/request-otp',
+  asyncHandler(async (req, res) => {
+    const email = normalizeEmail(req.body?.email);
+    const user = await prisma.users.findUnique({ where: { email } });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User tidak ditemukan' });
+    }
+
+    const cooldownAgo = new Date(Date.now() - cooldownSeconds * 1000);
+    const recentOtp = await prisma.otps.findFirst({  
+      where: {
+        email: user.email,
+        used: false,
+        createdAt: { gt: cooldownAgo },
+        expiresAt: { gt: new Date() },
+      },
+    });
+
+    if (recentOtp) {
+      return res.status(429).json({
+        success: false,
+        message: `Tunggu ${cooldownSeconds} detik sebelum meminta OTP lagi.`,
+      });
+    }
+
+    const otpCode = generateOtp(otpLength);
+    const expiresAt = new Date(Date.now() + expiryMinutes * 60 * 1000);
+
+    await prisma.otps.create({ 
+      data: {
+        email: user.email,
+        code: otpCode,
+        expiresAt,
+      },
+    });
+
+    await sendOtpEmail(user.email, otpCode);
+
+    res.json({
+      success: true,
+      message: `Kode OTP telah dikirim ke email Anda (berlaku ${expiryMinutes} menit)`,
+    });
+  })
+);
+
+router.post(
+  '/verify-otp',
+  asyncHandler(async (req, res) => {
+    const email = normalizeEmail(req.body?.email);
+    const code = normalizeString(req.body?.code, 'Code');
+
+    const otpRecord = await prisma.otps.findFirst({   
+      where: {
+        email,
+        code,
+        used: false,
+        expiresAt: { gt: new Date() },
+      },
+      orderBy: { createdAt: 'desc' },
+    });
+
+    if (!otpRecord) {
+      return res.status(401).json({ success: false, message: 'Kode OTP tidak valid atau sudah kadaluarsa' });
+    }
+
+    await prisma.otps.update({  
+      where: { id: otpRecord.id },
+      data: { used: true },
+    });
+
+    const user = await prisma.users.findUnique({ where: { email } });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User tidak ditemukan' });
+    }
+
+    await prisma.users.update({
+      where: { id: user.id },
+      data: { last_login_at: new Date() },
+    });
+
+    const jwtToken = signToken({ id: user.id.toString(), email: user.email });
+    const userSafe = sanitizeUser(user);
+
+    res.json({
+      success: true,
+      message: 'Login berhasil',
+      user: userSafe,
+      token: jwtToken,
+    });
+  })
+);
+
+router.post(
+  '/resend-otp',
+  asyncHandler(async (req, res) => {
+    const email = normalizeEmail(req.body?.email);
+    const user = await prisma.users.findUnique({ where: { email } });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User tidak ditemukan' });
+    }
+
+    const cooldownAgo = new Date(Date.now() - cooldownSeconds * 1000);
+    const recentOtp = await prisma.otps.findFirst({   
+      where: {
+        email: user.email,
+        used: false,
+        createdAt: { gt: cooldownAgo },
+        expiresAt: { gt: new Date() },
+      },
+    });
+
+    if (recentOtp) {
+      return res.status(429).json({
+        success: false,
+        message: `Tunggu ${cooldownSeconds} detik sebelum meminta ulang OTP.`,
+      });
+    }
+
+    await prisma.otps.deleteMany({  
+      where: {
+        email: user.email,
+        used: false,
+        expiresAt: { lt: new Date() },
+      },
+    });
+
+    const otpCode = generateOtp(otpLength);
+    const expiresAt = new Date(Date.now() + expiryMinutes * 60 * 1000);
+
+    await prisma.otps.create({   
+      data: {
+        email: user.email,
+        code: otpCode,
+        expiresAt,
+      },
+    });
+
+    await sendOtpEmail(user.email, otpCode);
+
+    res.json({
+      success: true,
+      message: `Kode OTP baru telah dikirim ke email Anda (berlaku ${expiryMinutes} menit)`,
+    });
+  })
+);
+
+router.post(
+  '/logout',
+  asyncHandler(async (req, res) => {
+    res.json({ success: true, message: 'Logout berhasil' });
+  })
+);
+
+router.post(
+  '/forgot-password',
+  asyncHandler(async (req, res) => {
+    const email = normalizeEmail(req.body?.email);
+    const user = await prisma.users.findUnique({ where: { email } });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Email tidak terdaftar' });
+    }
+
+    const token = crypto.randomBytes(32).toString('hex');
+    const expiresAt = new Date(Date.now() + 15 * 60 * 1000);
+
+    await prisma.password_resets.upsert({   
+      where: { email },
+      update: { token, expiresAt },
+      create: { email, token, expiresAt },
+    });
+
+    const resetLink = `${process.env.APP_URL}/reset-password?token=${token}`;
+    await sendResetPasswordEmail(email, resetLink);
+
+    res.json({ success: true, message: 'Link reset password telah dikirim ke email Anda' });
+  })
+);
+
+router.post(
+  '/reset-password',
+  asyncHandler(async (req, res) => {
+    const { token, newPassword } = req.body;
+
+    if (!token || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Token dan password baru wajib diisi',
+      });
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password baru minimal 6 karakter',
+      });
+    }
+
+    const resetRecord = await prisma.password_resets.findUnique({   
+      where: { token },
+    });
+
+    if (!resetRecord || resetRecord.expiresAt < new Date()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Token tidak valid atau kadaluarsa',
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await prisma.users.update({
+      where: { email: resetRecord.email },
+      data: { password: hashedPassword },
+    });
+
+    await prisma.password_resets.delete({   
+      where: { id: resetRecord.id },
+    });
+
+    res.json({
+      success: true,
+      message: 'Password berhasil direset',
+    });
+  })
+);
+
+export default router;

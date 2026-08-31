@@ -1,21 +1,41 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import type { CmsSectionContent } from "@/app/services/cms";
 
-export default function WhyChooseUsSection() {
-  const t = useTranslations("WhyChooseUs");
+type Props = {
+  content?: CmsSectionContent;
+};
+
+function text(
+  content: CmsSectionContent | undefined,
+  key: string,
+  fallback = ""
+) {
+  const value = content?.[key];
+  return typeof value === "string" && value.trim()
+    ? value
+    : fallback;
+}
+
+export default function WhyChooseUsSection({
+  content,
+}: Props) {
+  const backgroundImage = text(
+    content,
+    "background_image"
+  );
 
   return (
     <section className="relative overflow-hidden py-14 lg:py-20 min-h-[520px] md:min-h-0">
       {/* Background Desktop */}
       <Image
-  src="/images/bgdriving.png"
-  alt=""
-  fill
-  priority
-  className="pointer-events-none select-none object-fill object-[5%_left]"
-/>
+        src={backgroundImage}
+        alt=""
+        fill
+        priority
+        className="pointer-events-none select-none object-fill object-[5%_left]"
+      />
 
 
       {/* Background Mobile */}
@@ -28,14 +48,15 @@ export default function WhyChooseUsSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-20 pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-10 lg:pb-16">
         <div className="w-full max-w-[760px] text-white lg:ml-0">
-         <h2
-  id="why-choose-us-title"
-className="mx-auto max-w-[900px] text-center text-[25px] sm:text-[25px] lg:text-[35px] font-bold leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)]">
-  {t("title")}
-</h2>
+          <h2
+            id="why-choose-us-title"
+            className="mx-auto max-w-[900px] text-center text-[25px] sm:text-[25px] lg:text-[35px] font-bold leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)]"
+          >
+            {text(content, "title")}
+          </h2>
 
-         <p
-  className="
+          <p
+            className="
     mt-6 sm:mt-7 lg:mt-9
     max-w-full sm:max-w-[760px]
     text-center sm:text-left lg:text-justify
@@ -50,9 +71,9 @@ className="mx-auto max-w-[900px] text-center text-[25px] sm:text-[25px] lg:text-
     text-white/90
     px-2 sm:px-0
   "
->
-  {t("description")}
-</p>
+          >
+            {text(content, "description")}
+          </p>
         </div>
       </div>
     </section>

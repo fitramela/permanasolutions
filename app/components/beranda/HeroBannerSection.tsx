@@ -1,11 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 import SlotCounter from "react-slot-counter";
+import type { CmsSectionContent } from "@/app/services/cms";
 
-export default function HeroBannerSection() {
-  const t = useTranslations("Hero");
+type Props = {
+  content?: CmsSectionContent;
+};
+
+function text(
+  content: CmsSectionContent | undefined,
+  key: string,
+  fallback = ""
+) {
+  const value = content?.[key];
+  return typeof value === "string" && value.trim()
+    ? value
+    : fallback;
+}
+
+export default function HeroBannerSection({
+  content,
+}: Props) {
+  const backgroundImage = text(
+    content,
+    "background_image"
+  );
 
   return (
     <section className="bg-white py-4 lg:py-7">
@@ -22,19 +42,19 @@ export default function HeroBannerSection() {
         "
           >
             <Image
-  src="/images/bgHome.png"
-  alt="Permana Solutions Hero"
-  width={2048}
-  height={848}
-  priority
-  className="absolute inset-0 h-full w-full object-cover"
-/>
+              src={backgroundImage}
+              alt="Permana Solutions Hero"
+              width={2048}
+              height={848}
+              priority
+              className="absolute inset-0 h-full w-full object-cover"
+            />
 
-       {/* TEXT */}
-<div className="absolute inset-0 flex items-center z-10">
-  <div className="w-full px-[clamp(24px,5vw,80px)]">
-    <h1
-      className="
+            {/* TEXT */}
+            <div className="absolute inset-0 flex items-center z-10">
+              <div className="w-full px-[clamp(24px,5vw,80px)]">
+                <h1
+                  className="
         max-w-[clamp(340px,60vw,1050px)]
         text-white
         font-semibold
@@ -45,7 +65,7 @@ export default function HeroBannerSection() {
         drop-shadow-[0_5px_1px_rgba(1,10,10)]
       "
                 >
-                  {t("heading1")} {t("heading2")}
+                  {text(content, "heading1")} {text(content, "heading2")}
                 </h1>
               </div>
             </div>
@@ -64,9 +84,9 @@ export default function HeroBannerSection() {
   "
             >
               <div className="flex gap-[clamp(20px,4vw,50px)]">
-                <Statistic number="20" label={t("partner")} />
-                <Statistic number="20" label={t("customer")} />
-                <Statistic number="30" label={t("employee")} />
+                <Statistic number="20" label={text(content, "partner")} />
+                <Statistic number="20" label={text(content, "customer")} />
+                <Statistic number="30" label={text(content, "employee")} />
               </div>
             </div> */}
           </div>
@@ -74,9 +94,9 @@ export default function HeroBannerSection() {
           {/* Mobile Stats */}
           {/* <div className="bg-white py-5 lg:hidden">
             <div className="flex justify-center gap-6">
-              <Statistic number="20" label={t("partner")} />
-              <Statistic number="20" label={t("customer")} />
-              <Statistic number="30" label={t("employee")} />
+              <Statistic number="20" label={text(content, "partner")} />
+              <Statistic number="20" label={text(content, "customer")} />
+              <Statistic number="30" label={text(content, "employee")} />
             </div>
           </div> */}
         </div>

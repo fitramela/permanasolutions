@@ -1,0 +1,485 @@
+.shell {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  overflow: hidden;
+  background: #f8fbfc;
+  color: #16384a;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  height: calc(100vh - 32px);
+  margin: 16px 0 16px 16px;
+  padding: 24px 18px 16px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #087394 0%,
+      #086b8b 100%
+    );
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 35px rgba(5, 73, 95, 0.16);
+}
+
+/* =========================
+   BRAND / LOGO
+========================= */
+
+.brand {
+  width: 100%;
+  min-height: 96px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 12px 18px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+}
+
+.brandLogo {
+  display: block;
+
+  width: 100%;
+  max-width: 215px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  /* filter:
+    brightness(0)
+    invert(1); */
+}
+
+/* =========================
+   SIDEBAR BODY
+========================= */
+
+.sidebarBody {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 2px;
+
+  scrollbar-width: none;
+}
+
+.sidebarBody::-webkit-scrollbar {
+  display: none;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navLink,
+.groupButton {
+  width: 100%;
+
+  min-height: 44px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 13px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.96);
+
+  text-decoration: none;
+
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.navLink:hover,
+.groupButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navLink:active {
+  transform: scale(0.985);
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.14);
+
+  font-weight: 700;
+
+  box-shadow:
+    inset 0 0 0 1px
+      rgba(255, 255, 255, 0.05);
+}
+
+.groupButton {
+  justify-content: space-between;
+}
+
+.groupButton > span {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   SUB MENU
+========================= */
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+
+  margin: 1px 0 7px 41px;
+
+  gap: 1px;
+}
+
+.submenu a {
+  position: relative;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    background 0.18s ease,
+    padding-left 0.18s ease;
+}
+
+.submenu a:hover {
+  padding-left: 14px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.submenu .subActive {
+  font-weight: 700;
+
+  background: rgba(255, 255, 255, 0.11);
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profileWrap {
+  position: relative;
+
+  padding-top: 14px;
+
+  margin-top: 10px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.16);
+}
+
+.profileButton {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 11px 10px;
+
+  border: none;
+  border-radius: 12px;
+
+  color: white;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.profileButton:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.profileButton > div {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+}
+
+.profileButton strong {
+  overflow: hidden;
+
+  font-size: 14px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profileButton small {
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 11px;
+}
+
+.profileMenu {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 9px);
+
+  z-index: 30;
+
+  padding: 10px;
+
+  border:
+    1px solid rgba(19, 64, 83, 0.08);
+
+  border-radius: 14px;
+
+  background: white;
+
+  color: #153e50;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.profileInfo {
+  padding: 8px 9px 10px;
+}
+
+.profileInfo strong {
+  display: block;
+
+  font-size: 14px;
+}
+
+.profileInfo small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8399a3;
+
+  font-size: 11px;
+}
+
+.profileMenu button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #fff4f4;
+
+  color: #c24141;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.main {
+  height: 100vh;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  flex: 1;
+
+  padding:
+    28px
+    clamp(20px, 3vw, 38px)
+    20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding:
+    17px
+    clamp(20px, 3vw, 38px)
+    24px;
+
+  border-top: 1px solid #e6eef1;
+
+  color: #8ca0aa;
+
+  font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .sidebar {
+    padding-inline: 10px;
+  }
+
+  .brand strong {
+    display: none;
+  }
+
+  .brandMark {
+    font-size: 28px;
+  }
+
+  .navLink span,
+  .groupButton > span > span,
+  .profileButton > div,
+  .profileButton > svg:last-child {
+    display: none;
+  }
+
+  .navLink,
+  .groupButton,
+  .profileButton {
+    justify-content: center;
+  }
+
+  .submenu {
+    margin-left: 0;
+  }
+
+  .submenu a {
+    font-size: 0;
+    text-align: center;
+  }
+
+  .submenu a::before {
+    content: "•";
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .shell {
+    height: auto;
+
+    display: block;
+
+    overflow: visible;
+  }
+
+  .sidebar {
+    position: relative;
+
+    width: auto;
+    height: auto;
+
+    margin: 0;
+
+    border-radius: 0;
+  }
+
+  .main {
+    height: auto;
+
+    overflow: visible;
+  }
+
+  .content {
+    padding: 20px 14px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-inline: 14px;
+  }
+}

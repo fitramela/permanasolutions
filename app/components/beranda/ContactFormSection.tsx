@@ -1,41 +1,106 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-
-import aspIcon from "@/public/images/asp.png";
-import ispIcon from "@/public/images/isp.png";
-import resourceIcon from "@/public/images/resource.png";
+import type { CmsSectionContent } from "@/app/services/cms";
 
 type ServiceItem = {
-  key: "asp" | "isp" | "resource";
-  imageSrc: StaticImageData;
-  imageAlt: string;
-  href: string;
+  key:
+    | "asp"
+    | "isp"
+    | "resource";
+
+  imageSrc:
+    string;
+
+  imageAlt:
+    string;
+
+  href:
+    string;
 };
 
-export const ContactFormSection = () => {
-  const t = useTranslations("Service");
+type Props = {
+  content?: CmsSectionContent;
+};
 
-  const services: ServiceItem[] = [
+function text(
+  content:
+    CmsSectionContent | undefined,
+  key: string
+) {
+  const value =
+    content?.[key];
+
+  return typeof value ===
+    "string"
+    ? value
+    : "";
+}
+
+export const ContactFormSection = ({
+  content,
+}: Props) => {
+  const services:
+    ServiceItem[] = [
     {
-      key: "asp",
-      imageSrc: aspIcon,
-      imageAlt: "ASP",
-      href: "/service/asp",
+      key:
+        "asp",
+
+      imageSrc:
+        text(
+          content,
+          "asp_image"
+        ),
+
+      imageAlt:
+        "ASP",
+
+      href:
+        text(
+          content,
+          "asp_href"
+        ),
     },
+
     {
-      key: "isp",
-      imageSrc: ispIcon,
-      imageAlt: "ISP",
-      href: "/service/isp",
+      key:
+        "isp",
+
+      imageSrc:
+        text(
+          content,
+          "isp_image"
+        ),
+
+      imageAlt:
+        "ISP",
+
+      href:
+        text(
+          content,
+          "isp_href"
+        ),
     },
+
     {
-      key: "resource",
-      imageSrc: resourceIcon,
-      imageAlt: "Consulting & Resource",
-      href: "/service/resource",
+      key:
+        "resource",
+
+      imageSrc:
+        text(
+          content,
+          "resource_image"
+        ),
+
+      imageAlt:
+        "Consulting & Resource",
+
+      href:
+        text(
+          content,
+          "resource_href"
+        ),
     },
   ];
 
@@ -46,87 +111,123 @@ export const ContactFormSection = () => {
       className="w-full bg-white py-20"
     >
       <div className="w-full">
+
         <div className="mx-auto w-full px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-24">
 
           {/* Heading */}
           <div className="mb-14">
+
             <h2
               id="service-heading"
               className="
-            text-4xl
-            font-bold
-            text-[#05638B]
-            drop-shadow-[0_5px_8px_rgba(0,0,0,0.25)]
-            md:text-5xl
-          "
+                text-4xl
+                font-bold
+                text-[#05638B]
+                drop-shadow-[0_5px_8px_rgba(0,0,0,0.25)]
+                md:text-5xl
+              "
             >
-              {t("title")}
+              {text(
+                content,
+                "title"
+              )}
             </h2>
+
           </div>
 
           {/* Background */}
-         <div
-  className="service-background relative w-full overflow-hidden rounded-[40px]"
->
+          <div className="service-background relative w-full overflow-hidden rounded-[40px]">
+
             {/* Overlay */}
             <div className="absolute inset-0 bg-white/35" />
 
             {/* Content */}
             <div className="relative z-10 flex min-h-[650px] items-center justify-center px-10 py-20 md:px-20">
+
               <div className="grid w-full grid-cols-1 place-items-center gap-10 md:grid-cols-3">
 
-                {services.map((service) => (
-                  <div
-                    key={service.key}
-                    className="flex flex-col items-center"
-                  >
-                    <div className="flex h-[290px] w-[290px] flex-col items-center justify-center rounded-full bg-[#19C5CB] p-8 shadow-xl">
-
-                      <h3 className="mb-6 whitespace-pre-line text-center text-2xl font-bold leading-tight text-white">
-                        {t(service.key)}
-                      </h3>
-
-                      <Image
-                        src={service.imageSrc}
-                        alt={service.imageAlt}
-                        width={110}
-                        height={110}
-                      />
-                    </div>
-
-                    <Link
-                      href={service.href}
-                      className="mt-6 rounded-full bg-white px-8 py-3 font-semibold text-[#05638B] shadow-lg transition hover:bg-gray-100"
+                {services.map(
+                  (
+                    service
+                  ) => (
+                    <div
+                      key={
+                        service.key
+                      }
+                      className="flex flex-col items-center"
                     >
-                      {t("seeMore")}
-                    </Link>
-                  </div>
-                ))}
+
+                      <div className="flex h-[290px] w-[290px] flex-col items-center justify-center rounded-full bg-[#19C5CB] p-8 shadow-xl">
+
+                        <h3 className="mb-6 whitespace-pre-line text-center text-2xl font-bold leading-tight text-white">
+                          {text(
+                            content,
+                            service.key
+                          )}
+                        </h3>
+
+                        {service.imageSrc && (
+                          <Image
+                            src={
+                              service.imageSrc
+                            }
+                            alt={
+                              service.imageAlt
+                            }
+                            width={
+                              110
+                            }
+                            height={
+                              110
+                            }
+                          />
+                        )}
+
+                      </div>
+
+                      {service.href && (
+                        <Link
+                          href={
+                            service.href
+                          }
+                          className="mt-6 rounded-full bg-white px-8 py-3 font-semibold text-[#05638B] shadow-lg transition hover:bg-gray-100"
+                        >
+                          {text(
+                            content,
+                            "seeMore"
+                          )}
+                        </Link>
+                      )}
+
+                    </div>
+                  )
+                )}
 
               </div>
             </div>
 
             {/* Bottom Curve */}
-            <div className="    absolute
-    left-1/2
-    -translate-x-1/2
-    rounded-[100%]
-    bg-white
+            <div
+              className="
+                absolute
+                left-1/2
+                -translate-x-1/2
+                rounded-[100%]
+                bg-white
 
-    -bottom-44
-    h-[320px]
+                -bottom-44
+                h-[320px]
 
-    w-[200%]
-    sm:w-[140%]
-    md:w-[125%]
-    lg:w-[108%]
-    xl:w-[105%]" />
+                w-[200%]
+                sm:w-[140%]
+                md:w-[125%]
+                lg:w-[108%]
+                xl:w-[105%]
+              "
+            />
+
           </div>
-
         </div>
-
-      
-
       </div>
     </section>
   );

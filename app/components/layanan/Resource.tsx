@@ -1,168 +1,465 @@
 "use client";
 
-import { useRef, useState } from "react";
-import Image, { type StaticImageData } from "next/image";
-import { useTranslations } from "next-intl";
+import {
+  useRef,
+  useState,
+} from "react";
 
-import image19 from "@/public/images/client/image 19.png";
-import image20 from "@/public/images/client/image 20.png";
-import image21 from "@/public/images/client/image 21.png";
-import image22 from "@/public/images/client/image 22.png";
-import image23 from "@/public/images/client/image 23.png";
-import image24 from "@/public/images/client/image 24.png";
-import image25 from "@/public/images/client/image 25.png";
-import image26 from "@/public/images/client/image 26.png";
-import image27 from "@/public/images/client/image 27.png";
-import image28 from "@/public/images/client/image 28.png";
-import image30 from "@/public/images/client/image 30.png";
-import image31 from "@/public/images/client/image 31.png";
-import image33 from "@/public/images/client/image 33.png";
-import image34 from "@/public/images/client/image 34.png";
-import image35 from "@/public/images/client/image 35.png";
-import image36 from "@/public/images/client/image 36.png";
-import image37 from "@/public/images/client/image 37.png";
-import image38 from "@/public/images/client/image 38.png";
-import image39 from "@/public/images/client/image 39.png";
-import image40 from "@/public/images/client/image 40.png";
+import Image from "next/image";
 
-type ClientLogo = {
-  src: StaticImageData;
-  alt: string;
+import type {
+  CmsClient,
+  CmsSectionContent,
+  CmsTechnology,
+} from "@/app/services/cms";
+
+type Props = {
+  content?: CmsSectionContent;
+  technologies?: CmsTechnology[];
+  clients?: CmsClient[];
 };
 
-const clients: ClientLogo[] = [
-  { src: image19, alt: "Client 19" },
-  { src: image20, alt: "Client 20" },
-  { src: image21, alt: "Client 21" },
-  { src: image22, alt: "Client 22" },
-  { src: image23, alt: "Client 23" },
-  { src: image24, alt: "Client 24" },
-  { src: image25, alt: "Client 25" },
-  { src: image26, alt: "Client 26" },
-  { src: image27, alt: "Client 27" },
-  { src: image28, alt: "Client 28" },
-  { src: image30, alt: "Client 30" },
-  { src: image31, alt: "Client 31" },
-  { src: image33, alt: "Client 33" },
-  { src: image34, alt: "Client 34" },
-  { src: image35, alt: "Client 35" },
-  { src: image36, alt: "Client 36" },
-  { src: image37, alt: "Client 37" },
-  { src: image38, alt: "Client 38" },
-  { src: image39, alt: "Client 39" },
-  { src: image40, alt: "Client 40" },
-];
+type StandOutCard = {
+  image: string;
+  title: string;
+  desc: string;
+};
 
-export default function Resource() {
-  const t = useTranslations("Resource");
+function text(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  key: string
+): string {
+  const value =
+    source?.[key];
 
-  const technologies = [
-    "/images/powering/react.png",
-    "/images/powering/node.png",
-    "/images/powering/laravel.png",
-    "/images/powering/android.png",
-    "/images/powering/flutter.png",
-    "/images/powering/net.png",
-    "/images/powering/py.png",
-    "/images/powering/postgresql.png",
-    "/images/powering/figma.png",
-    "/images/powering/selenium.png",
-    "/images/powering/mysql.png",
-    "/images/powering/jira.png",
-  ];
+  return typeof value ===
+    "string"
+    ? value
+    : "";
+}
 
-  const cards = t.raw("standOut.cards") as {
-    image: string;
-    title: string;
-    desc: string;
-  }[];
+function objectValue(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  key: string
+): Record<
+  string,
+  unknown
+> {
+  const value =
+    source?.[key];
 
-  /* =========================================================
-     WHY STAND OUT - CAROUSEL
-  ========================================================= */
+  if (
+    !value ||
+    typeof value !==
+      "object" ||
+    Array.isArray(value)
+  ) {
+    return {};
+  }
 
-  const scrollRef = useRef<HTMLDivElement>(null);
+  return value as Record<
+    string,
+    unknown
+  >;
+}
 
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
+function getStandOutCards(
+  standOut:
+    | Record<string, unknown>
+    | undefined
+): StandOutCard[] {
+  const raw =
+    standOut?.cards;
 
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [startScrollLeft, setStartScrollLeft] = useState(0);
+  if (!Array.isArray(raw)) {
+    return [];
+  }
 
-  const handleScroll = () => {
-    if (!scrollRef.current) return;
+  return raw
+    .filter(
+      (
+        item
+      ): item is Record<
+        string,
+        unknown
+      > =>
+        !!item &&
+        typeof item ===
+          "object" &&
+        !Array.isArray(item)
+    )
+    .map(
+      (item) => ({
+        image:
+          typeof item.image ===
+          "string"
+            ? item.image
+            : "",
 
-    const {
-      scrollLeft,
-      scrollWidth,
-      clientWidth,
-    } = scrollRef.current;
+        title:
+          typeof item.title ===
+          "string"
+            ? item.title
+            : "",
 
-    setShowLeftArrow(scrollLeft > 10);
-
-    setShowRightArrow(
-      scrollLeft + clientWidth < scrollWidth - 10
+        desc:
+          typeof item.desc ===
+          "string"
+            ? item.desc
+            : "",
+      })
     );
-  };
+}
 
-  /* ================= MOUSE DOWN ================= */
+/**
+ * CMS description Resource sekarang berbentuk:
+ *
+ * Mitra Tepercaya Anda dalam
+ * <managed>Layanan Terkelola</managed> &
+ * <outsourcing>Alih Daya</outsourcing>
+ *
+ * Function ini menjaga styling lama
+ * tanpa dangerouslySetInnerHTML.
+ */
+function ResourceDescription({
+  value,
+}: {
+  value: string;
+}) {
+  const managedMatch =
+    value.match(
+      /<managed>(.*?)<\/managed>/
+    );
 
+  const outsourcingMatch =
+    value.match(
+      /<outsourcing>(.*?)<\/outsourcing>/
+    );
+
+  if (
+    !managedMatch &&
+    !outsourcingMatch
+  ) {
+    return (
+      <>
+        {value}
+      </>
+    );
+  }
+
+  let remaining =
+    value;
+
+  const parts: React.ReactNode[] =
+    [];
+
+  let key =
+    0;
+
+  const regex =
+    /<(managed|outsourcing)>(.*?)<\/\1>/g;
+
+  let lastIndex =
+    0;
+
+  let match:
+    RegExpExecArray | null;
+
+  while (
+    (match =
+      regex.exec(
+        remaining
+      )) !== null
+  ) {
+    if (
+      match.index >
+      lastIndex
+    ) {
+      parts.push(
+        <span
+          key={
+            `text-${key++}`
+          }
+        >
+          {remaining.slice(
+            lastIndex,
+            match.index
+          )}
+        </span>
+      );
+    }
+
+    parts.push(
+      <span
+        key={
+          `highlight-${key++}`
+        }
+        className="font-regular text-[#05638B]"
+      >
+        {match[2]}
+      </span>
+    );
+
+    lastIndex =
+      regex.lastIndex;
+  }
+
+  if (
+    lastIndex <
+    remaining.length
+  ) {
+    parts.push(
+      <span
+        key={
+          `text-${key++}`
+        }
+      >
+        {remaining.slice(
+          lastIndex
+        )}
+      </span>
+    );
+  }
+
+  return (
+    <>
+      {parts}
+    </>
+  );
+}
+
+export default function Resource({
+  content,
+  technologies = [],
+  clients = [],
+}: Props) {
+  /**
+   * =========================================================
+   * CMS DATA
+   * =========================================================
+   */
+
+  const standOut =
+    objectValue(
+      content,
+      "standOut"
+    );
+
+  const powering =
+    objectValue(
+      content,
+      "powering"
+    );
+
+  const cards =
+    getStandOutCards(
+      standOut
+    );
+
+  const heroDesktopImage =
+    text(
+      content,
+      "hero_desktop_image"
+    );
+
+  const heroMobileImage =
+    text(
+      content,
+      "hero_mobile_image"
+    );
+
+  /**
+   * Hanya tampilkan row
+   * yang punya logo.
+   */
+  const validTechnologies =
+    technologies.filter(
+      (technology) =>
+        Boolean(
+          technology.logo_url
+        )
+    );
+
+  const validClients =
+    clients.filter(
+      (client) =>
+        Boolean(
+          client.logo_url
+        )
+    );
+
+  /**
+   * =========================================================
+   * WHY STAND OUT - CAROUSEL
+   * =========================================================
+   */
+
+  const scrollRef =
+    useRef<HTMLDivElement>(
+      null
+    );
+
+  const [
+    showLeftArrow,
+    setShowLeftArrow,
+  ] =
+    useState(false);
+
+  const [
+    showRightArrow,
+    setShowRightArrow,
+  ] =
+    useState(true);
+
+  const [
+    isDragging,
+    setIsDragging,
+  ] =
+    useState(false);
+
+  const [
+    startX,
+    setStartX,
+  ] =
+    useState(0);
+
+  const [
+    startScrollLeft,
+    setStartScrollLeft,
+  ] =
+    useState(0);
+
+  const handleScroll =
+    () => {
+      if (
+        !scrollRef.current
+      ) {
+        return;
+      }
+
+      const {
+        scrollLeft,
+        scrollWidth,
+        clientWidth,
+      } =
+        scrollRef.current;
+
+      setShowLeftArrow(
+        scrollLeft > 10
+      );
+
+      setShowRightArrow(
+        scrollLeft +
+          clientWidth <
+          scrollWidth -
+            10
+      );
+    };
+
+  /**
+   * MOUSE DOWN
+   */
   const handleMouseDown = (
     e: React.MouseEvent<HTMLDivElement>
   ) => {
-    if (!scrollRef.current) return;
+    if (
+      !scrollRef.current
+    ) {
+      return;
+    }
 
-    setIsDragging(true);
+    setIsDragging(
+      true
+    );
 
     setStartX(
-      e.pageX - scrollRef.current.offsetLeft
+      e.pageX -
+        scrollRef.current
+          .offsetLeft
     );
 
     setStartScrollLeft(
-      scrollRef.current.scrollLeft
+      scrollRef.current
+        .scrollLeft
     );
   };
 
-  /* ================= MOUSE MOVE ================= */
-
+  /**
+   * MOUSE MOVE
+   */
   const handleMouseMove = (
     e: React.MouseEvent<HTMLDivElement>
   ) => {
-    if (!isDragging || !scrollRef.current) return;
+    if (
+      !isDragging ||
+      !scrollRef.current
+    ) {
+      return;
+    }
 
     e.preventDefault();
 
     const x =
-      e.pageX - scrollRef.current.offsetLeft;
+      e.pageX -
+      scrollRef.current
+        .offsetLeft;
 
-    const walk = (x - startX) * 1.5;
+    const walk =
+      (x -
+        startX) *
+      1.5;
 
     scrollRef.current.scrollLeft =
-      startScrollLeft - walk;
+      startScrollLeft -
+      walk;
   };
 
-  /* ================= MOUSE UP ================= */
+  /**
+   * MOUSE UP
+   */
+  const handleMouseUp =
+    () => {
+      setIsDragging(
+        false
+      );
+    };
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
+  /**
+   * ARROWS
+   */
+  const scrollRight =
+    () => {
+      scrollRef.current?.scrollBy(
+        {
+          left:
+            320,
 
-  /* ================= ARROWS ================= */
+          behavior:
+            "smooth",
+        }
+      );
+    };
 
-  const scrollRight = () => {
-    scrollRef.current?.scrollBy({
-      left: 320,
-      behavior: "smooth",
-    });
-  };
+  const scrollLeft =
+    () => {
+      scrollRef.current?.scrollBy(
+        {
+          left:
+            -320,
 
-  const scrollLeft = () => {
-    scrollRef.current?.scrollBy({
-      left: -320,
-      behavior: "smooth",
-    });
-  };
+          behavior:
+            "smooth",
+        }
+      );
+    };
+
+  if (!content) {
+    return null;
+  }
 
   return (
     <main className="overflow-hidden bg-white">
@@ -183,7 +480,48 @@ export default function Resource() {
           2xl:h-[860px]
         "
       >
+
+        {/* ================= MOBILE BACKGROUND ================= */}
+
+        {heroMobileImage && (
+          <Image
+            src={
+              heroMobileImage
+            }
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="
+              object-cover
+              md:hidden
+            "
+          />
+        )}
+
+        {/* ================= DESKTOP BACKGROUND ================= */}
+
+        {heroDesktopImage && (
+          <Image
+            src={
+              heroDesktopImage
+            }
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="
+              hidden
+              object-cover
+              md:block
+            "
+          />
+        )}
+
+        {/* ================= HERO CONTENT ================= */}
+
         <div className="absolute inset-0">
+
           <div
             className="
               mx-auto
@@ -203,6 +541,7 @@ export default function Resource() {
               2xl:px-24
             "
           >
+
             <div
               className="
                 max-w-[320px]
@@ -215,24 +554,28 @@ export default function Resource() {
                 xl:max-w-[640px]
               "
             >
+
               {/* TITLE */}
 
-             <h1
-  className="
-    text-[28px]
-    font-extrabold
-    leading-[1.1]
-    text-[#04BCBC]
+              <h1
+                className="
+                  text-[28px]
+                  font-extrabold
+                  leading-[1.1]
+                  text-[#04BCBC]
 
-    sm:whitespace-nowrap
-    sm:text-[36px]
-    md:text-[40px]
-    lg:text-[40px]
-    xl:text-[40px]
-  "
->
-  {t("title")}
-</h1>
+                  sm:whitespace-nowrap
+                  sm:text-[36px]
+                  md:text-[40px]
+                  lg:text-[40px]
+                  xl:text-[40px]
+                "
+              >
+                {text(
+                  content,
+                  "title"
+                )}
+              </h1>
 
               {/* SUBTITLE */}
 
@@ -249,7 +592,10 @@ export default function Resource() {
                   xl:text-[30px]
                 "
               >
-                {t("subtitle")}
+                {text(
+                  content,
+                  "subtitle"
+                )}
               </h2>
 
               {/* DESCRIPTION */}
@@ -266,22 +612,20 @@ export default function Resource() {
                   lg:text-[16px]
                 "
               >
-                {t.rich("description", {
-                  managed: (chunks) => (
-                    <span className="font-regular text-[#05638B]">
-                      {chunks}
-                    </span>
-                  ),
-                  outsourcing: (chunks) => (
-                    <span className="font-regular text-[#05638B]">
-                      {chunks}
-                    </span>
-                  ),
-                })}
+                <ResourceDescription
+                  value={text(
+                    content,
+                    "description"
+                  )}
+                />
               </p>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
       {/* =====================================================
@@ -298,6 +642,7 @@ export default function Resource() {
           lg:py-20
         "
       >
+
         {/* LEFT DECORATION */}
 
         <div
@@ -345,9 +690,11 @@ export default function Resource() {
             2xl:px-20
           "
         >
+
           {/* TITLE */}
 
           <div className="mb-8 text-center sm:mb-10">
+
             <h2
               className="
                 text-2xl
@@ -356,7 +703,10 @@ export default function Resource() {
                 sm:text-4xl
               "
             >
-              {t("standOut.title")}
+              {text(
+                standOut,
+                "title"
+              )}
             </h2>
 
             <p
@@ -367,8 +717,12 @@ export default function Resource() {
                 sm:text-base
               "
             >
-              {t("standOut.subtitle")}
+              {text(
+                standOut,
+                "subtitle"
+              )}
             </p>
+
           </div>
 
           {/* =================================================
@@ -378,12 +732,24 @@ export default function Resource() {
           <div className="relative">
 
             <div
-              ref={scrollRef}
-              onScroll={handleScroll}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseUp}
+              ref={
+                scrollRef
+              }
+              onScroll={
+                handleScroll
+              }
+              onMouseDown={
+                handleMouseDown
+              }
+              onMouseMove={
+                handleMouseMove
+              }
+              onMouseUp={
+                handleMouseUp
+              }
+              onMouseLeave={
+                handleMouseUp
+              }
               className={`
                 flex
                 gap-9
@@ -398,101 +764,128 @@ export default function Resource() {
                 }
               `}
             >
-              {cards.map((item) => (
-                <div
-                  key={item.title}
-                  className="
-                    group
-                    relative
-                    h-[320px]
-                    w-[240px]
-                    flex-shrink-0
-                    overflow-hidden
-                    rounded-[24px]
-                    sm:h-[380px]
-                    sm:w-[290px]
-                  "
-                >
-                  {/* IMAGE */}
 
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    draggable={false}
-                    className="
-                      object-cover
-                      transition
-                      duration-500
-                      group-hover:scale-105
-                    "
-                  />
-
-                  {/* GRADIENT */}
-
+              {cards.map(
+                (
+                  item,
+                  index
+                ) => (
                   <div
+                    key={
+                      `${item.title}-${index}`
+                    }
                     className="
-                      pointer-events-none
-                      absolute
-                      inset-0
-                      bg-gradient-to-t
-                      from-[#05638B]
-                      via-[#05638B]/40
-                      to-transparent
-                    "
-                  />
-
-                  {/* TEXT */}
-
-                  <div
-                    className="
-                      absolute
-                      bottom-5
-                      left-5
-                      right-5
-                      text-white
-                      sm:bottom-6
-                      sm:left-6
-                      sm:right-6
+                      group
+                      relative
+                      h-[320px]
+                      w-[240px]
+                      flex-shrink-0
+                      overflow-hidden
+                      rounded-[24px]
+                      sm:h-[380px]
+                      sm:w-[290px]
                     "
                   >
-                    <h3
-                      className="
-                        select-text
-                        text-xl
-                        font-light
-                        sm:text-2xl
-                      "
-                    >
-                      {item.title}
-                    </h3>
+
+                    {/* IMAGE */}
+
+                    {item.image && (
+                      <Image
+                        src={
+                          item.image
+                        }
+                        alt={
+                          item.title
+                        }
+                        fill
+                        draggable={
+                          false
+                        }
+                        className="
+                          object-cover
+                          transition
+                          duration-500
+                          group-hover:scale-105
+                        "
+                      />
+                    )}
+
+                    {/* GRADIENT */}
 
                     <div
                       className="
-                        mt-0
-                        max-h-0
-                        overflow-hidden
-                        opacity-0
-                        transition-all
-                        duration-500
-                        group-hover:mt-3
-                        group-hover:max-h-40
-                        group-hover:opacity-100
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        bg-gradient-to-t
+                        from-[#05638B]
+                        via-[#05638B]/40
+                        to-transparent
+                      "
+                    />
+
+                    {/* TEXT */}
+
+                    <div
+                      className="
+                        absolute
+                        bottom-5
+                        left-5
+                        right-5
+                        text-white
+                        sm:bottom-6
+                        sm:left-6
+                        sm:right-6
                       "
                     >
-                      <p
+
+                      <h3
                         className="
                           select-text
-                          text-sm
-                          leading-6
+                          text-xl
+                          font-light
+                          sm:text-2xl
                         "
                       >
-                        {item.desc}
-                      </p>
+                        {
+                          item.title
+                        }
+                      </h3>
+
+                      <div
+                        className="
+                          mt-0
+                          max-h-0
+                          overflow-hidden
+                          opacity-0
+                          transition-all
+                          duration-500
+                          group-hover:mt-3
+                          group-hover:max-h-40
+                          group-hover:opacity-100
+                        "
+                      >
+
+                        <p
+                          className="
+                            select-text
+                            text-sm
+                            leading-6
+                          "
+                        >
+                          {
+                            item.desc
+                          }
+                        </p>
+
+                      </div>
+
                     </div>
+
                   </div>
-                </div>
-              ))}
+                )
+              )}
+
             </div>
 
             {/* =================================================
@@ -502,7 +895,9 @@ export default function Resource() {
             {showLeftArrow && (
               <button
                 type="button"
-                onClick={scrollLeft}
+                onClick={
+                  scrollLeft
+                }
                 aria-label="Scroll left"
                 className="
                   absolute
@@ -527,6 +922,7 @@ export default function Resource() {
                   md:w-12
                 "
               >
+
                 <span
                   className="
                     text-2xl
@@ -537,6 +933,7 @@ export default function Resource() {
                 >
                   ❮
                 </span>
+
               </button>
             )}
 
@@ -547,7 +944,9 @@ export default function Resource() {
             {showRightArrow && (
               <button
                 type="button"
-                onClick={scrollRight}
+                onClick={
+                  scrollRight
+                }
                 aria-label="Scroll right"
                 className="
                   absolute
@@ -572,6 +971,7 @@ export default function Resource() {
                   md:w-12
                 "
               >
+
                 <span
                   className="
                     text-2xl
@@ -582,11 +982,14 @@ export default function Resource() {
                 >
                   ❯
                 </span>
+
               </button>
             )}
 
           </div>
+
         </div>
+
       </section>
 
       {/* =====================================================
@@ -594,85 +997,161 @@ export default function Resource() {
       ===================================================== */}
 
       <section className="relative overflow-hidden py-16">
+
         <div className="bg-[#05BDBD] py-4">
+
           <h2 className="text-center text-2xl font-bold text-white">
-            {t("powering.title")}
+            {text(
+              powering,
+              "title"
+            )}
           </h2>
+
         </div>
 
-        <div className="overflow-hidden py-10">
-          <div className="marquee flex w-max gap-8">
-            {[...technologies, ...technologies].map(
-              (logo, index) => (
-                <div
-                  key={index}
-                  className="
-                    flex
-                    h-24
-                    w-24
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-white
-                    shadow-lg
-                  "
-                >
-                  <Image
-                    src={logo}
-                    alt=""
-                    width={100}
-                    height={100}
-                    className="object-contain"
-                  />
-                </div>
-              )
-            )}
+        {validTechnologies.length >
+          0 && (
+          <div className="overflow-hidden py-10">
+
+            <div className="marquee flex w-max gap-8">
+
+              {[
+                ...validTechnologies,
+                ...validTechnologies,
+              ].map(
+                (
+                  technology,
+                  index
+                ) => (
+                  <div
+                    key={
+                      `${technology.id}-${index}`
+                    }
+                    className="
+                      flex
+                      h-24
+                      w-24
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-white
+                      shadow-lg
+                    "
+                  >
+
+                    <Image
+                      src={
+                        technology.logo_url!
+                      }
+                      alt={
+                        technology.name
+                      }
+                      width={
+                        100
+                      }
+                      height={
+                        100
+                      }
+                      className="
+                        h-auto
+                        max-h-[80px]
+                        w-auto
+                        max-w-[80px]
+                        object-contain
+                      "
+                    />
+
+                  </div>
+                )
+              )}
+
+            </div>
+
           </div>
-        </div>
+        )}
+
       </section>
 
       {/* =====================================================
           CLIENT
       ===================================================== */}
 
-      <section className="relative overflow-hidden py-3">
-        <div className="overflow-hidden py-10">
-          <div
-            className="animate-scroll flex w-max gap-8"
-            style={{
-              animationDuration: "15s",
-              animationTimingFunction: "linear",
-              animationIterationCount: "infinite",
-            }}
-          >
-            {[...technologies, ...technologies].map(
-              (logo, index) => (
-                <div
-                  key={index}
-                  className="
-                    flex
-                    h-24
-                    w-24
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-white
-                    shadow-lg
-                  "
-                >
-                  <Image
-                    src={logo}
-                    alt=""
-                    width={100}
-                    height={100}
-                    className="object-contain"
-                  />
-                </div>
-              )
-            )}
+      {validClients.length >
+        0 && (
+        <section className="relative overflow-hidden py-3">
+
+          <div className="overflow-hidden py-10">
+
+            <div
+              className="animate-scroll flex w-max gap-8"
+              style={{
+                animationDuration:
+                  "15s",
+
+                animationTimingFunction:
+                  "linear",
+
+                animationIterationCount:
+                  "infinite",
+              }}
+            >
+
+              {[
+                ...validClients,
+                ...validClients,
+              ].map(
+                (
+                  client,
+                  index
+                ) => (
+                  <div
+                    key={
+                      `${client.id}-${index}`
+                    }
+                    className="
+                      flex
+                      h-24
+                      w-24
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-white
+                      shadow-lg
+                    "
+                  >
+
+                    <Image
+                      src={
+                        client.logo_url!
+                      }
+                      alt={
+                        client.name
+                      }
+                      width={
+                        100
+                      }
+                      height={
+                        100
+                      }
+                      className="
+                        h-auto
+                        max-h-[80px]
+                        w-auto
+                        max-w-[80px]
+                        object-contain
+                      "
+                    />
+
+                  </div>
+                )
+              )}
+
+            </div>
+
           </div>
-        </div>
-      </section>
+
+        </section>
+      )}
 
     </main>
   );

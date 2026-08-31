@@ -1,15 +1,89 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 
-export default function HeroAboutUs() {
-  const t = useTranslations("About");
+import type {
+  CmsSectionContent,
+} from "@/app/services/cms";
+
+type Props = {
+  content?: CmsSectionContent;
+};
+
+function objectValue(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  key: string
+): Record<string, unknown> {
+  const value =
+    source?.[key];
+
+  if (
+    !value ||
+    typeof value !==
+      "object" ||
+    Array.isArray(value)
+  ) {
+    return {};
+  }
+
+  return value as Record<
+    string,
+    unknown
+  >;
+}
+
+function text(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  key: string
+): string {
+  const value =
+    source?.[key];
+
+  return typeof value ===
+    "string"
+    ? value
+    : "";
+}
+
+export default function HeroAboutUs({
+  content,
+}: Props) {
+  const hero =
+    objectValue(
+      content,
+      "hero"
+    );
+
+  const desktopImage =
+    text(
+      hero,
+      "desktop_image"
+    ) ||
+    "/images/cchero.png";
+
+  const mobileImage =
+    text(
+      hero,
+      "mobile_image"
+    ) ||
+    "/images/herohp.png";
+
+  const decorationImage =
+    text(
+      hero,
+      "decoration_image"
+    ) ||
+    "/images/Decore.png";
 
   return (
     <main className="overflow-x-hidden bg-white">
 
       {/* ================= HERO ================= */}
+
       <section
         className="
           relative
@@ -22,9 +96,12 @@ export default function HeroAboutUs() {
       >
 
         {/* ================= BACKGROUND DESKTOP ================= */}
+
         <Image
-          src="/images/bgTK.png"
-          alt="Solutions Hero Desktop"
+          src={
+            desktopImage
+          }
+          alt="About Permana Solutions"
           fill
           priority
           className="
@@ -38,8 +115,11 @@ export default function HeroAboutUs() {
         />
 
         {/* ================= BACKGROUND MOBILE ================= */}
+
         <Image
-          src="/images/herohp.png"
+          src={
+            mobileImage
+          }
           alt="About Permana Solutions Mobile"
           fill
           priority
@@ -52,6 +132,7 @@ export default function HeroAboutUs() {
         />
 
         {/* ================= CONTENT ================= */}
+
         <div
           className="
             relative
@@ -68,7 +149,8 @@ export default function HeroAboutUs() {
           "
         >
 
-          {/* ================= DESKTOP CONTENT ================= */}
+          {/* ================= DESKTOP ================= */}
+
           <div
             className="
               hidden
@@ -79,7 +161,6 @@ export default function HeroAboutUs() {
             "
           >
 
-            {/* TITLE */}
             <h1
               className="
                 text-[58px]
@@ -88,10 +169,12 @@ export default function HeroAboutUs() {
                 text-white
               "
             >
-              {t("hero.title")}
+              {text(
+                hero,
+                "title"
+              )}
             </h1>
 
-            {/* DESCRIPTION */}
             <p
               className="
                 mt-8
@@ -101,13 +184,17 @@ export default function HeroAboutUs() {
                 text-white/95
               "
             >
-              {t("hero.description")}
+              {text(
+                hero,
+                "description"
+              )}
             </p>
 
-            {/* DECORATION */}
             <Image
-              src="/images/Decore.png"
-              alt="Line Decoration"
+              src={
+                decorationImage
+              }
+              alt=""
               width={750}
               height={8}
               priority
@@ -119,9 +206,11 @@ export default function HeroAboutUs() {
                 pointer-events-none
               "
             />
+
           </div>
 
-          {/* ================= MOBILE / TABLET CONTENT ================= */}
+          {/* ================= MOBILE / TABLET ================= */}
+
           <div
             className="
               absolute
@@ -133,7 +222,6 @@ export default function HeroAboutUs() {
             "
           >
 
-            {/* TITLE */}
             <h1
               className="
                 max-w-[240px]
@@ -146,10 +234,12 @@ export default function HeroAboutUs() {
                 sm:text-[40px]
               "
             >
-              {t("hero.title")}
+              {text(
+                hero,
+                "title"
+              )}
             </h1>
 
-            {/* DESCRIPTION */}
             <p
               className="
                 mt-1
@@ -161,13 +251,17 @@ export default function HeroAboutUs() {
                 sm:text-[13px]
               "
             >
-              {t("hero.description")}
+              {text(
+                hero,
+                "description"
+              )}
             </p>
 
-            {/* DECORATION */}
             <Image
-              src="/images/Decore.png"
-              alt="Line Decoration"
+              src={
+                decorationImage
+              }
+              alt=""
               width={330}
               height={8}
               priority
@@ -180,10 +274,13 @@ export default function HeroAboutUs() {
                 sm:w-[330px]
               "
             />
+
           </div>
 
         </div>
+
       </section>
+
     </main>
   );
 }

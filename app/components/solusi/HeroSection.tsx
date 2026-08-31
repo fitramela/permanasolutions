@@ -1,174 +1,213 @@
-    "use client";
+"use client";
 
-    import Image from "next/image";
-    import Link from "next/link";
-    import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
 
-    export default function Solutions() {
-      const t = useTranslations("Solutions.hero");
-      const locale = useLocale();
+type HeroContent = {
+  title?: string;
+  description?: string;
+  profileButton?: string;
+  contactButton?: string;
 
-      const companyProfile =
-        locale === "en"
-      ? "/Compro English Permana 2026 Partnerships .pdf"
-      : "/Compro Indo Permana 2026 Partnerships .pdf";
+  desktop_image?: string;
+  mobile_image?: string;
 
-      return (
-        <main className="overflow-x-hidden bg-white">
-          {/* ================= HERO ================= */}
+  company_profile_id?: string;
+  company_profile_en?: string;
 
-          <section
+  contact_href?: string;
+};
+
+type Props = {
+  content?: HeroContent;
+  locale: string;
+};
+
+export default function Solutions({
+  content,
+  locale,
+}: Props) {
+  if (!content) {
+    return null;
+  }
+
+  const companyProfile =
+    locale === "en"
+      ? content.company_profile_en
+      : content.company_profile_id;
+
+  return (
+    <main className="overflow-x-hidden bg-white">
+      {/* ================= HERO ================= */}
+
+      <section
+        className="
+          relative
+          h-[600px]
+          overflow-hidden
+          sm:h-[650px]
+          md:h-[720px]
+        "
+      >
+        {/* ================= BACKGROUND DESKTOP ================= */}
+
+        {content.desktop_image && (
+          <Image
+            src={content.desktop_image}
+            alt="Solutions Hero Desktop"
+            fill
+            priority
+            className="hidden object-cover md:block"
+          />
+        )}
+
+        {/* ================= BACKGROUND MOBILE ================= */}
+
+        {content.mobile_image && (
+          <Image
+            src={content.mobile_image}
+            alt="Solutions Hero Mobile"
+            fill
+            priority
+            className="object-cover md:hidden"
+          />
+        )}
+
+        {/* ================= CONTENT ================= */}
+
+        <div
+          className="
+            relative
+            mx-auto
+            flex
+            h-full
+            max-w-[1440px]
+            items-center
+            justify-center
+            px-5
+            sm:px-6
+            lg:px-16
+          "
+        >
+          <div
             className="
-              relative
-              h-[600px]
-              overflow-hidden
-              sm:h-[650px]
-              md:h-[720px]
+              max-w-[820px]
+              text-center
+              text-white
             "
           >
-            {/* ================= BACKGROUND DESKTOP ================= */}
-            <Image
-              src="/images/solutions new.png"
-              alt="Solutions Hero Desktop"
-              fill
-              priority
-              className="hidden object-cover md:block"
-            />
+            {/* TITLE */}
 
-            {/* ================= BACKGROUND MOBILE ================= */}
-            <Image
-              src="/images/solutions-mobile.png"
-              alt="Solutions Hero Mobile"
-              fill
-              priority
-              className="object-cover md:hidden"
-            />
-
-            {/* ================= CONTENT ================= */}
-            <div
+            <h1
               className="
-                relative
-                mx-auto
-                flex
-                h-full
-                max-w-[1440px]
-                items-center
-                justify-center
-                px-5
-                sm:px-6
-                lg:px-16
+                text-3xl
+                font-bold
+                leading-tight
+                sm:text-4xl
+                md:text-6xl
               "
             >
-              <div
-                className="
-                  max-w-[820px]
-                  text-center
-                  text-white
-                "
-              >
-                {/* TITLE */}
-                <h1
+              {content.title}
+            </h1>
+
+            {/* DESCRIPTION */}
+
+            <p
+              className="
+                mx-auto
+                mt-4
+                max-w-[720px]
+                text-sm
+                leading-7
+                text-white/90
+                sm:mt-5
+                sm:text-base
+                sm:leading-8
+                md:mt-6
+                md:text-lg
+              "
+            >
+              {content.description}
+            </p>
+
+            {/* BUTTONS */}
+
+            <div
+              className="
+                mt-7
+                flex
+                flex-row
+                flex-wrap
+                items-center
+                justify-center
+                gap-2.5
+                sm:mt-8
+                sm:gap-3
+                md:mt-10
+                md:gap-4
+              "
+            >
+              {/* COMPANY PROFILE */}
+
+              {companyProfile && (
+                <a
+                  href={companyProfile}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
-                    text-3xl
-                    font-bold
-                    leading-tight
-                    sm:text-4xl
-                    md:text-6xl
+                    rounded-lg
+                    border
+                    border-white/30
+                    bg-[#00628D]/30
+                    px-4
+                    py-2
+                    text-xs
+                    font-medium
+                    text-white
+                    backdrop-blur-md
+                    transition-all
+                    duration-300
+                    hover:bg-[#00628D]/50
+                    sm:px-5
+                    sm:py-2.5
+                    sm:text-sm
                   "
                 >
-                  {t("title")}
-                </h1>
+                  {content.profileButton}
+                </a>
+              )}
 
-                {/* DESCRIPTION */}
-                <p
+              {/* CONTACT */}
+
+              {content.contact_href && (
+                <Link
+                  href={content.contact_href}
                   className="
-                    mx-auto
-                    mt-4
-                    max-w-[720px]
-                    text-sm
-                    leading-7
-                    text-white/90
-                    sm:mt-5
-                    sm:text-base
-                    sm:leading-8
-                    md:mt-6
-                    md:text-lg
+                    rounded-lg
+                    border
+                    border-white/30
+                    bg-white/20
+                    px-4
+                    py-2
+                    text-xs
+                    font-medium
+                    text-white
+                    backdrop-blur-md
+                    transition-all
+                    duration-300
+                    hover:bg-white/15
+                    sm:px-5
+                    sm:py-2.5
+                    sm:text-sm
                   "
                 >
-                  {t("description")}
-                </p>
-
-                {/* BUTTONS */}
-                <div
-                  className="
-                    mt-7
-                    flex
-                    flex-row
-                    flex-wrap
-                    items-center
-                    justify-center
-                    gap-2.5
-                    sm:mt-8
-                    sm:gap-3
-                    md:mt-10
-                    md:gap-4
-                  "
-                >
-                  {/* COMPANY PROFILE */}
-                  <a
-                    href={companyProfile}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      rounded-lg
-                      border
-                      border-white/30
-                      bg-[#00628D]/30
-                      px-4
-                      py-2
-                      text-xs
-                      font-medium
-                      text-white
-                      backdrop-blur-md
-                      transition-all
-                      duration-300
-                      hover:bg-[#00628D]/50
-                      sm:px-5
-                      sm:py-2.5
-                      sm:text-sm
-                    "
-                  >
-                    {t("profileButton")}
-                  </a>
-
-                  {/* CONTACT */}
-                  <Link
-                    href="/contact"
-                    className="
-                      rounded-lg
-                      border
-                      border-white/30
-                      bg-white/20
-                      px-4
-                      py-2
-                      text-xs
-                      font-medium
-                      text-white
-                      backdrop-blur-md
-                      transition-all
-                      duration-300
-                      hover:bg-white/15
-                      sm:px-5
-                      sm:py-2.5
-                      sm:text-sm
-                    "
-                  >
-                    {t("contactButton")}
-                  </Link>
-                </div>
-              </div>
+                  {content.contactButton}
+                </Link>
+              )}
             </div>
-          </section>
-        </main>
-      );
-    }
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
