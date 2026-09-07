@@ -553,7 +553,8 @@ export default function AboutContent() {
 
         md:-mt-[250px]
 
-        lg:-mt-[310px]
+        lg:-mt-[210px]
+        2xl:-mt-[360px]
       "
     >
 
@@ -701,6 +702,9 @@ export default function AboutContent() {
 
             lg:pt-[120px]
             lg:pb-[140px]
+
+            2xl:pt-[20px]
+            2xl:pb-[90px]
           "
         >
 
@@ -738,9 +742,13 @@ export default function AboutContent() {
                 md:left-[-320px]
                 md:w-[680px]
 
-                lg:left-[-580px]
+                lg:left-[-650px]
                 lg:top-[-90px]
                 lg:w-[840px]
+
+                2xl:left-[-650px]
+                2xl:top-[-20px]
+                2xl:w-[840px]
 
                 h-auto
 
@@ -767,9 +775,12 @@ export default function AboutContent() {
 
                 md:text-[32px]
 
-                lg:left-[-25px]
+                lg:left-[-55px]
                 lg:top-[-25px]
                 lg:text-[32px]
+
+                2xl:left-[-55px]
+                2xl:top-[35px]
               "
             >
               {t("ourProfile.title")}
@@ -780,7 +791,8 @@ export default function AboutContent() {
             className="
               mt-[5px]
 
-              lg:mt-[-30px]
+              lg:mt-[18px]
+              2xl:mt-[24px]
 
               flex
               justify-center
@@ -905,27 +917,38 @@ export default function AboutContent() {
                 LOGO DAN SAMBUNGAN TERPISAH
             ================================================= */}
 
+            {/* =================================================
+                DESKTOP VIEWPORT ANCHOR
+                Tetap menempel di pojok kanan walau zoom berubah.
+            ================================================= */}
             <div
               className="
                 hidden
-                lg:flex
+                lg:block
 
                 absolute
-
-                items-center
-                justify-end
-
                 pointer-events-none
                 select-none
               "
               style={{
-                right:
-                  `${DESKTOP_LOGO_CONFIG.wrapper.right}px`,
-
-                top:
-                  `${DESKTOP_LOGO_CONFIG.wrapper.top}px`,
+                left: "calc(50% - 50vw)",
+                top: `${DESKTOP_LOGO_CONFIG.wrapper.top}px`,
+                width: "100vw",
+                height: `${DESKTOP_LOGO_CONFIG.connector.height + 40}px`,
               }}
             >
+              <div
+                className="
+                  absolute
+                  flex
+                  items-center
+                  justify-end
+                "
+                style={{
+                  right: "-145px",
+                  top: 0,
+                }}
+              >
 
               {/* =================================================
                   LOGO PERMANA DESKTOP
@@ -1045,6 +1068,7 @@ export default function AboutContent() {
 
               </div>
 
+              </div>
             </div>
 
             {/* =================================================
@@ -1131,7 +1155,7 @@ export default function AboutContent() {
 
             md:py-[125px]
 
-            lg:py-[170px]
+            lg:py-[135px]
           "
         >
 
@@ -1154,9 +1178,7 @@ export default function AboutContent() {
               md:left-[-235px]
               md:w-[550px]
 
-              lg:left-[-270px]
-              lg:top-[5px]
-              lg:w-[630px]
+              lg:hidden
 
               h-auto
 
@@ -1164,6 +1186,60 @@ export default function AboutContent() {
               select-none
             "
           />
+
+          {/* =================================================
+              VISION & MISSION DESKTOP VIEWPORT ANCHOR
+              Bentuk tetap seperti desain awal dan selalu nempel kiri.
+          ================================================= */}
+          <div
+            className="
+              hidden
+              lg:block
+
+              absolute
+              top-0
+              z-[5]
+
+              pointer-events-none
+              select-none
+            "
+            style={{
+              left: "calc(50% - 50vw)",
+              width: "100vw",
+              height: "220px",
+            }}
+          >
+            <Image
+              src="/images/visimisits.png"
+              alt=""
+              width={1800}
+              height={450}
+              priority
+              className="
+                absolute
+                left-[-150px]
+                top-[5px]
+                w-[630px]
+                h-auto
+                select-none
+              "
+            />
+
+            <h2
+              className="
+                absolute
+                left-[55px]
+                top-[58px]
+
+                text-[40px]
+                leading-[1.05]
+                text-[#005D86]
+                font-bold
+              "
+            >
+              {t("visionMission.title")}
+            </h2>
+          </div>
 
           <div
             className="
@@ -1212,11 +1288,7 @@ export default function AboutContent() {
 
                   md:text-[38px]
 
-                  lg:absolute
-                  lg:left-[-40px]
-                  lg:top-[-110px]
-                  lg:text-[40px]
-                  lg:leading-[1.05]
+                  lg:hidden
                 "
               >
                 {t("visionMission.title")}
