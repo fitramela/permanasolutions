@@ -1,7 +1,7 @@
   {
   "Hero": {
   "heading1": "Memberdayakan Bisnis Melalui",
-  "heading2": "Teknologi, Konektivitas & Keahlian",
+  "heading2": "Teknologi, Konektivitas & Solusi",
     "partner": "Mitra Kami",
     "customer": "Pelanggan Kami",
     "employee": "Karyawan"
@@ -220,10 +220,11 @@
   "seeMore": "Selengkapnya",
   "asp": "ASP",
   "isp": "ISP",
-  "resource": "Consulting\n&\nResource"
+  "resource": "Konsultasi\n&\nLayanan Profesional"
 },
 
- "Asp": {
+ 
+"Asp": {
     "title": "ASP",
     "subtitle": "Application Service Provider",
     "description": "Build Dynamic Web Applications with ASP",
@@ -238,213 +239,241 @@
     "seeMore": "see more...",
 
     "primeDescription": "Manage your business smarter, faster, and more efficiently.",
-    "primeTeamsDescription": "Digital form solution to streamline every business process.",
-    "primeRestoDescription": "Smart asset and inventory management system.",
-    "primeCafeDescription": "Modern POS solution for cafés and restaurants.",
-    "primeCareDescription": "Integrated healthcare management platform.",
-    "primeEduDescription": "Digital education management system.",
-    "primeCourseDescription": "Complete organization management platform.",
-    "petPuffyDescription": "Smart pet care management solution.",
+    "primeJulaDescription": "Solusi Cerdas, Transaksi Lancar.",
+    "primeTeamsDescription": "Kolaborasi Cerdas, Proyek Tuntas.",
+    "primeRestoDescription": "Solusi POS untuk Bisnis Lebih Mudah.",
+    "primeCafeDescription": "Solusi Cerdas, Bisnis Lancar.",
+    "primeCareDescription": "Solusi Terintegrasi, Layanan Lebih Efisien.",
+    "primeEduDescription": "Solusi Cerdas, Sekolah Lebih Terintegrasi.",
+    "primeCourseDescription": "Solusi Cerdas, Pembelajaran Lebih Mudah.",
+    "petPuffyDescription": "Solusi Cerdas, Petshop Lebih Mudah.",
+
+    "videoUnavailable": "Video belum tersedia",
 
     "primebiz": {
-      "items": [
-        {
-          "title": "PrimeBiz is an integrated ERP platform.",
-          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
-        },
-        {
-          "title": "Complete operational modules.",
-          "description": "All business operations are connected in real time."
-        },
-        {
-          "title": "Increase productivity.",
-          "description": "Automation reduces repetitive work and improves efficiency."
-        },
-        {
-          "title": "Flexible for every business.",
-          "description": "Suitable for small businesses up to enterprise companies."
-        },
-        {
-          "title": "Easy implementation.",
-          "description": "Starts from consultation, implementation, and user training."
-        }
-      ]
+  "items": [
+    {
+      "title": "PrimeBiz adalah platform ERP terintegrasi yang membantu bisnis mengelola operasional dalam satu sistem secara real-time.",
+      "description": "PrimeBiz menyatukan berbagai proses bisnis seperti keuangan, HR, penjualan, dan operasional dalam satu dashboard terpusat sehingga monitoring dan pengambilan keputusan menjadi lebih cepat dan akurat."
     },
-
-    "primeteams": {
-      "items": [
-        {
-          "title": "Digital Forms.",
-          "description": "Create and manage digital forms with ease."
-        },
-        {
-          "title": "Workflow Automation.",
-          "description": "Automate approval and submission processes."
-        },
-        {
-          "title": "Real-time Submission.",
-          "description": "Monitor submitted forms instantly."
-        },
-        {
-          "title": "Cloud Storage.",
-          "description": "Store every form securely in the cloud."
-        },
-        {
-          "title": "Easy Reporting.",
-          "description": "Generate reports from collected data."
-        }
-      ]
+    {
+      "title": "PrimeBiz menyediakan berbagai modul utama untuk kebutuhan operasional bisnis.",
+      "description": "Modul yang tersedia meliputi HR, Finance, Project Management, Sales, Purchasing, dan Warehouse yang dapat disesuaikan dengan kebutuhan perusahaan."
     },
-
-    "primeresto": {
-      "items": [
-        {
-          "title": "Asset Management.",
-          "description": "Manage company assets efficiently."
-        },
-        {
-          "title": "Inventory Tracking.",
-          "description": "Track stock movement in real time."
-        },
-        {
-          "title": "Maintenance Schedule.",
-          "description": "Plan maintenance automatically."
-        },
-        {
-          "title": "QR Code Integration.",
-          "description": "Scan assets quickly with QR codes."
-        },
-        {
-          "title": "Comprehensive Reports.",
-          "description": "Access complete asset reports anytime."
-        }
-      ]
+    {
+      "title": "PrimeBiz membantu meningkatkan efisiensi dan produktivitas bisnis.",
+      "description": "Dengan otomatisasi proses kerja dan integrasi data, PrimeBiz mengurangi pekerjaan manual, meminimalkan kesalahan, dan menyediakan data yang akurat untuk mendukung pengambilan keputusan strategis."
     },
-
-    "primecafe": {
-      "items": [
-        {
-          "title": "Restaurant POS.",
-          "description": "Fast and reliable cashier system."
-        },
-        {
-          "title": "Kitchen Display.",
-          "description": "Orders are sent directly to the kitchen."
-        },
-        {
-          "title": "Sales Analytics.",
-          "description": "View sales performance in real time."
-        },
-        {
-          "title": "Inventory Integration.",
-          "description": "Stock updates automatically after every sale."
-        },
-        {
-          "title": "Multi Outlet.",
-          "description": "Manage multiple branches from one dashboard."
-        }
-      ]
+    {
+      "title": "PrimeBiz dirancang fleksibel untuk berbagai skala bisnis.",
+      "description": "Solusi ini cocok digunakan oleh UMKM, perusahaan menengah, hingga perusahaan besar karena dapat disesuaikan dengan kebutuhan operasional dan perkembangan bisnis."
     },
-
-    "primecare": {
-      "items": [
-        {
-          "title": "Patient Management.",
-          "description": "Manage patient records digitally."
-        },
-        {
-          "title": "Doctor Scheduling.",
-          "description": "Organize appointments efficiently."
-        },
-        {
-          "title": "Medical Records.",
-          "description": "Secure electronic medical records."
-        },
-        {
-          "title": "Billing System.",
-          "description": "Integrated healthcare billing."
-        },
-        {
-          "title": "Healthcare Reports.",
-          "description": "Generate medical reports instantly."
-        }
-      ]
-    },
-
-    "primeedu": {
-      "items": [
-        {
-          "title": "Student Management.",
-          "description": "Manage student information easily."
-        },
-        {
-          "title": "Attendance.",
-          "description": "Digital attendance management."
-        },
-        {
-          "title": "Online Grading.",
-          "description": "Manage grades in one platform."
-        },
-        {
-          "title": "Learning Management.",
-          "description": "Support online learning activities."
-        },
-        {
-          "title": "Parent Portal.",
-          "description": "Parents can monitor student progress."
-        }
-      ]
-    },
-
-    "primecourse": {
-      "items": [
-        {
-          "title": "Organization Management.",
-          "description": "Manage organization activities centrally."
-        },
-        {
-          "title": "Collaboration Tools.",
-          "description": "Improve team collaboration."
-        },
-        {
-          "title": "Workflow Automation.",
-          "description": "Automate daily operational tasks."
-        },
-        {
-          "title": "Real-time Dashboard.",
-          "description": "Monitor activities anytime."
-        },
-        {
-          "title": "Enterprise Security.",
-          "description": "Protected with enterprise-grade security."
-        }
-      ]
-    },
-
-    "petpuffy": {
-      "items": [
-        {
-          "title": "Pet Management.",
-          "description": "Manage pet data digitally."
-        },
-        {
-          "title": "Vaccination Reminder.",
-          "description": "Automatic reminders for vaccinations."
-        },
-        {
-          "title": "Medical Records.",
-          "description": "Complete health records for every pet."
-        },
-        {
-          "title": "Grooming Schedule.",
-          "description": "Manage grooming appointments."
-        },
-        {
-          "title": "Owner Portal.",
-          "description": "Owners can access pet information online."
-        }
-      ]
+    {
+      "title": "Memulai PrimeBiz menjadi lebih mudah dengan konsultasi awal.",
+      "description": "Anda dapat menghubungi tim PrimeBiz untuk berkonsultasi, melihat demo produk, dan mendapatkan panduan implementasi yang sesuai dengan kebutuhan bisnis."
     }
+  ]
+},
+
+"primejula": {
+  "items": [
+    {
+      "title": "Jula memudahkan proses penjualan dan pembayaran.",
+      "description": "Jula memudahkan proses penjualan dan pembayaran agar operasional bisnis lebih cepat dan terorganisir."
+    },
+    {
+      "title": "Jula mendukung berbagai metode pembayaran.",
+      "description": "Mulai dari cash, kartu, hingga pembayaran melalui transfer dan metode digital lainnya dapat dikelola dengan lebih praktis."
+    },
+    {
+      "title": "Jula membantu mempercepat proses transaksi.",
+      "description": "Sistem yang praktis membantu kasir bekerja lebih cepat sekaligus mengurangi kesalahan dalam proses transaksi."
+    },
+    {
+      "title": "Jula memudahkan pemantauan penjualan dan aktivitas operasional.",
+      "description": "Data transaksi yang tercatat dalam sistem memudahkan pemilik bisnis dalam memantau penjualan dan aktivitas operasional."
+    },
+    {
+      "title": "Jula dapat disesuaikan dengan kebutuhan operasional bisnis.",
+      "description": "Dengan fitur yang mendukung transaksi dan pembayaran, Jula dapat disesuaikan dengan kebutuhan operasional bisnis."
+    }
+  ]
+},
+
+"primeteams": {
+  "items": [
+    {
+      "title": "PrimeTeams adalah solusi PMaaS yang membantu mengelola proyek dalam satu platform terintegrasi.",
+      "description": "PrimeTeams dirancang untuk memudahkan perusahaan mengelola operasional proyek, koordinasi tim, dan pemantauan progres secara real-time agar pekerjaan lebih terstruktur dan efisien."
+    },
+    {
+      "title": "PrimeTeams menyediakan fitur utama untuk mendukung pengelolaan proyek dan tim.",
+      "description": "Fitur yang tersedia meliputi Project Management, Recruitment Management, dan Sales & Prospect Management untuk membantu mengelola proyek dari awal hingga pelaksanaan."
+    },
+    {
+      "title": "PrimeTeams membantu meningkatkan produktivitas dan efisiensi tim.",
+      "description": "Dengan alur kerja yang terintegrasi, PrimeTeams memudahkan kolaborasi, mempercepat pengambilan keputusan, dan memastikan setiap proyek berjalan sesuai target dan timeline."
+    },
+    {
+      "title": "PrimeTeams cocok untuk berbagai perusahaan yang mengelola proyek secara dinamis.",
+      "description": "Solusi ini ideal untuk perusahaan kecil hingga besar yang membutuhkan sistem terpusat untuk mengelola tim, sumber daya, dan progres proyek secara efektif."
+    },
+    {
+      "title": "Memulai PrimeTeams dapat dilakukan melalui konsultasi awal dengan tim terkait.",
+      "description": "Anda dapat menghubungi tim PrimeTeams untuk berkonsultasi mengenai kebutuhan bisnis, mencoba demo produk, dan mendapatkan panduan implementasi yang sesuai dengan alur kerja perusahaan."
+    }
+  ]
+},
+
+"primeresto": {
+  "items": [
+    {
+      "title": "PrimeResto menyatukan berbagai kebutuhan operasional dalam satu sistem.",
+      "description": "PrimeResto membantu bisnis berjalan lebih praktis, cepat, dan terkontrol dengan mengintegrasikan berbagai kebutuhan operasional dalam satu platform."
+    },
+    {
+      "title": "PrimeResto mendukung berbagai kebutuhan operasional bisnis F&B.",
+      "description": "Mulai dari kasir, pemesanan, dapur, stok, hingga laporan bisnis, semuanya dapat dikelola dalam satu platform."
+    },
+    {
+      "title": "PrimeResto membantu meningkatkan efisiensi operasional.",
+      "description": "Dengan proses yang terintegrasi dan otomatis, tim dapat bekerja lebih cepat, mengurangi kesalahan, dan fokus memberikan pelayanan terbaik."
+    },
+    {
+      "title": "PrimeResto menyediakan data dan laporan bisnis yang terpusat.",
+      "description": "Data penjualan dan laporan yang terpusat memberikan informasi yang jelas untuk memantau performa dan perkembangan bisnis."
+    },
+    {
+      "title": "PrimeResto fleksibel untuk berbagai jenis bisnis.",
+      "description": "Mulai dari restoran, kafe, hingga bisnis hospitality dan entertainment, PrimeResto dapat disesuaikan dengan kebutuhan operasional setiap bisnis."
+    }
+  ]
+},
+
+"primecafe": {
+  "items": [
+    {
+      "title": "PrimeCafe membantu proses penjualan menjadi lebih cepat dan terorganisir.",
+      "description": "Dengan sistem yang fleksibel, PrimeCafe membantu proses penjualan menjadi lebih cepat dan terorganisir."
+    },
+    {
+      "title": "PrimeCafe mendukung custom barcode sesuai kebutuhan bisnis.",
+      "description": "Barcode dapat disesuaikan untuk berbagai produk, menu, maupun kebutuhan operasional cafe."
+    },
+    {
+      "title": "PrimeCafe membantu mempercepat proses transaksi.",
+      "description": "Cukup dengan scan barcode, produk dapat dikenali dengan cepat sehingga transaksi menjadi lebih praktis dan minim kesalahan."
+    },
+    {
+      "title": "PrimeCafe fleksibel untuk berbagai alur bisnis.",
+      "description": "Mulai dari pengelolaan menu dan produk hingga transaksi, semuanya dapat disesuaikan dengan alur bisnis Anda."
+    },
+    {
+      "title": "PrimeCafe membantu meningkatkan efisiensi operasional cafe.",
+      "description": "Dengan fitur custom barcode dan pengelolaan transaksi yang praktis, PrimeCafe membantu operasional menjadi lebih efisien."
+    }
+  ]
+},
+
+"primecare": {
+  "items": [
+    {
+      "title": "PrimeCare mengintegrasikan pelayanan pasien, administrasi, dan pengelolaan data rumah sakit.",
+      "description": "Mulai dari pelayanan pasien, administrasi, hingga pengelolaan data rumah sakit dapat dikelola secara terintegrasi."
+    },
+    {
+      "title": "PrimeCare mendukung integrasi dengan ekosistem kesehatan nasional.",
+      "description": "Integrasi ini membantu rumah sakit dalam mengelola dan menyinkronkan data serta proses layanan dengan ekosistem kesehatan nasional."
+    },
+    {
+      "title": "PrimeCare membantu membuat proses kerja lebih efisien.",
+      "description": "Dengan sistem yang terintegrasi, proses kerja menjadi lebih terstruktur, cepat, dan mengurangi pekerjaan administratif yang berulang."
+    },
+    {
+      "title": "PrimeCare menyediakan data terintegrasi untuk mendukung pengambilan keputusan.",
+      "description": "Data yang terintegrasi membantu tenaga kesehatan dan manajemen mendapatkan informasi yang lebih mudah diakses untuk mendukung pelayanan dan pengambilan keputusan."
+    },
+    {
+      "title": "PrimeCare membantu rumah sakit mengelola operasional secara lebih efektif.",
+      "description": "Dengan sistem yang fleksibel dan terintegrasi, PrimeCare dapat membantu rumah sakit mengelola pelayanan, administrasi, dan operasional secara lebih efektif."
+    }
+  ]
+},
+
+"primeedu": {
+  "items": [
+    {
+      "title": "PrimeEdu mengintegrasikan administrasi, data siswa, dan pengelolaan akademik.",
+      "description": "Mulai dari administrasi, data siswa, hingga pengelolaan akademik dapat dilakukan secara lebih terintegrasi."
+    },
+    {
+      "title": "PrimeEdu membantu mengelola berbagai data dan kebutuhan administrasi sekolah.",
+      "description": "Sistem membantu mengelola data siswa, guru, akademik, keuangan, hingga kebutuhan administrasi sekolah."
+    },
+    {
+      "title": "PrimeEdu membantu membuat proses administrasi lebih cepat dan terstruktur.",
+      "description": "Dengan sistem yang terintegrasi, proses administrasi menjadi lebih cepat, terstruktur, dan mudah dipantau."
+    },
+    {
+      "title": "PrimeEdu menyediakan data terpusat untuk mendukung pengambilan keputusan.",
+      "description": "Data yang tersaji dalam satu sistem membantu pihak sekolah mendapatkan informasi yang lebih akurat untuk mendukung pengambilan keputusan."
+    },
+    {
+      "title": "PrimeEdu dapat disesuaikan dengan berbagai kebutuhan sekolah.",
+      "description": "Sistem ini dapat disesuaikan dengan kebutuhan sekolah dalam mengelola aktivitas akademik maupun administrasi."
+    }
+  ]
+},
+
+"primecourse": {
+  "items": [
+    {
+      "title": "PrimeCourse mengintegrasikan pengelolaan pembelajaran dalam satu sistem.",
+      "description": "Mulai dari pengelolaan materi, peserta, hingga aktivitas pembelajaran dapat dilakukan secara terintegrasi."
+    },
+    {
+      "title": "PrimeCourse memudahkan pengajar mengelola pembelajaran.",
+      "description": "Pengajar dapat mengelola course, materi, peserta, dan aktivitas pembelajaran dengan lebih mudah."
+    },
+    {
+      "title": "PrimeCourse membuat proses belajar lebih fleksibel dan terorganisir.",
+      "description": "Dengan sistem yang terintegrasi, proses belajar menjadi lebih fleksibel, terorganisir, dan mudah dipantau."
+    },
+    {
+      "title": "PrimeCourse memudahkan pemantauan course dan perkembangan peserta.",
+      "description": "Informasi course dan perkembangan peserta dapat dikelola dalam satu sistem sehingga lebih mudah dipantau."
+    },
+    {
+      "title": "PrimeCourse cocok untuk berbagai kebutuhan pembelajaran dan pelatihan.",
+      "description": "Mulai dari institusi pendidikan, perusahaan, hingga lembaga pelatihan dapat memanfaatkan PrimeCourse sesuai kebutuhan."
+    }
+  ]
+},
+
+"petpuffy": {
+  "items": [
+    {
+      "title": "PetPuffy mengintegrasikan transaksi, produk, stok, dan data pelanggan.",
+      "description": "Mulai dari transaksi, produk, stok, hingga data pelanggan dapat dikelola dengan lebih praktis dan terintegrasi."
+    },
+    {
+      "title": "PetPuffy membantu mengelola stok dan informasi produk dengan lebih teratur.",
+      "description": "Pemantauan stok dan informasi produk menjadi lebih teratur sehingga membantu mengurangi kesalahan dan kehabisan stok."
+    },
+    {
+      "title": "PetPuffy membantu mempercepat pelayanan kasir.",
+      "description": "Sistem membantu mempercepat pelayanan kasir sekaligus mencatat transaksi secara lebih rapi dan akurat."
+    },
+    {
+      "title": "PetPuffy membantu memantau data transaksi dan operasional bisnis.",
+      "description": "Data transaksi, penjualan, dan operasional dapat dipantau dalam satu sistem untuk mendukung keputusan bisnis."
+    },
+    {
+      "title": "PetPuffy fleksibel untuk berbagai skala bisnis petshop.",
+      "description": "Mulai dari petshop skala kecil hingga bisnis dengan operasional yang lebih kompleks dapat menggunakan sistem sesuai kebutuhan."
+    }
+  ]
+}
   },
 
   "ISP": {
@@ -506,9 +535,8 @@
 
      "managed": {
       "tag": "Mengelola",
-
-      "title1": "Layanan",
-      "title2": "Konektivitas",
+      "title 1": "Layanan",
+      "title 2": "Konektivitas",
 
       "badge1": {
       "title": "Manajemen",
@@ -556,11 +584,14 @@
     "descriptionPlaceholder": "Jelaskan kebutuhan Anda atau bagaimana kami dapat membantu...",
 
     "submit": "Kirim",
-    "download": "Unduh"
+    "download": "Unduh",
+"sending": "Mengirim...",
+"thankYouTitle": "Terima Kasih Atas Ketertarikan Anda Pada Layanan Kami.",
+"thankYouDescription": "Pengajuan Anda telah berhasil diterima. Kami akan segera menghubungi Anda."
   },
 
   "Resource": {
-  "title": "Consulting & Resource",
+  "title": "Konsultasi & Layanan Profesional",
   "subtitle": "Sederhanakan TI. Tingkatkan Kinerja.",
   "description": "Mitra Tepercaya Anda dalam <managed>Layanan Terkelola </managed> & <outsourcing>Alih Daya</outsourcing>",
 
@@ -571,45 +602,49 @@
       {
         "image": "/images/card1.png",
         "title": "PJP Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Pendampingan profesional untuk kebutuhan perizinan dan regulasi."
       },
       {
         "image": "/images/card2.png",
         "title": "ISO Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Mendorong kepatuhan terhadap standar ISO dan peningkatan kualitas operasional."
       },
       {
         "image": "/images/card3.png",
         "title": "Digital Compliance",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Solusi untuk memenuhi kebutuhan regulasi dan kepatuhan digital."
       },
       {
         "image": "/images/card4.png",
         "title": "IT Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Mengoptimalkan teknologi untuk meningkatkan kinerja bisnis dan operasional."
       },
       {
         "image": "/images/card5.png",
         "title": "IT Resource Outsourcing",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Menyediakan tenaga ahli IT untuk mendukung kebutuhan bisnis Anda."
       },
       {
         "image": "/images/card6.png",
         "title": "Infrastructure Managed Services",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+        "desc": "Mengelola infrastruktur IT untuk memastikan operasional yang andal dan optimal."
       }
     ]
   },
-
+    
   "powering": {
     "title": "Powering Innovation With"
   }
 },
 
 "ContactHero": {
-  "title": "Kontak Kami",
-  "office": "Kantor Pusat - Jakarta",
-  "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nKecamatan Gambir\nKota Jakarta Pusat\nDaerah Khusus Ibukota Jakarta\n10140"
+  "contactUs": "Hubungi Kami",
+   "titleStart": "Kami Di Sini untuk Membantu",
+  "titleEnd": "Anda!",
+  "office": "Kantor - Jakarta",
+  "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nKecamatan Gambir\nKota Jakarta Pusat\nDaerah Khusus Ibukota Jakarta\n10140",
+  "findOffice": "Temukan Kantor Kami",
+  "visitContact": "Kunjungi kami atau hubungi tim kami secara langsung."
 },
 
 "Footer": {
@@ -649,8 +684,60 @@
 
   "team": {
     "title": "Kenali Tim Kami yang Luar Biasa",
-    "subtitle": "Sosok di Balik Permana Solutions",
+    "subtitle": "Orang-orang di Balik Permana Solutions",
     "description": "Didorong oleh inovasi dan dipersatukan oleh visi bersama, para profesional kami bekerja sama untuk menghadirkan pengalaman teknologi yang bermakna."
   }
-}
+},
+  "Team": {
+    "ekie": {
+      "name": "Ekie Wachidie",
+      "position": "Direktur",
+      "description": "Saya percaya bahwa pertumbuhan perusahaan berasal dari inovasi, kolaborasi, dan keberanian untuk mengambil langkah-langkah strategis demi masa depan."
+    },
+    "putut": {
+      "name": "Putut Indriatmoko",
+      "position": "Manajer Operasional",
+      "description": "Saya berkomitmen untuk menjaga stabilitas keuangan perusahaan melalui pengelolaan keuangan yang cermat, transparan, dan terukur."
+    },
+    "indah": {
+      "name": "Indah Sundari",
+      "position": "Keuangan",
+      "description": "Saya berkomitmen untuk menjaga stabilitas keuangan perusahaan melalui pengelolaan keuangan yang cermat, transparan, dan terukur."
+    },
+    "putri": {
+      "name": "Putri Aulia M",
+      "position": "Pengelola Akun",
+      "description": "Membangun hubungan yang kuat dengan klien adalah prioritas saya, guna memastikan setiap kebutuhan dipahami dan ditangani secara efektif."
+    },
+    "serly": {
+      "name": "Serly Zumeri",
+      "position": "Pengembangan Bisnis",
+      "description": "Saya terus mencari peluang baru untuk memperluas jaringan bisnis dan membangun kemitraan yang saling menguntungkan."
+    },
+    "palupi": {
+      "name": "Palupi Pebi Pratiwi",
+      "position": "UI/UX & Analis Bisnis",
+      "description": "Saya menjembatani kebutuhan bisnis dengan pengalaman pengguna untuk menciptakan solusi yang relevan, intuitif, dan berdampak."
+    },
+    "fitra": {
+      "name": "Fitra Melania Rais",
+      "position": "Full Stack Developer",
+      "description": "Saya menikmati membangun sistem, mulai dari frontend hingga backend, untuk menghadirkan solusi digital yang andal dan dapat dikembangkan."
+    },
+    "umar": {
+      "name": "Umar Dani Y",
+      "position": "Full Stack Developer",
+      "description": "Bagi saya, kode yang hebat tidak hanya fungsional, tetapi juga mudah dipelihara dan mampu memberikan dampak nyata."
+    },
+    "mugi": {
+      "name": "Mugi Ardana",
+      "position": "Teknisi Support",
+      "description": "Saya memastikan seluruh infrastruktur dan perangkat beroperasi secara optimal agar kegiatan operasional sehari-hari dapat berjalan lancar tanpa gangguan."
+    },
+    "ari": {
+      "name": "Mohammad Ari Wenandi",
+      "position": "NOC",
+      "description": "Pemantauan sistem secara real-time merupakan tanggung jawab saya untuk menjaga layanan tetap stabil, aman, dan responsif."
+    }
+  }
 }

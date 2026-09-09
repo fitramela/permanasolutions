@@ -22,26 +22,27 @@ export default function HeroBannerSection() {
         "
           >
             <Image
-              src="/images/heroHome.png"
-              alt="Permana Solutions Hero"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-[40%_center]"
-            />
+  src="/images/bgHome.png"
+  alt="Permana Solutions Hero"
+  width={2048}
+  height={848}
+  priority
+  className="absolute inset-0 h-full w-full object-cover"
+/>
 
-            {/* TEXT */}
-            <div className="absolute inset-0 flex items-center z-10">
-              <div className="w-full px-[clamp(24px,5vw,80px)]">
-                <h1
-                  className="
-        max-w-[clamp(320px,60vw,1050px)]
+       {/* TEXT */}
+<div className="absolute inset-0 flex items-center z-10">
+  <div className="w-full px-[clamp(24px,5vw,80px)]">
+    <h1
+      className="
+        max-w-[clamp(340px,60vw,1050px)]
         text-white
         font-semibold
-        text-[clamp(28px,4vw,60px)]
-        leading-[1.1]
-        tracking-[-0.04em]
-        drop-shadow-[0_5px_1px_rgba(0,0,0,.5)]
+         text-[clamp(24px,5vw,50px)]
+      
+        leading-[1.2]
+        tracking-[-0.0em]
+        drop-shadow-[0_5px_1px_rgba(1,10,10)]
       "
                 >
                   {t("heading1")} {t("heading2")}
@@ -50,7 +51,7 @@ export default function HeroBannerSection() {
             </div>
 
             {/* Desktop Stats */}
-            <div
+            {/* <div
               className="
     hidden
     lg:block
@@ -67,17 +68,17 @@ export default function HeroBannerSection() {
                 <Statistic number="20" label={t("customer")} />
                 <Statistic number="30" label={t("employee")} />
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile Stats */}
-          <div className="bg-white py-5 lg:hidden">
+          {/* <div className="bg-white py-5 lg:hidden">
             <div className="flex justify-center gap-6">
-              <Statistic number="20+" label={t("partner")} />
-              <Statistic number="20+" label={t("customer")} />
-              <Statistic number="30+" label={t("employee")} />
+              <Statistic number="20" label={t("partner")} />
+              <Statistic number="20" label={t("customer")} />
+              <Statistic number="30" label={t("employee")} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
@@ -102,7 +103,7 @@ function Statistic({
         +
       </h2>
 
-      <p className="mt-2 text-[#05638B] font-medium text-[11px] sm:text-[14px] lg:text-[22px] drop-shadow-[0_5px_7px_rgba(0,0,0,0.50)]">
+      <p className="mt-2 text-[#05638B] font-medium text-[11px] sm:text-[14px] lg:text-[22px]">
         {label}
       </p>
     </div>

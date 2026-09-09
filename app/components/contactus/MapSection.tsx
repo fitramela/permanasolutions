@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function MapSection() {
+  const t = useTranslations("ContactHero");
+
   return (
     <section className="w-full bg-white py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -8,27 +12,25 @@ export default function MapSection() {
         {/* Heading */}
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-[#005D86] md:text-4xl">
-            Find Our Office
+            {t("findOffice")}
           </h2>
 
           <p className="mt-3 text-gray-500">
-            Visit us or contact our team directly.
+            {t("visitContact")}
           </p>
         </div>
 
         {/* Map Card */}
         <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_20px_50px_rgba(0,0,0,.08)]">
-
           <iframe
             src="https://www.google.com/maps?q=Medianusa+Permana+Jakarta&output=embed"
             loading="lazy"
             title="Medianusa Permana Location"
             className="h-[320px] w-full border-0 md:h-[420px] lg:h-[500px]"
           />
-
         </div>
 
-        {/* Address Card */}
+          {/* Address Card */}
         <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
 
           <h3 className="text-xl font-semibold text-[#005D86]">
@@ -67,7 +69,6 @@ export default function MapSection() {
           </a>
 
         </div>
-
       </div>
     </section>
   );

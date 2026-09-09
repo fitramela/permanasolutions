@@ -1,5 +1,5 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { TeamMember } from "./teamdata";
 
@@ -8,136 +8,150 @@ interface TeamCardProps {
 }
 
 export default function TeamCard({ member }: TeamCardProps) {
+  const t = useTranslations("Team");
   return (
     <article
       className="
-        group
         relative
-        flex
-        h-full
-        min-h-[390px]
-        flex-col
-        rounded-[32px]
+        w-[320px]
+        h-[400px]
+
+        rounded-[26px]
+
         bg-white
-        px-7
-        pb-8
-        pt-24
-        shadow-[0_12px_40px_rgba(0,93,134,.08)]
+
+        border
+        border-white/80
+
+        shadow-[0_12px_45px_rgba(0,0,0,0.08)]
+
+        flex
+        flex-col
+        items-center
+
+        overflow-visible
+
         transition-all
         duration-300
         hover:-translate-y-2
-        hover:shadow-[0_20px_55px_rgba(0,93,134,.18)]
+        hover:shadow-[0_22px_60px_rgba(0,0,0,.12)]
       "
     >
-      {/* Photo */}
+      {/* FOTO */}
 
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+      <div
+        className="
+          absolute
 
-        <div
-          className="
-            relative
+          left-1/2
+          -translate-x-1/2
 
-            h-[140px]
-            w-[140px]
+          -top-[100px]
 
-            overflow-hidden
+          w-[200px]
+          h-[200px]
 
-            rounded-full
+          rounded-full
 
-            border-[6px]
-            border-white
+          overflow-hidden
 
-            shadow-xl
+          bg-white
 
-            transition-transform
-            duration-500
+          border-[3px]
+          border-[#F4F4F4]
 
-            group-hover:scale-105
-
-            lg:h-[160px]
-            lg:w-[160px]
-          "
-        >
-          <Image
-            src={member.image}
-            alt={member.name}
-            fill
-            className="object-cover object-top"
-          />
-        </div>
-
+          shadow-[0_12px_35px_rgba(0,0,0,.16)]
+        "
+      >
+        <Image
+          src={member.image}
+          alt={t(member.nameKey)}
+          fill
+          className="object-cover"
+          sizes="200px"
+        />
       </div>
 
-      {/* Position */}
+      {/* BADGE */}
 
-      <div className="flex justify-center">
+      <div
+        className="
+          mt-[122px]
 
+          w-[160px]
+          h-[32px]
+
+          rounded-full
+
+          bg-[#04BCBC]
+
+          flex
+          items-center
+          justify-center
+
+          shadow-[0_6px_15px_rgba(4,188,188,.28)]
+        "
+      >
         <span
           className="
-            rounded-full
+            text-white
 
-            bg-gradient-to-r
-
-            from-cyan-400
-            to-sky-500
-
-            px-5
-            py-2
-
-            text-xs
+            text-[11px]
 
             font-semibold
 
-            tracking-wide
-
-            text-white
+            tracking-[0.2px]
           "
         >
-          {member.position}
+          {t(member.positionKey)}
         </span>
-
       </div>
 
-      {/* Name */}
+      {/* NAMA */}
 
       <h3
         className="
-          mt-6
+          mt-[16px]
+
+          w-[250px]
 
           text-center
 
-          text-xl
+          text-[#101A24]
+
+          text-[20px]
+
+          leading-[26px]
 
           font-bold
 
-          text-[#005D86]
-
-          lg:text-2xl
+          font-['David_Libre']
         "
       >
-        {member.name}
+       {t(member.nameKey)}
       </h3>
 
-      {/* Description */}
+      {/* DESKRIPSI */}
 
       <p
         className="
-          mt-5
+          mt-[28px]
 
-          flex-1
+          w-[250px]
 
           text-center
 
-          text-sm
+          text-[#5C6574]
 
-          leading-7
+          text-[15px]
 
-          text-[#6B7280]
+          leading-[26px]
+
+          font-normal
         "
       >
-        {member.description}
+       {t(member.descriptionKey)}
       </p>
-
     </article>
   );
 }

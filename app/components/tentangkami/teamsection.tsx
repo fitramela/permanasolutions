@@ -1,76 +1,151 @@
-"use client";
+// "use client";
 
-import TeamCard from "./teamcard";
-import { teamData } from "./teamdata";
+// import useEmblaCarousel from "embla-carousel-react";
+// import TeamCard from "./teamcard";
+// import { teamData } from "./teamdat";
+// import ArrowButton from "./ArrowButton";
+// import DotPattern from "./DotPattern";
 
-export default function TeamSection() {
-  return (
-    <section className="relative overflow-hidden bg-[#F7FCFE] py-20 lg:py-28">
+// export default function TeamSection() {
+//   const [emblaRef, emblaApi] = useEmblaCarousel({
+//     align: "start",
+//     containScroll: "keepSnaps",
+//     dragFree: true,
+//     loop: false,
+//   });
 
-      {/* Glow */}
-      <div className="absolute -left-40 top-20 h-[340px] w-[340px] rounded-full bg-[#7BE7FF]/20 blur-[120px]" />
+//   return (
+//    <section
+//   className="
+//     relative
+//     w-full
+//     top-[-45px]
+//     overflow-hidden
+//   "
+// >
+//   <div
+//     className="
+//       relative
 
-      <div className="absolute -right-40 bottom-10 h-[340px] w-[340px] rounded-full bg-[#8DDFFF]/20 blur-[120px]" />
+  
+//       max-w-full
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
+//       h-[581px]
 
-        {/* Heading */}
+//       bg-[#F3F3F3]
 
-        <div className="mx-auto max-w-3xl text-center">
+//       overflow-hidden
+//     "
+//   >
 
-          
+//       {/* Pattern kiri */}
 
-        </div>
+//       <DotPattern
+//         className="
+//           absolute
+//           hidden
+//           lg:block
 
-        {/* Team */}
+//           left-10
+//           top-40
+//           z-0
+//         "
+//       />
 
-        <div
-          className="
-          mt-20
+//       {/* Pattern kanan */}
 
-          flex
+//       <DotPattern
+//         className="
+//           absolute
+//           hidden
+//           lg:block
 
-          gap-6
+//           right-10
+//           bottom-20
+//           rotate-180
+//           z-0
+//         "
+//       />
 
-          overflow-x-auto
+//    <div className="relative w-full z-10">
+//         {/* Arrow kiri */}
 
-          scroll-smooth
+//         <ArrowButton
+//           direction="left"
+//           onClick={() => emblaApi?.scrollPrev()}
+//           className="
+//             absolute
 
-          snap-x
+//             left-2
+//             md:left-4
+//             lg:left-6
 
-          snap-proximity
+//             top-[320px]
+//             lg:top-[360px]
 
-          px-1
+//             -translate-y-1/2
+//             z-30
+//           "
+//         />
 
-          pt-24
+//         {/* Arrow kanan */}
 
-          pb-6
+//         <ArrowButton
+//           direction="right"
+//           onClick={() => emblaApi?.scrollNext()}
+//           className="
+//             absolute
 
-          scrollbar-hide
-        "
-        >
-          {teamData.map((member) => (
-            <div
-              key={member.id}
-              className="
-                snap-start
+//             right-2
+//             md:right-4
+//             lg:right-6
 
-                shrink-0
+//             top-[320px]
+//             lg:top-[360px]
 
-                w-[88%]
+//             -translate-y-1/2
+//             z-30
+//           "
+//         />
 
-                sm:w-[340px]
+//         {/* Embla */}
 
-                lg:w-[310px]
-              "
-            >
-              <TeamCard member={member} />
-            </div>
-          ))}
-        </div>
+//        <div
+//   ref={emblaRef}
+//   className="
+//     overflow-hidden
+//     cursor-grab
+//     active:cursor-grabbing
+//   "
+// >
+//           <div
+//             className="
+//               flex
 
-      </div>
+//               gap-6
+//               lg:gap-[34px]
 
-    </section>
-  );
-}
+//               items-start
+
+//               pt-[110px]
+//               pb-5
+//             "
+//           >
+//             {teamData.map((member) => (
+//               <div
+//                 key={member.id}
+//                 className="
+//                   flex-[0_0_320px]
+//                   select-none
+//                 "
+//               >
+//                 <TeamCard member={member} />
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//       </div>
+//     </section>
+//   );
+// }

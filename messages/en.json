@@ -1,28 +1,23 @@
 {
   "Hero": {
-  "heading1": "Empowering Business Through",
-  "heading2": "Technology, Connectivity & Expertise",
+    "heading1": "Empowering Business Through",
+    "heading2": "Technology, Connectivity & Solutions",
     "partner": "Our Partner",
     "customer": "Our Customer",
     "employee": "Employee"
   },
-
- "Navbar": {
+  "Navbar": {
     "home": "Home Page",
     "solutions": "Solutions",
     "service": "Services",
     "about": "About Us",
     "contact": "Contact"
   },
-
-  
-
   "WhoWeAre": {
     "title": "Who We Are",
     "description1": "PT Medianusa Permana, with more than a decade of experience, provides a comprehensive technology ecosystem covering Technology Consulting, Business Application Solutions, Internet Connectivity Services, and IT Resource Services.",
     "description2": "Supported by continuously evolving infrastructure, ISO 9001:2015 and ISO 27001 certifications, and extensive experience across various industries, we are committed to delivering reliable, innovative, and sustainable technology solutions to support long-term business growth."
   },
-
   "Solutions": {
     "hero": {
       "title": "Technology Solutions for Business Growth.",
@@ -30,12 +25,10 @@
       "profileButton": "Company Profile",
       "contactButton": "Contact Us"
     },
-
     "bestSolutions": {
       "our": "Our",
       "title": "Best Solutions",
       "button": "Learn More",
-
       "items": [
         {
           "title": "Digital Transformation Solutions",
@@ -48,7 +41,6 @@
             "Cloud Adoption"
           ]
         },
-
         {
           "title": "Connectivity & Infrastructure Solutions",
           "description": "Providing reliable network and internet services to ensure seamless business operations.",
@@ -60,7 +52,6 @@
             "Cloud Connectivity"
           ]
         },
-
         {
           "title": "Business Application Solutions",
           "description": "Delivering scalable applications that streamline operations and support business expansion.",
@@ -73,7 +64,6 @@
             "Workflow Automation"
           ]
         },
-
         {
           "title": "Compliance & Governance Solutions",
           "description": "Helping organizations meet regulatory requirements and industry standards.",
@@ -86,7 +76,6 @@
             "Risk & Governance Advisory"
           ]
         },
-
         {
           "title": "Managed Technology Solutions",
           "description": "Keeping your technology environment secure, optimized, and continuously supported.",
@@ -102,97 +91,86 @@
       ]
     }
   },
-
   "WhyChoose": {
     "title": "Why Choose Us?",
-
     "items": [
       {
         "title": "Reliability & Security",
         "description": "Robust systems with a strong security architecture."
       },
-
       {
         "title": "Operational Efficiency",
         "description": "Reduce complexity and optimize workflows."
       },
-
       {
         "title": "Cost Optimization",
         "description": "Maximize ROI through strategic technology investments."
       },
-
       {
         "title": "Business Agility",
         "description": "Adapt faster to market and operational changes."
       },
-
       {
         "title": "Compliance Readiness",
         "description": "Stay compliant with regulatory requirements."
       },
-
       {
         "title": "Innovation & Growth",
         "description": "Enabling scalable digital transformation."
       }
     ]
   },
-
-"SolutionsIndustry": {
-  "tag": "Industries We Serve",
-  "title1": "Solutions Designed",
-  "title2": "For Every",
-  "titleHighlight": "Industry",
-  "description": "We provide tailored solutions that address the unique challenges of each industry, helping businesses improve efficiency, ensure compliance, and deliver exceptional experiences.",
-  "footer": "One platform to <bold>Streamline operations</bold>, <bold>Enhance security</bold>, and keep you connected with what <bold>Matters</bold> most to your people and your customers."
-},
-
+  "SolutionsIndustry": {
+    "tag": "Industries We Serve",
+    "title1": "Solutions Designed",
+    "title2": "For Every",
+    "titleHighlight": "Industry",
+    "description": "We provide tailored solutions that address the unique challenges of each industry, helping businesses improve efficiency, ensure compliance, and deliver exceptional experiences.",
+    "footer": "One platform to <bold>Streamline operations</bold>, <bold>Enhance security</bold>, and keep you connected with what <bold>Matters</bold> most to your people and your customers."
+  },
   "WhyChooseUs": {
     "title": "Driving Business Growth Through Technology, Compliance, and Innovation",
     "description": "We deliver integrated technology and advisory services that help organizations operate smarter, scale faster, and stay ahead of evolving business requirements. Combining strategic consulting, digital solutions, connectivity services, and expert IT resources, we support business transformation, governance readiness, operational efficiency, and sustainable growth creating long-term value for our clients and partners."
   },
-
   "SmartSystem": {
-  "title": "Smart System, Real Impact",
-  "subtitle": "We build systems and dashboards that help businesses operate smarter, make better decisions, and achieve more.",
-  "ourSystem": "Our System",
-  "industry": "Built For Every Industry",
-  "monitoring": "Real Time Monitoring And Actionable Business Insights.",
-  "systems": [
-    {
-      "name": "Prime Course",
-      "title": "Learning Management System",
-      "description": "A modern LMS platform for managing courses, students, assignments, and progress in one place."
-    },
-    {
-      "name": "Prime EDU",
-      "title": "School Management System",
-      "description": "End to end school management for academic operations, administration, and communication."
-    },
-    {
-      "name": "Prime Cafe",
-      "title": "Cafe Management System",
-      "description": "Simplifies cafe operations from ordering and billing to inventory monitoring."
-    },
-    {
-      "name": "Prime Restaurant",
-      "title": "Restaurant Management System",
-      "description": "Complete restaurant operations management from orders to kitchen to reporting."
-    },
-    {
-      "name": "Prime Biz",
-      "title": "Enterprise Resource Planning",
-      "description": "PrimeBiz is an integrated ERP platform that helps businesses manage operations in one real time system."
-    },
-    {
-      "name": "Prime Teams",
-      "title": "Project Management System",
-      "description": "Improves collaboration, task management, and communication across teams."
-    }
-  ]
-},
-
+    "title": "Smart System, Real Impact",
+    "subtitle": "We build systems and dashboards that help businesses operate smarter, make better decisions, and achieve more.",
+    "ourSystem": "Our System",
+    "industry": "Built For Every Industry",
+    "monitoring": "Real Time Monitoring And Actionable Business Insights.",
+    "systems": [
+      {
+        "name": "Prime Course",
+        "title": "Learning Management System",
+        "description": "A modern LMS platform for managing courses, students, assignments, and progress in one place."
+      },
+      {
+        "name": "Prime EDU",
+        "title": "School Management System",
+        "description": "End to end school management for academic operations, administration, and communication."
+      },
+      {
+        "name": "Prime Cafe",
+        "title": "Cafe Management System",
+        "description": "Simplifies cafe operations from ordering and billing to inventory monitoring."
+      },
+      {
+        "name": "Prime Restaurant",
+        "title": "Restaurant Management System",
+        "description": "Complete restaurant operations management from orders to kitchen to reporting."
+      },
+      {
+        "name": "Prime Biz",
+        "title": "Enterprise Resource Planning",
+        "description": "PrimeBiz is an integrated ERP platform that helps businesses manage operations in one real time system."
+      },
+      {
+        "name": "Prime Teams",
+        "title": "Project Management System",
+        "description": "Improves collaboration, task management, and communication across teams."
+      }
+    ]
+  },
   "SmartSystemShowcase": {
     "why": "Why",
     "heading": "Organizations Trust Permana",
@@ -224,256 +202,273 @@
       }
     ]
   },
-
   "Service": {
     "title": "Our Services",
-  "title-clientlayanan": "Our Clients",
+    "title-clientlayanan": "Our Clients",
     "seeMore": "Learn More",
     "asp": "ASP",
     "isp": "ISP",
     "resource": "Consulting\n&\nResource"
   },
-
-  "Asp": {
+ "Asp": {
     "title": "ASP",
     "subtitle": "Application Service Provider",
     "description": "Build Dynamic Web Applications with ASP",
     "technology": "Technology",
-
     "card1": "Empower Your Web with Modern ASP Solutions",
     "card2": "Dynamic Web Development, Simplified with ASP",
     "card3": "Years of Web Development Expertise",
     "card4": "ASP technology that grows together with your business.",
-
     "showLess": "show less...",
     "seeMore": "see more...",
-
     "primeDescription": "Manage your business smarter, faster, and more efficiently.",
-    "primeTeamsDescription": "Digital form solution to streamline every business process.",
-    "primeRestoDescription": "Smart asset and inventory management system.",
-    "primeCafeDescription": "Modern POS solution for cafés and restaurants.",
-    "primeCareDescription": "Integrated healthcare management platform.",
-    "primeEduDescription": "Digital education management system.",
-    "primeCourseDescription": "Complete organization management platform.",
-    "petPuffyDescription": "Smart pet care management solution.",
-
+    "primeJulaDescription": "Smart Solutions, Seamless Transactions.",
+    "primeTeamsDescription": "Smart Collaboration, Project Completed.",
+    "primeRestoDescription": "POS Solutions for Easier Business.",
+    "primeCafeDescription": "Smart Solutions, Smooth Business Operations.",
+    "primeCareDescription": "IIntegrated Solutions, More Efficient Services.",
+    "primeEduDescription": "Smart Solutions, More Integrated Schools.",
+    "primeCourseDescription": "Smart Solutions, Easier Learning.",
+    "petPuffyDescription": "Smart Solution, Easier Pet Shop Management.",
+    "videoUnavailable": "Video is not available yet",
+    
     "primebiz": {
-      "items": [
-        {
-          "title": "PrimeBiz is an integrated ERP platform.",
-          "description": "PrimeBiz integrates finance, inventory, purchasing, HR, production, and sales into one centralized system."
-        },
-        {
-          "title": "Complete operational modules.",
-          "description": "All business operations are connected in real time."
-        },
-        {
-          "title": "Increase productivity.",
-          "description": "Automation reduces repetitive work and improves efficiency."
-        },
-        {
-          "title": "Flexible for every business.",
-          "description": "Suitable for small businesses up to enterprise companies."
-        },
-        {
-          "title": "Easy implementation.",
-          "description": "Starts from consultation, implementation, and user training."
-        }
-      ]
+  "items": [
+    {
+      "title": "PrimeBiz is an integrated ERP platform that helps businesses manage operations in one real-time system.",
+      "description": "PrimeBiz unites various business processes such as finance, HR, sales and operations into one centralized dashboard so that monitoring and decision making becomes faster and more accurate."
     },
-
-    "primeteams": {
-      "items": [
-        {
-          "title": "Digital Forms.",
-          "description": "Create and manage digital forms with ease."
-        },
-        {
-          "title": "Workflow Automation.",
-          "description": "Automate approval and submission processes."
-        },
-        {
-          "title": "Real-time Submission.",
-          "description": "Monitor submitted forms instantly."
-        },
-        {
-          "title": "Cloud Storage.",
-          "description": "Store every form securely in the cloud."
-        },
-        {
-          "title": "Easy Reporting.",
-          "description": "Generate reports from collected data."
-        }
-      ]
+    {
+      "title": "PrimeBiz provides various main modules for business operational needs.",
+      "description": "Available modules include HR, Finance, Project Management, Sales, Purchasing, and Warehouse, which can be adjusted to suit the company's needs."
     },
-
-    "primeresto": {
-      "items": [
-        {
-          "title": "Asset Management.",
-          "description": "Manage company assets efficiently."
-        },
-        {
-          "title": "Inventory Tracking.",
-          "description": "Track stock movement in real time."
-        },
-        {
-          "title": "Maintenance Schedule.",
-          "description": "Plan maintenance automatically."
-        },
-        {
-          "title": "QR Code Integration.",
-          "description": "Scan assets quickly with QR codes."
-        },
-        {
-          "title": "Comprehensive Reports.",
-          "description": "Access complete asset reports anytime."
-        }
-      ]
+    {
+      "title": "PrimeBiz helps increase business efficiency and productivity.",
+      "description": "By automating work processes and data integration, PrimeBiz reduces manual work, minimizes errors, and provides accurate data to support strategic decision making."
     },
-
-    "primecafe": {
-      "items": [
-        {
-          "title": "Restaurant POS.",
-          "description": "Fast and reliable cashier system."
-        },
-        {
-          "title": "Kitchen Display.",
-          "description": "Orders are sent directly to the kitchen."
-        },
-        {
-          "title": "Sales Analytics.",
-          "description": "View sales performance in real time."
-        },
-        {
-          "title": "Inventory Integration.",
-          "description": "Stock updates automatically after every sale."
-        },
-        {
-          "title": "Multi Outlet.",
-          "description": "Manage multiple branches from one dashboard."
-        }
-      ]
+    {
+      "title": "PrimeBiz is designed to be flexible for various business scales.",
+      "description": "This solution is suitable for use by MSMEs, medium-sized companies, and large companies because it can be adjusted to operational needs and business growth."
     },
-
-    "primecare": {
-      "items": [
-        {
-          "title": "Patient Management.",
-          "description": "Manage patient records digitally."
-        },
-        {
-          "title": "Doctor Scheduling.",
-          "description": "Organize appointments efficiently."
-        },
-        {
-          "title": "Medical Records.",
-          "description": "Secure electronic medical records."
-        },
-        {
-          "title": "Billing System.",
-          "description": "Integrated healthcare billing."
-        },
-        {
-          "title": "Healthcare Reports.",
-          "description": "Generate medical reports instantly."
-        }
-      ]
-    },
-
-    "primeedu": {
-      "items": [
-        {
-          "title": "Student Management.",
-          "description": "Manage student information easily."
-        },
-        {
-          "title": "Attendance.",
-          "description": "Digital attendance management."
-        },
-        {
-          "title": "Online Grading.",
-          "description": "Manage grades in one platform."
-        },
-        {
-          "title": "Learning Management.",
-          "description": "Support online learning activities."
-        },
-        {
-          "title": "Parent Portal.",
-          "description": "Parents can monitor student progress."
-        }
-      ]
-    },
-
-    "primecourse": {
-      "items": [
-        {
-          "title": "Organization Management.",
-          "description": "Manage organization activities centrally."
-        },
-        {
-          "title": "Collaboration Tools.",
-          "description": "Improve team collaboration."
-        },
-        {
-          "title": "Workflow Automation.",
-          "description": "Automate daily operational tasks."
-        },
-        {
-          "title": "Real-time Dashboard.",
-          "description": "Monitor activities anytime."
-        },
-        {
-          "title": "Enterprise Security.",
-          "description": "Protected with enterprise-grade security."
-        }
-      ]
-    },
-
-    "petpuffy": {
-      "items": [
-        {
-          "title": "Pet Management.",
-          "description": "Manage pet data digitally."
-        },
-        {
-          "title": "Vaccination Reminder.",
-          "description": "Automatic reminders for vaccinations."
-        },
-        {
-          "title": "Medical Records.",
-          "description": "Complete health records for every pet."
-        },
-        {
-          "title": "Grooming Schedule.",
-          "description": "Manage grooming appointments."
-        },
-        {
-          "title": "Owner Portal.",
-          "description": "Owners can access pet information online."
-        }
-      ]
+    {
+      "title": "Getting started with PrimeBiz is easy with an initial consultation.",
+      "description": "You can contact the PrimeBiz team for consultation, see product demos, and get implementation guidance that suits your business needs."
     }
+  ]
+},
+
+"primejula": {
+  "items": [
+    {
+      "title": "Jula makes sales and payment processes faster and more organized.",
+      "description": "Jula makes sales and payment processes faster and more organized, helping businesses streamline their daily operations."
+    },
+    {
+      "title": "Jula supports various payment methods.",
+      "description": "From cash and card payments to bank transfers and other digital payment methods, everything can be managed more conveniently."
+    },
+    {
+      "title": "Jula helps cashiers process transactions faster.",
+      "description": "Its user-friendly system helps cashiers process transactions faster while reducing errors."
+    },
+    {
+      "title": "Jula makes it easier to monitor sales and operational activities.",
+      "description": "Recorded transaction data makes it easier for business owners to monitor sales and daily operational activities."
+    },
+    {
+      "title": "Jula is flexible for various business operational needs.",
+      "description": "With features designed to support sales and payments, Jula can be customized to meet the specific operational needs of your business."
+    }
+  ]
+},
+
+"primeteams": {
+  "items": [
+    {
+      "title": "PrimeTeams is a PMaaS solution that helps manage projects in one integrated platform.",
+      "description": "PrimeTeams is designed to make it easier for companies to manage project operations, team coordination, and real-time progress monitoring so that work is more structured and efficient."
+    },
+    {
+      "title": "PrimeTeams provides key features to support project and team management.",
+      "description": "Available features include Project Management, Recruitment Management, and Sales & Prospect Management to help manage projects from inception to execution."
+    },
+    {
+      "title": "PrimeTeams helps increase team productivity and efficiency.",
+      "description": "With an integrated workflow, PrimeTeams makes collaboration easier, speeds up decision making, and ensures every project runs according to targets and timelines."
+    },
+    {
+      "title": "PrimeTeams is suitable for a variety of companies that manage projects dynamically.",
+      "description": "This solution is ideal for small to large companies that need a centralized system to manage teams, resources and project progress effectively."
+    },
+    {
+      "title": "Getting started with PrimeTeams can be done through initial consultation with the relevant team.",
+      "description": "You can contact the PrimeTeams team to consult on business needs, try product demos, and get implementation guidance that suits your company's workflow."
+    }
+  ]
+},
+
+"primeresto": {
+  "items": [
+    {
+      "title": "PrimeResto brings all your operational needs together in one system.",
+      "description": "PrimeResto helps make your business more efficient, streamlined, and easy to manage by integrating various operational needs into one platform."
+    },
+    {
+      "title": "PrimeResto supports various F&B operational needs.",
+      "description": "From cashier and ordering to kitchen operations, inventory, and business reporting, everything can be managed on one platform."
+    },
+    {
+      "title": "PrimeResto helps improve operational efficiency.",
+      "description": "With integrated and automated processes, your team can work faster, reduce errors, and focus on delivering the best customer experience."
+    },
+    {
+      "title": "PrimeResto provides centralized business data and reports.",
+      "description": "Centralized sales data and reports provide clear insights to help you monitor business performance and track growth."
+    },
+    {
+      "title": "PrimeResto is flexible for various types of businesses.",
+      "description": "From restaurants and cafés to hospitality and entertainment businesses, PrimeResto can be tailored to meet the operational needs of your business."
+    }
+  ]
+},
+
+"primecafe": {
+  "items": [
+    {
+      "title": "PrimeCafe makes the sales process faster and more organized.",
+      "description": "With its flexible system, PrimeCafe makes the sales process faster, more organized, and easier to manage."
+    },
+    {
+      "title": "PrimeCafe supports customizable barcodes for different business needs.",
+      "description": "Barcodes can be customized for different products, menu items, and specific café operational needs."
+    },
+    {
+      "title": "PrimeCafe helps speed up the transaction process.",
+      "description": "Simply scan the barcode to quickly identify products, making transactions more convenient while minimizing errors."
+    },
+    {
+      "title": "PrimeCafe offers flexibility for different business workflows.",
+      "description": "From menu and product management to transactions, everything can be tailored to fit your business workflow."
+    },
+    {
+      "title": "PrimeCafe helps improve café operational efficiency.",
+      "description": "With customizable barcodes and streamlined transaction management, PrimeCafe helps make your café operations more efficient."
+    }
+  ]
+},
+
+"primecare": {
+  "items": [
+    {
+      "title": "PrimeCare integrates patient care, administration, and hospital data management.",
+      "description": "PrimeCare integrates patient care, administration, and hospital data management into one comprehensive system."
+    },
+    {
+      "title": "PrimeCare supports integration with the national healthcare ecosystem.",
+      "description": "This integration helps hospitals manage and synchronize data and healthcare services with the national healthcare ecosystem."
+    },
+    {
+      "title": "PrimeCare helps make workflows more efficient.",
+      "description": "With an integrated system, workflows become more structured and efficient, while reducing repetitive administrative tasks."
+    },
+    {
+      "title": "PrimeCare provides integrated data to support better decisions.",
+      "description": "Integrated data provides healthcare professionals and management with easier access to information, supporting better patient care and more informed decision-making."
+    },
+    {
+      "title": "PrimeCare helps hospitals manage operations more effectively.",
+      "description": "With its flexible and integrated system, PrimeCare helps hospitals manage healthcare services, administration, and operations more effectively."
+    }
+  ]
+},
+
+"primeedu": {
+  "items": [
+    {
+      "title": "PrimeEdu integrates administration, student data, and academic management.",
+      "description": "From administration and student data to academic management, everything can be managed through an integrated system."
+    },
+    {
+      "title": "PrimeEdu supports school data and administrative management.",
+      "description": "The system helps manage student and teacher data, academics, finances, and various school administrative needs."
+    },
+    {
+      "title": "PrimeEdu helps make school administration more efficient.",
+      "description": "With an integrated system, administrative processes become faster, more organized, and easier to monitor."
+    },
+    {
+      "title": "PrimeEdu provides centralized data to support better decision-making.",
+      "description": "Centralized data provides schools with more accurate information to support better decision-making."
+    },
+    {
+      "title": "PrimeEdu is flexible for various school needs.",
+      "description": "The system can be customized to meet the school's needs in managing both academic activities and administrative processes."
+    }
+  ]
+},
+
+"primecourse": {
+  "items": [
+    {
+      "title": "PrimeCourse integrates learning management into one system.",
+      "description": "From managing learning materials and participants to tracking learning activities, everything can be managed through an integrated system."
+    },
+    {
+      "title": "PrimeCourse makes learning management easier for instructors.",
+      "description": "Instructors can easily manage courses, learning materials, participants, and learning activities."
+    },
+    {
+      "title": "PrimeCourse makes learning more flexible and organized.",
+      "description": "With an integrated system, the learning process becomes more flexible, organized, and easier to monitor."
+    },
+    {
+      "title": "PrimeCourse makes it easier to monitor courses and participant progress.",
+      "description": "Course information and participant progress can be managed in one system, making them easier to track and monitor."
+    },
+    {
+      "title": "PrimeCourse supports various learning and training needs.",
+      "description": "From educational institutions and companies to training organizations, PrimeCourse can be tailored to meet a variety of learning and training needs."
+    }
+  ]
+},
+
+"petpuffy": {
+  "items": [
+    {
+      "title": "PetPuffy integrates transactions, products, inventory, and customer data.",
+      "description": "From transactions and products to inventory and customer data, everything can be managed more efficiently through an integrated system."
+    },
+    {
+      "title": "PetPuffy helps manage inventory and product information.",
+      "description": "Inventory levels and product information can be monitored more systematically, helping reduce errors and prevent stock shortages."
+    },
+    {
+      "title": "PetPuffy helps speed up cashier operations.",
+      "description": "The system helps speed up cashier operations while keeping transaction records organized and accurate."
+    },
+    {
+      "title": "PetPuffy provides operational data to support business decisions.",
+      "description": "Transaction, sales, and operational data can be monitored in one system to support better business decisions."
+    },
+    {
+      "title": "PetPuffy is flexible for different pet shop business scales.",
+      "description": "From small pet shops to businesses with more complex operations, the system can be tailored to meet different business needs."
+    }
+  ]
+}
   },
-
-
   "ISP": {
     "tagline": "Internet Service Provider",
-
     "heading1": "Connectivity &",
     "heading2": "Infrastructure",
     "heading3": "Solutions",
-
     "premiumTitle": "Our Premium",
     "premiumTitle2": "Solutions",
-
     "products": [
       {
         "logo": "/images/image 261.png",
         "title": "Permana Dedicated",
-        "description": "Dedicated internet service dengan bandwidth simetris yang stabil, cepat, dan aman untuk kebutuhan bisnis, pemerintahan, industri, dan UKM, tersedia melalui Fiber Optic dan Wireless Radio."
+        "description": "Dedicated internet services with stable, fast, and secure bandwidth symmetry for business, government, industry, and SME needs, available via Fiber Optic and Wireless Radio."
       },
       {
         "logo": "/images/image 262.png",
@@ -483,140 +478,172 @@
       {
         "logo": "/images/image 263.png",
         "title": "Permana iMore",
-        "description": "Permana iMore is a high-speed internet solution with value-added services, delivering reliable connectivity and integrated support for business digital transformation." 
+        "description": "Permana iMore is a high-speed internet solution with value-added services, delivering reliable connectivity and integrated support for business digital transformation."
       },
       {
         "logo": "/images/image 264.png",
         "title": "Permana Home",
         "description": "Permana Home is a residential broadband service offering fast, stable, and reliable internet from 25–100 Mbps via Fiber Optic."
       }
-
     ],
-
     "connectivity": {
-  "title": "Connectivity & Infrastructure",
-  "services": [
-    {
-      "icon": "/images/Earth-Globe.png",
-      "title": "Permana Link (Metro Ethernet/IP VPN)",
-      "description": "Permana Link delivers high-speed, reliable IP/Ethernet connectivity with strong QoS for businesses.",
-      "color": "#04BCBC"
+      "title": "Connectivity & Infrastructure",
+      "services": [
+        {
+          "icon": "/images/Earth-Globe.png",
+          "title": "Permana Link (Metro Ethernet/IP VPN)",
+          "description": "Permana Link delivers high-speed, reliable IP/Ethernet connectivity with strong QoS for businesses.",
+          "color": "#04BCBC"
+        },
+        {
+          "icon": "/images/Electrical.png",
+          "title": "Permana Dark Fiber",
+          "description": "Scalable enterprise networking solutions that ensure secure and efficient communication across your organization.",
+          "color": "#6ED6E0"
+        },
+        {
+          "icon": "/images/GPS Signal.png",
+          "title": "Permana DWDM",
+          "description": "Direct cloud connectivity that improves application performance, enhances security, and supports business productivity.",
+          "color": "#00628D"
+        }
+      ]
     },
-    {
-      "icon": "/images/Electrical.png",
-      "title": "Permana Dark Fiber",
-      "description": "Scalable enterprise networking solutions that ensure secure and efficient communication across your organization.",
-      "color": "#6ED6E0"
-    },
-    {
-      "icon": "/images/GPS Signal.png",
-      "title": "Permana DWDM",
-      "description": "Direct cloud connectivity that improves application performance, enhances security, and supports business productivity.",
-      "color": "#00628D"
-    }
-  ]
-},
-
     "managed": {
       "tag": "Managed",
-
       "title 1": "Connectivity",
       "title 2": "Service",
       "badge1": {
-  "title": "Internet Provider",
-  "subtitle": "Management"
-},
-"badge2": {
-  "title": "Networking",
-  "subtitle": "Monitoring"
-},
-"badge3": {
-  "title": "Last Mile",
-  "subtitle": "Connectivity"
-},
-"badge4": {
-  "title": "Enterprise Connectivity",
-  "subtitle": "Solutions"
-}
+        "title": "Internet Provider",
+        "subtitle": "Management"
+      },
+      "badge2": {
+        "title": "Networking",
+        "subtitle": "Monitoring"
+      },
+      "badge3": {
+        "title": "Last Mile",
+        "subtitle": "Connectivity"
+      },
+      "badge4": {
+        "title": "Enterprise Connectivity",
+        "subtitle": "Solutions"
+      }
     }
   },
-
   "Client": {
     "title": "Our Clients"
   },
-
   "Contact": {
     "title": "Trusted Technology\nService Partner",
-    "companyProfile": "Company Profile  →",
-
+    "companyProfile": "Company Profile    →",
     "formTitle": "Explore The Best Solution\nFor Your Organization",
-
     "fullName": "Full Name",
     "fullNamePlaceholder": "Enter your full name",
-
     "companyName": "Company Name",
     "companyNamePlaceholder": "Enter your company name",
-
     "phone": "Phone Number / Whatsapp",
     "phonePlaceholder": "Enter your phone number",
-
     "email": "Email Address",
     "emailPlaceholder": "Enter your email address",
-
     "description": "Brief Description of Your Needs",
     "descriptionPlaceholder": "Please describe your needs or how we can help you...",
-
     "submit": "Submit",
-    "download": "Download"
+    "download": "Download",
+"sending": "Sending...",
+"thankYouTitle": "Thank You For Your Interest In Our Services.",
+"thankYouDescription": "Your submission has been received successfully. We will get back to you as soon as possible."
   },
   
- "Resource": {
-  "title": "Consulting & Resource",
-  "subtitle": "Simplify IT. Amplify Performance.",
-  "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>"
+  "Resource": {
+    "title": "Consulting & Resource",
+    "subtitle": "Simplify IT. Amplify Performance.",
+    "description": "Your Trusted Partner in <managed>Managed Services</managed> & <outsourcing>Outsourcing</outsourcing>",
+    "standOut": {
+      "title": "Why We Stand Out?",
+      "subtitle": "We focus on quality, speed, and efficiency to deliver real results for every client.",
+      "cards": [
+        {
+          "image": "/images/card1.png",
+          "title": "PJP Consulting",
+          "desc": "Professional consulting to support licensing, regulatory, and business needs."
+        },
+        {
+          "image": "/images/card2.png",
+          "title": "ISO Consulting",
+          "desc": "Guidance to help businesses achieve ISO standards and improve operational quality."
+        },
+        {
+          "image": "/images/card3.png",
+          "title": "Digital Compliance",
+          "desc": "Digital solutions that help businesses meet regulatory and compliance requirements."
+        },
+        {
+          "image": "/images/card4.png",
+          "title": "IT Consulting",
+          "desc": "Expert IT guidance to optimize technology, systems, and business operations."
+        },
+        {
+          "image": "/images/card5.png",
+          "title": "IT Resource Outsourcing",
+          "desc": "Skilled IT professionals to support your business needs."
+        },
+        {
+          "image": "/images/card6.png",
+          "title": "Infrastructure Managed Services",
+          "desc": "Reliable IT infrastructure management for seamless operations."
+        }
+      ]
+    },
+    "powering": {
+      "title": "Powering Innovation With"
+    }
+  },
 
-},
-
-"ContactHero": {
-  "title": "Contact Us",
-  "office": "Head Office - Jakarta",
-  "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nGambir District\nCentral Jakarta\nSpecial Capital Region of Jakarta\n10140"
-},
-  "standOut": {
-    "title": "Why We Stand Out?",
-    "subtitle": "We focus on quality, speed, and efficiency to deliver real results for every client.",
-    "cards": [
-      {
-        "image": "/images/card1.png",
-        "title": "PJP Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+    "ContactHero": {
+      "contactUs": "Contact Us",
+       "titleStart": "We're Here to help",
+  "titleEnd": "you!",
+      "office": "Office - Jakarta",
+      "address": "Jl. Cideng Barat No.21B 3, RT.11/RW.11\nDuri Pulo\nGambir District\nCentral Jakarta\nSpecial Capital Region of Jakarta\n10140",
+      "findOffice": "Find Our Office",
+  "visitContact": "Visit us or contact our team directly."
+    },
+    "Footer": {
+      "copyright": "© 2026 PT Medianusa Permana"
+    },
+    "About": {
+      "hero": {
+        "title": "About Us",
+        "description": "Permana Solutions offers integrated IT solutions to accelerate your company's digital transformation through software development, professional IT services, and innovative technology solutions."
       },
-      {
-        "image": "/images/card2.png",
-        "title": "ISO Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      "profile": {
+        "title": "Our Profile",
+        "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through the PERMANA technology ecosystem."
       },
-      {
-        "image": "/images/card3.png",
-        "title": "Digital Compliance",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      "company": {
+        "title": "Permana Solutions",
+        "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of PERMANA Corporation, focusing on digital solutions, application development, connectivity services, and professional IT resources."
       },
-      {
-        "image": "/images/card4.png",
-        "title": "IT Consulting",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      "visionMission": {
+        "title": "Vision & Mission",
+        "visionTitle": "Vision",
+        "visionDescription": "Driving innovation through collaboration and creativity, delivering solutions that transform the way people interact with technology.",
+        "missionTitle": "Mission",
+        "missions": [
+          "Provide innovative and high-quality IT solutions.",
+          "Deliver reliable and secure cloud connectivity.",
+          "Become a trusted software and IT partner.",
+          "Optimize technology resources for business productivity.",
+          "Deliver responsive service and excellent technical support."
+        ]
       },
-      {
-        "image": "/images/card5.png",
-        "title": "IT Resource Outsourcing",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
-      },
-      {
-        "image": "/images/card6.png",
-        "title": "Infrastructure Managed Services",
-        "desc": "Lorem ipsum is the standard placeholder text used in graphic design, publishing, and web development to simulate real copy"
+      "team": {
+        "title": "Meet Our Exceptional Team",
+        "subtitle": "The People Behind Permana Solutions",
+        "description": "Driven by innovation and united by shared values, our professionals create impactful technology experiences."
       }
-    ]
+    
   },
 
   "powering": {
@@ -637,13 +664,13 @@
   },
 
   "ourProfile": {
-    "title": "Our Profile",
-    "description": "PERMANA is a technology solutions provider focused on continuous innovation to help businesses embrace future opportunities through the PERMANA technology ecosystem."
+    "title": "Our Profil",
+    "description": "PERMANA is a technology solutions provider corporation that focuses on continuous innovation to help the business world face future opportunities by optimizing technology connected to the PERMANA technology ecosystem."
   },
 
   "company": {
     "title": "Permana Solutions",
-    "description": "Founded in November 2020 in Jakarta, Permana Solutions is part of PERMANA Corporation, focusing on digital solutions, application development, connectivity services, and professional IT resources."
+    "description": "Founded In November 2020 In Jakarta, Permana Solutions is Part Of The PERMANA Corporation. Focuses On Developing Digital Solutions To Increase Company Productivity, With The Services Offered: Permana Applications | Permana Internet | Permana Expert."
   },
 
   "visionMission": {
@@ -667,9 +694,60 @@
   "team": {
     "title": "Meet Our Exceptional Team",
     "subtitle": "The People Behind Permana Solutions",
-    "description": "Driven by innovation and united by a shared vision, our professionals work together to deliver meaningful technology experiences."
+    "description": "Driven By Innovation And United By A Shared Vision, Our Professionals Work Together To Deliver Meaningful Technology Experiences."
+  }
+},
+  "Team": {
+    "ekie": {
+      "name": "Ekie Wachidie",
+      "position": "Director",
+      "description": "I believe company growth comes from innovation, collaboration, and the courage to take strategic steps toward the future."
+    },
+    "putut": {
+      "name": "Putut Indriatmoko",
+      "position": "Manager Operational",
+      "description": "I am committed to maintaining the company's financial stability through careful, transparent, and measurable financial management."
+    },
+    "indah": {
+      "name": "Indah Sundari",
+      "position": "Finance",
+      "description": "I am committed to maintaining the company's financial stability through careful, transparent, and measurable financial management."
+    },
+    "putri": {
+      "name": "Putri Aulia M",
+      "position": "Account Manager",
+      "description": "Building strong relationships with clients is my priority, ensuring every need is understood and addressed effectively."
+    },
+    "serly": {
+      "name": "Serly Zumeri",
+      "position": "Business Development",
+      "description": "I continuously seek new opportunities to expand business networks and create mutually beneficial partnerships."
+    },
+    "palupi": {
+      "name": "Palupi Pebi Pratiwi",
+      "position": "UI/UX & Business Analyst",
+      "description": "I bridge business needs with user experience to create solutions that are relevant, intuitive, and impactful."
+    },
+    "fitra": {
+      "name": "Fitra Melania Rais",
+      "position": "Full Stack Developer",
+      "description": "I enjoy building systems from frontend to backend to deliver reliable and scalable digital solutions."
+    },
+    "umar": {
+      "name": "Umar Dani Y",
+      "position": "Full Stack Developer",
+      "description": "To me, great code is not only functional but also maintainable and capable of creating real impact."
+    },
+    "mugi": {
+      "name": "Mugi Ardana",
+      "position": "Technical Support",
+      "description": "I ensure all infrastructure and devices operate optimally so daily operations can run smoothly without disruption."
+    },
+    "ari": {
+      "name": "Mohammad Ari Wenandi",
+      "position": "NOC",
+      "description": "Real-time system monitoring is my responsibility to keep services stable, secure, and responsive."
+    }
   }
 }
-}
-
 
