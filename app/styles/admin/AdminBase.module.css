@@ -1,0 +1,374 @@
+/* Shared admin layout, cards, headers, feedback, and generic buttons. */
+.pageHeader,
+.sectionHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+.pageHeader h1,
+.pageTitle {
+  margin: 0;
+
+  color: #15384a;
+
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+}
+.pageHeader p,
+.pageDescription {
+  margin: 7px 0 0;
+
+  color: #78919d;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+.headerAction {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 9px;
+
+  color: #78939f;
+
+  font-size: 12px;
+}
+.breadcrumb strong {
+  color: #087f8d;
+}
+.primaryButton,
+.secondaryButton,
+.websiteButton {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border-radius: 10px;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    opacity 0.15s ease;
+}
+.primaryButton,
+.websiteButton {
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087b9b,
+      #12b1b7
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 18px
+    rgba(8, 139, 158, 0.17);
+}
+.primaryButton:hover:not(:disabled),
+.websiteButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 22px
+    rgba(8, 139, 158, 0.21);
+}
+.secondaryButton {
+  border: 1px solid #cbdfe3;
+
+  background: #ffffff;
+
+  color: #315563;
+
+  text-decoration: none;
+}
+.secondaryButton:hover:not(:disabled) {
+  background: #f6fafb;
+}
+.primaryButton:disabled,
+.secondaryButton:disabled,
+.websiteButton:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+.errorBox,
+.successBox {
+  margin: 0 0 17px;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+.errorBox {
+  border: 1px solid #ffd0d0;
+
+  background: #fff4f4;
+
+  color: #b42318;
+}
+.successBox {
+  border: 1px solid #afe9c8;
+
+  background: #effcf5;
+
+  color: #087b4c;
+}
+.loadingBox {
+  padding: 48px 25px;
+
+  color: #8299a4;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+.card,
+.editorCard {
+  border: 1px solid #e0e9ed;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 7px 25px
+    rgba(19, 66, 84, 0.05);
+}
+.card,
+.editorCard {
+  overflow: hidden;
+
+  border-radius: 17px;
+}
+.editorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 21px 24px;
+
+  border-bottom: 1px solid #e8eff2;
+}
+.editorHeader h2 {
+  margin: 0;
+
+  color: #173e50;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+.editorHeader p {
+  margin: 5px 0 0;
+
+  color: #879aa3;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+.editorFooter {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  padding: 13px 24px;
+
+  border-top: 1px solid #e8eff2;
+
+  background: #fbfdfe;
+}
+.emptyState {
+  min-height: 250px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 30px;
+
+  border: 1px dashed #bad7dd;
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  color: #718b96;
+
+  text-align: center;
+
+  font-size: 13px;
+}
+.settingsGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 215px)
+    minmax(0, 1fr);
+
+  gap: 20px;
+}
+.settingMenu {
+  height: max-content;
+
+  padding: 9px;
+
+  border: 1px solid #dfebee;
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+.settingMenu button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #506d79;
+
+  text-align: left;
+
+  font: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+.settingMenu button:hover {
+  background: #f4fafa;
+}
+.settingMenu button:first-child {
+  background: #e9f8f8;
+
+  color: #087e8e;
+
+  font-weight: 700;
+}
+.hideScrollbar {
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+}
+.hideScrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+
+  display: none;
+}
+@media (max-width: 850px) {
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+.pageHeader,
+  .sectionHeader {
+    flex-direction: column;
+  }
+.headerAction {
+    width: auto;
+
+    align-self: flex-end;
+  }
+.headerAction .primaryButton,
+  .headerAction .secondaryButton,
+  .headerAction .websiteButton {
+    width: auto;
+  }
+.editorHeader,
+  .editorFooter {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+.editorFooter {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+.editorFooter .primaryButton,
+  .editorFooter .secondaryButton,
+  .editorFooter .websiteButton {
+    width: 100%;
+  }
+}
+
+/* Icon-only action helpers */
+.primaryButton svg,
+.secondaryButton svg,
+.websiteButton svg {
+  flex: 0 0 auto;
+}
+
+.iconOnlyButton {
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spin {
+  animation: adminSpin 0.8s linear infinite;
+}
+
+@keyframes adminSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 650px) {
+  .pageHeader,
+  .sectionHeader {
+    gap: 14px;
+  }
+
+  .headerAction {
+    width: auto;
+    align-self: flex-end;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .websiteButton {
+    min-height: 42px;
+  }
+}

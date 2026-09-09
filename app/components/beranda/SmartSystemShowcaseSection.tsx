@@ -1,17 +1,57 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import type { CmsSectionContent } from "@/app/services/cms";
 
 type ShowcaseItem = {
   title: string;
   description: string;
 };
 
-export default function SmartSystemShowcaseSection() {
-  const t = useTranslations("SmartSystemShowcase");
+type Props = {
+  content?: CmsSectionContent;
+};
 
-  const showcaseItems = t.raw("items") as ShowcaseItem[];
+function text(
+  content: CmsSectionContent | undefined,
+  key: string,
+  fallback = ""
+) {
+  const value = content?.[key];
+  return typeof value === "string" && value.trim()
+    ? value
+    : fallback;
+}
+
+function showcaseItems(
+  content?: CmsSectionContent
+): ShowcaseItem[] {
+  const value = content?.items;
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((item) => {
+    if (!item || typeof item !== "object" || Array.isArray(item)) {
+      return [];
+    }
+
+    const record = item as Record<string, unknown>;
+    const title =
+      typeof record.title === "string" ? record.title : "";
+    const description =
+      typeof record.description === "string"
+        ? record.description
+        : "";
+
+    if (!title && !description) return [];
+
+    return [{ title, description }];
+  });
+}
+
+export default function SmartSystemShowcaseSection({
+  content,
+}: Props) {
+  const items = showcaseItems(content);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -115,7 +155,7 @@ export default function SmartSystemShowcaseSection() {
           <div className="flex flex-col items-center md:flex-row md:gap-3">
 
             <span className="text-5xl font-bold text-[#00628D]">
-              {t("why")}
+              {text(content, "why")}
             </span>
 
             <h2
@@ -134,7 +174,7 @@ export default function SmartSystemShowcaseSection() {
                 lg:text-5xl
               "
             >
-              {t("heading")}
+              {text(content, "heading")}
             </h2>
 
           </div>
@@ -152,7 +192,7 @@ export default function SmartSystemShowcaseSection() {
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
             role="list"
-            aria-label={t("aria")}
+            aria-label={text(content, "aria")}
             className={`
               flex
               gap-4
@@ -170,7 +210,7 @@ export default function SmartSystemShowcaseSection() {
             `}
           >
 
-            {showcaseItems.map((item, index) => (
+            {items.map((item, index) => (
               <article
                 key={index}
                 role="listitem"

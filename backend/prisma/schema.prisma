@@ -1,0 +1,235 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma" // jika diperlukan, sesuaikan
+}
+
+datasource db {
+  provider = "mysql"
+  // url      = env("DATABASE_URL")
+}
+
+model users {
+  id             String    @id @default(uuid()) @db.Char(36)
+  name           String?
+  email          String    @unique(map: "users_email_unique")
+  password       String?
+  active_status  Boolean   @default(false)
+  two_fa_secret  String?   @db.VarChar(255)
+  two_fa_enabled Boolean   @default(false)
+  last_login_at  DateTime? @db.DateTime(0)
+  created_at     DateTime? @db.Timestamp(0)
+  updated_at     DateTime? @db.Timestamp(0)
+}
+
+model otps {
+  id        String   @id @default(uuid()) @db.Char(36)
+  email     String   @db.VarChar(255)
+  code      String   @db.VarChar(6)
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  updatedAt DateTime @updatedAt @db.Timestamp(0)
+
+  @@index([email])
+  @@index([expiresAt])
+}
+
+model password_resets {
+  id        String   @id @default(uuid()) @db.Char(36)
+  email     String   @unique @db.VarChar(255)
+  token     String   @unique @db.VarChar(255)
+  expiresAt DateTime
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+
+  @@index([email])
+  @@index([token])
+}
+
+model leads {
+  id         String   @id @default(uuid()) @db.Char(36)
+  full_name  String   @db.VarChar(100)
+  company    String?  @db.VarChar(100)
+  phone      String   @db.VarChar(20)
+  email      String   @db.VarChar(100)
+  message    String   @db.Text
+  status     String   @default("new") @db.VarChar(20)
+  source     String?  @default("website")
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  updated_at DateTime @updatedAt @db.Timestamp(0)
+}
+
+model cms_pages {
+  id               String         @id @default(uuid()) @db.Char(36)
+  slug             String         @db.VarChar(100)
+  locale           String         @default("en") @db.VarChar(10)
+
+  title            String         @db.VarChar(150)
+  page_type        String         @default("page") @db.VarChar(30)
+  status           String         @default("published") @db.VarChar(20)
+
+  meta_title       String?        @db.VarChar(255)
+  meta_description String?        @db.Text
+
+  created_at       DateTime       @default(now()) @db.Timestamp(0)
+  updated_at       DateTime       @updatedAt @db.Timestamp(0)
+
+  sections         cms_sections[]
+
+  @@unique([slug, locale])
+  @@index([locale])
+  @@index([page_type])
+  @@index([status])
+}
+
+model cms_sections {
+  id          String     @id @default(uuid()) @db.Char(36)
+  page_id     String?    @db.Char(36)
+  section_key String     @db.VarChar(100)
+  locale      String     @default("en") @db.VarChar(10)
+  title       String?    @db.VarChar(150)
+  content     Json
+  is_active   Boolean    @default(true)
+  sort_order  Int        @default(0)
+  created_at  DateTime   @default(now()) @db.Timestamp(0)
+  updated_at  DateTime   @updatedAt @db.Timestamp(0)
+  page        cms_pages? @relation(fields: [page_id], references: [id], onDelete: Cascade)
+
+  @@unique([page_id, section_key, locale])
+  @@index([page_id, sort_order])
+  @@index([section_key, locale])
+}
+
+model site_settings {
+  id          String   @id @default(uuid()) @db.Char(36)
+  setting_key String   @unique @db.VarChar(100)
+  value       Json
+  updated_at  DateTime @updatedAt @db.Timestamp(0)
+}
+
+model products {
+  id          String             @id @default(uuid()) @db.Char(36)
+  name        String             @db.VarChar(150)
+  slug        String             @db.VarChar(150)
+  service     String             @db.VarChar(50)
+  category    String?            @db.VarChar(100)
+  locale      String             @default("en") @db.VarChar(10)
+  description String?            @db.Text
+  image_url   String?            @db.VarChar(500)
+  meta        Json?
+  sort_order  Int                @default(0)
+  is_active   Boolean            @default(true)
+  created_at  DateTime           @default(now()) @db.Timestamp(0)
+  updated_at  DateTime           @updatedAt @db.Timestamp(0)
+  features    product_features[]
+
+  @@unique([slug, locale])
+  @@index([service, is_active])
+  @@index([locale])
+}
+
+model product_features {
+  id          String   @id @default(uuid()) @db.Char(36)
+  product_id  String   @db.Char(36)
+  title       String   @db.VarChar(150)
+  description String?  @db.Text
+  sort_order  Int      @default(0)
+  is_active   Boolean  @default(true)
+  created_at  DateTime @default(now()) @db.Timestamp(0)
+  updated_at  DateTime @updatedAt @db.Timestamp(0)
+  product     products @relation(fields: [product_id], references: [id], onDelete: Cascade)
+
+  @@index([product_id, sort_order])
+}
+
+model clients {
+  id         String   @id @default(uuid()) @db.Char(36)
+  name       String   @db.VarChar(150)
+  industry   String?  @db.VarChar(100)
+  logo_url   String?  @db.VarChar(500)
+  placement  String?  @db.VarChar(100)
+  locale     String   @default("en") @db.VarChar(10)
+  sort_order Int      @default(0)
+  is_active  Boolean  @default(true)
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  updated_at DateTime @updatedAt @db.Timestamp(0)
+
+  @@index([locale, is_active])
+}
+
+model technologies {
+  id         String   @id @default(uuid()) @db.Char(36)
+  name       String   @db.VarChar(150)
+  category   String?  @db.VarChar(100)
+  logo_url   String?  @db.VarChar(500)
+  locale     String   @default("en") @db.VarChar(10)
+  sort_order Int      @default(0)
+  is_active  Boolean  @default(true)
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  updated_at DateTime @updatedAt @db.Timestamp(0)
+
+  @@index([locale, is_active])
+}
+
+model team_members {
+  id           String   @id @default(uuid()) @db.Char(36)
+  name         String   @db.VarChar(150)
+  position     String?  @db.VarChar(150)
+  bio          String?  @db.Text
+  photo_url    String?  @db.VarChar(500)
+  linkedin_url String?  @db.VarChar(500)
+  locale       String   @default("en") @db.VarChar(10)
+  sort_order   Int      @default(0)
+  is_active    Boolean  @default(true)
+  created_at   DateTime @default(now()) @db.Timestamp(0)
+  updated_at   DateTime @updatedAt @db.Timestamp(0)
+
+  @@index([locale, is_active])
+}
+
+model visitors {
+  id            String             @id @default(uuid()) @db.Char(36)
+  visitor_id    String             @unique @db.VarChar(64)
+  first_seen_at DateTime           @default(now()) @db.Timestamp(0)
+  last_seen_at  DateTime           @default(now()) @db.Timestamp(0)
+  sessions      visitor_sessions[]
+
+  @@index([first_seen_at])
+  @@index([last_seen_at])
+}
+
+model visitor_sessions {
+  id                 String       @id @default(uuid()) @db.Char(36)
+  visitor_id         String       @db.VarChar(64)
+  session_id         String       @unique @db.VarChar(64)
+  ip_hash            String?      @db.VarChar(64)
+  user_agent         String?      @db.VarChar(500)
+  network_agent_hash String?      @db.VarChar(64)
+  referrer           String?      @db.VarChar(1000)
+  started_at         DateTime     @default(now()) @db.Timestamp(0)
+  last_seen_at       DateTime     @default(now()) @db.Timestamp(0)
+
+  visitor            visitors     @relation(fields: [visitor_id], references: [visitor_id], onDelete: Cascade)
+  page_views         page_views[]
+
+  @@index([visitor_id])
+  @@index([started_at])
+  @@index([last_seen_at])
+  @@index([network_agent_hash])
+}
+
+model page_views {
+  id         String           @id @default(uuid()) @db.Char(36)
+  visitor_id String           @db.VarChar(64)
+  session_id String           @db.VarChar(64)
+  path       String           @db.VarChar(500)
+  locale     String?          @db.VarChar(10)
+  referrer   String?          @db.VarChar(1000)
+  viewed_at  DateTime         @default(now()) @db.Timestamp(0)
+
+  session    visitor_sessions @relation(fields: [session_id], references: [session_id], onDelete: Cascade)
+
+  @@index([viewed_at])
+  @@index([visitor_id, viewed_at])
+  @@index([session_id, viewed_at])
+  @@index([path])
+}

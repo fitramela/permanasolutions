@@ -1,10 +1,83 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 
-export default function HeroAboutUs() {
-  const t = useTranslations("About");
+import type {
+  CmsSectionContent,
+} from "@/app/services/cms";
+
+type Props = {
+  content?: CmsSectionContent;
+};
+
+function objectValue(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  key: string
+): Record<string, unknown> {
+  const value =
+    source?.[key];
+
+  if (
+    !value ||
+    typeof value !==
+      "object" ||
+    Array.isArray(value)
+  ) {
+    return {};
+  }
+
+  return value as Record<
+    string,
+    unknown
+  >;
+}
+
+function text(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  key: string
+): string {
+  const value =
+    source?.[key];
+
+  return typeof value ===
+    "string"
+    ? value
+    : "";
+}
+
+export default function HeroAboutUs({
+  content,
+}: Props) {
+  const hero =
+    objectValue(
+      content,
+      "hero"
+    );
+
+  const desktopImage =
+    text(
+      hero,
+      "desktop_image"
+    ) ||
+    "/images/about-us.png";
+
+  const mobileImage =
+    text(
+      hero,
+      "mobile_image"
+    ) ||
+    "/images/herohp.png";
+
+  const decorationImage =
+    text(
+      hero,
+      "decoration_image"
+    ) ||
+    "/images/Decore.png";
 
   return (
     <main className="w-full overflow-x-hidden bg-white">
@@ -15,16 +88,18 @@ export default function HeroAboutUs() {
       <section
         className="
           relative
+          left-1/2
           hidden
           w-screen
           max-w-none
+          -translate-x-1/2
           overflow-hidden
           lg:block
         "
       >
         {/* BACKGROUND DESKTOP */}
         <img
-          src="/images/about-us.png"
+          src={desktopImage}
           alt="About Permana Solutions"
           className="
             block
@@ -67,7 +142,10 @@ export default function HeroAboutUs() {
                 2xl:text-[52px]
               "
             >
-              {t("hero.title")}
+              {text(
+                hero,
+                "title"
+              )}
             </h1>
 
             {/* DESCRIPTION */}
@@ -84,12 +162,15 @@ export default function HeroAboutUs() {
                 2xl:text-[16px]
               "
             >
-              {t("hero.description")}
+              {text(
+                hero,
+                "description"
+              )}
             </p>
 
             {/* DECORATION LINE */}
             <Image
-              src="/images/Decore.png"
+              src={decorationImage}
               alt=""
               width={750}
               height={8}
@@ -116,15 +197,18 @@ export default function HeroAboutUs() {
       <section
         className="
           relative
+          left-1/2
           block
-          w-full
+          w-screen
+          max-w-none
+          -translate-x-1/2
           overflow-hidden
           lg:hidden
         "
       >
         {/* BACKGROUND MOBILE */}
         <img
-          src="/images/herohp.png"
+          src={mobileImage}
           alt="About Permana Solutions Mobile"
           className="
             block
@@ -166,7 +250,10 @@ export default function HeroAboutUs() {
               md:text-[50px]
             "
           >
-            {t("hero.title")}
+            {text(
+              hero,
+              "title"
+            )}
           </h1>
 
           {/* DESCRIPTION */}
@@ -186,12 +273,15 @@ export default function HeroAboutUs() {
               md:text-[15px]
             "
           >
-            {t("hero.description")}
+            {text(
+              hero,
+              "description"
+            )}
           </p>
 
           {/* DECORATION LINE */}
           <Image
-            src="/images/Decore.png"
+            src={decorationImage}
             alt=""
             width={500}
             height={8}

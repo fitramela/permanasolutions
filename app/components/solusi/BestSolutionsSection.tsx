@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useTranslations } from "next-intl";
 
 type SolutionItem = {
   title: string;
@@ -10,10 +9,21 @@ type SolutionItem = {
   includes: string[];
 };
 
-export default function BestSolutionsSection() {
-  const t = useTranslations("Solutions.bestSolutions");
+type BestSolutionsContent = {
+  our?: string;
+  title?: string;
+  button?: string;
+  items?: SolutionItem[];
+};
 
-  const items = t.raw("items") as SolutionItem[];
+type Props = {
+  content?: BestSolutionsContent;
+};
+
+export default function BestSolutionsSection({
+  content,
+}: Props) {
+  const items = content?.items ?? [];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -116,11 +126,11 @@ export default function BestSolutionsSection() {
 
         <div className="w-full lg:w-[280px] lg:shrink-0">
           <p className="text-3xl font-bold text-[#04BCBC] md:text-4xl">
-            {t("our")}
+            {content?.our}
           </p>
 
           <h2 className="mt-2 text-3xl font-bold leading-tight text-[#00628D] md:text-4xl">
-            {t("title")}
+            {content?.title}
           </h2>
         </div>
 
@@ -210,7 +220,7 @@ export default function BestSolutionsSection() {
                         hover:gap-3
                       "
                     >
-                      {t("button")}
+                      {content?.button}
                       <span>→</span>
                     </button>
                   </>
@@ -346,7 +356,7 @@ export default function BestSolutionsSection() {
                           hover:gap-3
                         "
                       >
-                        {t("button")}
+                        {content?.button}
                         <span>→</span>
                       </button>
                     </>

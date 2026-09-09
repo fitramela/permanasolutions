@@ -1,10 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import type { CmsSectionContent } from "@/app/services/cms";
 
-export default function WhoWeAreSection() {
-  const t = useTranslations("WhoWeAre");
+type Props = {
+  content?: CmsSectionContent;
+};
+
+function text(
+  content: CmsSectionContent | undefined,
+  key: string,
+  fallback = ""
+) {
+  const value = content?.[key];
+  return typeof value === "string" && value.trim()
+    ? value
+    : fallback;
+}
+
+export default function WhoWeAreSection({
+  content,
+}: Props) {
+  const imageUrl = text(
+    content,
+    "image_url",
+  );
+  const secondaryImageUrl = text(
+    content,
+    "secondary_image_url",
+  );
 
   return (
     <section className="w-full bg-white py-16 lg:py-20">
@@ -15,7 +39,7 @@ export default function WhoWeAreSection() {
 
           {/* Watermark */}
           <Image
-            src="/images/image 10.png"
+            src={secondaryImageUrl}
             alt=""
             width={1000}
             height={500}
@@ -34,7 +58,7 @@ export default function WhoWeAreSection() {
           />
 
           <h2
-  className="
+            className="
     relative
     z-10
     mb-10
@@ -45,29 +69,29 @@ export default function WhoWeAreSection() {
     drop-shadow-[0_4px_6px_rgba(0,0,0,0.25)]
     lg:text-[40px]
   "
->
-  {t("title")}
-</h2>
+          >
+            {text(content, "title")}
+          </h2>
 
           <p className="relative z-10 mb-8 text-justify text-[20px] leading-[2.1] text-[#4F5965]">
-            {t("description1")}
+            {text(content, "description1")}
           </p>
 
           <p className="relative z-10 text-justify text-[21px] leading-[2.1] text-[#4F5965]">
-            {t("description2")}
+            {text(content, "description2")}
           </p>
         </div>
 
         {/* RIGHT */}
         <div className="flex w-full items-center justify-center lg:w-[55%]">
-         <Image
-  src="/images/newWHO.png"
-  alt="Who We Are"
-  width={2000}
-  height={5000}
-  priority
-  className="w-full max-w-[7000px] h-auto"
-/>
+          <Image
+            src={imageUrl}
+            alt="Who We Are"
+            width={2000}
+            height={5000}
+            priority
+            className="w-full max-w-[7000px] h-auto"
+          />
         </div>
 
       </div>

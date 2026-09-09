@@ -4,20 +4,103 @@ import Image from "next/image";
 import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type MouseEvent,
 } from "react";
-import { useTranslations } from "next-intl";
 import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
 
-import {
-  teamData,
-  TeamMember,
-} from "./teamdata";
+import type {
+  CmsSectionContent,
+  CmsTeamMember,
+} from "@/app/services/cms";
+
+type Props = {
+  content?: CmsSectionContent;
+  team?: CmsTeamMember[];
+};
+
+type TeamMember = {
+  id: string;
+  name: string;
+  position: string;
+  description: string;
+  image: string;
+  linkedin_url?: string | null;
+};
+
+function getNestedValue(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  path: string
+): unknown {
+  if (!source) {
+    return undefined;
+  }
+
+  const keys = path.split(".");
+  let current: unknown = source;
+
+  for (const key of keys) {
+    if (
+      !current ||
+      typeof current !== "object" ||
+      Array.isArray(current)
+    ) {
+      return undefined;
+    }
+
+    current = (
+      current as Record<string, unknown>
+    )[key];
+  }
+
+  return current;
+}
+
+function getText(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  path: string
+): string {
+  const value =
+    getNestedValue(
+      source,
+      path
+    );
+
+  return typeof value === "string"
+    ? value
+    : "";
+}
+
+function getStringArray(
+  source:
+    | Record<string, unknown>
+    | undefined,
+  path: string
+): string[] {
+  const value =
+    getNestedValue(
+      source,
+      path
+    );
+
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value.filter(
+    (item): item is string =>
+      typeof item === "string"
+  );
+}
 
 /* =========================================================
    DESKTOP LOGO CONFIG
@@ -42,15 +125,19 @@ const DESKTOP_LOGO_CONFIG = {
   ======================================================= */
 
   logo: {
-    width: 167,
+    width: 220,
     xlWidth: 300,
 
     /* Posisi logo relatif terhadap wrapper */
-    x: 230,
-    y: 10,
+    x: 260,
+    y: 18,
 
-    /* Jika ingin logo sedikit lebih besar/kecil */
-    scale: 1,
+    /*
+     * Skala visual tambahan.
+     * Berguna untuk logo CMS yang punya area transparan
+     * cukup besar di sekeliling gambar.
+     */
+    scale: 1.35,
   },
 
   /* =======================================================
@@ -106,8 +193,56 @@ const DESKTOP_LOGO_CONFIG = {
    ABOUT CONTENT
 ========================================================= */
 
-export default function AboutContent() {
-  const t = useTranslations("About");
+export default function AboutContent({
+  content,
+  team = [],
+}: Props) {
+  const t = useMemo(
+    () => {
+      const translator =
+        (path: string) =>
+          getText(
+            content,
+            path
+          );
+
+      translator.raw =
+        (path: string) =>
+          getNestedValue(
+            content,
+            path
+          );
+
+      return translator;
+    },
+    [content]
+  );
+
+  const teamData: TeamMember[] =
+    useMemo(
+      () =>
+        team
+          .filter(
+            (member) =>
+              member.is_active !== false
+          )
+          .map(
+            (member) => ({
+              id: member.id,
+              name: member.name,
+              position:
+                member.position ?? "",
+              description:
+                member.bio ?? "",
+              image:
+                member.photo_url ??
+                "/images/icon-logo.png",
+              linkedin_url:
+                member.linkedin_url,
+            })
+          ),
+      [team]
+    );
 
   /* =========================================================
      MOBILE / TABLET SCROLL
@@ -212,7 +347,7 @@ export default function AboutContent() {
       setActiveIndex(
         safeIndex
       );
-    }, []);
+    }, [teamData.length]);
 
   /* =========================================================
      MOBILE SCROLL EVENT
@@ -535,9 +670,11 @@ export default function AboutContent() {
      MISSIONS
   ========================================================= */
 
-  const missions = t.raw(
-    "visionMission.missions"
-  ) as string[];
+  const missions =
+    getStringArray(
+      content,
+      "visionMission.missions"
+    );
 
   return (
     <section
@@ -572,7 +709,13 @@ export default function AboutContent() {
       >
 
         <Image
-          src="/images/bgkiri2permana.png"
+          src={
+            getText(
+              content,
+              "background_left_image"
+            ) ||
+            "/images/bgkiri2permana.png"
+          }
           alt=""
           width={920}
           height={1200}
@@ -600,7 +743,13 @@ export default function AboutContent() {
         />
 
         <Image
-          src="/images/imageg.png"
+          src={
+            getText(
+              content,
+              "background_shape_image"
+            ) ||
+            "/images/imageg.png"
+          }
           alt=""
           width={380}
           height={380}
@@ -723,7 +872,13 @@ export default function AboutContent() {
           >
 
             <Image
-              src="/images/ourteks.png"
+              src={
+                getText(
+                  content,
+                  "our_profile_ribbon_image"
+                ) ||
+                "/images/ourteks.png"
+              }
               alt=""
               width={850}
               height={160}
@@ -887,28 +1042,39 @@ export default function AboutContent() {
               "
             >
 
-              <Image
-                src="/images/pErmana.png"
-                alt="Permana Solutions"
-                width={520}
-                height={220}
-                priority
+              <div
                 className="
                   relative
                   z-30
-
-                  w-[170px]
-
-                  sm:w-[210px]
-
-                  md:w-[260px]
-
-                  h-auto
-
-                  shrink-0
-                  select-none
+                  h-[72px]
+                  w-[190px]
+                  overflow-hidden
+                  sm:h-[84px]
+                  sm:w-[230px]
+                  md:h-[96px]
+                  md:w-[280px]
                 "
-              />
+              >
+                <Image
+                  src={
+                    getText(
+                      content,
+                      "company_logo_image"
+                    ) ||
+                    "/images/pErmana.png"
+                  }
+                  alt="Permana Solutions"
+                  fill
+                  priority
+                  sizes="(max-width: 639px) 190px, (max-width: 767px) 230px, 280px"
+                  className="
+                    object-contain
+                    scale-[1.22]
+                    select-none
+                    pointer-events-none
+                  "
+                />
+              </div>
 
             </div>
 
@@ -974,7 +1140,17 @@ export default function AboutContent() {
               >
 
                 <Image
-                  src="/images/ogol1.png"
+                  src={
+                    getText(
+                      content,
+                      "company_logo_desktop_image"
+                    ) ||
+                    getText(
+                      content,
+                      "company_logo_image"
+                    ) ||
+                    "/images/ogol1.png"
+                  }
                   alt="Permana Solutions"
                   width={520}
                   height={220}
@@ -1160,7 +1336,13 @@ export default function AboutContent() {
         >
 
           <Image
-            src="/images/visimisits.png"
+            src={
+              getText(
+                content,
+                "vision_mission_ribbon_image"
+              ) ||
+              "/images/visimisits.png"
+            }
             alt=""
             width={1800}
             height={450}
@@ -1210,7 +1392,13 @@ export default function AboutContent() {
             }}
           >
             <Image
-              src="/images/visimisits.png"
+              src={
+                getText(
+                  content,
+                  "vision_mission_ribbon_image"
+                ) ||
+                "/images/visimisits.png"
+              }
               alt=""
               width={1800}
               height={450}
@@ -2089,9 +2277,6 @@ function TeamCard({
   index,
   isActive,
 }: TeamCardProps) {
-  const t =
-    useTranslations("Team");
-
   const CARD_CONFIG = {
     width: 300,
     height: 340,
@@ -2258,7 +2443,7 @@ function TeamCard({
 
           <Image
             src={member.image}
-            alt={t(member.nameKey)}
+            alt={member.name}
             fill
             className="
               rounded-full
@@ -2338,7 +2523,7 @@ function TeamCard({
               `${CARD_CONFIG.positionFontSize}px`,
           }}
         >
-          {t(member.positionKey)}
+          {member.position}
         </span>
 
       </div>
@@ -2371,7 +2556,7 @@ function TeamCard({
             `${CARD_CONFIG.nameLineHeight}px`,
         }}
       >
-        {t(member.nameKey)}
+        {member.name}
       </h3>
 
       {/* DESKRIPSI */}
@@ -2406,7 +2591,7 @@ function TeamCard({
             `${CARD_CONFIG.descriptionLineHeight}px`,
         }}
       >
-        {t(member.descriptionKey)}
+        {member.description}
       </p>
 
     </article>

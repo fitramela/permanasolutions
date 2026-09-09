@@ -1,0 +1,297 @@
+/* Dashboard-only cards, metrics, charts, and activity feed. */
+.dashCard,
+.statCard {
+  border: 1px solid #e0e9ed;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 7px 25px
+    rgba(19, 66, 84, 0.05);
+}
+.statGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-bottom: 24px;
+}
+.statCard {
+  overflow: hidden;
+
+  border-radius: 14px;
+}
+.statTop {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+}
+.statIcon {
+  width: 54px;
+  height: 54px;
+
+  flex: 0 0 54px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  background: #e1f3f7;
+
+  color: #087b99;
+}
+.statTop div {
+  min-width: 0;
+
+  display: grid;
+}
+.statTop b {
+  color: #365765;
+
+  font-size: 12px;
+}
+.statTop strong {
+  margin-top: 4px;
+
+  color: #153a4b;
+
+  font-size: 28px;
+  line-height: 1;
+}
+.statTop small {
+  margin-top: 5px;
+
+  color: #8198a2;
+
+  font-size: 11px;
+}
+.statFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 16px;
+
+  border-top: 1px solid #e7eef1;
+
+  color: #188b6d;
+
+  font-size: 11px;
+}
+.dashboardGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(320px, 0.85fr);
+
+  gap: 18px;
+}
+.dashCard {
+  min-height: 460px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+}
+.dashTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 19px 22px;
+
+  border-bottom: 1px solid #e5edef;
+}
+.dashTitle h2 {
+  margin: 0;
+
+  color: #173e50;
+
+  font-size: 17px;
+}
+.dashTitle button {
+  min-height: 36px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d6e4e7;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #52717e;
+
+  font: inherit;
+  font-size: 11px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+.metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+
+  padding: 20px 22px 6px;
+}
+.metrics > div {
+  padding: 14px;
+
+  border: 1px solid #e5edef;
+  border-radius: 11px;
+
+  background: #fbfefe;
+}
+.metrics span {
+  color: #69838f;
+
+  font-size: 11px;
+}
+.metrics b {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #173e50;
+
+  font-size: 20px;
+}
+.chart {
+  height: 300px;
+
+  padding: 12px 24px 0;
+}
+.chart svg {
+  width: 100%;
+  height: 245px;
+
+  overflow: visible;
+}
+.gridLines line {
+  stroke: #e5edef;
+
+  stroke-width: 1;
+}
+.lineOne,
+.lineTwo {
+  fill: none;
+
+  stroke-width: 2;
+}
+.lineOne {
+  stroke: #0a7899;
+}
+.lineTwo {
+  stroke: #18b6ba;
+}
+.chartLabels {
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 5px;
+
+  color: #95a7af;
+
+  font-size: 10px;
+}
+.legend {
+  display: flex;
+  justify-content: center;
+
+  gap: 30px;
+
+  margin-top: 7px;
+
+  color: #087a98;
+
+  font-size: 11px;
+}
+.legend span:last-child {
+  color: #16b4b8;
+}
+.updates {
+  padding: 12px 24px;
+}
+.updates > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px 5px;
+
+  border-bottom: 1px solid #ebf0f2;
+}
+.updates > div:last-child {
+  border-bottom: 0;
+}
+.updates p {
+  margin: 0;
+
+  display: grid;
+
+  color: #264b5a;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+.updates small {
+  margin-top: 4px;
+
+  color: #8ca0aa;
+
+  font-size: 10px;
+  font-weight: 400;
+}
+.updates em {
+  color: #95a6ae;
+
+  font-size: 10px;
+  font-style: normal;
+
+  white-space: nowrap;
+}
+.updateFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 10px;
+
+  padding: 14px 24px;
+
+  border-top: 1px solid #e8eff2;
+
+  color: #087d96;
+
+  font-size: 11px;
+}
+@media (max-width: 1100px) {
+.statGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+.dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+.statGrid {
+    grid-template-columns: 1fr;
+  }
+}
